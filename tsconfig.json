@@ -4,7 +4,7 @@
         "noImplicitAny": true,
         "module": "ESNext",
         "target": "es5",
-        "jsx": "react",
+        "jsx": "react-jsx",
         "allowJs": true,  //компилятор обрабатывает не только ts, но и js файлы
         "moduleResolution": "node",
         "esModuleInterop": true, // позволяет работать с пакетами, которые используют common js,
