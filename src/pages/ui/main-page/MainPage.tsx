@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {memo} from 'react';
 
-const MainPage = () => {
+
+const MainPage = memo(() => {
+
+
     return (
         <div>
             MainPage
         </div>
     );
-};
+});
 
 export default MainPage;

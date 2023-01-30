@@ -10,7 +10,10 @@
         "esModuleInterop": true, // позволяет работать с пакетами, которые используют common js,
                                 //  как с обычными пакетами с помощью import
         "allowSyntheticDefaultImports": true, // симулирует дефолтный импорт пакета даже если таковой отсутствует
-        "baseUrl": "."
+        "baseUrl": ".",
+        "paths": {
+            "*": ["./src/*"]
+        }
     },
     "ts-node": {
         "compilerOptions": {

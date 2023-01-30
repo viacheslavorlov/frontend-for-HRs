@@ -1,13 +1,18 @@
 import {render} from "react-dom";
-import App from "./components/app/App";
+import App from "./app/App";
+import {StrictMode} from "react";
 import {BrowserRouter} from "react-router-dom";
-import ThemeProvider from "./theme/ThemeProvider";
+import {ThemeProvider} from "app/providers/themeProvider";
+import React from "react";
 
 render(
-    <BrowserRouter>
-        <ThemeProvider>
-            <App/>
-        </ThemeProvider>
-    </BrowserRouter>,
+    <StrictMode>
+        <BrowserRouter>
+            <ThemeProvider>
+                <App/>
+            </ThemeProvider>
+        </BrowserRouter>
+    </StrictMode>,
+
     document.getElementById('root')
 )
