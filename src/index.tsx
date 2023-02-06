@@ -2,7 +2,7 @@ import {render} from "react-dom";
 import App from "./app/App";
 import {StrictMode} from "react";
 import {BrowserRouter} from "react-router-dom";
-import {ThemeProvider} from "app/providers/themeProvider";
+import {ThemeProvider} from "app/providers/TemeProvider";
 import React from "react";
 
 render(
