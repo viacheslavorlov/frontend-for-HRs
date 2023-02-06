@@ -10,14 +10,20 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         use: ['@svgr/webpack'],
     }
 
-    const fileLoader =  {
-        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-        use: [
-            {
-                loader: 'file-loader',
-            },
-        ],
+    // const fileLoader =  {
+    //     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    //     use: [
+    //         {
+    //             loader: 'file-loader',
+    //         },
+    //     ],
+    // }
+
+    const assetsLoader = {
+        test: /\.(png|jpg|gif)$/i,
+        type: 'asset/resource'
     }
+
 
     const cssLoader = {
         test: /\.s[ac]ss$/i,
@@ -44,5 +50,5 @@ export function buildLoaders({isDev}: BuildOptions): webpack.RuleSetRule[] {
         use: 'ts-loader',
         exclude: /node_modules/,
     }
-    return [svgLoader, typeScriptLoader, cssLoader, fileLoader]
+    return [svgLoader, typeScriptLoader, cssLoader, assetsLoader]
 }
