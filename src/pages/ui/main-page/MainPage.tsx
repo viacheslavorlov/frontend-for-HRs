@@ -3,7 +3,7 @@ import {useTranslation} from "react-i18next";
 
 
 const MainPage = memo(() => {
-const {t, i18n} =useTranslation('main')
+    const {t, i18n} = useTranslation('main')
 
     return (
         <div>
