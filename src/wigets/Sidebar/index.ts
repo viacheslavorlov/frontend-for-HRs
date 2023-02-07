@@ -1,5 +1,5 @@
-import {Sidebar} from "wigets/Sidebar/ui/Sidebar/Sidebar";
+import { Sidebar } from 'wigets/Sidebar/ui/Sidebar/Sidebar';
 
 export {
-    Sidebar
-}
+    Sidebar,
+};
