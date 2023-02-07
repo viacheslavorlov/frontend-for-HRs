@@ -1,15 +1,17 @@
 import {render} from "react-dom";
 import App from "./app/App";
-import {StrictMode} from "react";
+import React, {StrictMode, Suspense} from "react";
 import {BrowserRouter} from "react-router-dom";
 import {ThemeProvider} from "app/providers/TemeProvider";
-import React from "react";
+import "./shared/config/i18n/i18n";
 
 render(
     <StrictMode>
         <BrowserRouter>
             <ThemeProvider>
-                <App/>
+                <Suspense fallback={'loading'}>
+                    <App/>
+                </Suspense>
             </ThemeProvider>
         </BrowserRouter>
     </StrictMode>,
