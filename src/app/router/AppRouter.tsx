@@ -1,5 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routes';
+import { Suspense } from 'react';
+import { PageLoader } from 'wigets/PageLoader/PageLoader';
 
 export const AppRouter = () => (
     <Routes>
@@ -7,9 +9,11 @@ export const AppRouter = () => (
             <Route
                 key={route.path}
                 path={route.path}
-                element={
-                    <div className="page-wrapper">{route.element}</div>
-                }
+                element={(
+                    <Suspense fallback={<PageLoader />}>
+                        <div className="page-wrapper">{route.element}</div>
+                    </Suspense>
+                )}
             />
         ))}
     </Routes>

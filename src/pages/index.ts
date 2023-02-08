@@ -1,5 +1,5 @@
-import { MainPageAsync } from 'pages/ui/main-page/MainPage.async';
-import { AboutPageAsync } from 'pages/ui/about-page/AboutPage.async';
+import { MainPageAsync } from 'pages/ui/MainPage/MainPage.async';
+import { AboutPageAsync } from 'pages/ui/AboutPage/AboutPage.async';
 
 export {
     MainPageAsync as MainPage,

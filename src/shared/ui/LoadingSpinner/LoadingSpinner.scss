@@ -1,48 +1,104 @@
-.loader {
-    width: 16px;
-    height: 16px;
-    box-shadow: 0 30px, 0 -30px;
-    border-radius: 4px;
-    background: currentColor;
-    display: block;
-    margin: -50px auto 0;
+.lds-roller {
+    display: inline-block;
     position: relative;
-    color: #FFF;
-    transform: translateY(30px);
-    box-sizing: border-box;
-    animation: animloader 2s ease infinite;
-}
-.loader::after,
-.loader::before {
-    content: '';
-    box-sizing: border-box;
-    width: 16px;
-    height: 16px;
-    box-shadow: 0 30px, 0 -30px;
-    border-radius: 4px;
-    background: currentColor;
-    color: #FFF;
-    position: absolute;
-    left: 30px;
-    top: 0;
-    animation: animloader 2s 0.2s ease infinite;
-}
-.loader::before {
-    animation-delay: 0.4s;
-    left: 60px;
+    width: 80px;
+    height: 80px;
 }
 
-@keyframes animloader {
+.lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+}
+
+.lds-roller div::after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--inverted-bg-color);
+    margin: -4px 0 0 -4px;
+}
+
+.lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+}
+
+.lds-roller div:nth-child(1)::after {
+    top: 63px;
+    left: 63px;
+}
+
+.lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+}
+
+.lds-roller div:nth-child(2)::after {
+    top: 68px;
+    left: 56px;
+}
+
+.lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+}
+
+.lds-roller div:nth-child(3)::after {
+    top: 71px;
+    left: 48px;
+}
+
+.lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+}
+
+.lds-roller div:nth-child(4)::after {
+    top: 72px;
+    left: 40px;
+}
+
+.lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+}
+
+.lds-roller div:nth-child(5)::after {
+    top: 71px;
+    left: 32px;
+}
+
+.lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+}
+
+.lds-roller div:nth-child(6)::after {
+    top: 68px;
+    left: 24px;
+}
+
+.lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+}
+
+.lds-roller div:nth-child(7)::after {
+    top: 63px;
+    left: 17px;
+}
+
+.lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+}
+
+.lds-roller div:nth-child(8)::after {
+    top: 56px;
+    left: 12px;
+}
+
+@keyframes lds-roller {
     0% {
-        top: 0;
-        color: white;
+        transform: rotate(0deg);
     }
-    50% {
-        top: 30px;
-        color: rgba(255, 255, 255, 0.2);
-    }
+
     100% {
-        top: 0;
-        color: white;
+        transform: rotate(360deg);
     }
 }
