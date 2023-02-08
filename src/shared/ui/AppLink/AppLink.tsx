@@ -4,7 +4,9 @@ import { FC } from 'react';
 import cls from './AppLink.module.scss';
 
 export enum AppLInkTheme {
-    PRIMARI = 'primary',
+    // eslint-disable-next-line no-unused-vars
+    PRIMARY = 'primary',
+    // eslint-disable-next-line no-unused-vars
     SECONDARY = 'secondary'
 }
 
@@ -15,12 +17,13 @@ interface AppLinkProps extends LinkProps{
 
 export const AppLink: FC<AppLinkProps> = (props: AppLinkProps) => {
     const {
-        to, className, children, theme = AppLInkTheme.PRIMARI, ...otherProps
+        to, className, children, theme = AppLInkTheme.PRIMARY, ...otherProps
     } = props;
     return (
         <Link
             to={to}
             className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+            /* eslint-disable-next-line react/jsx-props-no-spreading */
             {...otherProps}
         >
             {children}
