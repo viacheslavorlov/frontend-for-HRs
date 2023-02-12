@@ -1,5 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
-import { routeConfig } from 'shared/config/routeConfig/routes';
+import { routeConfig } from 'app/router/routeConfig/routes';
 import { Suspense } from 'react';
 import { PageLoader } from 'wigets/PageLoader/PageLoader';
 
