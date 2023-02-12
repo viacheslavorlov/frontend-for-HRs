@@ -5,5 +5,8 @@
     "Свернуть": "Collapse",
     "О нас!": "About us!",
     "Главная": "Main Page",
-    "Страница не найдена": "Page not found"
+    "Страница не найдена": "Page not found",
+    "Произошла непредвиденная ошибка": "Unexpected error occurred!",
+    "Обновить страницу": "Reload Page",
+    "throw error": "throw error"
 }
