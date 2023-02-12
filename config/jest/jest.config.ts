@@ -1,9 +1,39 @@
+import path from 'path';
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
  */
 
 export default {
+    clearMocks: true,
+    testEnvironment: 'jsdom',
+    coveragePathIgnorePatterns: [
+        '\\\\node_modules\\\\',
+    ],
+    moduleFileExtensions: [
+        'js',
+        'jsx',
+        'ts',
+        'tsx',
+        'json',
+        'node',
+    ],
+    moduleDirectories: [
+        'node_modules',
+    ],
+    modulePaths: [
+        '<rootDir>src',
+    ],
+    testMatch: [
+        // Обнаружил разницу между МАК ОС и ВИНДОУС!!!
+        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    ],
+    rootDir: '../../',
+    setupFilesAfterEnv: ['<rootDir>config/jest/jest-setup.ts'],
+    moduleNameMapper: {
+        '\\.s?css$': 'identity-obj-proxy',
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+    },
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -14,7 +44,7 @@ export default {
     // cacheDirectory: "/tmp/jest_rs",
 
     // Automatically clear mock calls, instances and results before every test
-    clearMocks: true,
+    // clearMocks: true,
 
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
@@ -27,9 +57,9 @@ export default {
     // coverageDirectory: undefined,
 
     // An array of regexp pattern strings used to skip coverage collection
-    coveragePathIgnorePatterns: [
-        '/node_modules/',
-    ],
+    // coveragePathIgnorePatterns: [
+    //     '/node_modules/',
+    // ],
 
     // Indicates which provider should be used to instrument code for coverage
     // coverageProvider: "babel",
@@ -69,22 +99,26 @@ export default {
     // maxWorkers: "50%",
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules',
-    ],
+    // moduleDirectories: [
+    //     'node_modules',
+    // ],
 
     // An array of file extensions your modules use
-    moduleFileExtensions: [
-        'js',
-        'jsx',
-        'ts',
-        'tsx',
-        'json',
-        'node',
-    ],
+    // moduleFileExtensions: [
+    //     'js',
+    //     'jsx',
+    //     'ts',
+    //     'tsx',
+    //     'json',
+    //     'node',
+    // ],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-    // moduleNameMapper: {},
+    // moduleNameMapper: {
+    //     moduleNameMapper: {
+    //         '\\.scss$': 'identity-obj-proxy',
+    //     },
+    // },
 
     // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
     // modulePathIgnorePatterns: [],
@@ -117,7 +151,8 @@ export default {
     // restoreMocks: false,
 
     // The root directory that Jest should scan for tests and modules within
-    rootDir: '../../',
+    // rootDir: '../../',
+    // modulePaths: ['<rootDir>src'],
 
     // A list of paths to directories that Jest should use to search for files in
     // roots: [
@@ -131,7 +166,7 @@ export default {
     // setupFiles: [],
 
     // A list of paths to modules that run some code to configure or set up the testing framework before each test
-    // setupFilesAfterEnv: [],
+    // setupFilesAfterEnv: ['<rootDir>/config/jest/jest-setup.ts'],
 
     // The number of seconds after which a test is considered as slow and reported as such in the results.
     // slowTestThreshold: 5,
@@ -140,7 +175,7 @@ export default {
     // snapshotSerializers: [],
 
     // The test environment that will be used for testing
-    testEnvironment: 'jsdom',
+    // testEnvironment: 'jsdom',
 
     // Options that will be passed to the testEnvironment
     // testEnvironmentOptions: {},
@@ -149,11 +184,11 @@ export default {
     // testLocationInResults: false,
 
     // The glob patterns Jest uses to detect test files
-    testMatch: [
-        //! есть разница между Windows Mac и Linux
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
-        '**/?(*.)+(spec|test).[tj]s?(x)',
-    ],
+    // testMatch: [
+    //     //! есть разница между Windows Mac и Linux
+    //     '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
+    //     '**/?(*.)+(spec|test).[tj]s?(x)',
+    // ],
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
     // testPathIgnorePatterns: [
