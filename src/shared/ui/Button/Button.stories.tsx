@@ -15,10 +15,12 @@ const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Classic = Template.bind({});
 Classic.args = {
+    children: 'Button',
     theme: ThemeButton.CLASSIC,
 };
 
 export const Clear = Template.bind({});
 Clear.args = {
+    children: 'Button',
     theme: ThemeButton.CLEAR,
 };
