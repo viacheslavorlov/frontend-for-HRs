@@ -6,7 +6,9 @@ export enum ThemeButton {
     // eslint-disable-next-line no-unused-vars
     CLEAR = 'clear',
     // eslint-disable-next-line no-unused-vars
-    CLASSIC = 'classic'
+    CLASSIC = 'classic',
+    // eslint-disable-next-line no-unused-vars
+    OUTLINE = 'outline'
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

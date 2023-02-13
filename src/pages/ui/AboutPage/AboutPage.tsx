@@ -1,10 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const AboutPage = () => {
+interface AboutPageProps {
+    className?: string
+}
+
+const AboutPage = (props: AboutPageProps) => {
     const { t } = useTranslation('about');
     return (
-        <div>
+        <div className={props?.className}>
             {t('О нас!')}
         </div>
     );
