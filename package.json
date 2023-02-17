@@ -31,7 +31,8 @@
     "storybook": "start-storybook -p 6006 -c ./config/storybook",
     "build-storybook": "build-storybook -c ./config/storybook",
     "loki:test": "npx loki test",
-    "loki:approve": "npx loki approve"
+    "loki:approve": "npx loki approve",
+    "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
