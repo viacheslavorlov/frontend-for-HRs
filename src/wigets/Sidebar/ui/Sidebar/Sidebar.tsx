@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { ThemeSwitcher } from 'wigets/ThemeSwitcher';
 import { TranslateSwitcher } from 'wigets/TranslateSwitcher/TranslateSwitcher';
 import { useTranslation } from 'react-i18next';
-import { Button, ThemeButton } from 'shared/ui/Button/Button';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -25,10 +25,11 @@ export const Sidebar = ({ className }: SidebarProps) => {
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
-                className={cls.color}
-                theme={ThemeButton.CLEAR}
+                className={cls.collapseBtn}
+                theme={ButtonTheme.BACKGROUND_INVERTED}
+                square
             >
-                {label}
+                {collapsed ? '>' : '<'}
             </Button>
             <div className={cls.switchers}>
                 <ThemeSwitcher />

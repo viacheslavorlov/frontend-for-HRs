@@ -14,7 +14,6 @@
     position: absolute;
     bottom: 20px;
     display: flex;
-    flex-direction: column;  // изменено положение с свичей
     justify-content: center;
     width: 100%;
 }
@@ -23,6 +22,8 @@
     margin-left: 20px;
 }
 
-.color {
-    color: var(--secondary-color);
+.collapseBtn {
+    position: absolute;
+    right: -40px;
+    bottom: 40px;
 }
