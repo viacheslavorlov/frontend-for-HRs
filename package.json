@@ -32,7 +32,10 @@
         "build-storybook": "build-storybook -c ./config/storybook",
         "loki:test": "npx loki test",
         "loki:approve": "npx loki approve",
-        "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static"
+        "test:ui:report": "npm run visual:report:json && npm run visual:report:html",
+        "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+        "visual:report:json": "node scripts/generate-visual-json-report.js",
+        "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
     },
     "devDependencies": {
         "@babel/core": "^7.17.5",
@@ -80,6 +83,7 @@
         "loki": "^0.31.0",
         "mini-css-extract-plugin": "^2.5.3",
         "react-refresh": "^0.14.0",
+        "reg-cli": "^0.17.7",
         "regenerator-runtime": "^0.13.9",
         "sass": "^1.49.9",
         "sass-loader": "^12.6.0",
