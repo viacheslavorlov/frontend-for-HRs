@@ -22,7 +22,7 @@ i18n
     .init({
         fallbackLng: 'ru',
         // eslint-disable-next-line no-undef
-        debug: __IS_DEV, // __IS_DEV - переменная для удаления сообщений консоли в режиме production
+        debug: false, // __IS_DEV - переменная для удаления сообщений консоли в режиме production
 
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
