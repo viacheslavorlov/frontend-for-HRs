@@ -33,7 +33,7 @@
         "loki:test": "npx loki test",
         "loki:approve": "npx loki approve",
         "test:ui:report": "npm run visual:report:json && npm run visual:report:html",
-        "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
+        "test:ui:ci": "npx loki --requireReference update --reactUri file:./storybook-static",
         "visual:report:json": "node scripts/generate-visual-json-report.js",
         "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
     },
