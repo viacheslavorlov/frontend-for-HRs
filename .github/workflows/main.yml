@@ -7,14 +7,14 @@ on:
 
 jobs:
   pipeline:
-    runs-on: ubuntu-22.04
+    runs-on: windows-2019
     strategy:
       matrix:
-        node-version: [ 17.4.0 ]
+        node-version: [ 16.x ]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
