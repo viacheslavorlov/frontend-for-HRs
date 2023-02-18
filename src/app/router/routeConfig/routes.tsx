@@ -11,7 +11,7 @@ export enum AllRoutes {
     NOT_FOUND = 'not-found'
 }
 
-const RoutePaths: Record<AllRoutes, string> = {
+export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.MAIN]: '/',
     [AllRoutes.ABOUT]: '/about',
     [AllRoutes.NOT_FOUND]: '*',

@@ -9,13 +9,18 @@ export enum ButtonTheme {
     CLASSIC = 'classic',
     // eslint-disable-next-line no-unused-vars
     OUTLINE = 'outline',
+    // eslint-disable-next-line no-unused-vars
     BACKGROUND = 'background',
+    // eslint-disable-next-line no-unused-vars
     BACKGROUND_INVERTED = 'backgroundInverted'
 }
 
 export enum ButtonSize {
+    // eslint-disable-next-line no-unused-vars
     M = 'size_m',
+    // eslint-disable-next-line no-unused-vars
     L = 'size_l',
+    // eslint-disable-next-line no-unused-vars
     XL = 'size_xl',
 }
 
@@ -31,6 +36,7 @@ export const Button: FC<ButtonProps> = (props) => {
         className,
         theme,
         square,
+        size = ButtonSize.M,
         children,
         ...otherProps
     } = props;
@@ -38,6 +44,7 @@ export const Button: FC<ButtonProps> = (props) => {
     const mods: Record<string, boolean> = {
         [cls[theme]]: true,
         [cls.square]: square,
+        [cls[size]]: true,
     };
 
     return (

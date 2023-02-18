@@ -4,10 +4,11 @@ import { useTranslation } from 'react-i18next';
 import cls from './TranslateSwitcher.module.scss';
 
 interface TranslateSwitcherProps {
-    className?: string
+    className?: string;
+    short?: boolean;
 }
 
-export const TranslateSwitcher = ({ className }: TranslateSwitcherProps) => {
+export const TranslateSwitcher = ({ className, short }: TranslateSwitcherProps) => {
     const { t, i18n } = useTranslation();
 
     const toggle = () => {
@@ -19,7 +20,7 @@ export const TranslateSwitcher = ({ className }: TranslateSwitcherProps) => {
             className={classNames(cls.TranslateSwitcher, {}, [className])}
             theme={ButtonTheme.CLEAR}
         >
-            {t('Русский')}
+            {t(short ? 'короткий язык' : 'Русский')}
         </Button>
     );
 };
