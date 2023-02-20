@@ -5,6 +5,7 @@ import { ThemeProvider } from 'app/providers/TemeProvider';
 import { ErrorBoundary } from 'app/providers/ErrorBoundary';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 import App from './app/App';
+import './app/styles/index.scss';
 import './shared/config/i18n/i18n';
 
 render(
