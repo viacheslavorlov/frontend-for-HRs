@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'app/router/routeConfig/routes';
 import { Suspense } from 'react';
-import { PageLoader } from 'wigets/PageLoader/PageLoader';
+import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 
 export const AppRouter = () => (
     <Routes>

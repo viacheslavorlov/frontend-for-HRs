@@ -100,7 +100,6 @@
     },
     "loki": {
         "looks-same": {
-
             "ignoreCaret": true
         },
         "configurations": {
