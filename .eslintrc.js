@@ -9,7 +9,7 @@ module.exports = {
         'airbnb',
         'plugin:i18next/recommended'
     ],
-    parser: "@typescript-eslint/parser",
+    parser: '@typescript-eslint/parser',
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module'
@@ -39,10 +39,11 @@ module.exports = {
         'no-undef': 'warn',
         'react/button-has-type': 'off',
         'max-len': ['error', { code: 100, ignoreComments: true }],
-        'i18next/no-literal-string': ["error", {markupOnly: true, ignoreAttributes: ['data-testid']}],
+        'i18next/no-literal-string': ['error', {markupOnly: true, ignoreAttributes: ['data-testid']}],
         'linebreak-style': 0,
-        "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "error"
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        'no-param-reassign': 'off',
     },
     globals: {
         __IS_DEV__: true,
