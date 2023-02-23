@@ -60,12 +60,12 @@ export const Modal = (props: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className])}>
+            <div className={classNames(cls.Modal, mods, [className, 'app_modal', theme])}>
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
                 <div className={cls.overlay} onClick={closeHandler}>
                     {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
                     <div
-                        className={classNames(cls.content, {}, [theme])}
+                        className={classNames(cls.content, {})}
                         onClick={contentClickHandler}
                     >
                         {children}
