@@ -2,7 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 import { UserSchema } from '../types/user';
 
 const initialState: UserSchema = {
-
+    authData: {
+        id: '',
+        username: '',
+    },
 };
 
 export const userSlice = createSlice({
