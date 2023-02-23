@@ -9,8 +9,8 @@ import cls from './Modal.module.scss';
 interface ModalProps {
     className?: string;
     children?: ReactNode;
-    isOpen: boolean;
-    onClose: () => void;
+    isOpen?: boolean;
+    onClose?: () => void;
 }
 
 const ANIMATION_DELAY = 300;
