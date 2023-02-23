@@ -10,5 +10,8 @@
     "Произошла непредвиденная ошибка": "Unexpected error occurred!",
     "Обновить страницу": "Reload Page",
     "throw error": "throw error",
-    "короткий язык": "Ru"
+    "короткий язык": "Ru",
+    "increment": "increment",
+    "decrement": "decrement",
+    "value": "value ="
 }
