@@ -6,14 +6,13 @@
 body {
     font: var(--font-l);
     color: var(--primary-color);
-
 }
+
 .app {
     background: var(--bg-color);
     min-height: 100vh;
     font-family: var(--font-family-main);
 }
-
 
 .content-page {
     display: flex;
