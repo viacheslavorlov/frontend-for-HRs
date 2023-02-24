@@ -38,7 +38,8 @@
         "test:ui:report": "npm run visual:report:json && npm run visual:report:html",
         "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
         "visual:report:json": "node scripts/generate-visual-json-report.js",
-        "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html"
+        "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "@babel/core": "^7.17.5",
@@ -80,6 +81,7 @@
         "eslint-plugin-storybook": "^0.6.10",
         "file-loader": "^6.2.0",
         "html-webpack-plugin": "^5.5.0",
+        "husky": "^8.0.3",
         "identity-obj-proxy": "^3.0.0",
         "jest": "^27.5.1",
         "json-server": "^0.17.2",
