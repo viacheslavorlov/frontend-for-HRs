@@ -13,5 +13,7 @@
     "короткий язык": "Ru",
     "increment": "increment",
     "decrement": "decrement",
-    "value": "value ="
+    "value": "value =",
+    "Введите логин": "Enter login",
+    "Введите пароль": "Enter password"
 }

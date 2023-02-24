@@ -1,7 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import {
-    ChangeEvent, InputHTMLAttributes, memo, useState,
+    ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState,
 } from 'react';
 import cls from './Input.module.scss';
 
@@ -11,6 +10,7 @@ interface InputProps extends HTMLInputProps {
     value?: string;
     onChange?: (value: string) => void;
     placeholder?: string;
+    autofocused?: boolean;
 }
 
 export const Input = memo((props: InputProps) => {
@@ -20,11 +20,12 @@ export const Input = memo((props: InputProps) => {
         className,
         onChange,
         placeholder,
+        autofocused,
         ...otherProps
     } = props;
-    const { t } = useTranslation();
-    const [isFocused, setIsFocused] = useState(false);
+    const [isFocused, setIsFocused] = useState(autofocused);
     const [carretPosition, setCarretPosition] = useState(0);
+    const ref = useRef<HTMLInputElement>(null);
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         onChange?.(e.target.value);
@@ -42,6 +43,13 @@ export const Input = memo((props: InputProps) => {
         setCarretPosition(e?.target?.selectionStart || 0);
     };
 
+    useEffect(() => {
+        if (autofocused) {
+            setIsFocused(autofocused);
+            ref?.current?.focus();
+        }
+    }, [autofocused]);
+
     return (
         <div className={classNames(cls.InputWrapper, {}, [className])}>
             {
@@ -54,6 +62,7 @@ export const Input = memo((props: InputProps) => {
             <div className={cls.caretWrapper}>
                 <input
                     {...otherProps}
+                    ref={ref}
                     value={value}
                     onChange={onChangeHandler}
                     type={type}
@@ -69,7 +78,6 @@ export const Input = memo((props: InputProps) => {
                     />
                 )}
             </div>
-
         </div>
     );
 });
