@@ -5,13 +5,13 @@ import {ThemeDecorator} from "../../src/shared/config/themeDecorator/themeDecora
 import {Theme} from "../../src/app/providers/TemeProvider";
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+    actions: {argTypesRegex: "^on[A-Z].*"},
+    controls: {
+        matchers: {
+            color: /(background|color)$/i,
+            date: /Date$/,
+        },
     },
-  },
 }
 
 addDecorator(StyleDecorator);

@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Input } from './Input';
 
 export default {
-    title: 'widgets/Input',
+    title: 'shared/Input',
     component: Input,
     argTypes: {
         background: { control: 'background' },

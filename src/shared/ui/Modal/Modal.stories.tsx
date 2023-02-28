@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Modal } from './Modal';
 
 export default {
-    title: 'widgets/Modal',
+    title: 'shared/Modal',
     component: Modal,
     argTypes: {
         background: { control: 'background' },

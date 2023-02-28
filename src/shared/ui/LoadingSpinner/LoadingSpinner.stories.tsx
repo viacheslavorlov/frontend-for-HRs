@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/TemeProvider';
 import LoadingSpinner from './LoadingSpinner';
 
 export default {
-    title: 'widgets/LoadingSpinner',
+    title: 'shared/LoadingSpinner',
     component: LoadingSpinner,
     argTypes: {
         background: { control: 'background' },

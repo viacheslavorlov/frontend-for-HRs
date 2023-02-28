@@ -4,8 +4,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
-import { loginActions, getLoginState, loginByUsername } from 'features/AuthByUsername';
+import { getLoginState, loginActions, loginByUsername } from 'features/AuthByUsername';
 
+import { Text, TextVariant } from 'shared/ui/Text/Text';
 import cls from './LoginForm.module.scss';
 
 interface LoginFormProps {
@@ -33,7 +34,8 @@ export const LoginForm = memo(({ className }: LoginFormProps) => {
 
     return (
         <div className={classNames(cls.LoginForm, {}, [className])}>
-            {error && <div>{() => 'Error'}</div>}
+            <Text variant={TextVariant.PRIMARY} title={t('Форма авторизации')} />
+            {error && <Text variant={TextVariant.ERROR} text={t('Вы ввели неверный логин или пароль')} />}
             <Input
                 type="text"
                 autofocused

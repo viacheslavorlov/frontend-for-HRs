@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/TemeProvider';
 import { ThemeSwitcher } from './ThemeSwitcher';
 
 export default {
-    title: 'widgets/ThemeSwitcher',
+    title: 'shared/ThemeSwitcher',
     component: ThemeSwitcher,
     argTypes: {
         background: { control: 'background' },

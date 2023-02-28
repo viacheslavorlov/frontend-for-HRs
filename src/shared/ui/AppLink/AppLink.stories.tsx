@@ -4,10 +4,10 @@ import { Theme } from 'app/providers/TemeProvider';
 import { AppLink, AppLInkTheme } from './AppLink';
 
 export default {
-    title: 'widgets/AppLink',
+    title: 'shared/AppLink',
     component: AppLink,
     argTypes: {
-        backGrounfColor: { control: 'color' },
+        backGroundColor: { control: 'color' },
     },
     args: {
         to: '/',
