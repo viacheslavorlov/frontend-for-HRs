@@ -31,7 +31,7 @@
         "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
         "stylelint": "stylelint \"**/*.scss\"",
         "stylelint:fix": "stylelint \"**/*.scss\" --fix",
-        "unit": "jest --config ./config/jest/jest.config.ts",
+        "unit": "jest --config ./config/jest/jest.config.ts --transformIgnorePatterns \\\"node_modules/(?!axios)/\\\"",
         "storybook": "start-storybook -p 6006 -c ./config/storybook",
         "build-storybook": "build-storybook -c ./config/storybook",
         "loki:test": "npx loki test",
