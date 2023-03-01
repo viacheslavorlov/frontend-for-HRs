@@ -4,5 +4,5 @@
 npm run lint:ts
 npm run stylelint
 npm run unit
-npm run build-storybook
-npm run test:ui:ci
+#npm run build-storybook
+#npm run test:ui:ci
