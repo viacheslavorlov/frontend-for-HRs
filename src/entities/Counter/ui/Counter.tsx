@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { counterActions } from 'entities/Counter';
 import { useTranslation } from 'react-i18next';
+import { memo } from 'react';
 import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
 
-export const Counter = () => {
+export const Counter = memo(() => {
     const dispatch = useDispatch();
     const counterValue = useSelector(getCounterValue);
     const { t } = useTranslation();
@@ -28,4 +29,4 @@ export const Counter = () => {
             <button data-testid="decrement" onClick={decrement}>{t('decrement')}</button>
         </div>
     );
-};
+});

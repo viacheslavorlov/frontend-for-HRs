@@ -1,6 +1,7 @@
 import { RouteProps } from 'react-router-dom';
 import { AboutPage, MainPage } from 'pages';
 import { NotFoundPage } from 'pages/ui/NotFoundPage';
+import ProfilePage from 'pages/ui/ProfilePage/ui/ProfilePage';
 
 export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
@@ -8,12 +9,16 @@ export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
     ABOUT = 'about',
     // eslint-disable-next-line no-unused-vars
+    PROFILE = 'profile',
+    // eslint-disable-next-line no-unused-vars
     NOT_FOUND = 'not-found'
 }
 
 export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.MAIN]: '/',
     [AllRoutes.ABOUT]: '/about',
+    [AllRoutes.PROFILE]: '/profile',
+    // last
     [AllRoutes.NOT_FOUND]: '*',
 };
 
@@ -26,6 +31,10 @@ export const routeConfig: Record<AllRoutes, RouteProps> = {
     [AllRoutes.ABOUT]: {
         path: RoutePaths.about,
         element: <AboutPage />,
+    },
+    [AllRoutes.PROFILE]: {
+        path: RoutePaths.profile,
+        element: <ProfilePage />,
     },
     [AllRoutes.NOT_FOUND]: {
         path: RoutePaths['not-found'],
