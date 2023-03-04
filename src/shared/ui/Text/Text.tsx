@@ -16,7 +16,7 @@ interface TextProps {
 
 export const Text = memo((props: TextProps) => {
     const {
-        className, text, title, variant,
+        className, text, title, variant = 'primary',
     } = props;
     return (
         <div className={classNames(cls.Text, { [cls[variant]]: true }, [className])}>

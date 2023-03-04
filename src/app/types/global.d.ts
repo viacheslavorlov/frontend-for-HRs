@@ -19,3 +19,7 @@ declare const __API_URL: string;
 declare module '*.jpeg';
 declare module '*.jpg';
 declare module '*.png';
+
+type DeepPartial<T> = T extends object ? {
+    [P in keyof T]?: DeepPartial<T[P]>;
+} : T;

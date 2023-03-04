@@ -7,13 +7,14 @@ import { getProfileError } from 'entities/Profile/model/selectors/getProfileErro
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { memo } from 'react';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
     className?: string
 }
 
-export const ProfileCard = ({ className }: ProfileCardProps) => {
+export const ProfileCard = memo(({ className }: ProfileCardProps) => {
     const { t } = useTranslation('profile');
     const data = useSelector(getProfileData);
     const isLoading = useSelector(getProfileLoading);
@@ -32,4 +33,4 @@ export const ProfileCard = ({ className }: ProfileCardProps) => {
             </div>
         </div>
     );
-};
+});

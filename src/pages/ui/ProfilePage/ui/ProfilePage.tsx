@@ -18,7 +18,6 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const dispatch = useAppDispatch();
 
     useEffect(() => {
-        // @ts-ignore
         dispatch(fetchProfileData());
     }, [dispatch]);
 

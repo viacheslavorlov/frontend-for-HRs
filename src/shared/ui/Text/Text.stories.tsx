@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/TemeProvider';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
-import { Text } from './Text';
+import { Text, TextVariant } from './Text';
 
 export default {
     title: 'shared/Text',
@@ -36,7 +36,7 @@ RedText.args = {
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusantium autem consequuntur'
         + 'dignissimos dolor enim illum non porro? Asperiores beatae deleniti enim et ipsam laudantium nobis, '
         + 'non quam repellat!',
-    variant: 'error',
+    variant: TextVariant.PRIMARY,
 };
 
 export const RedTextDark = Template.bind({});
@@ -45,6 +45,6 @@ RedTextDark.args = {
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ab accusantium autem consequuntur'
         + 'dignissimos dolor enim illum non porro? Asperiores beatae deleniti enim et ipsam laudantium nobis, '
         + 'non quam repellat!',
-    variant: 'error',
+    variant: TextVariant.ERROR,
 };
 RedTextDark.decorators = [ThemeDecorator(Theme.DARK)];

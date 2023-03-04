@@ -36,7 +36,7 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'no-undef': 'warn',
+        'no-undef': 'off',
         'react/button-has-type': 'off',
         'max-len': ['error', { code: 120, ignoreComments: true }],
         'i18next/no-literal-string': ['error', {markupOnly: true, ignoreAttributes: ['data-testid']}],

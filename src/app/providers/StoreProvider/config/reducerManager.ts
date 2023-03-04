@@ -10,10 +10,10 @@ import { ReducerManager, StateSchemaKey } from 'app/providers/StoreProvider/conf
 export function createReducerManager(initialReducers: ReducersMapObject<StateSchema>): ReducerManager {
     const reducers = { ...initialReducers };
     let combinedReducer = combineReducers(reducers);
-    let keysToRemove: StateSchemaKey[] = [];
+    let keysToRemove: Array<StateSchemaKey> = [];
     return {
         getReducerMap: () => reducers,
-        reduce: (state: StateSchema, action: AnyAction) => {
+        reduce: (state: StateSchema, action: any) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
                 keysToRemove.forEach((key) => {
