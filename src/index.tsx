@@ -10,19 +10,19 @@ import './app/styles/index.scss';
 import './shared/config/i18n/i18n';
 
 render(
-    <StoreProvider>
-        <StrictMode>
-            <ErrorBoundary>
-                <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
+            <StrictMode>
+                <ErrorBoundary>
                     <ThemeProvider>
                         <Suspense fallback={<PageLoader />}>
                             <App />
                         </Suspense>
                     </ThemeProvider>
-                </BrowserRouter>
-            </ErrorBoundary>
-        </StrictMode>
-    </StoreProvider>,
+                </ErrorBoundary>
+            </StrictMode>
+        </StoreProvider>
+    </BrowserRouter>,
 
     document.getElementById('root'),
 );
