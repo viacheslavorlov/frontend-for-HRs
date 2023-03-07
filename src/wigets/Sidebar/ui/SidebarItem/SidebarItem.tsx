@@ -1,8 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePaths } from 'app/router/routeConfig/routes';
-import HomeIcon from 'wigets/Sidebar/assets/home.svg';
 import { SidebarItemType } from 'wigets/Sidebar/model/items';
 import { memo } from 'react';
 import cls from './SidebarItem.module.scss';

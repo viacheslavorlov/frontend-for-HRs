@@ -10,6 +10,7 @@ export enum ButtonTheme {
     CLASSIC = 'classic',
     // eslint-disable-next-line no-unused-vars
     OUTLINE = 'outline',
+    OUTLINE_RED = 'outline_red',
     // eslint-disable-next-line no-unused-vars
     BACKGROUND = 'background',
     // eslint-disable-next-line no-unused-vars

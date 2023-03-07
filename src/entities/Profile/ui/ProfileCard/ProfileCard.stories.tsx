@@ -19,7 +19,11 @@ LightProfileCard.args = {};
 LightProfileCard.decorators = [StoreDecorator(
     {
         profile: {
-
+            data: {
+                first: 'John',
+                last: 'Doe',
+                age: 42,
+            },
         },
     },
 )];
@@ -27,5 +31,13 @@ LightProfileCard.decorators = [StoreDecorator(
 export const DarkProfileCard = Template.bind({});
 DarkProfileCard.args = {};
 DarkProfileCard.decorators = [StoreDecorator(
-    { loginForm: { username: '123', password: 'asdf' } },
+    {
+        profile: {
+            data: {
+                first: 'John',
+                last: 'Doe',
+                age: 42,
+            },
+        },
+    },
 ), ThemeDecorator(Theme.DARK)];
