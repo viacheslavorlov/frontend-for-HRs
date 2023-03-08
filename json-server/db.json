@@ -43,7 +43,7 @@
   "profile": {
     "first": "Вячеслав",
     "last": "Орлов",
-    "age": "35",
+    "age": 32,
     "currency": "rub",
     "country": "Russia",
     "city": "Novgorod",

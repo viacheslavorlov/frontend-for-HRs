@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Text } from 'shared/ui/Text/Text';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { getProfileReadonly, profileActions } from 'entities/Profile';
+import { getProfileReadonly, profileActions, updateProfile } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback } from 'react';
 import cls from './ProfileHeader.module.scss';
@@ -23,9 +23,9 @@ export const ProfileHeader = (props: ProfileHeaderProps) => {
         dispatch(profileActions.setReadonly(false));
     }, [dispatch]);
 
-    const onSave = () => {
-
-    };
+    const onSave = useCallback(() => {
+        dispatch(updateProfile());
+    }, [dispatch]);
 
     return (
         <div className={classNames(cls.ProfileHeader, {}, [className])}>

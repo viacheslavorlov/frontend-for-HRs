@@ -10,22 +10,14 @@ export {
     profileReducer,
 } from './model/slice/profileSlice';
 
-export {
-    getProfileData,
-} from './model/selectors/getProfileData/getProfileFirstname';
+export { getProfileData } from './model/selectors/getProfileData/getProfileFirstname';
 
-export {
-    getProfileLoading,
-} from './model/selectors/getProfileLoading/getProfileLoading';
+export { getProfileLoading } from './model/selectors/getProfileLoading/getProfileLoading';
 
-export {
-    getProfileError,
-} from './model/selectors/getProfileError/getProfileError';
+export { getProfileError } from './model/selectors/getProfileError/getProfileError';
 
-export {
-    getProfileReadonly,
-} from './model/selectors/getProfileReadonly/getProfileReadonly';
+export { getProfileReadonly } from './model/selectors/getProfileReadonly/getProfileReadonly';
 
-export {
-    getProfileForm,
-} from './model/selectors/getProfileForm/getProfileForm';
+export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm';
+
+export { updateProfile } from './model/services/updateProfile/updateProfile';
