@@ -43,7 +43,7 @@ export const profileSlice = createSlice({
                 state.isLoading = false;
                 state.error = action.payload;
             })
-            .addCase(updateProfile.pending, (state, action) => {
+            .addCase(updateProfile.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
             })
@@ -51,6 +51,7 @@ export const profileSlice = createSlice({
                 state.isLoading = false;
                 state.data = action.payload;
                 state.form = action.payload;
+                state.readonly = true;
             })
             .addCase(updateProfile.rejected, (state, action) => {
                 state.isLoading = false;

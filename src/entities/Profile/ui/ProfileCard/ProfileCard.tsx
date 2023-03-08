@@ -6,6 +6,10 @@ import { memo } from 'react';
 import { ProfileType } from 'entities/Profile';
 import LoadingSpinner from 'shared/ui/LoadingSpinner/LoadingSpinner';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Currency } from 'entities/Currency/model/types/currency';
+import { CurrencySelect } from 'entities/Currency';
+import { Country } from 'entities/Country/model/country';
+import { CountrySelect } from 'entities/Country';
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {
@@ -19,6 +23,8 @@ interface ProfileCardProps {
     onChangeCity?: (value: string) => void;
     onChangeAvatar?: (value: string) => void;
     onChangeUsername?: (value: string) => void;
+    onChangeCurrency?: (value?: Currency) => void;
+    onChangeCounty?: (value?: Country) => void;
     readonly?: boolean;
 }
 
@@ -33,6 +39,8 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
         onChangeLastname,
         onChangeUsername,
         onChangeAvatar,
+        onChangeCurrency,
+        onChangeCounty,
         readonly,
         onChangeAge,
         onChangeCity,
@@ -114,6 +122,18 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                     className={cls.input}
                     onChange={onChangeAvatar}
                     readonly={readonly}
+                />
+                <CurrencySelect
+                    className={cls.input}
+                    value={data?.currency}
+                    readonly={readonly}
+                    onChange={onChangeCurrency}
+                />
+                <CountrySelect
+                    className={cls.input}
+                    value={data?.country}
+                    readonly={readonly}
+                    onChange={onChangeCounty}
                 />
             </div>
         </div>

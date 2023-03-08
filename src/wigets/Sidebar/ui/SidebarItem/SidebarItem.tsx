@@ -3,6 +3,8 @@ import { useTranslation } from 'react-i18next';
 import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
 import { SidebarItemType } from 'wigets/Sidebar/model/items';
 import { memo } from 'react';
+import { useSelector } from 'react-redux';
+import { getUserAuthData } from 'entities/User';
 import cls from './SidebarItem.module.scss';
 
 export interface SidebarItemProps {
@@ -12,6 +14,12 @@ export interface SidebarItemProps {
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {
     const { t } = useTranslation();
+    const isAuth = useSelector(getUserAuthData);
+
+    if (item.authOnly && !isAuth) {
+        return null;
+    }
+
     return (
         <AppLink
             to={item.path}

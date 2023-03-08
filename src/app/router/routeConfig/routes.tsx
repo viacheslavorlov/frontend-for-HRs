@@ -3,6 +3,10 @@ import { AboutPage, MainPage } from 'pages';
 import { NotFoundPage } from 'pages/ui/NotFoundPage';
 import ProfilePage from 'pages/ui/ProfilePage/ui/ProfilePage';
 
+type AppRouteProps = RouteProps & {
+    authOnly?: boolean;
+}
+
 export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
     MAIN = 'main',
@@ -23,7 +27,7 @@ export const RoutePaths: Record<AllRoutes, string> = {
 };
 
 // ? Более сложный вариант с Record
-export const routeConfig: Record<AllRoutes, RouteProps> = {
+export const routeConfig: Record<AllRoutes, AppRouteProps> = {
     [AllRoutes.MAIN]: {
         path: RoutePaths.main,
         element: <MainPage />,
@@ -35,6 +39,7 @@ export const routeConfig: Record<AllRoutes, RouteProps> = {
     [AllRoutes.PROFILE]: {
         path: RoutePaths.profile,
         element: <ProfilePage />,
+        authOnly: true,
     },
     [AllRoutes.NOT_FOUND]: {
         path: RoutePaths['not-found'],

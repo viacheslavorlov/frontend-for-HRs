@@ -12,6 +12,8 @@ import {
 } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country/model/country';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 
 const reducers: ReducersList = {
@@ -60,6 +62,14 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ username: value || '' }));
     }, [dispatch]);
 
+    const onChangeCurrency = useCallback((value?: Currency) => {
+        dispatch(profileActions.updateProfile({ currency: value }));
+    }, [dispatch]);
+
+    const onChangeCounty = useCallback((value?: Country) => {
+        dispatch(profileActions.updateProfile({ country: value }));
+    }, [dispatch]);
+
     const onCancelEdit = useCallback(() => {
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
@@ -79,6 +89,8 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
                     onChangeCity={onChangeCity}
                     onChangeUsername={onChangeUsername}
                     onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCounty={onChangeCounty}
                 />
             </div>
         </DynamicModuleLoader>
