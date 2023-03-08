@@ -1,5 +1,5 @@
 export { ProfileCard } from './ui/ProfileCard/ProfileCard';
-export { fetchProfileData } from './model/services/fetchProfile';
+export { fetchProfileData } from './model/services/fetchProfile/fetchProfile';
 export {
     ProfileSchema,
     ProfileType,
