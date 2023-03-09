@@ -10,5 +10,14 @@
     "Произошла ошибка при загрузке профиля": "Error while loading profile data...",
     "Отменить": "Cancel",
     "Сохранить": "Save",
-    "Город": "City"
+    "Город": "City",
+    "Ошибка сервера": "Server error",
+    "Данные не получены": "No data",
+    "Некорректный адрес аватара": "Incorrect avatar address",
+    "Некорректное имя пользователя": "Incorrect username",
+    "Некорректная валюта": "Incorrect currency",
+    "Некорректные данные города проживания": "Incorrect city name",
+    "Некорректное имя или фамилия пользователя ": "Incorrect firstname or lastname ",
+    "Некорректное название страны проживания": "Incorrect country name",
+    "Некорректный возраст": "Incorrect age"
 }
