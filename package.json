@@ -8,6 +8,7 @@
         "@types/jest": "^27.4.1",
         "@types/webpack-bundle-analyzer": "^4.6.0",
         "axios": "^0.26.1",
+        "concurrently": "^7.6.0",
         "i18next": "^21.6.11",
         "i18next-browser-languagedetector": "^6.1.3",
         "i18next-http-backend": "^1.3.2",
@@ -24,6 +25,7 @@
     "license": "ISC",
     "scripts": {
         "start": "webpack serve --env port=3000",
+        "start:dev": "concurrently \"npm start:dev:server\" \"npm start\"",
         "start:dev:server": "node ./json-server/index.js",
         "build:production": "webpack --env mode=production",
         "build:development": "webpack --env mode=development",
