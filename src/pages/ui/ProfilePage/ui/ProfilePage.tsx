@@ -52,7 +52,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.INCORRECT_COUNTRY]: t('Некорректное название страны проживания'),
     };
     useEffect(() => {
-        dispatch(fetchProfileData());
+        if (__PROJECT !== 'storybook') {
+            dispatch(fetchProfileData());
+        }
     }, [dispatch]);
 
     const onChangeFirstName = useCallback((value?: string) => {

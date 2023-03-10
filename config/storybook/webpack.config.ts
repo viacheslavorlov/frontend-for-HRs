@@ -4,8 +4,9 @@ import { buildCssLoader } from '../build/cssLoaders/buldCSSLoader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
     config!.plugins!.push(new DefinePlugin({
-        __IS_DEV: true,
-        __API_URL: 'false',
+        __IS_DEV: JSON.stringify(true),
+        __API_URL: JSON.stringify('false'),
+        __PROJECT: JSON.stringify('storybook'),
     }));
 
     config!.resolve!.modules!.push(path.resolve(__dirname, '..', '..', 'src'));

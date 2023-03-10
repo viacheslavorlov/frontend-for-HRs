@@ -1,4 +1,3 @@
-import axios from 'axios';
 import { loginByUsername } from 'features/AuthByUsername';
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';

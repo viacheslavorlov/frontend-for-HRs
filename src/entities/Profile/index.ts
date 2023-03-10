@@ -10,7 +10,7 @@ export {
     profileReducer,
 } from './model/slice/profileSlice';
 
-export { getProfileData } from './model/selectors/getProfileData/getProfileFirstname';
+export { getProfileData } from './model/selectors/getProfileData/getProfileData';
 
 export { getProfileLoading } from './model/selectors/getProfileLoading/getProfileLoading';
 

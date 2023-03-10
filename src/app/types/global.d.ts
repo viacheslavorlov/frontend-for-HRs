@@ -15,6 +15,7 @@ declare module '*.svg' {
 
 declare const __IS_DEV: boolean;
 declare const __API_URL: string;
+declare const __PROJECT: 'storybook' | 'jest' | 'frontend';
 
 declare module '*.jpeg';
 declare module '*.jpg';

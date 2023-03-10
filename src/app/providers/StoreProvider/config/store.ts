@@ -7,7 +7,7 @@ import { createReducerManager } from 'app/providers/StoreProvider/config/reducer
 import { $api } from 'shared/api/api';
 import { NavigateOptions } from 'react-router';
 import { To } from 'react-router-dom';
-import { ReduxStoreWithManager, StateSchema, ThunkExtraArg } from './StateSchema';
+import { StateSchema, ThunkExtraArg } from './StateSchema';
 
 export function createReduxStore(
     initialState?: StateSchema,
