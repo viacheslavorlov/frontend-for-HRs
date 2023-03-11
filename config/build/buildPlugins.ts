@@ -8,7 +8,8 @@ import { BuildOptions } from './types/config';
 export function buildPlugins({
     paths, isDev, apiUrl, project,
 }: BuildOptions): webpack.WebpackPluginInstance[] {
-    return [
+    const plugins = [];
+    plugins.push(
         new webpack.DefinePlugin({
             __IS_DEV: JSON.stringify(isDev),
             __API_URL: JSON.stringify(apiUrl),
@@ -23,7 +24,10 @@ export function buildPlugins({
             filename: 'css/[name].[contenthash:8].css',
             chunkFilename: 'css/[name].[contenthash:8].css',
         }),
-        new ReactRefreshWebpackPlugin(),
-        // new BundleAnalyzerPlugin(),
-    ];
+        // new BundleAnalyzerPlugin()
+    );
+    if (isDev) {
+        plugins.push(new ReactRefreshWebpackPlugin());
+    }
+    return plugins;
 }
