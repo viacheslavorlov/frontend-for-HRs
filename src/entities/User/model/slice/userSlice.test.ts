@@ -7,12 +7,14 @@ describe('userSlice.test', () => {
                 id: 'e123423',
                 username: 'asdfasd',
             },
+            _inited: true,
         };
         expect(state).toEqual({
             authData: {
                 id: 'e123423',
                 username: 'asdfasd',
             },
+            _inited: true,
         });
     });
 });

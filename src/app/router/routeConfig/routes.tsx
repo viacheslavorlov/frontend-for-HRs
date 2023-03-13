@@ -1,9 +1,11 @@
 import { RouteProps } from 'react-router-dom';
-import { AboutPage, MainPage } from 'pages';
+import {
+    AboutPage, ArticleDetailedPage, ArticlePage, MainPage,
+} from 'pages';
 import { NotFoundPage } from 'pages/ui/NotFoundPage';
 import ProfilePage from 'pages/ui/ProfilePage/ui/ProfilePage';
 
-type AppRouteProps = RouteProps & {
+export type AppRouteProps = RouteProps & {
     authOnly?: boolean;
 }
 
@@ -15,6 +17,10 @@ export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
     PROFILE = 'profile',
     // eslint-disable-next-line no-unused-vars
+    ARTICLES = 'articles',
+    // eslint-disable-next-line no-unused-vars
+    ARTICLE_DETAILS = 'article_details',
+    // eslint-disable-next-line no-unused-vars
     NOT_FOUND = 'not-found'
 }
 
@@ -22,6 +28,8 @@ export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.MAIN]: '/',
     [AllRoutes.ABOUT]: '/about',
     [AllRoutes.PROFILE]: '/profile',
+    [AllRoutes.ARTICLES]: '/articles',
+    [AllRoutes.ARTICLE_DETAILS]: '/article_details', // ? + :id
     // last
     [AllRoutes.NOT_FOUND]: '*',
 };
@@ -41,10 +49,24 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
         element: <ProfilePage />,
         authOnly: true,
     },
-    [AllRoutes.NOT_FOUND]: {
-        path: RoutePaths['not-found'],
-        element: <NotFoundPage />,
+    [AllRoutes.ARTICLES]: {
+        path: RoutePaths.articles,
+        element: <ArticlePage />,
+        authOnly: true,
+
     },
+    [AllRoutes.ARTICLE_DETAILS]: {
+        path: `${RoutePaths.article_details}:id`,
+        element: <ArticleDetailedPage />,
+        authOnly: true,
+    },
+    [AllRoutes.NOT_FOUND]:
+{
+    path: RoutePaths['not-found'],
+    element:
+    <NotFoundPage />,
+}
+    ,
 };
 
 // ? более простой вариант с массивом
