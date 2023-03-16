@@ -29,7 +29,7 @@ export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.ABOUT]: '/about',
     [AllRoutes.PROFILE]: '/profile',
     [AllRoutes.ARTICLES]: '/articles',
-    [AllRoutes.ARTICLE_DETAILS]: '/article_details', // ? + :id
+    [AllRoutes.ARTICLE_DETAILS]: '/articles/', // ? + :id
     // last
     [AllRoutes.NOT_FOUND]: '*',
 };
@@ -60,13 +60,10 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
         element: <ArticleDetailedPage />,
         authOnly: true,
     },
-    [AllRoutes.NOT_FOUND]:
-{
-    path: RoutePaths['not-found'],
-    element:
-    <NotFoundPage />,
-}
-    ,
+    [AllRoutes.NOT_FOUND]: {
+        path: RoutePaths['not-found'],
+        element: <NotFoundPage />,
+    },
 };
 
 // ? более простой вариант с массивом
