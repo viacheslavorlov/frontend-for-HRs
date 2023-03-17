@@ -4,14 +4,14 @@ import cls from './Avatar.module.scss';
 
 interface AvatarPrors {
     className?: string;
-    url?: string;
+    src?: string;
     alt?: string;
     size?: number;
 }
 
 export const Avatar = memo((props: AvatarPrors) => {
     const {
-        url, alt, className, size,
+        src, alt, className, size,
     } = props;
     const mods: Mods = {};
     const styles = useMemo<CSSProperties>(() => ({
@@ -20,7 +20,7 @@ export const Avatar = memo((props: AvatarPrors) => {
     }), [size]);
     return (
         <img
-            src={url}
+            src={src}
             alt={alt}
             style={styles}
             className={classNames(cls.Avatar, mods, [className])}

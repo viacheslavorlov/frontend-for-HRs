@@ -15,14 +15,14 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const LightAvatar = Template.bind({});
 LightAvatar.args = {
-    url: 'https://cdn-icons-png.flaticon.com/512/924/924956.png',
+    src: 'https://cdn-icons-png.flaticon.com/512/924/924956.png',
     alt: 'alt',
     size: 100,
 };
 
 export const DarkAvatar = Template.bind({});
 DarkAvatar.args = {
-    url: 'https://cdn-icons-png.flaticon.com/512/924/924956.png',
+    src: 'https://cdn-icons-png.flaticon.com/512/924/924956.png',
     alt: 'alt',
     size: 100,
 };
