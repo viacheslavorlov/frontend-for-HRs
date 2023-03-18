@@ -3,7 +3,7 @@ import { ThunkConfig } from 'app/providers/StoreProvider/config/StateSchema';
 import { Article } from '../../types/type';
 
 export const fetchArticleById = createAsyncThunk<Article, string, ThunkConfig<string>>(
-    'articleDetails/fetchArticleById',
+    'articleDetails/fetchComments',
     async (articleId, thunkAPI) => {
         const { extra, rejectWithValue } = thunkAPI;
 

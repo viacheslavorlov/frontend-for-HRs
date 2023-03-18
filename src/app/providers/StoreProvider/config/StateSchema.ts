@@ -2,7 +2,7 @@ import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
-    AnyAction, AsyncThunk, AsyncThunkAction, CombinedState, Dispatch, EnhancedStore, Reducer, ReducersMapObject,
+    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
@@ -10,6 +10,7 @@ import { NavigateOptions } from 'react-router';
 import { To } from 'react-router-dom';
 import { AppDispatch } from 'app/providers/StoreProvider';
 import { ArticleDetailsSchema } from 'entities/Article';
+import { ArticleDetailedCommentSchema } from 'pages';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -18,6 +19,7 @@ export interface StateSchema {
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
+    articleDetailedComment?: ArticleDetailedCommentSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

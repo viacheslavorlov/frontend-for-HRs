@@ -1,3 +1,5 @@
 {
-    "Произошла ошибка при загрузке страницы": "Error while loading article page!"
+    "Произошла ошибка при загрузке страницы": "Error while loading article page!",
+    "Комментарии": "Comments",
+    "Коментарии отсутствуют": "There is no comments"
 }
