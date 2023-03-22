@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useEffect } from 'react';
+import { memo, useCallback, useEffect } from 'react';
 import { ArticleDetails } from 'entities/Article';
 import { useParams } from 'react-router-dom';
 import { NotFoundPage } from 'pages/ui/NotFoundPage';
@@ -9,13 +9,17 @@ import { CommentList } from 'entities/Comments';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader';
 import {
-    commentReducer,
+    articleCommentReducer,
     getArticleComments,
 } from 'pages/ui/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
 import { getArticleCommentsIsLoading } from 'pages/ui/ArticleDetaildPage/CommentsEntitie/selectors/comments';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchCommentsByArticleId } from 'entities/Comments/model/services/fetchComments/fetchComments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { AddCommentForm } from 'features/addCommentForm';
+import {
+    addCommentsForArticle,
+} from 'pages/ui/ArticleDetaildPage/CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
 import cls from './ArticleDetailedPage.module.scss';
 
 interface ArticleDetaildPageProps {
@@ -35,6 +39,10 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
         }
     });
 
+    const onSendComment = useCallback((text: string) => {
+        dispatch(addCommentsForArticle(text));
+    }, [dispatch]);
+
     if (!id) {
         return (
             <NotFoundPage />
@@ -42,7 +50,7 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     }
 
     const reducers: ReducersList = {
-        articleDetailedComment: commentReducer,
+        articleDetailedComment: articleCommentReducer,
     };
 
     return (
@@ -50,6 +58,7 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
             <div className={classNames(cls.ArticleDetaildPage, {}, [className])}>
                 <ArticleDetails id={id} />
                 <Text title={t('Комментарии')} className={cls.commentTitle} />
+                <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={isLoading}
                     comments={comments}

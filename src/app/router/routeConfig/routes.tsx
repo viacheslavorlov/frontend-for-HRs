@@ -27,7 +27,7 @@ export enum AllRoutes {
 export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.MAIN]: '/',
     [AllRoutes.ABOUT]: '/about',
-    [AllRoutes.PROFILE]: '/profile',
+    [AllRoutes.PROFILE]: '/profile/',
     [AllRoutes.ARTICLES]: '/articles',
     [AllRoutes.ARTICLE_DETAILS]: '/articles/', // ? + :id
     // last
@@ -45,7 +45,7 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
         element: <AboutPage />,
     },
     [AllRoutes.PROFILE]: {
-        path: RoutePaths.profile,
+        path: `${RoutePaths.profile}:id`,
         element: <ProfilePage />,
         authOnly: true,
     },

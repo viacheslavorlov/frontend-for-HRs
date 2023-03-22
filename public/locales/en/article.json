@@ -1,5 +1,7 @@
 {
-    "Произошла ошибка при загрузке страницы": "Error while loading article page!",
+    "Введите текст комментария": "Input comment text",
+    "Коментарии отсутствуют": "There is no comments",
     "Комментарии": "Comments",
-    "Коментарии отсутствуют": "There is no comments"
+    "Отправить": "Send",
+    "Произошла ошибка при загрузке страницы": "Error while loading article page!"
 }

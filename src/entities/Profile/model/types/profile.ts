@@ -3,14 +3,15 @@ import { Country } from 'entities/Country/model/country';
 import { ValidateProfileError } from 'entities/Profile/model/services/validateProfile/validateProfile';
 
 export interface ProfileType {
-    first?: string,
-    last?: string,
-    age?: number
-    currency?: Currency,
-    country?: Country,
-    city?: string,
-    username?: string,
-    avatar?: string
+    id?: string;
+    first?: string;
+    last?: string;
+    age?: number;
+    currency?: Currency;
+    country?: Country;
+    city?: string;
+    username?: string;
+    avatar?: string;
 }
 
 export interface ProfileSchema {

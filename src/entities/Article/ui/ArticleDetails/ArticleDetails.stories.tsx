@@ -3,8 +3,6 @@ import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
 import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/type';
-import { ArticleDetailsSchema } from 'entities/Article';
-import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetails';
 import { ArticleDetails } from './ArticleDetails';
 
 export default {
