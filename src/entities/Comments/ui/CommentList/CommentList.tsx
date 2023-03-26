@@ -27,6 +27,10 @@ export const CommentList = memo((props: CommentListProps) => {
                 <div className={cls.header}>
                     <Skeleton width={30} height={30} border="50%" />
                     <Skeleton width={300} height={16} className={cls.comment} />
+                    <Skeleton width={30} height={30} border="50%" />
+                    <Skeleton width={300} height={16} className={cls.comment} />
+                    <Skeleton width={30} height={30} border="50%" />
+                    <Skeleton width={300} height={16} className={cls.comment} />
                 </div>
             </div>
         );

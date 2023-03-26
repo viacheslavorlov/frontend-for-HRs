@@ -4,7 +4,7 @@ import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { CommentCard } from './CommentCard';
 
 export default {
-    title: 'shared/CommentCard',
+    title: 'entities/Comment/CommentCard',
     component: CommentCard,
     argTypes: {
         background: { control: 'background' },
@@ -26,7 +26,7 @@ export const Dark = Template.bind({});
 Dark.args = {
     comment: {
         id: '1',
-        user: { id: '1', username: 'UserName' },
+        user: { id: '1', username: 'UserName', avatar: 'https://hsto.org/r/w1560/getpro/habr/post_images/d56/a02/ffc/d56a02ffc62949b42904ca00c63d8cc1.png' },
         text: 'comment text',
     },
 };

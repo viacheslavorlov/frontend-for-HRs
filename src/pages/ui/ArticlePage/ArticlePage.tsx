@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo } from 'react';
+import { memo, Suspense } from 'react';
 import { ArticleDetailedPage } from 'pages';
 import { Article, ArticleList, ArticleView } from 'entities/Article';
 import { useSelector } from 'react-redux';

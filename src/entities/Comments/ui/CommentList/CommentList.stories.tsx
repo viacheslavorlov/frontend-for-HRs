@@ -18,12 +18,12 @@ Normal.args = {
         {
             id: '1',
             text: 'hello world',
-            user: { id: '1', username: 'Vasya' },
+            user: { id: '1', username: 'Vasya', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png' },
         },
         {
             id: '2',
             text: 'Comment 2',
-            user: { id: '1', username: 'Petya' },
+            user: { id: '1', username: 'Petya', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png' },
         },
     ],
 };
