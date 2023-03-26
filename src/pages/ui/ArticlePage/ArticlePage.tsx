@@ -18,8 +18,14 @@ const article = {
     img: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     views: 1022,
     createdAt: '26.02.2022',
+    user: {
+        id: '1',
+        username: 'Viacheslav',
+        // eslint-disable-next-line max-len
+        avatar: 'https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
+    },
     type: [
-        'IT',
+        'IT', 'SCIENCE', 'Cultutre', 'POLITICS', 'MEDICINE',
     ],
     blocks: [
         {
@@ -98,8 +104,13 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
 
     return (
         <div className={classNames(cls.ArticlePage, {}, [className])}>
-            <ArticleList articles={[article]} view={ArticleView.SMALL} />
-            {/* <ArticleDetailedPage /> */}
+            <ArticleList
+                articles={new Array(16).fill(0).map((item, index) => ({
+                    ...article,
+                    id: index.toString(),
+                }))}
+                view={ArticleView.BIG}
+            />
         </div>
     );
 };

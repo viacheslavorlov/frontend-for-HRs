@@ -19,10 +19,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
         isLoading,
     } = props;
 
-    const renderArticle = (article: Article) => <ArticleListItem article={article} view={view} />;
+    const renderArticle = (article: Article) => (
+        <ArticleListItem
+            className={cls.card}
+            key={article.id}
+            article={article}
+            view={view}
+        />
+    );
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className])}>
+        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
             {articles.map((item) => renderArticle(item))}
         </div>
     );
