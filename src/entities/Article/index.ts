@@ -1,4 +1,7 @@
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
-export { Article } from './model/types/type';
+export { Article, ArticleView } from './model/types/type';
 export { ArticleDetailsSchema } from './model/types/ArticleDetailsSchema';
+
+export { ArticleList } from './ui/ArticleList/ArticleList';
+export { ArticleListItem } from './ui/ArticleListItem/ArticleListItem';
