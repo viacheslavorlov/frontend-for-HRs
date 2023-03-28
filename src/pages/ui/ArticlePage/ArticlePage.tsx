@@ -105,6 +105,7 @@ const ArticlePage = ({ className }: ArticlePageProps) => {
     return (
         <div className={classNames(cls.ArticlePage, {}, [className])}>
             <ArticleList
+                isLoading
                 articles={new Array(16).fill(0).map((item, index) => ({
                     ...article,
                     id: index.toString(),

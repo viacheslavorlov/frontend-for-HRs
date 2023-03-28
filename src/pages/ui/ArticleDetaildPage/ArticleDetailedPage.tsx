@@ -1,25 +1,22 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { memo, useCallback, useEffect } from 'react';
+import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
-import { useParams } from 'react-router-dom';
-import { NotFoundPage } from 'pages/ui/NotFoundPage';
+import { useNavigate, useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comments';
 import { useSelector } from 'react-redux';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader';
-import {
-    articleCommentReducer,
-    getArticleComments,
-} from 'pages/ui/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
-import { getArticleCommentsIsLoading } from 'pages/ui/ArticleDetaildPage/CommentsEntitie/selectors/comments';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchCommentsByArticleId } from 'entities/Comments/model/services/fetchComments/fetchComments';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { AddCommentForm } from 'features/addCommentForm';
-import {
-    addCommentsForArticle,
-} from 'pages/ui/ArticleDetaildPage/CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { RoutePaths } from 'app/router/routeConfig/routes';
+import { addCommentsForArticle } from './CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
+import { getArticleCommentsIsLoading } from './CommentsEntitie/selectors/comments';
+import { articleCommentReducer, getArticleComments } from './CommentsEntitie/slice/articleDetaildCommentSlice';
+import { NotFoundPage } from '../NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
 
 interface ArticleDetaildPageProps {
@@ -32,6 +29,10 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const isLoading = useSelector(getArticleCommentsIsLoading);
+    const navigate = useNavigate();
+    const onBackToList = useCallback(() => {
+        navigate(RoutePaths.articles);
+    }, [navigate]);
 
     useInitialEffect(() => {
         if (id != null) {
@@ -56,6 +57,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+                <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onBackToList} className={cls.backButton}>
+                    {t('Назад к списку статей...')}
+                </Button>
                 <ArticleDetails id={id} />
                 <Text title={t('Комментарии')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />

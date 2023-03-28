@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo } from 'react';
+import { memo, useCallback } from 'react';
 import {
     Article, ArticleBlockType, ArticleTextBlock, ArticleView,
 } from 'entities/Article/model/types/type';
@@ -10,6 +10,8 @@ import { useHover } from 'shared/lib/hooks/useHover/useHover';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
+import { useNavigate } from 'react-router-dom';
+import { RoutePaths } from 'app/router/routeConfig/routes';
 import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/ArticlesTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import Eye from '../../assets/Eye.svg';
@@ -27,6 +29,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         view = ArticleView.SMALL,
     } = props;
     const { t } = useTranslation();
+
+    const navigate = useNavigate();
+
+    const onOpenArticle = useCallback(() => {
+        navigate(RoutePaths.article_details + article.id);
+    }, [article, navigate]);
 
     const [isHover, bindHover] = useHover();
     console.log(isHover);
@@ -58,6 +66,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         <Button
                             theme={ButtonTheme.CLEAR}
                             className={cls.btn}
+                            onClick={onOpenArticle}
                         >
                             {t('Читать далее...')}
                         </Button>
@@ -70,7 +79,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
 
     return (
         <div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
-            <Card className={cls.card}>
+            <Card className={cls.card} onClick={onOpenArticle}>
                 <div className={cls.imageWrapper}>
                     <img src={article?.img} alt={article?.title} className={cls.img} />
                     <Text text={article?.createdAt} className={cls.date} />
