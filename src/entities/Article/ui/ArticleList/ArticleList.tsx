@@ -16,7 +16,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
         articles,
-        view = ArticleView.SMALL,
+        view = ArticleView.BIG,
         isLoading,
     } = props;
 
@@ -29,7 +29,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         />
     );
 
-    const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.SMALL ? 14 : 3)
+    const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.BIG ? 14 : 3)
         .fill(0)
     // eslint-disable-next-line react/no-array-index-key
         .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);

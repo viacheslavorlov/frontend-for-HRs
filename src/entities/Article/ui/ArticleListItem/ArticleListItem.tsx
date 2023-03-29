@@ -26,7 +26,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const {
         className,
         article,
-        view = ArticleView.SMALL,
+        view = ArticleView.BIG,
     } = props;
     const { t } = useTranslation();
 

@@ -1,17 +1,9 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
 import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/type';
-import ArticlePage from './ArticlePage';
+import { ArticlePageAsync } from './ArticlePage.async';
 
-export default {
-    title: 'pages/ArticlePage',
-    component: ArticlePage,
-    argTypes: {
-        background: { control: 'background' },
-    },
-} as ComponentMeta<typeof ArticlePage>;
-
-const Template: ComponentStory<typeof ArticlePage> = (args) => <ArticlePage {...args} />;
+const Template: ComponentStory<typeof ArticlePageAsync> = (args) => <ArticlePageAsync {...args} />;
 
 const article = {
     isLoading: false,
