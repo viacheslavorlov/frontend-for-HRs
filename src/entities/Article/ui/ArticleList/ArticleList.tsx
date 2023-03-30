@@ -34,17 +34,12 @@ export const ArticleList = memo((props: ArticleListProps) => {
     // eslint-disable-next-line react/no-array-index-key
         .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
 
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        );
-    }
-
     return (
         <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.map((item) => renderArticle(item))}
+            {articles.length > 0
+                ? articles.map((item) => renderArticle(item))
+                : null}
+            {isLoading && getSkeletons(view)}
         </div>
     );
 });

@@ -5,7 +5,7 @@ import { profileReducer } from 'entities/Profile';
 import { ReducersList } from 'shared/lib/DynamicModuleLoader';
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetails';
 import { addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentSlice';
-import { articleCommentReducer } from 'pages/ui/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
+import { articleCommentReducer } from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
 
 const defaultReducers: ReducersList = {
     loginForm: loginReducer,

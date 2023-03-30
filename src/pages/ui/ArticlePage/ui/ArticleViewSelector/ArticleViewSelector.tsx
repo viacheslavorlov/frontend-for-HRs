@@ -31,7 +31,6 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorPrors) => {
         onViewClick,
         view,
     } = props;
-    const dispatch = useAppDispatch();
 
     const onCLick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
@@ -41,6 +40,7 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorPrors) => {
         <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
             {viewTypes.map((viewType) => (
                 <Button
+                    key={viewType.view}
                     theme={ButtonTheme.CLEAR}
                     onClick={onCLick(viewType.view)}
                     className={cls.btn}

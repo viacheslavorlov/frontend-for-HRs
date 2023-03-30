@@ -13,10 +13,13 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'app/router/routeConfig/routes';
+import { Page } from 'shared/Page/Page';
+import { getArticleCommentsIsLoading } from 'pages/ArticleDetaildPage/CommentsEntitie/selectors/comments';
+import {
+    articleCommentReducer, getArticleComments,
+} from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
 import { addCommentsForArticle } from './CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
-import { getArticleCommentsIsLoading } from './CommentsEntitie/selectors/comments';
-import { articleCommentReducer, getArticleComments } from './CommentsEntitie/slice/articleDetaildCommentSlice';
-import { NotFoundPage } from '../NotFoundPage';
+import { NotFoundPage } from '../ui/NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
 
 interface ArticleDetaildPageProps {
@@ -46,7 +49,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
 
     if (!id) {
         return (
-            <NotFoundPage />
+            <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+                <NotFoundPage />
+            </Page>
         );
     }
 
@@ -56,7 +61,7 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+            <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
                 <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onBackToList} className={cls.backButton}>
                     {t('Назад к списку статей...')}
                 </Button>
@@ -67,7 +72,7 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                     isLoading={isLoading}
                     comments={comments}
                 />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

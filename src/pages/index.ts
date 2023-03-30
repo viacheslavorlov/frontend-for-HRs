@@ -1,10 +1,10 @@
-import { MainPageAsync } from 'pages/ui/MainPage/MainPage.async';
-import { AboutPageAsync } from 'pages/ui/AboutPage/AboutPage.async';
-import { ArticlePageAsync } from 'pages/ui/ArticlePage/ui/ArticlePage.async';
-import { ArticleDetailedPageAsync } from 'pages/ui/ArticleDetaildPage/ArticleDetailedPage.async';
+import { MainPageAsync } from './ui/MainPage/MainPage.async';
+import { AboutPageAsync } from './AboutPage/AboutPage.async';
+import { ArticlePageAsync } from './ui/ArticlePage/ui/ArticlePage.async';
+import { ArticleDetailedPageAsync } from './ArticleDetaildPage/ArticleDetailedPage.async';
 import {
     ArticleDetailedCommentSchema,
-} from 'pages/ui/ArticleDetaildPage/CommentsEntitie/types/ArticleDetailedCommentSchema';
+} from './ArticleDetaildPage/CommentsEntitie/types/ArticleDetailedCommentSchema';
 
 export {
     ArticleDetailedCommentSchema,
