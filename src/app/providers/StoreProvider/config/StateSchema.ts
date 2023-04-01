@@ -6,24 +6,24 @@ import {
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { NavigateOptions } from 'react-router';
-import { To } from 'react-router-dom';
 import { AppDispatch } from 'app/providers/StoreProvider';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailedCommentSchema } from 'pages';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ui/ArticlePage';
+import { ScrollRestorationSchema } from 'features/ScrollRextoration';
 
 export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
+    scroll: ScrollRestorationSchema;
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailedComment?: ArticleDetailedCommentSchema;
     addCommentForm?: AddCommentFormSchema;
-    articlesPage?: ArticlesPageSchema
+    articlesPage?: ArticlesPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;

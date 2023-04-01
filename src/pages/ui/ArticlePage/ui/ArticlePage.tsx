@@ -6,7 +6,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleList, ArticleView } from 'entities/Article';
-import { Page } from 'shared/Page/Page';
+import { Page } from 'wigets/Page/Page';
 import { initArticlesPage } from '../model/service/initArticlesPage/initArticlesPage';
 import { ArticleViewSelector } from './ArticleViewSelector/ArticleViewSelector';
 import { fetchNextArticlePage } from '../model/service/fetchNextArticlePage/fetchNextArticlePage';

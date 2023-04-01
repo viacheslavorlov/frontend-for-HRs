@@ -535,6 +535,18 @@
       "userId": "2",
       "text": "wierd comments asldkfj a;skldjf ;alksjdf ;laksd a;",
       "id": "RGDvH_m"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "asdfasdf",
+      "id": "H72CgjB"
+    },
+    {
+      "articleId": "2",
+      "userId": "1",
+      "text": "122421312",
+      "id": "IGVgCv3"
     }
   ],
   "users": [
@@ -571,7 +583,7 @@
       "last": "Nani",
       "age": 45,
       "currency": "RUB",
-      "country": "Belarus",
+      "country": "Russia",
       "city": "Moscow",
       "username": "user",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"

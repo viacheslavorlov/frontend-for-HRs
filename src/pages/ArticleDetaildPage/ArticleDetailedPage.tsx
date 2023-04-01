@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { ArticleDetails } from 'entities/Article';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comments';
 import { useSelector } from 'react-redux';
@@ -13,7 +13,7 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'app/router/routeConfig/routes';
-import { Page } from 'shared/Page/Page';
+import { Page } from 'wigets/Page/Page';
 import { getArticleCommentsIsLoading } from 'pages/ArticleDetaildPage/CommentsEntitie/selectors/comments';
 import {
     articleCommentReducer, getArticleComments,
@@ -33,9 +33,12 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     const comments = useSelector(getArticleComments.selectAll);
     const isLoading = useSelector(getArticleCommentsIsLoading);
     const navigate = useNavigate();
+    const location = useLocation();
     const onBackToList = useCallback(() => {
         navigate(RoutePaths.articles);
     }, [navigate]);
+
+    console.log('location', location.pathname);
 
     useInitialEffect(() => {
         if (id != null) {
@@ -60,8 +63,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     };
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+
+        <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+            <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
                 <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onBackToList} className={cls.backButton}>
                     {t('Назад к списку статей...')}
                 </Button>
@@ -72,8 +76,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                     isLoading={isLoading}
                     comments={comments}
                 />
-            </Page>
-        </DynamicModuleLoader>
+            </DynamicModuleLoader>
+        </Page>
+
     );
 };
 
