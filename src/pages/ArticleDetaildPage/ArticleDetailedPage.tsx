@@ -19,7 +19,7 @@ import {
     articleCommentReducer, getArticleComments,
 } from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
 import { addCommentsForArticle } from './CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
-import { NotFoundPage } from '../ui/NotFoundPage';
+import { NotFoundPage } from '../NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
 
 interface ArticleDetaildPageProps {

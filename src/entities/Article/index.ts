@@ -1,3 +1,5 @@
+export { ArticleSortField, ArticleType } from './model/types/type';
+
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
 
 export { Article, ArticleView } from './model/types/type';
