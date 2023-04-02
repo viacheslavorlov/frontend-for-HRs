@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
 import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { Text } from 'shared/ui/Text/Text';
 import { CommentList } from 'entities/Comments';
@@ -16,22 +16,40 @@ import { RoutePaths } from 'app/router/routeConfig/routes';
 import { Page } from 'wigets/Page/Page';
 import { getArticleCommentsIsLoading } from 'pages/ArticleDetaildPage/CommentsEntitie/selectors/comments';
 import {
-    articleCommentReducer, getArticleComments,
+    articleCommentReducer,
+    getArticleComments,
 } from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
-import { addCommentsForArticle } from './CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
-import { NotFoundPage } from '../NotFoundPage';
+import {
+    articleDetailsPageRecomendationReducer,
+    getArticleRecommendations,
+} from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetailsPageRecomendation';
+import {
+    getArticleDetailsRecommendationIsLoading,
+} from 'pages/ArticleDetaildPage/CommentsEntitie/selectors/recomendations';
+import {
+    fetchRecommendations,
+} from '../CommentsEntitie/services/fetchRecommendations/fetchRecommendations';
+import { addCommentsForArticle } from '../CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
+import { NotFoundPage } from '../../NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
 
 interface ArticleDetaildPageProps {
     className?: string
 }
 
+const reducers: ReducersList = {
+    articleDetailedComment: articleCommentReducer,
+    articleDetailsRecommendations: articleDetailsPageRecomendationReducer,
+};
+
 const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     const { t } = useTranslation('article');
     const { id } = useParams();
     const dispatch = useAppDispatch();
+    const recommendations = useSelector(getArticleRecommendations.selectAll);
     const comments = useSelector(getArticleComments.selectAll);
-    const isLoading = useSelector(getArticleCommentsIsLoading);
+    const commentIsLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationIsLoading);
     const navigate = useNavigate();
     const location = useLocation();
     const onBackToList = useCallback(() => {
@@ -44,6 +62,7 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
         if (id != null) {
             dispatch(fetchCommentsByArticleId(id));
         }
+        dispatch(fetchRecommendations());
     });
 
     const onSendComment = useCallback((text: string) => {
@@ -58,10 +77,6 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
         );
     }
 
-    const reducers: ReducersList = {
-        articleDetailedComment: articleCommentReducer,
-    };
-
     return (
 
         <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
@@ -70,10 +85,12 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                     {t('Назад к списку статей...')}
                 </Button>
                 <ArticleDetails id={id} />
+                <Text title={t('Рекомендации')} />
+                <ArticleList articles={recommendations} view={ArticleView.SMALL} className={cls.recommendations} />
                 <Text title={t('Комментарии')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
-                    isLoading={isLoading}
+                    isLoading={commentIsLoading}
                     comments={comments}
                 />
             </DynamicModuleLoader>

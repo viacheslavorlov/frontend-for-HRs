@@ -6,12 +6,15 @@ import {
 } from '@reduxjs/toolkit';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { AppDispatch } from 'app/providers/StoreProvider';
 import { ArticleDetailsSchema } from 'entities/Article';
 import { ArticleDetailedCommentSchema } from 'pages';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlesPageSchema } from 'pages/ArticlePage';
 import { ScrollRestorationSchema } from 'features/ScrollRextoration';
+import {
+    ArticleDetailsPageRecommendationSchema,
+} from 'pages/ArticleDetaildPage/CommentsEntitie/types/ArticleDetailsPageRecomendationSchema';
+import { AppDispatch } from './store';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -22,6 +25,7 @@ export interface StateSchema {
     profile?: ProfileSchema;
     articleDetails?: ArticleDetailsSchema;
     articleDetailedComment?: ArticleDetailedCommentSchema;
+    articleDetailsRecommendations?: ArticleDetailsPageRecommendationSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
 }
