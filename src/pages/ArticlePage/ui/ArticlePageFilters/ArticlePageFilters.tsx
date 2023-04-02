@@ -2,7 +2,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { ArticleSortField, ArticleView } from 'entities/Article';
+import { ArticleSortField, ArticleTypeTabs, ArticleView } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
 import { Card } from 'shared/ui/Card/Card';
 import { Input } from 'shared/ui/Input/Input';
@@ -83,7 +83,11 @@ export const ArticlePageFilters = memo((props: ArticlePageFiltersProps) => {
             <Card className={cls.search}>
                 <Input value={search} placeholder={t('Поиск')} onChange={onChangeSearch} />
             </Card>
-            <Tabs onTabClick={onChangeType} tabs={typeTabs} value={type} className={cls.tabs} />
+            <ArticleTypeTabs
+                onChangeType={onChangeType}
+                value={type}
+                className={cls.tabs}
+            />
         </div>
     );
 });

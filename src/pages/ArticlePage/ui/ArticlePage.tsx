@@ -16,7 +16,6 @@ import {
     getArticlePageError,
     getArticlePageHasMore,
     getArticlePageLoading,
-    getArticlePageNum,
     getArticlePageView,
 } from '../model/selectors/articlePageSelectors';
 import cls from './ArticlePage.module.scss';

@@ -36,8 +36,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
         navigate(RoutePaths.article_details + article.id);
     }, [article, navigate]);
 
+    // * useHover() hook can be used instead of
     const [isHover, bindHover] = useHover();
-    console.log(isHover);
+    // console.log(isHover);
 
     const types = <Text text={article?.type.join(', ')} className={cls.type} />;
     const views = (
