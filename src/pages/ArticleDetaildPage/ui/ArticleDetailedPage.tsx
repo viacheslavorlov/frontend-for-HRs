@@ -14,22 +14,12 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'app/router/routeConfig/routes';
 import { Page } from 'wigets/Page/Page';
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetaildPage/model/selectors/comments';
-import {
-    articleCommentReducer,
-    getArticleComments,
-} from 'pages/ArticleDetaildPage/model/slice/articleDetaildCommentSlice';
-import {
-    articleDetailsPageRecomendationReducer,
-    getArticleRecommendations,
-} from 'pages/ArticleDetaildPage/model/slice/articleDetailsPageRecomendation';
-import {
-    getArticleDetailsRecommendationIsLoading,
-} from 'pages/ArticleDetaildPage/model/selectors/recomendations';
-import { articleDetailsPageReducer } from 'pages/ArticleDetaildPage/model/slice';
-import {
-    fetchRecommendations,
-} from '../model/services/fetchRecommendations/fetchRecommendations';
+import { articleDetailsPageReducer } from '../model/slice';
+import { getArticleCommentsIsLoading } from '../model/selectors/comments';
+import { getArticleComments } from '../model/slice/articleDetaildCommentSlice';
+import { getArticleRecommendations } from '../model/slice/articleDetailsPageRecomendation';
+import { getArticleDetailsRecommendationIsLoading } from '../model/selectors/recomendations';
+import { fetchRecommendations } from '../model/services/fetchRecommendations/fetchRecommendations';
 import { addCommentsForArticle } from '../model/services/addCommentsForArticle/addCommentsForArticle';
 import { NotFoundPage } from '../../NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
@@ -51,12 +41,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     const commentIsLoading = useSelector(getArticleCommentsIsLoading);
     const recommendationsIsLoading = useSelector(getArticleDetailsRecommendationIsLoading);
     const navigate = useNavigate();
-    const location = useLocation();
     const onBackToList = useCallback(() => {
         navigate(RoutePaths.articles);
     }, [navigate]);
-
-    console.log('location', location.pathname);
 
     useInitialEffect(() => {
         if (id != null) {
@@ -86,7 +73,12 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                 </Button>
                 <ArticleDetails id={id} />
                 <Text title={t('Рекомендации')} />
-                <ArticleList articles={recommendations} view={ArticleView.SMALL} className={cls.recommendations} />
+                <ArticleList
+                    target="_blank"
+                    articles={recommendations}
+                    view={ArticleView.SMALL}
+                    className={cls.recommendations}
+                />
                 <Text title={t('Комментарии')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList

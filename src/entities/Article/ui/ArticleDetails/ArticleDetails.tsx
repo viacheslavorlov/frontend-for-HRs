@@ -10,11 +10,11 @@ import {
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleCodeBlockComponent } from 'entities/Article/ui/ArticleCodeBlockComponent/ArticleCodeBlockComponent';
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {
     ArticlesImageBlockComponent,
-} from 'entities/Article/ui/ArticlesImageBlockComponent/ArticlesImageBlockComponent';
-import { ArticlesTextBlockComponent } from 'entities/Article/ui/ArticlesTextBlockComponent/ArticlesTextBlockComponent';
+} from '../ArticlesImageBlockComponent/ArticlesImageBlockComponent';
+import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/ArticlesTextBlockComponent';
 import { ArticleBlock, ArticleBlockType } from '../../model/types/type';
 import { articleDetailsReducer } from '../../model/slice/articleDetails';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
