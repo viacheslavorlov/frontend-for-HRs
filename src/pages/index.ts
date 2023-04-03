@@ -4,7 +4,9 @@ import { ArticlePageAsync } from './ArticlePage/ui/ArticlePage.async';
 import { ArticleDetailedPageAsync } from './ArticleDetaildPage/ui/ArticleDetailedPage.async';
 import {
     ArticleDetailedCommentSchema,
-} from './ArticleDetaildPage/CommentsEntitie/types/ArticleDetailedCommentSchema';
+} from './ArticleDetaildPage/model/types/ArticleDetailedCommentSchema';
+
+export { ArticleDetailsPageSchema } from './ArticleDetaildPage/model/types';
 
 export {
     ArticleDetailedCommentSchema,

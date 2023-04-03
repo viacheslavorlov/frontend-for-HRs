@@ -3,7 +3,7 @@ import { Article } from 'entities/Article';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
     fetchRecommendations,
-} from 'pages/ArticleDetaildPage/CommentsEntitie/services/fetchRecommendations/fetchRecommendations';
+} from 'pages/ArticleDetaildPage/model/services/fetchRecommendations/fetchRecommendations';
 import {
     ArticleDetailsPageRecommendationSchema,
 } from '../types/ArticleDetailsPageRecomendationSchema';
@@ -20,7 +20,7 @@ const recomendationAdapter = createEntityAdapter<Article>({
 });
 
 export const getArticleRecommendations = recomendationAdapter.getSelectors<StateSchema>(
-    (state) => state.articleDetailsRecommendations || recomendationAdapter.getInitialState(),
+    (state) => state.articleDetailedPage?.recommendations || recomendationAdapter.getInitialState(),
 );
 
 export const articleDetailsPageRecomendationSlice = createSlice({

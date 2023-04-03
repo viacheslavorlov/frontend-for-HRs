@@ -14,22 +14,23 @@ import { AddCommentForm } from 'features/addCommentForm';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePaths } from 'app/router/routeConfig/routes';
 import { Page } from 'wigets/Page/Page';
-import { getArticleCommentsIsLoading } from 'pages/ArticleDetaildPage/CommentsEntitie/selectors/comments';
+import { getArticleCommentsIsLoading } from 'pages/ArticleDetaildPage/model/selectors/comments';
 import {
     articleCommentReducer,
     getArticleComments,
-} from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetaildCommentSlice';
+} from 'pages/ArticleDetaildPage/model/slice/articleDetaildCommentSlice';
 import {
     articleDetailsPageRecomendationReducer,
     getArticleRecommendations,
-} from 'pages/ArticleDetaildPage/CommentsEntitie/slice/articleDetailsPageRecomendation';
+} from 'pages/ArticleDetaildPage/model/slice/articleDetailsPageRecomendation';
 import {
     getArticleDetailsRecommendationIsLoading,
-} from 'pages/ArticleDetaildPage/CommentsEntitie/selectors/recomendations';
+} from 'pages/ArticleDetaildPage/model/selectors/recomendations';
+import { articleDetailsPageReducer } from 'pages/ArticleDetaildPage/model/slice';
 import {
     fetchRecommendations,
-} from '../CommentsEntitie/services/fetchRecommendations/fetchRecommendations';
-import { addCommentsForArticle } from '../CommentsEntitie/services/addCommentsForArticle/addCommentsForArticle';
+} from '../model/services/fetchRecommendations/fetchRecommendations';
+import { addCommentsForArticle } from '../model/services/addCommentsForArticle/addCommentsForArticle';
 import { NotFoundPage } from '../../NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
 
@@ -38,8 +39,7 @@ interface ArticleDetaildPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailedComment: articleCommentReducer,
-    articleDetailsRecommendations: articleDetailsPageRecomendationReducer,
+    articleDetailedPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
