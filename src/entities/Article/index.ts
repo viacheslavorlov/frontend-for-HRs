@@ -1,3 +1,8 @@
+export {
+    getArticleDetailsData, getArticleDetailsError,
+    getArticleDetailsIsLoading,
+} from './model/selectors/articleDetailsSelector';
+
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export { ArticleSortField, ArticleType } from './model/types/type';
