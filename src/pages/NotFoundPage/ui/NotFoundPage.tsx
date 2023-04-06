@@ -8,7 +8,7 @@ interface NotFoundPageProps {
     className?: string
 }
 
-export const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
+const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
     const { t } = useTranslation();
     return (
         <Page
@@ -18,3 +18,5 @@ export const NotFoundPage = memo(({ className }: NotFoundPageProps) => {
         </Page>
     );
 });
+
+export default NotFoundPage;

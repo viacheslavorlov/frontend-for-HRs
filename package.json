@@ -27,7 +27,7 @@
         "start": "webpack serve --env port=3000",
         "start:dev:server": "node ./json-server/index.js",
         "start:dev": "concurrently \"webpack serve --env port=3000\" \"node ./json-server/index.js\"",
-        "build:production": "webpack --env mode=production",
+        "build:production": "webpack --env mode=production apiUrl=https://backend-for-advanced-frontend.vercel.app/",
         "build:development": "webpack --env mode=development",
         "lint:ts": "eslint \"**/*.{ts,tsx}\"",
         "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
