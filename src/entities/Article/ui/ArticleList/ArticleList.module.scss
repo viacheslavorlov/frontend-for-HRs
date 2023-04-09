@@ -1,5 +1,7 @@
 .ArticleList {
-    width: 100%;
+    width: calc(100vw - 40px - var(--sidebar-widh));
+    overflow-y: hidden;
+    margin-left: 40px;
 }
 
 .BIG {
@@ -12,4 +14,22 @@
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+}
+
+.itemContainer {
+    gap: 0.5rem;
+
+    // width: 33%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+        width: 50%;
+    }
+
+    @media (max-width: 300px) {
+        width: 100%;
+    }
 }

@@ -22,7 +22,7 @@ body {
 
 * {
     scrollbar-color: var(--inverted-primary-color) var(--primary-color); /* Цвет скролла, цвет ползунка */
-    scrollbar-width: auto; /* Толщина скролла thin, auto */
+    scrollbar-width: thin; /* Толщина скролла thin, auto */
 }
 
 *::-webkit-scrollbar-track {
@@ -37,11 +37,11 @@ body {
     border: 1px solid var(--primary-color);
 }
 
-//*::-webkit-scrollbar-thumb:hover {
-//    background-color: var(--inverted-bg-color); /* Цвет ползунка */
-//}
+*::-webkit-scrollbar-thumb:hover {
+    background-color: var(--inverted-bg-color); /* Цвет ползунка */
+}
 
 *::-webkit-scrollbar {
-    width: 2em; /* Толщина скролла */
-    height: 2em;
+    width: 1em; /* Толщина скролла */
+    height: 1em;
 }

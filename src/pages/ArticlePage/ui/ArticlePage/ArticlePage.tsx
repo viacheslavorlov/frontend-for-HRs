@@ -35,14 +35,14 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
     const isLoading = useSelector(getArticlePageLoading);
     const error = useSelector(getArticlePageError);
     const view = useSelector(getArticlePageView) || ArticleView.SMALL;
-    const hasMore = useSelector(getArticlePageHasMore);
+    // const hasMore = useSelector(getArticlePageHasMore);
     const [searchParams] = useSearchParams();
     console.log(searchParams);
-    const onLoadNextPart = useCallback(() => {
-        if (hasMore) {
-            dispatch(fetchNextArticlePage());
-        }
-    }, [dispatch, hasMore]);
+    // const onLoadNextPart = useCallback(() => {
+    //     if (hasMore) {
+    //         dispatch(fetchNextArticlePage());
+    //     }
+    // }, [dispatch, hasMore]);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
@@ -51,7 +51,7 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
 
-            <ArticlePageFilters className={cls.viewSelector} />
+            {/* <ArticlePageFilters className={cls.viewSelector} /> */}
             <ArticleList
                 isLoading={isLoading}
                 articles={articles}

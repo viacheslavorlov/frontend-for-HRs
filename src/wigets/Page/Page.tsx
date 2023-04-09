@@ -2,7 +2,6 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import {
     memo, MutableRefObject, ReactNode, useRef, UIEvent,
 } from 'react';
-import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getScrollByPath, scrollRestorationSliceActions } from 'features/ScrollRextoration';
 import { useLocation } from 'react-router-dom';
@@ -37,11 +36,11 @@ export const Page = memo((props: PageProps) => {
 
     console.log('currentScroll', currentScroll);
 
-    useInfiniteScroll({
-        triggerRef,
-        wrapperRef,
-        callback: onScrollEnd,
-    });
+    // useInfiniteScroll({
+    //     triggerRef,
+    //     wrapperRef,
+    //     callback: onScrollEnd,
+    // });
 
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = currentScroll;
@@ -56,7 +55,7 @@ export const Page = memo((props: PageProps) => {
     return (
         <section ref={wrapperRef} onScroll={onScroll} className={classNames(cls.Page, {}, [className])}>
             {children}
-            {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />}
+            {/* {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />} */}
         </section>
     );
 });
