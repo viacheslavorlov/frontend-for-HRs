@@ -3,6 +3,7 @@ import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize, TextVariant } from 'shared/ui/Text/Text';
+import { Virtuoso } from 'react-virtuoso';
 import { Article, ArticleView } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
@@ -49,11 +50,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
 
     return (
-        <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-            {articles.length > 0
-                ? articles.map((item) => renderArticle(item))
-                : null}
+        <Virtuoso
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+            style={{ height: '100%', width: '800px' }}
+            data={articles}
+            itemContent={(index, article) => renderArticle(article)}
+        >
             {isLoading && getSkeletons(view)}
-        </div>
+        </Virtuoso>
     );
 });

@@ -50,17 +50,13 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page
-                onScrollEnd={onLoadNextPart}
-                className={classNames(cls.ArticlePage, {}, [className])}
-            >
-                <ArticlePageFilters className={cls.viewSelector} />
-                <ArticleList
-                    isLoading={isLoading}
-                    articles={articles}
-                    view={view}
-                />
-            </Page>
+
+            <ArticlePageFilters className={cls.viewSelector} />
+            <ArticleList
+                isLoading={isLoading}
+                articles={articles}
+                view={view}
+            />
         </DynamicModuleLoader>
     );
 });

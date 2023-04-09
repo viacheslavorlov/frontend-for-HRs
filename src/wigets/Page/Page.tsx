@@ -1,11 +1,11 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    memo, MutableRefObject, ReactNode, useRef, UIEvent, useEffect,
+    memo, MutableRefObject, ReactNode, useRef, UIEvent,
 } from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getScrollByPath, scrollRestorationSliceActions } from 'features/ScrollRextoration';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
