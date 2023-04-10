@@ -1,4 +1,4 @@
-// noinspection JSUnresolvedVariable
+// noinspection JSUnresolvedVariable,DuplicatedCode
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
