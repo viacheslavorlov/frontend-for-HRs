@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, ReactNode, useCallback } from 'react';
-import { Card, CardVariant } from 'shared/ui/Card/Card';
+import { Card, CardVariant } from '../Card/Card';
 import cls from './Tabs.module.scss';
 
 export interface TabItem {
@@ -12,6 +12,7 @@ interface TabsProps {
     className?: string;
     tabs: TabItem[];
     value: string;
+    // eslint-disable-next-line no-unused-vars
     onTabClick: (tab: TabItem) => void;
 }
 

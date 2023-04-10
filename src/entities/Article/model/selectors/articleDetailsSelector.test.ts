@@ -1,12 +1,9 @@
+import { StateSchema } from 'app/providers/StoreProvider';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
     getArticleDetailsIsLoading,
-} from 'entities/Article/model/selectors/articleDetailsSelector';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/type';
-import { useSelector } from 'react-redux';
-import { d } from '@pmmmwh/react-refresh-webpack-plugin/types/options';
-import { StateSchema } from 'app/providers/StoreProvider';
+} from './articleDetailsSelector';
 
 describe('articleDetailsSelector.test', () => {
     const article: DeepPartial<StateSchema> = {

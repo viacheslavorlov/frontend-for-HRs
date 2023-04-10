@@ -8,7 +8,7 @@ import { getUserAuthData, userActions } from 'entities/User';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/router/routeConfig/routes';
-import cls from './Navbar.module.scss';
+import cls from 'wigets/Navbar/ui/Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;

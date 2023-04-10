@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/TemeProvider';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
-import { CurrencySelect } from 'entities/Currency/ui/CurrencySelect/CurrencySelect';
+import { CurrencySelect } from './CurrencySelect';
 
 export default {
     title: 'entities/CurrencySelect',
@@ -11,6 +11,7 @@ export default {
     },
 } as ComponentMeta<typeof CurrencySelect>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
 
 export const LightCurrencySelect = Template.bind({});

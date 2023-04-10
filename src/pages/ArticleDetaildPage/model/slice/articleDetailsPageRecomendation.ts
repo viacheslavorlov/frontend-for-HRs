@@ -3,7 +3,7 @@ import { Article } from 'entities/Article';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
     fetchRecommendations,
-} from 'pages/ArticleDetaildPage/model/services/fetchRecommendations/fetchRecommendations';
+} from '../services/fetchRecommendations/fetchRecommendations';
 import {
     ArticleDetailsPageRecommendationSchema,
 } from '../types/ArticleDetailsPageRecomendationSchema';

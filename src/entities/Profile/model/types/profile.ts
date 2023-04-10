@@ -1,6 +1,6 @@
 import { Currency } from 'entities/Currency/model/types/currency';
 import { Country } from 'entities/Country/model/country';
-import { ValidateProfileError } from 'entities/Profile/model/services/validateProfile/validateProfile';
+import { ValidateProfileError } from '../services/validateProfile/validateProfile';
 
 export interface ProfileType {
     id?: string;

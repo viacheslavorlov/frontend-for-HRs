@@ -1,8 +1,9 @@
-import { loginByUsername } from 'features/AuthByUsername';
+/* eslint-disable no-unused-vars */
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk/testAsyncThunk';
+import { loginByUsername } from './loginByUsername';
 
 jest.mock('axios');
 

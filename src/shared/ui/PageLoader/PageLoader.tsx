@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import LoadingSpinner from 'shared/ui/LoadingSpinner/LoadingSpinner';
 import { memo } from 'react';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import cls from './PageLoader.module.scss';
 
 interface PageLoaderProps {

@@ -1,10 +1,11 @@
+/* eslint-disable no-unused-vars */
 import { Dispatch } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk/testAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { ProfileType } from 'entities/Profile';
-import { ValidateProfileError } from 'entities/Profile/model/services/validateProfile/validateProfile';
+import { ProfileType } from '../../types/profile';
+import { ValidateProfileError } from '../validateProfile/validateProfile';
 import { updateProfile } from './updateProfile';
 
 jest.mock('axios');

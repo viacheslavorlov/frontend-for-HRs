@@ -1,8 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
-} from 'entities/Article/model/types/type';
 import { Text } from 'shared/ui/Text/Text';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Card } from 'shared/ui/Card/Card';
@@ -13,6 +10,9 @@ import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { RoutePaths } from 'app/router/routeConfig/routes';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
+import {
+    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+} from '../../model/types/type';
 import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/ArticlesTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import Eye from '../../assets/Eye.svg';

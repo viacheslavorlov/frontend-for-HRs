@@ -1,4 +1,4 @@
-import { UserSchema } from 'entities/User';
+import { UserSchema } from '../types/user';
 
 describe('userSlice.test', () => {
     test('user state exists', () => {

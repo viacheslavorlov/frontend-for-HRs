@@ -1,6 +1,6 @@
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { validateProfile, ValidateProfileError } from 'entities/Profile/model/services/validateProfile/validateProfile';
+import { validateProfile, ValidateProfileError } from './validateProfile';
 
 const data = {
     first: 'John',

@@ -1,14 +1,23 @@
-import { ProfileType } from 'entities/Profile';
+import { ProfileType } from '../../types/profile';
 
 export enum ValidateProfileError {
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_USER_DATA = 'INCORRECT_USER_DATA',
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_AGE = 'INCORRECT_AGE',
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_COUNTRY = 'INCORRECT_COUNTRY',
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_AVATAR = 'INCORRECT_AVATAR',
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_CITY = 'INCORRECT_CITY',
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_USERNAME = 'INCORRECT_USERNAME',
+    // eslint-disable-next-line no-unused-vars
     INCORRECT_CURRENCY = 'INCORRECT_CURRENCY',
+    // eslint-disable-next-line no-unused-vars
     NO_DATA = 'NO_DATA',
+    // eslint-disable-next-line no-unused-vars
     SERVER_ERROR = 'SERVER_ERROR'
 }
 

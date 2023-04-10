@@ -1,8 +1,8 @@
+// noinspection JSUnusedLocalSymbols
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
-import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
-import { Article } from 'entities/Article';
+import { Article } from '../../model/types/type';
 import { ArticleList } from './ArticleList';
 
 export default {

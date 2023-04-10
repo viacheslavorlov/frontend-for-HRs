@@ -3,13 +3,15 @@ import { StateSchema } from 'app/providers/StoreProvider';
 import { TestAsyncThunk } from 'shared/config/tests/testAsyncThunk/testAsyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
-import { ProfileType } from 'entities/Profile';
+import { ProfileType } from '../../types/profile';
 import { fetchProfileData } from './fetchProfile';
 
 jest.mock('axios');
 
 describe('fetchProfile test', () => {
+    // eslint-disable-next-line no-unused-vars
     let dispatch: Dispatch;
+    // eslint-disable-next-line no-unused-vars
     let getState: () => StateSchema;
 
     beforeEach(() => {

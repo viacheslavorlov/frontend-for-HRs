@@ -1,12 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback, useMemo } from 'react';
 import { TabItem, Tabs } from 'shared/ui/Tabs/Tabs';
-import { ArticleType } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
+import { ArticleType } from '../../model/types/type';
 
 interface ArticleTypeTabsProps {
     className?: string;
     value: ArticleType;
+    // eslint-disable-next-line no-unused-vars
     onChangeType: (tab: TabItem) => void;
 }
 

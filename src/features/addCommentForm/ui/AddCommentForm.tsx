@@ -4,13 +4,14 @@ import { Input } from 'shared/ui/Input/Input';
 import { useTranslation } from 'react-i18next';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader';
+// noinspection ES6PreferShortImport
 import {
     getAddCommentFormError,
     getAddCommentFormText,
-} from 'features/addCommentForm/model/selectors/addCommentFormSelectors';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader';
-import { addCommentFormActions, addCommentFormReducer } from 'features/addCommentForm/model/slice/addCommentSlice';
+} from '../model/selectors/addCommentFormSelectors';
+import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentSlice';
 import cls from './AddCommentForm.module.scss';
 
 export interface AddCommentFormProps {

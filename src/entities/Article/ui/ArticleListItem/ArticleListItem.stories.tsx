@@ -1,8 +1,11 @@
+// noinspection JSUnresolvedVariable
+
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
-import { Article, ArticleView } from 'entities/Article';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/type';
+import {
+    Article, ArticleView, ArticleBlockType, ArticleType,
+} from '../../model/types/type';
 import { ArticleListItem } from './ArticleListItem';
 
 export default {
@@ -13,6 +16,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItem>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
 const article: Article = {

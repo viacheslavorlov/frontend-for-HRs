@@ -1,10 +1,10 @@
 import { memo } from 'react';
-import { ArticleView } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
-import cls from 'entities/Article/ui/ArticleListItem/ArticleListItem.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Card } from 'shared/ui/Card/Card';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { ArticleView } from '../../model/types/type';
+import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemSkeletonProps {
     className?: string;
@@ -16,7 +16,6 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
         className,
         view = ArticleView.SMALL,
     } = props;
-    const { t } = useTranslation();
 
     if (view === ArticleView.BIG) {
         return (

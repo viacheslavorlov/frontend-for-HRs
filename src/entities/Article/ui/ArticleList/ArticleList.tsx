@@ -1,8 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    ComponentType, HTMLAttributeAnchorTarget, memo, MutableRefObject, UIEvent, useCallback, useRef,
+    ComponentType, HTMLAttributeAnchorTarget, memo, UIEvent, useCallback,
 } from 'react';
-import { ArticleListItemSkeleton } from 'entities/Article/ui/ArticleListItem/ArticleListItemSkeleton';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize, TextVariant } from 'shared/ui/Text/Text';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
