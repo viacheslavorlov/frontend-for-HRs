@@ -44,7 +44,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className,
         articles,
         target,
-        view = ArticleView.BIG,
+        view = ArticleView.SMALL,
         isLoading,
     } = props;
     const dispatch = useAppDispatch();

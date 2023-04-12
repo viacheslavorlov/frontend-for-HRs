@@ -6,6 +6,8 @@ import { useSelector } from 'react-redux';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleList, ArticleView } from 'entities/Article';
 import { useSearchParams } from 'react-router-dom';
+import { Page } from 'wigets/Page/Page';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage';
 import { articlePageReducer, getArticles } from '../../model/slice/articlesSlice';
 import {
@@ -13,6 +15,7 @@ import {
     getArticlePageLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
+import cls from './ArticlePage.module.scss';
 
 interface ArticlePageProps {
     className?: string
@@ -43,13 +46,14 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-
-            {/* <ArticlePageFilters className={cls.viewSelector} /> */}
-            <ArticleList
-                isLoading={isLoading}
-                articles={articles}
-                view={view}
-            />
+            <Page>
+                <ArticlePageFilters className={cls.viewSelector} />
+                <ArticleList
+                    isLoading={isLoading}
+                    articles={articles}
+                    view={view}
+                />
+            </Page>
         </DynamicModuleLoader>
     );
 });
