@@ -47,7 +47,7 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page>
-                <ArticlePageFilters className={cls.viewSelector} />
+                {/* <ArticlePageFilters className={cls.viewSelector} /> */}
                 <ArticleList
                     isLoading={isLoading}
                     articles={articles}

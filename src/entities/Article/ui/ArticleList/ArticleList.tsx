@@ -92,6 +92,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 style={{ height: '100%' }}
                 data={articles}
+                overscan={250}
                 endReached={onLoadNextPart}
                 itemContent={(index, article) => renderArticle(article)}
                 components={{
@@ -105,7 +106,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
             style={{ height: '100%' }}
             totalCount={articles.length}
-            overscan={450}
             data={articles}
             listClassName={cls.itemContainer}
             endReached={onLoadNextPart}
