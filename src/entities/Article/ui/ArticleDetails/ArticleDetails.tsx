@@ -10,6 +10,7 @@ import {
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {
     ArticlesImageBlockComponent,
@@ -85,30 +86,31 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         );
     } else {
         content = (
-            <>
-                <div className={cls.avatarWrapper}>
+            <VStack max gap="8">
+                <HStack max justify="center">
                     <Avatar
                         size={150}
                         src={data?.img}
-                        className={cls.avatar}
                     />
-                </div>
+                </HStack>
                 <Text
                     title={data?.title}
                     text={data?.subtitle}
                     className={cls.title}
                     size={TextSize.L}
                 />
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={Eye} />
+                <HStack gap="8">
+                    <Icon Svg={Eye} />
                     <Text text={String(data?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={Calendar} />
+                </HStack>
+                <HStack gap="8">
+                    <Icon Svg={Calendar} />
                     <Text text={data?.createdAt} />
-                </div>
-                {data?.blocks.map(renderBlock)}
-            </>
+                </HStack>
+                <VStack gap="16" max>
+                    {data?.blocks.map(renderBlock)}
+                </VStack>
+            </VStack>
         );
     }
 

@@ -1,4 +1,4 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     ComponentType, HTMLAttributeAnchorTarget, memo, UIEvent, useCallback,
 } from 'react';
@@ -22,22 +22,8 @@ interface ArticleListProps {
     isLoading?: boolean;
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    searchParams?: boolean;
 }
-
-// interface ScrollPlaceholderProps {
-//     height: number;
-//     width: number;
-//     index: number;
-//     view: ArticleView;
-// }
-//
-// const ScrollPlaceholder = ({
-//     height, width, index, view,
-// }: ScrollPlaceholderProps) => (
-//     <div className={cls.itemContainer}>
-//         <ArticleListItemSkeleton view={view} />
-//     </div>
-// );
 
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
@@ -46,6 +32,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         target,
         view = ArticleView.SMALL,
         isLoading,
+        searchParams,
     } = props;
     const dispatch = useAppDispatch();
     const { t } = useTranslation('article');
@@ -72,11 +59,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
             dispatch(fetchNextArticlePage());
         }
     }, [dispatch, hasMore]);
-    //
-    // const getSkeletons = (view: ArticleView) => new Array(view === ArticleView.BIG ? 14 : 3)
-    //     .fill(0)
-    //     // eslint-disable-next-line react/no-array-index-key
-    //     .map((item, index) => <ArticleListItemSkeleton key={index} view={view} />);
 
     if (!isLoading && !articles.length) {
         return (
@@ -86,11 +68,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
+    const mods: Mods = {
+        [cls.wrap]: searchParams,
+    };
+
     if (view === ArticleView.BIG) {
         return (
             <Virtuoso
-                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-                style={{ height: '100%' }}
+                className={classNames(cls.ArticleList, mods, [className, cls[view]])}
                 data={articles}
                 overscan={250}
                 endReached={onLoadNextPart}
@@ -103,14 +88,14 @@ export const ArticleList = memo((props: ArticleListProps) => {
     }
     return (
         <VirtuosoGrid
-            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
-            style={{ height: '100%' }}
+            className={classNames(cls.ArticleList, mods, [className, cls[view]])}
+            style={{ height: searchParams ? '100%' : '50%' }}
             totalCount={articles.length}
             data={articles}
             listClassName={cls.itemContainer}
-            endReached={onLoadNextPart}
+            endReached={searchParams ? onLoadNextPart : undefined}
             components={{
-                Header: ArticlePageFilters as ComponentType,
+                Header: searchParams ? ArticlePageFilters as ComponentType : undefined,
                 // ScrollSeekPlaceholder: ScrollPlaceholder,
             }}
             itemContent={(index, article) => renderArticle(article)}

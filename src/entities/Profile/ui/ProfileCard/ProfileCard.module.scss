@@ -5,21 +5,12 @@
 }
 
 .input {
-    margin-top: 10px;
+    width: 100%;
 }
 
 .loading,
 .error {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     height: 300px;
-}
-
-.avatarWrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
 }
 
 .editing {

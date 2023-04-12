@@ -11,6 +11,7 @@ import { SortOrder } from 'shared/types/sortOrder';
 import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from 'shared/ui/Tabs/Tabs';
 import { ArticleType } from 'entities/Article/model/types/type';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { fetchArticlesList } from '../../model/service/fetchArticles/fetchArticles';
 import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,
@@ -70,8 +71,8 @@ export const ArticlePageFilters = memo((props: ArticlePageFiltersProps) => {
     }, [debounceFetchData, dispatch]);
 
     return (
-        <div className={classNames('', {}, [className])}>
-            <div className={cls.softWrapper}>
+        <VStack gap="16" max className={classNames('', {}, [className])}>
+            <HStack gap="16" max justify="between">
                 <ArticleSortSelector
                     order={order}
                     onChangeOrder={onChangeOrder}
@@ -79,15 +80,14 @@ export const ArticlePageFilters = memo((props: ArticlePageFiltersProps) => {
                     onChangeSort={onChangeSort}
                 />
                 <ArticleViewSelector view={view} onViewClick={onChangeView} />
-            </div>
-            <Card className={cls.search}>
+            </HStack>
+            <Card>
                 <Input value={search} placeholder={t('Поиск')} onChange={onChangeSearch} />
             </Card>
             <ArticleTypeTabs
                 onChangeType={onChangeType}
                 value={type}
-                className={cls.tabs}
             />
-        </div>
+        </VStack>
     );
 });

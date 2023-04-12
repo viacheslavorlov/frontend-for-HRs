@@ -1,6 +1,5 @@
 .ArticleList {
 	width: 100%;
-	height: 100%;
 	//overflow-y: hidden;
 	//margin-left: 40px;
 }
@@ -19,8 +18,8 @@
 
 .itemContainer {
     gap: 0.5rem;
-    height: 100%;
     width: 100%;
+	height: auto;
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;

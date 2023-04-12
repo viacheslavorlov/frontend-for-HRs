@@ -35,7 +35,11 @@ export const ProfileHeader = (props: ProfileHeaderProps) => {
     const canEdit = profile?.id === authData?.id;
 
     return (
-        <HStack className={classNames('', {}, [className])} justify="between">
+        <HStack
+            className={classNames('', {}, [className])}
+            max
+            justify="between"
+        >
             <Text title={t('Профиль')} />
             {canEdit && (
                 <div>
@@ -50,7 +54,7 @@ export const ProfileHeader = (props: ProfileHeaderProps) => {
                         )
 
                         : (
-                            <HStack gap="8">
+                            <HStack gap="8" justify="end">
                                 <Button
                                     theme={ButtonTheme.OUTLINE_RED}
                                     onClick={onCancelEdit}

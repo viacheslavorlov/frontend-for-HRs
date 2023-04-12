@@ -24,6 +24,7 @@ import { ValidateProfileError } from 'entities/Profile/model/services/validatePr
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useParams } from 'react-router-dom';
 import { Page } from 'wigets/Page/Page';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { ProfileHeader } from './ProfileHeader/ProfileHeader';
 
 const reducers: ReducersList = {
@@ -101,24 +102,27 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <Page className={classNames('', {}, [className])}>
-                <ProfileHeader onCancelEdit={onCancelEdit} />
-                {validateErrors?.length && validateErrors.map((err) => (
-                    <Text key={err} variant={TextVariant.ERROR} text={validateErrorTranslates[err]} />
-                ))}
-                <ProfileCard
-                    readonly={readonly}
-                    data={profileForm}
-                    error={error}
-                    isLoading={isLoading}
-                    onChangeFirstname={onChangeFirstName}
-                    onChangeLastname={onChangeLastName}
-                    onChangeAge={onChangeAge}
-                    onChangeCity={onChangeCity}
-                    onChangeUsername={onChangeUsername}
-                    onChangeAvatar={onChangeAvatar}
-                    onChangeCurrency={onChangeCurrency}
-                    onChangeCounty={onChangeCounty}
-                />
+                <VStack gap="8">
+                    <ProfileHeader onCancelEdit={onCancelEdit} />
+                    {validateErrors?.length && validateErrors.map((err) => (
+                        <Text key={err} variant={TextVariant.ERROR} text={validateErrorTranslates[err]} />
+                    ))}
+                    <ProfileCard
+                        readonly={readonly}
+                        data={profileForm}
+                        error={error}
+                        isLoading={isLoading}
+                        onChangeFirstname={onChangeFirstName}
+                        onChangeLastname={onChangeLastName}
+                        onChangeAge={onChangeAge}
+                        onChangeCity={onChangeCity}
+                        onChangeUsername={onChangeUsername}
+                        onChangeAvatar={onChangeAvatar}
+                        onChangeCurrency={onChangeCurrency}
+                        onChangeCounty={onChangeCounty}
+                    />
+                </VStack>
+
             </Page>
         </DynamicModuleLoader>
     );

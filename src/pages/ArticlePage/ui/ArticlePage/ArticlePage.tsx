@@ -7,7 +7,6 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { ArticleList, ArticleView } from 'entities/Article';
 import { useSearchParams } from 'react-router-dom';
 import { Page } from 'wigets/Page/Page';
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage';
 import { articlePageReducer, getArticles } from '../../model/slice/articlesSlice';
 import {
@@ -15,7 +14,6 @@ import {
     getArticlePageLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
-import cls from './ArticlePage.module.scss';
 
 interface ArticlePageProps {
     className?: string
@@ -52,6 +50,7 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
                     isLoading={isLoading}
                     articles={articles}
                     view={view}
+                    searchParams
                 />
             </Page>
         </DynamicModuleLoader>
