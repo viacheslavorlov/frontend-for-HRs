@@ -9,6 +9,7 @@ import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/router/routeConfig/routes';
 import cls from 'wigets/Navbar/ui/Navbar.module.scss';
+import { HStack } from 'shared/ui/Stack';
 
 interface NavbarProps {
     className?: string;
@@ -35,25 +36,36 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-
-                <Text className={cls.appName} title={t('Blogg App')} variant={TextVariant.INVERTED} />
-                <AppLink to={RoutePaths.article_create} theme={AppLInkTheme.SECONDARY} className={cls.createLink}>
-                    {t('Создать статью')}
-                </AppLink>
-                <Button
-                    theme={ButtonTheme.CLEAR}
-                    className={cls.logout}
-                    onClick={onLogout}
-                >
-                    {t('Выйти')}
-                </Button>
+                <HStack justify="between" max>
+                    <HStack justify="start">
+                        <Text
+                            className={cls.appName}
+                            title={t('Блог')}
+                            variant={TextVariant.INVERTED}
+                        />
+                        <AppLink
+                            to={RoutePaths.article_create}
+                            theme={AppLInkTheme.SECONDARY}
+                            className={cls.createLink}
+                        >
+                            {t('Создать статью')}
+                        </AppLink>
+                    </HStack>
+                    <Button
+                        theme={ButtonTheme.CLEAR}
+                        className={cls.logout}
+                        onClick={onLogout}
+                    >
+                        {t('Выйти')}
+                    </Button>
+                </HStack>
             </header>
         );
     }
 
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
-            <div className={classNames(cls.links)}>
+            <HStack justify="end" max className={classNames(cls.links)}>
                 <Button
                     theme={ButtonTheme.CLEAR}
                     className={cls.links}
@@ -67,7 +79,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         onClose={onCloseModal}
                     />
                 )}
-            </div>
+            </HStack>
         </header>
     );
 });
