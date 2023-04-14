@@ -1,28 +1,25 @@
 .ArticleList {
-	width: 100%;
-	//overflow-y: hidden;
-	//margin-left: 40px;
+    width: 100%;
 }
 
 .BIG {
-	.card {
-		margin-bottom: 10px;
-	}
+    .card {
+        margin-bottom: 10px;
+    }
 }
 
 .SMALL {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .itemContainer {
     gap: 0.5rem;
     width: 100%;
-	height: auto;
+    height: auto;
     display: flex;
     flex-wrap: wrap;
     align-content: stretch;
     box-sizing: border-box;
-
 }

@@ -2,8 +2,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
-import { Article } from '../../model/types/type';
+import { Provider } from 'react-redux';
+import { configureStore, createStore } from '@reduxjs/toolkit';
+import { createReduxStore, StoreProvider } from 'app/providers/StoreProvider';
 import { ArticleList } from './ArticleList';
+import { Article } from '../../model/types/type';
 
 export default {
     title: 'entities/ArticleList',
@@ -13,7 +16,7 @@ export default {
     },
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
+const Template: ComponentStory<typeof ArticleList> = (args) => <StoreProvider><ArticleList {...args} /></StoreProvider>;
 
 const articles = new Array(10).fill(0).map((item) => ({
     id: '1',

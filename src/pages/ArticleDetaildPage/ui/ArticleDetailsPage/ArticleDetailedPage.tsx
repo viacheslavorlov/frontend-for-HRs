@@ -61,9 +61,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     }
 
     return (
+        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+            <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
 
-        <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
-            <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
                 <VStack max gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
@@ -82,9 +82,9 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                         comments={comments}
                     />
                 </VStack>
-            </DynamicModuleLoader>
-        </Page>
 
+            </Page>
+        </DynamicModuleLoader>
     );
 };
 

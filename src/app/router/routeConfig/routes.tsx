@@ -75,7 +75,7 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
     },
     [AllRoutes.ARTICLE_CREATE]: {
         path: `${RoutePaths.article_create}/new`,
-        element: <ArticleDetailedPage />,
+        element: <ArticleEditPage />,
         authOnly: true,
     },
     [AllRoutes.NOT_FOUND]: {

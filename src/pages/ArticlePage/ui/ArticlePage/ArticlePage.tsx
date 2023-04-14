@@ -10,7 +10,7 @@ import { Page } from 'wigets/Page/Page';
 import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage';
 import { articlePageReducer, getArticles } from '../../model/slice/articlesSlice';
 import {
-    getArticlePageError,
+    getArticlePageError, getArticlePageHasMore,
     getArticlePageLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
@@ -31,6 +31,7 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
     const error = useSelector(getArticlePageError);
     const view = useSelector(getArticlePageView) || ArticleView.SMALL;
     const [searchParams] = useSearchParams();
+    const hasMore = useSelector(getArticlePageHasMore);
     console.log(searchParams);
     // const onLoadNextPart = useCallback(() => {
     //     if (hasMore) {
@@ -51,6 +52,7 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
                     articles={articles}
                     view={view}
                     searchParams
+                    hasMore={hasMore}
                 />
             </Page>
         </DynamicModuleLoader>

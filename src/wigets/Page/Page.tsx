@@ -1,14 +1,14 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
-    memo, MutableRefObject, ReactNode, useRef, UIEvent,
+    memo, MutableRefObject, ReactNode, useRef,
 } from 'react';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+// import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getScrollByPath, scrollRestorationSliceActions } from 'features/ScrollRextoration';
 import { useLocation } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSelector } from 'react-redux';
 import { StateSchema } from 'app/providers/StoreProvider';
-import { useThrottle } from 'shared/lib/hooks/useTrottle/useTrottle';
+// import { useThrottle } from 'shared/lib/hooks/useTrottle/useTrottle';
 import cls from './Page.module.scss';
 
 interface PageProps {
@@ -24,12 +24,12 @@ export const Page = memo((props: PageProps) => {
         onScrollEnd,
     } = props;
 
-    const dispatch = useAppDispatch();
+    // const dispatch = useAppDispatch();
     const location = useLocation();
-    const currentScroll = useSelector((state: StateSchema) => {
-        const path = location.pathname;
-        return getScrollByPath(state, path);
-    });
+    // const currentScroll = useSelector((state: StateSchema) => {
+    //     const path = location.pathname;
+    //     return getScrollByPath(state, path);
+    // });
 
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>;
@@ -42,20 +42,24 @@ export const Page = memo((props: PageProps) => {
     //     callback: onScrollEnd,
     // });
 
-    useInitialEffect(() => {
-        wrapperRef.current.scrollTop = currentScroll;
-    });
+    // useInitialEffect(() => {
+    //     wrapperRef.current.scrollTop = currentScroll;
+    // });
 
-    const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollRestorationSliceActions.setScrollPosition({
-            position: e.currentTarget.scrollTop, path: location.pathname,
-        }));
-    }, 700);
+    // const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
+    //     dispatch(scrollRestorationSliceActions.setScrollPosition({
+    //         position: e.currentTarget.scrollTop, path: location.pathname,
+    //     }));
+    // }, 700);
 
     return (
-        <section ref={wrapperRef} onScroll={onScroll} className={classNames(cls.Page, {}, [className])}>
+        <main
+            ref={wrapperRef}
+            // onScroll={onScroll}
+            className={classNames(cls.Page, {}, [className])}
+        >
             {children}
             {/* {onScrollEnd && <div className={cls.trigger} ref={triggerRef} />} */}
-        </section>
+        </main>
     );
 });

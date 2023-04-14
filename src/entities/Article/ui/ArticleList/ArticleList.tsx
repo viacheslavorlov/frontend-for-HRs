@@ -23,6 +23,7 @@ interface ArticleListProps {
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     searchParams?: boolean;
+    hasMore?: boolean;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -33,6 +34,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
         isLoading,
         searchParams,
+        hasMore,
     } = props;
     const dispatch = useAppDispatch();
     const { t } = useTranslation('article');
@@ -53,7 +55,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             position: e.currentTarget.scrollTop, path: window.location.pathname,
         }));
     }, 700);
-    const hasMore = useSelector(getArticlePageHasMore);
+
     const onLoadNextPart = useCallback(() => {
         if (hasMore) {
             dispatch(fetchNextArticlePage());

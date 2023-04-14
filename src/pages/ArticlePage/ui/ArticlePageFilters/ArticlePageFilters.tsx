@@ -17,7 +17,6 @@ import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
 import { ArticleViewSelector } from '../ArticleViewSelector/ArticleViewSelector';
-import cls from './ArticlePageFilters.module.scss';
 import { articlePageActions } from '../../model/slice/articlesSlice';
 
 interface ArticlePageFiltersProps {

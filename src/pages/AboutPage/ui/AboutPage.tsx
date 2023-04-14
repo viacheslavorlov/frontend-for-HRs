@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'wigets/Page/Page';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 
 interface AboutPageProps {
     className?: string
@@ -25,6 +26,7 @@ const AboutPage = memo((props: AboutPageProps) => {
                 text={t('Используйте пароль: 123')}
                 variant={TextVariant.PRIMARY}
             />
+
         </Page>
     );
 });
