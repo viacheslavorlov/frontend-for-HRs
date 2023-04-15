@@ -1,5 +1,6 @@
 {
     "Аватар": "Avatar",
+    "Валюта": "Currency",
     "Ваш возраст": "Your age",
     "Ваша фамилия": "Your last name",
     "Ваше имя": "Your first name",
@@ -19,5 +20,6 @@
     "Произошла ошибка при загрузке профиля": "Error while loading profile data...",
     "Профиль": "Profile",
     "Редактировать": "Change",
-    "Сохранить": "Save"
+    "Сохранить": "Save",
+    "Страна": "Country"
 }

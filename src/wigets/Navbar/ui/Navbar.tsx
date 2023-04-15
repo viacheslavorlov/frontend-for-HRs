@@ -10,6 +10,8 @@ import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/router/routeConfig/routes';
 import cls from 'wigets/Navbar/ui/Navbar.module.scss';
 import { HStack } from 'shared/ui/Stack';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 
 interface NavbarProps {
     className?: string;
@@ -51,13 +53,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             {t('Создать статью')}
                         </AppLink>
                     </HStack>
-                    <Button
-                        theme={ButtonTheme.CLEAR}
+                    <Dropdown
+                        direction="bottomLeft"
                         className={cls.logout}
-                        onClick={onLogout}
-                    >
-                        {t('Выйти')}
-                    </Button>
+                        items={[
+                            {
+                                content: t('translation:Выйти'),
+                                onClick: onLogout,
+                            },
+                            {
+                                content: t('Профиль'),
+                                href: RoutePaths.profile + authData.id,
+                            },
+                        ]}
+                        trigger={<Avatar src={authData.avatar} alt="выйти" size={30} />}
+                    />
                 </HStack>
             </header>
         );

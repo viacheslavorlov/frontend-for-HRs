@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
+import { DropDownDirection } from '../types';
 import { Button } from '../Button/Button';
 import cls from './ListBox.module.scss';
 
@@ -18,6 +19,7 @@ interface ListBoxProps {
     defaultValue?: string;
     onChange: <T extends string>(value: T) => void;
     label?: string;
+    direction?: DropDownDirection;
 }
 
 export const ListBox = memo((props: ListBoxProps) => {
@@ -29,7 +31,10 @@ export const ListBox = memo((props: ListBoxProps) => {
         defaultValue,
         disabled,
         label,
+        direction = 'topRight',
     } = props;
+
+    const optionsClasses = cls[direction];
 
     return (
         <Listbox
@@ -45,7 +50,7 @@ export const ListBox = memo((props: ListBoxProps) => {
                     {value || defaultValue}
                 </Button>
             </Listbox.Button>
-            <Listbox.Options className={cls.options}>
+            <Listbox.Options className={classNames(cls.options, {}, [optionsClasses])}>
                 {items?.map((item) => (
                     <Listbox.Option
                         key={item.value}

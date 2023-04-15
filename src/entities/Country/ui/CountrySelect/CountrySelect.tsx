@@ -1,6 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Select } from 'shared/ui/Select/Select';
 import { memo, useCallback } from 'react';
 import { ListBox } from 'shared/ui/ListBox/ListBox';
 import { Country } from '../../model/country';
@@ -19,7 +18,7 @@ const options = [
     { value: Country.Kazakhstan, content: Country.Kazakhstan },
 ];
 export const CountrySelect = memo((props: CountrySelectProps) => {
-    const { t } = useTranslation();
+    const { t } = useTranslation('profile');
     const {
         readonly,
         className,
@@ -36,13 +35,14 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
 
     return (
         <ListBox
-            label="Страна"
+            label={t('Страна')}
             disabled={readonly}
             onChange={onChangeHandler}
-            defaultValue="Укажите страну"
+            defaultValue={t('Укажите страну')}
             value={value}
             items={options}
             className={classNames('', {}, [className])}
+            direction="topRight"
         />
     );
 

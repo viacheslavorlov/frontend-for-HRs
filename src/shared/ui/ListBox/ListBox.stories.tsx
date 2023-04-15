@@ -9,8 +9,12 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        (Story) => <div style={{ padding: 100 }}><Story /></div>,
+    ],
 } as ComponentMeta<typeof ListBox>;
 
+// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
 
 export const LightListBox = Template.bind({});
@@ -23,6 +27,7 @@ LightListBox.args = {
         { value: '2222', disabled: false, content: '2222' },
         { value: '3333', disabled: false, content: '3333' },
     ],
+    direction: 'bottomLeft',
     onChange: (value: string) => {},
     defaultValue: 'укажите',
 };
@@ -41,3 +46,19 @@ DarkListBox.args = {
     defaultValue: 'укажите',
 };
 DarkListBox.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkListBoxBottomLeft = Template.bind({});
+DarkListBoxBottomLeft.args = {
+    value: '1111',
+    disabled: false,
+    label: 'label',
+    items: [
+        { value: '1111', disabled: false, content: '1111' },
+        { value: '2222', disabled: false, content: '2222' },
+        { value: '3333', disabled: false, content: '3333' },
+    ],
+    direction: 'bottomLeft',
+    onChange: (value: string) => {},
+    defaultValue: 'укажите',
+};
+DarkListBoxBottomLeft.decorators = [ThemeDecorator(Theme.DARK)];
