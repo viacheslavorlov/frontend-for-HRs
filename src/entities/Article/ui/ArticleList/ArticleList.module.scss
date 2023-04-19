@@ -11,6 +11,7 @@
 .SMALL {
     display: flex;
     gap: 8px;
+
     .wrap {
         flex-wrap: nowrap;
     }
@@ -25,4 +26,3 @@
     align-content: stretch;
     box-sizing: border-box;
 }
-

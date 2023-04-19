@@ -1,4 +1,3 @@
-import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -7,10 +6,12 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { ArticleList, ArticleView } from 'entities/Article';
 import { useSearchParams } from 'react-router-dom';
 import { Page } from 'wigets/Page/Page';
+import { PageError } from 'wigets/PageError/PageError';
 import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage';
 import { articlePageReducer, getArticles } from '../../model/slice/articlesSlice';
 import {
-    getArticlePageError, getArticlePageHasMore,
+    getArticlePageError,
+    getArticlePageHasMore,
     getArticlePageLoading,
     getArticlePageView,
 } from '../../model/selectors/articlePageSelectors';
@@ -24,7 +25,6 @@ const reducers: ReducersList = {
 };
 
 const ArticlePage = memo(({ className }: ArticlePageProps) => {
-    const { t } = useTranslation();
     const dispatch = useAppDispatch();
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlePageLoading);
@@ -32,21 +32,22 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
     const view = useSelector(getArticlePageView) || ArticleView.SMALL;
     const [searchParams] = useSearchParams();
     const hasMore = useSelector(getArticlePageHasMore);
-    console.log(searchParams);
-    // const onLoadNextPart = useCallback(() => {
-    //     if (hasMore) {
-    //         dispatch(fetchNextArticlePage());
-    //     }
-    // }, [dispatch, hasMore]);
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
     });
 
+    if (error) {
+        return (
+            <Page>
+                <PageError />
+            </Page>
+        );
+    }
+
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page>
-                {/* <ArticlePageFilters className={cls.viewSelector} /> */}
                 <ArticleList
                     isLoading={isLoading}
                     articles={articles}

@@ -5,6 +5,7 @@ import { counterReducer } from 'entities/Counter';
 import { userReducer } from 'entities/User';
 import { $api } from 'shared/api/api';
 import { scrollRestorationSliceReducer } from 'features/ScrollRextoration';
+import { rtkApi } from 'shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
 
@@ -17,6 +18,7 @@ export function createReduxStore(
         counter: counterReducer,
         user: userReducer,
         scroll: scrollRestorationSliceReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer,
     };
 
     const extraArgument: ThunkExtraArg = {
@@ -33,7 +35,7 @@ export function createReduxStore(
             thunk: {
                 extraArgument,
             },
-        }),
+        }).concat(rtkApi.middleware),
     });
     // @ts-ignore
     store.reducerManager = reducerManager;

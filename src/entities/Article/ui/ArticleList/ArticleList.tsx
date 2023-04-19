@@ -9,8 +9,6 @@ import { ArticlePageFilters } from 'pages/ArticlePage/ui/ArticlePageFilters/Arti
 import { useThrottle } from 'shared/lib/hooks/useTrottle/useTrottle';
 import { scrollRestorationSliceActions } from 'features/ScrollRextoration';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { getArticlePageHasMore } from 'pages/ArticlePage/model/selectors/articlePageSelectors';
 import { fetchNextArticlePage } from 'pages/ArticlePage/model/service/fetchNextArticlePage/fetchNextArticlePage';
 import { Article, ArticleView } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -92,7 +90,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <VirtuosoGrid
             className={classNames(cls.ArticleList, mods, [className, cls[view]])}
             style={{
-                height: searchParams ? '100%' : 'calc(52vh - var(--navbar-heigt)',
+                height: searchParams ? '100%' : 'calc(55vh - var(--navbar-heigt)',
                 overflowY: !searchParams ? 'hidden' : 'auto',
             }}
             totalCount={articles.length}

@@ -66,14 +66,14 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     let content;
     if (loading) {
         content = (
-            <>
+            <VStack max gap="16">
                 <Skeleton width={200} height={200} border="50%" className={cls.center} />
                 <Skeleton width="50%" height={50} className={cls.center} />
                 <Skeleton width="100%" height={50} />
                 <Skeleton width="100%" height={150} />
                 <Skeleton width="100%" height={250} />
                 <Skeleton width="100%" height={150} />
-            </>
+            </VStack>
 
         );
     } else if (error) {

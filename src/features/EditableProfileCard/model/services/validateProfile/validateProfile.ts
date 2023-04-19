@@ -1,4 +1,4 @@
-import { ProfileType } from '../../types/profile';
+import { ProfileType } from 'entities/Profile';
 
 export enum ValidateProfileError {
     // eslint-disable-next-line no-unused-vars
