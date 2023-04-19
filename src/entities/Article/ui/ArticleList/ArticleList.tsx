@@ -91,7 +91,10 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <VirtuosoGrid
             className={classNames(cls.ArticleList, mods, [className, cls[view]])}
-            style={{ height: searchParams ? '100%' : '50%' }}
+            style={{
+                height: searchParams ? '100%' : 'calc(52vh - var(--navbar-heigt)',
+                overflowY: !searchParams ? 'hidden' : 'auto',
+            }}
             totalCount={articles.length}
             data={articles}
             listClassName={cls.itemContainer}

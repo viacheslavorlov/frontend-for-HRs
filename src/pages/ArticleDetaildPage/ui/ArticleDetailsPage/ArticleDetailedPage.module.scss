@@ -3,7 +3,8 @@
 }
 
 .recommendations {
-    flex-wrap: nowrap;
+    height: 250px;
+    width: 100%;
     overflow-y: hidden;
     overflow-x: auto;
 }

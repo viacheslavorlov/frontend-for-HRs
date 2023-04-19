@@ -61,19 +61,18 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     }
 
     return (
-        <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
-
+        <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+            <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
                 <VStack max gap="16">
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <Text title={t('Рекомендации')} />
                     <ArticleList
+                        isLoading={recommendationsIsLoading}
                         target="_blank"
                         articles={recommendations}
                         view={ArticleView.SMALL}
                         className={cls.recommendations}
-                        searchParams={false}
                     />
                     <Text title={t('Комментарии')} />
                     <AddCommentForm onSendComment={onSendComment} />
@@ -82,9 +81,8 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                         comments={comments}
                     />
                 </VStack>
-
-            </Page>
-        </DynamicModuleLoader>
+            </DynamicModuleLoader>
+        </Page>
     );
 };
 

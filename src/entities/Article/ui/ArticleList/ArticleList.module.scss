@@ -10,12 +10,14 @@
 
 .SMALL {
     display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    gap: 8px;
+    .wrap {
+        flex-wrap: nowrap;
+    }
 }
 
 .itemContainer {
-    gap: 0.5rem;
+    margin-top: 16px;
     width: 100%;
     height: auto;
     display: flex;
@@ -23,3 +25,4 @@
     align-content: stretch;
     box-sizing: border-box;
 }
+
