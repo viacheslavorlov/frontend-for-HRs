@@ -85,12 +85,14 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 placeholder={t('Ваше имя')}
                 onChange={onChangeFirstname}
                 readonly={readonly}
+                data-testid="EditableProfileCard.FirstName"
             />
             <Input
                 value={data?.last}
                 placeholder={t('Ваша фамилия')}
                 onChange={onChangeLastname}
                 readonly={readonly}
+                data-testid="EditableProfileCard.LastName"
             />
 
             <Input
@@ -98,34 +100,40 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
                 placeholder={t('Ваш возраст')}
                 onChange={onChangeAge}
                 readonly={readonly}
+                data-testid="EditableProfileCard.Age"
             />
             <Input
                 value={data?.city}
                 placeholder={t('Город')}
                 onChange={onChangeCity}
                 readonly={readonly}
+                data-testid="EditableProfileCard.City"
             />
             <Input
                 value={data?.username}
                 placeholder={t('Имя пользователя')}
                 onChange={onChangeUsername}
                 readonly={readonly}
+                data-testid="EditableProfileCard.Username"
             />
             <Input
                 value={data?.avatar}
                 placeholder={t('Аватар')}
                 onChange={onChangeAvatar}
                 readonly={readonly}
+                data-testid="EditableProfileCard.Avatar"
             />
             <CurrencySelect
                 value={data?.currency}
                 readonly={readonly}
                 onChange={onChangeCurrency}
+                data-testid="EditableProfileCard.Currency"
             />
             <CountrySelect
                 value={data?.country}
                 readonly={readonly}
                 onChange={onChangeCounty}
+                data-testid="EditableProfileCard.Country"
             />
         </VStack>
     );

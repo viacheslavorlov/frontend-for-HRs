@@ -6,9 +6,12 @@ import { ArticleDetailedPage } from 'pages/ArticleDetaildPage';
 import ArticlePage from 'pages/ArticlePage/ui/ArticlePage/ArticlePage';
 import { AboutPage } from 'pages/AboutPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
+import { AdminPanelPage } from 'pages/AdminPanelPage';
+import { UserRole } from 'entities/User/model/types/user';
 
 export type AppRouteProps = RouteProps & {
     authOnly?: boolean;
+    roles?: UserRole[];
 }
 
 export enum AllRoutes {
@@ -27,6 +30,8 @@ export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
     ARTICLE_EDIT = 'article_edit',
     // eslint-disable-next-line no-unused-vars
+    ADMIN_PANEL = 'admin_panel',
+    // eslint-disable-next-line no-unused-vars
     NOT_FOUND = 'not-found'
 }
 
@@ -38,6 +43,7 @@ export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.ARTICLE_DETAILS]: '/articles/', // ? + :id
     [AllRoutes.ARTICLE_CREATE]: '/articles/new',
     [AllRoutes.ARTICLE_EDIT]: '/articles/:id/edit', // ? + :id
+    [AllRoutes.ADMIN_PANEL]: '/admin',
     // last
     [AllRoutes.NOT_FOUND]: '*',
 };
@@ -77,6 +83,12 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
         path: `${RoutePaths.article_create}/new`,
         element: <ArticleEditPage />,
         authOnly: true,
+    },
+    [AllRoutes.ADMIN_PANEL]: {
+        path: `${RoutePaths.admin_panel}`,
+        element: <AdminPanelPage />,
+        authOnly: true,
+        roles: [UserRole.MANAGER, UserRole.ADMIN],
     },
     [AllRoutes.NOT_FOUND]: {
         path: RoutePaths['not-found'],

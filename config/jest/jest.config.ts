@@ -5,6 +5,11 @@ import path from 'path';
  */
 
 export default {
+    globals: {
+        __IS_DEV: true,
+        __API_URL: '',
+        __PROJECT: 'jest',
+    },
     clearMocks: true,
     testEnvironment: 'jsdom',
     coveragePathIgnorePatterns: [
@@ -101,11 +106,6 @@ export default {
     // globalTeardown: undefined,
 
     // A set of global variables that need to be available in all test environments
-    globals: {
-        __IS_DEV: JSON.stringify(true),
-        __API_URL: JSON.stringify(''),
-        __PROJECT: JSON.stringify('storybook'),
-    },
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
     // maxWorkers: "50%",

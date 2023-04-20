@@ -4,7 +4,9 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
-import { getUserAuthData, userActions } from 'entities/User';
+import {
+    getUserAuthData, isUserAdmin, isUserManager, userActions,
+} from 'entities/User';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'app/router/routeConfig/routes';
@@ -22,6 +24,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
     const dispatch = useDispatch();
+    const isAdmin = useSelector(isUserAdmin);
+    const isManager = useSelector(isUserManager);
 
     const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
@@ -35,6 +39,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
+    const isAdminPanelAvalible = isAdmin || isManager;
+    console.log(isAdminPanelAvalible);
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
@@ -57,6 +63,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         direction="bottomLeft"
                         className={cls.logout}
                         items={[
+                            ...(isAdminPanelAvalible ? [{
+                                content: t('Admin'),
+                                href: RoutePaths.admin_panel,
+                            }] : []),
                             {
                                 content: t('translation:Выйти'),
                                 onClick: onLogout,
