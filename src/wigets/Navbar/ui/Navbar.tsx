@@ -40,7 +40,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     }, [dispatch]);
 
     const isAdminPanelAvalible = isAdmin || isManager;
-    console.log(isAdminPanelAvalible);
+
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>

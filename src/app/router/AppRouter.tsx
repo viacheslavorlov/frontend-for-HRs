@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
-import { AppRouteProps, routeConfig } from 'app/router/routeConfig/routes';
 import { Suspense, useCallback } from 'react';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
-import { RequireAuth } from 'app/router/RequireAuth';
+import { AppRouteProps, routeConfig } from './routeConfig/routes';
+import { RequireAuth } from './RequireAuth';
 
 export const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
@@ -16,7 +16,13 @@ export const AppRouter = () => {
                 key={route.path}
                 path={route.path}
                 element={route.authOnly
-                    ? <Suspense fallback={<PageLoader />}><RequireAuth>{element}</RequireAuth></Suspense>
+                    ? (
+                        <Suspense fallback={<PageLoader />}>
+                            <RequireAuth roles={route.roles}>
+                                {element}
+                            </RequireAuth>
+                        </Suspense>
+                    )
                     : element}
             />
         );

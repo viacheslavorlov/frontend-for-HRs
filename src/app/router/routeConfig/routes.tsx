@@ -8,6 +8,7 @@ import { AboutPage } from 'pages/AboutPage';
 import { ArticleEditPage } from 'pages/ArticleEditPage';
 import { AdminPanelPage } from 'pages/AdminPanelPage';
 import { UserRole } from 'entities/User/model/types/user';
+import { ForbiddenPage } from 'pages/ForbiddenPage';
 
 export type AppRouteProps = RouteProps & {
     authOnly?: boolean;
@@ -32,7 +33,9 @@ export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
     ADMIN_PANEL = 'admin_panel',
     // eslint-disable-next-line no-unused-vars
-    NOT_FOUND = 'not-found'
+    NOT_FOUND = 'not-found',
+    // eslint-disable-next-line no-unused-vars
+    FORBIDDEN_PAGE = 'forbidden'
 }
 
 export const RoutePaths: Record<AllRoutes, string> = {
@@ -44,6 +47,7 @@ export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.ARTICLE_CREATE]: '/articles/new',
     [AllRoutes.ARTICLE_EDIT]: '/articles/:id/edit', // ? + :id
     [AllRoutes.ADMIN_PANEL]: '/admin',
+    [AllRoutes.FORBIDDEN_PAGE]: '/forbidden',
     // last
     [AllRoutes.NOT_FOUND]: '*',
 };
@@ -67,7 +71,6 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
         path: RoutePaths.articles,
         element: <ArticlePage />,
         authOnly: true,
-
     },
     [AllRoutes.ARTICLE_DETAILS]: {
         path: `${RoutePaths.article_details}:id`,
@@ -93,6 +96,10 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
     [AllRoutes.NOT_FOUND]: {
         path: RoutePaths['not-found'],
         element: <NotFoundPage />,
+    },
+    [AllRoutes.FORBIDDEN_PAGE]: {
+        path: RoutePaths.forbidden,
+        element: <ForbiddenPage />,
     },
 };
 
