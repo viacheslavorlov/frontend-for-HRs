@@ -1,12 +1,10 @@
 // noinspection JSUnusedLocalSymbols
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { ComponentMeta, ComponentStory, Story } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
-import { Provider } from 'react-redux';
-import { configureStore, createStore } from '@reduxjs/toolkit';
-import { createReduxStore, StoreProvider } from 'app/providers/StoreProvider';
+import { StoreProvider } from 'app/providers/StoreProvider';
 import { ArticleList } from './ArticleList';
-import { Article } from '../../model/types/type';
+import { Article, ArticleView } from '../../model/types/type';
 
 export default {
     title: 'entities/ArticleList',
@@ -14,6 +12,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [(StoryComponent: Story) => <div style={{ width: '100vw', height: '100vh' }}><StoryComponent /></div>],
 } as ComponentMeta<typeof ArticleList>;
 
 const Template: ComponentStory<typeof ArticleList> = (args) => <StoreProvider><ArticleList {...args} /></StoreProvider>;
@@ -107,23 +106,45 @@ const articles = new Array(10).fill(0).map((item) => ({
 } as Article));
 
 export const LightArticleListLoading = Template.bind({});
-LightArticleListLoading.args = { isLoading: true, articles };
+LightArticleListLoading.args = {
+    view: ArticleView.SMALL, isLoading: true, articles, searchParams: true,
+};
 LightArticleListLoading.decorators = [];
 
+export const LightArticleListLoadingBIG = Template.bind({});
+LightArticleListLoadingBIG.args = {
+    view: ArticleView.BIG, isLoading: false, searchParams: true, articles,
+};
+LightArticleListLoadingBIG.decorators = [];
+
 export const DarkArticleListLoading = Template.bind({});
-DarkArticleListLoading.args = { isLoading: true, articles };
+DarkArticleListLoading.args = { isLoading: false, articles, searchParams: true };
 DarkArticleListLoading.decorators = [ThemeDecorator(Theme.DARK)];
 
+export const DarkArticleListLoadingBig = Template.bind({});
+DarkArticleListLoadingBig.args = {
+    view: ArticleView.BIG, isLoading: false, articles, searchParams: true,
+};
+DarkArticleListLoadingBig.decorators = [ThemeDecorator(Theme.DARK)];
+
 export const OrangeArticleListLoading = Template.bind({});
-OrangeArticleListLoading.args = { isLoading: true, articles };
+OrangeArticleListLoading.args = {
+    view: ArticleView.SMALL, isLoading: false, articles, searchParams: true,
+};
 OrangeArticleListLoading.decorators = [ThemeDecorator(Theme.ORANGE)];
 
+export const OrangeArticleListLoadingBIG = Template.bind({});
+OrangeArticleListLoadingBIG.args = {
+    view: ArticleView.BIG, isLoading: false, articles, searchParams: true,
+};
+OrangeArticleListLoadingBIG.decorators = [ThemeDecorator(Theme.ORANGE)];
+
 export const LightArticleList = Template.bind({});
-LightArticleList.args = { isLoading: false, articles };
+LightArticleList.args = { isLoading: false, articles, searchParams: true };
 LightArticleList.decorators = [];
 
 export const DarkArticleList = Template.bind({});
-DarkArticleList.args = { isLoading: false, articles };
+DarkArticleList.args = { isLoading: false, articles, searchParams: true };
 DarkArticleList.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OrangeArticleList = Template.bind({});
