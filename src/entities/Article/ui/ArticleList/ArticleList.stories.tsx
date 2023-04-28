@@ -2,7 +2,7 @@
 import { ComponentMeta, ComponentStory, Story } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
-import { StoreProvider } from 'app/providers/StoreProvider';
+import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
 import { ArticleList } from './ArticleList';
 import { Article, ArticleView } from '../../model/types/type';
 
@@ -12,10 +12,11 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [(StoryComponent: Story) => <div style={{ width: '100vw', height: '100vh' }}><StoryComponent /></div>],
+    decorators: [StoreDecorator({}), (StoryComponent: Story) => <div style={{ width: '100vw', height: '100vh' }}><StoryComponent /></div>],
 } as ComponentMeta<typeof ArticleList>;
 
-const Template: ComponentStory<typeof ArticleList> = (args) => <StoreProvider><ArticleList {...args} /></StoreProvider>;
+// eslint-disable-next-line react/jsx-props-no-spreading
+const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
 const articles = new Array(10).fill(0).map((item) => ({
     id: '1',
@@ -105,48 +106,37 @@ const articles = new Array(10).fill(0).map((item) => ({
     ],
 } as Article));
 
-export const LightArticleListLoading = Template.bind({});
-LightArticleListLoading.args = {
-    view: ArticleView.SMALL, isLoading: true, articles, searchParams: true,
+export const LoadingBig = Template.bind({});
+LoadingBig.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.BIG,
+    searchParams: true,
 };
-LightArticleListLoading.decorators = [];
+LoadingBig.decorators = [ThemeDecorator(Theme.DARK)];
 
-export const LightArticleListLoadingBIG = Template.bind({});
-LightArticleListLoadingBIG.args = {
-    view: ArticleView.BIG, isLoading: false, searchParams: true, articles,
+export const LoadingSmall = Template.bind({});
+LoadingSmall.args = {
+    articles: [],
+    isLoading: true,
+    view: ArticleView.SMALL,
+    searchParams: true,
 };
-LightArticleListLoadingBIG.decorators = [];
-
-export const DarkArticleListLoading = Template.bind({});
-DarkArticleListLoading.args = { isLoading: false, articles, searchParams: true };
-DarkArticleListLoading.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const DarkArticleListLoadingBig = Template.bind({});
-DarkArticleListLoadingBig.args = {
-    view: ArticleView.BIG, isLoading: false, articles, searchParams: true,
-};
-DarkArticleListLoadingBig.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const OrangeArticleListLoading = Template.bind({});
-OrangeArticleListLoading.args = {
-    view: ArticleView.SMALL, isLoading: false, articles, searchParams: true,
-};
-OrangeArticleListLoading.decorators = [ThemeDecorator(Theme.ORANGE)];
-
-export const OrangeArticleListLoadingBIG = Template.bind({});
-OrangeArticleListLoadingBIG.args = {
-    view: ArticleView.BIG, isLoading: false, articles, searchParams: true,
-};
-OrangeArticleListLoadingBIG.decorators = [ThemeDecorator(Theme.ORANGE)];
 
 export const LightArticleList = Template.bind({});
-LightArticleList.args = { isLoading: false, articles, searchParams: true };
+LightArticleList.args = {
+    view: ArticleView.SMALL, isLoading: false, articles, searchParams: true,
+};
 LightArticleList.decorators = [];
 
-export const DarkArticleList = Template.bind({});
-DarkArticleList.args = { isLoading: false, articles, searchParams: true };
-DarkArticleList.decorators = [ThemeDecorator(Theme.DARK)];
+export const LightArticleListBIG = Template.bind({});
+LightArticleListBIG.args = {
+    view: ArticleView.BIG, isLoading: false, searchParams: true, articles,
+};
+LightArticleListBIG.decorators = [];
 
-export const OrangeArticleList = Template.bind({});
-OrangeArticleList.args = { isLoading: false, articles };
-OrangeArticleList.decorators = [ThemeDecorator(Theme.ORANGE)];
+export const ArticleListError = Template.bind({});
+ArticleListError.args = {
+    view: ArticleView.SMALL, isLoading: false, articles: [], searchParams: true,
+};
+ArticleListError.decorators = [ThemeDecorator(Theme.DARK)];

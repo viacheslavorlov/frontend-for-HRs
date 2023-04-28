@@ -1,6 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
+import { DefaultTFuncReturn } from 'i18next';
 import { DropDownDirection } from '../types';
 import { Button } from '../Button/Button';
 import cls from './ListBox.module.scss';
@@ -18,7 +19,7 @@ interface ListBoxProps {
     value?: string;
     defaultValue?: string;
     onChange: <T extends string>(value: T) => void;
-    label?: string;
+    label?: string | DefaultTFuncReturn;
     direction?: DropDownDirection;
 }
 

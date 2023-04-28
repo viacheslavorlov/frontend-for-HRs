@@ -9,7 +9,6 @@ import { ArticleRecomendationList } from 'features/ArticleRecomendationList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 import { articleDetailsPageReducer } from '../../model/slice';
-import { NotFoundPage } from '../../../NotFoundPage';
 import cls from './ArticleDetailedPage.module.scss';
 
 interface ArticleDetaildPageProps {
@@ -22,14 +21,6 @@ const reducers: ReducersList = {
 
 const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     const { id } = useParams();
-
-    if (!id) {
-        return (
-            <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>
-                <NotFoundPage />
-            </Page>
-        );
-    }
 
     return (
         <Page className={classNames(cls.ArticleDetaildPage, {}, [className])}>

@@ -94,16 +94,8 @@ const article: Article = {
 
 export const LightArticleDetaildPage = Template.bind({});
 LightArticleDetaildPage.args = {};
-LightArticleDetaildPage.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+LightArticleDetaildPage.decorators = [StoreDecorator({ articleDetails: { data: article, isLoading: false, error: undefined } })];
 
 export const DarkArticleDetaildPage = Template.bind({});
 DarkArticleDetaildPage.args = {};
-DarkArticleDetaildPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+DarkArticleDetaildPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ articleDetails: { data: article, isLoading: false, error: undefined } })];

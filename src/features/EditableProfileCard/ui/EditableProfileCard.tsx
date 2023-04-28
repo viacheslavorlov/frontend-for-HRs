@@ -24,7 +24,7 @@ import { getProfileReadonly } from '../model/selectors/getProfileReadonly/getPro
 
 interface EditableProfileCardProps {
     className?: string;
-    id?: string;
+    id?: string | undefined;
 }
 
 export const EditableProfileCard = memo((props: EditableProfileCardProps) => {

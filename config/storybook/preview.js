@@ -3,6 +3,7 @@ import {StyleDecorator} from "../../src/shared/config/styleDecorator/styleDecora
 import {RouterDecorator} from "../../src/shared/config/routerDecorator/routerDecorator";
 import {ThemeDecorator} from "../../src/shared/config/themeDecorator/themeDecorator";
 import {Theme} from "../../src/app/providers/TemeProvider";
+import {SuspenseDecorator} from '../../src/shared/config/SuspenseDecorator/SuspenseDecorator';
 
 export const parameters = {
     actions: {argTypesRegex: "^on[A-Z].*"},
@@ -16,4 +17,5 @@ export const parameters = {
 
 addDecorator(StyleDecorator);
 addDecorator(RouterDecorator);
+addDecorator(SuspenseDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));

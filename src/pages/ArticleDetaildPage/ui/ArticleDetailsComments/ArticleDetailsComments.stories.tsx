@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from 'app/providers/TemeProvider';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
+import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 export default {
@@ -9,6 +10,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [StoreDecorator({})],
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

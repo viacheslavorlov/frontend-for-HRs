@@ -29,9 +29,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     const dispatch = useAppDispatch();
 
     useInitialEffect(() => {
-        if (id != null) {
-            dispatch(fetchCommentsByArticleId(id));
-        }
+        dispatch(fetchCommentsByArticleId(id));
         dispatch(fetchRecommendations());
     });
 
