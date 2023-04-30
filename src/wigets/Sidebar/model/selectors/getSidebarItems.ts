@@ -1,6 +1,6 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { getUserAuthData } from 'entities/User';
-import { RoutePaths } from 'app/router/routeConfig/routes';
+import { RoutePaths } from 'shared/config/routeConfig/routes';
 import HomeIcon from 'wigets/Sidebar/assets/home.svg';
 import AboutIcon from 'wigets/Sidebar/assets/about-icon.svg';
 import ProfileIcon from 'wigets/Sidebar/assets/Profile.svg';

@@ -7,6 +7,7 @@ import { VStack } from 'shared/ui/Stack';
 import { PageError } from 'wigets/PageError/PageError';
 import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
 import { useArticleRecommendationsList } from '../model/api/recommmendationsApi';
+import cls from './ArticleRecomendationList.module.scss';
 
 interface ArticleRecomendationListProps {
     className?: string;
@@ -32,10 +33,12 @@ export const ArticleRecomendationList = memo((props: ArticleRecomendationListPro
             <Text title={t('Рекомендации')} />
             {!isLoading && recommendations && (
                 <ArticleList
+                    className={cls.ArticleRecommendationList}
                     target="_blank"
                     articles={recommendations}
                     view={ArticleView.SMALL}
-                    searchParams={false}
+                    isLoading={isLoading}
+                    onLoadNext={undefined}
                 />
             )}
         </VStack>

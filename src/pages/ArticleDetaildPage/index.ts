@@ -1,6 +1,6 @@
 export { ArticleDetailedPageAsync as ArticleDetailedPage } from './ui/ArticleDetailsPage/ArticleDetailedPage.async';
-export {
+export type {
     ArticleDetailedCommentSchema,
 } from './model/types/ArticleDetailedCommentSchema';
 
-export { ArticleDetailsPageSchema } from './model/types';
+export type { ArticleDetailsPageSchema } from './model/types';

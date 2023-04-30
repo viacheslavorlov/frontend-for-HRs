@@ -1,7 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { RoutePaths } from 'app/router/routeConfig/routes';
+import { RoutePaths } from 'shared/config/routeConfig/routes';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
@@ -19,7 +19,6 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
         className,
     } = props;
     const { t } = useTranslation('article');
-    const userData = useSelector(getUserAuthData);
     const article = useSelector(getArticleDetailsData);
     const canEdit = useSelector(getCanEditArticle);
     const navigate = useNavigate();

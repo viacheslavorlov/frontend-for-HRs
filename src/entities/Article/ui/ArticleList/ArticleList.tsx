@@ -1,15 +1,10 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
-    ComponentType, HTMLAttributeAnchorTarget, memo, UIEvent, useCallback,
+    HTMLAttributeAnchorTarget, memo,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize, TextVariant } from 'shared/ui/Text/Text';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { ArticlePageFilters } from 'pages/ArticlePage/ui/ArticlePageFilters/ArticlePageFilters';
-import { useThrottle } from 'shared/lib/hooks/useTrottle/useTrottle';
-import { scrollRestorationSliceActions } from 'features/ScrollRextoration';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { fetchNextArticlePage } from 'pages/ArticlePage/model/service/fetchNextArticlePage/fetchNextArticlePage';
 import { Article, ArticleView } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
@@ -21,7 +16,7 @@ interface ArticleListProps {
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     searchParams?: boolean;
-    hasMore?: boolean;
+    onLoadNext?: () => void
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -32,9 +27,8 @@ export const ArticleList = memo((props: ArticleListProps) => {
         view = ArticleView.SMALL,
         isLoading,
         searchParams,
-        hasMore,
+        onLoadNext,
     } = props;
-    const dispatch = useAppDispatch();
     const { t } = useTranslation('article');
 
     const renderArticle = (article: Article) => (
@@ -46,19 +40,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
             target={target}
         />
     );
-
-    const Footer = <div style={{ height: 40 }} />;
-    const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(scrollRestorationSliceActions.setScrollPosition({
-            position: e.currentTarget.scrollTop, path: window.location.pathname,
-        }));
-    }, 700);
-
-    const onLoadNextPart = useCallback(() => {
-        if (hasMore) {
-            dispatch(fetchNextArticlePage());
-        }
-    }, [dispatch, hasMore]);
 
     if (!isLoading && !articles.length) {
         return (
@@ -76,13 +57,16 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return (
             <Virtuoso
                 className={classNames(cls.ArticleList, mods, [className, cls[view]])}
+                style={{
+                    height: 'calc(65vh - var(--navbar-heigt)',
+                }}
                 data={articles}
                 overscan={250}
-                endReached={onLoadNextPart}
+                endReached={onLoadNext}
                 itemContent={(index, article) => renderArticle(article)}
-                components={{
-                    Header: ArticlePageFilters as ComponentType,
-                }}
+                // components={{
+                //     Header: ArticlePageFilters as ComponentType,
+                // }}
             />
         );
     }
@@ -90,17 +74,17 @@ export const ArticleList = memo((props: ArticleListProps) => {
         <VirtuosoGrid
             className={classNames(cls.ArticleList, mods, [className, cls[view]])}
             style={{
-                height: searchParams ? '100%' : 'calc(55vh - var(--navbar-heigt)',
+                height: searchParams ? 'calc(65vh - var(--navbar-heigt)' : 'calc(55vh - var(--navbar-heigt)',
                 overflowY: !searchParams ? 'hidden' : 'auto',
             }}
             totalCount={articles.length}
             data={articles}
             listClassName={cls.itemContainer}
-            endReached={searchParams ? onLoadNextPart : undefined}
-            components={{
-                Header: searchParams ? ArticlePageFilters as ComponentType : undefined,
-                // ScrollSeekPlaceholder: ScrollPlaceholder,
-            }}
+            endReached={searchParams ? onLoadNext : undefined}
+            // components={{
+            //     Header: searchParams ? ArticlePageFilters as ComponentType : undefined,
+            //     // ScrollSeekPlaceholder: ScrollPlaceholder,
+            // }}
             itemContent={(index, article) => renderArticle(article)}
             // scrollSeekConfiguration={{
             //     enter: (velocity) => Math.abs(velocity) > 200,

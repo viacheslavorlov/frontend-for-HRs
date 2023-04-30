@@ -9,7 +9,7 @@ import {
 } from 'entities/User';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
-import { RoutePaths } from 'app/router/routeConfig/routes';
+import { RoutePaths } from 'shared/config/routeConfig/routes';
 import cls from 'wigets/Navbar/ui/Navbar.module.scss';
 import { HStack } from 'shared/ui/Stack';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';

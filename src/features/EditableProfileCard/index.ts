@@ -5,7 +5,7 @@ export { getProfileForm } from './model/selectors/getProfileForm/getProfileForm'
 export { updateProfile } from './model/services/updateProfile/updateProfile';
 export { getProfileData } from './model/selectors/getProfileData/getProfileData';
 export { fetchProfileData } from './model/services/fetchProfile/fetchProfile';
-export { ProfileSchema } from './model/type/type';
+export type { ProfileSchema } from './model/type/type';
 
 export {
     profileActions,
