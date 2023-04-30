@@ -1,6 +1,6 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
-    ComponentType, HTMLAttributeAnchorTarget, memo, UIEvent, useCallback,
+    HTMLAttributeAnchorTarget, memo, UIEvent, useCallback,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize, TextVariant } from 'shared/ui/Text/Text';
@@ -10,7 +10,8 @@ import { useThrottle } from 'shared/lib/hooks/useTrottle/useTrottle';
 import { scrollRestorationSliceActions } from 'features/ScrollRextoration';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { fetchNextArticlePage } from 'pages/ArticlePage/model/service/fetchNextArticlePage/fetchNextArticlePage';
-import { Article, ArticleView } from '../../model/types/type';
+import { ArticleView } from '../../model/consts/articleConst';
+import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 
@@ -74,39 +75,39 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     if (view === ArticleView.BIG) {
         return (
-            <Virtuoso
-                className={classNames(cls.ArticleList, mods, [className, cls[view]])}
-                data={articles}
-                overscan={250}
-                endReached={onLoadNextPart}
-                itemContent={(index, article) => renderArticle(article)}
-                components={{
-                    Header: ArticlePageFilters as ComponentType,
-                }}
-            />
+            <>
+                {searchParams && <ArticlePageFilters />}
+                <Virtuoso
+                    className={classNames(cls.ArticleList, mods, [className, cls[view]])}
+                    data={articles}
+                    overscan={250}
+                    endReached={onLoadNextPart}
+                    itemContent={(index, article) => renderArticle(article)}
+
+                />
+            </>
         );
     }
     return (
-        <VirtuosoGrid
-            className={classNames(cls.ArticleList, mods, [className, cls[view]])}
-            style={{
-                height: searchParams ? '100%' : 'calc(55vh - var(--navbar-heigt)',
-                overflowY: !searchParams ? 'hidden' : 'auto',
-            }}
-            totalCount={articles.length}
-            data={articles}
-            listClassName={cls.itemContainer}
-            endReached={searchParams ? onLoadNextPart : undefined}
-            components={{
-                Header: searchParams ? ArticlePageFilters as ComponentType : undefined,
-                // ScrollSeekPlaceholder: ScrollPlaceholder,
-            }}
-            itemContent={(index, article) => renderArticle(article)}
-            // scrollSeekConfiguration={{
-            //     enter: (velocity) => Math.abs(velocity) > 200,
-            //     exit: (velocity) => Math.abs(velocity) < 30,
-            //     change: (_, range) => console.log({ range }),
-            // }}
-        />
+        <>
+            {searchParams && <ArticlePageFilters />}
+            <VirtuosoGrid
+                className={classNames(cls.ArticleList, mods, [className, cls[view]])}
+                style={{
+                    height: searchParams ? '100%' : 'calc(55vh - var(--navbar-heigt)',
+                    overflowY: !searchParams ? 'hidden' : 'auto',
+                }}
+                totalCount={articles.length}
+                data={articles}
+                listClassName={cls.itemContainer}
+                endReached={searchParams ? onLoadNextPart : undefined}
+                itemContent={(index, article) => renderArticle(article)}
+                // scrollSeekConfiguration={{
+                //     enter: (velocity) => Math.abs(velocity) > 200,
+                //     exit: (velocity) => Math.abs(velocity) < 30,
+                //     change: (_, range) => console.log({ range }),
+                // }}
+            />
+        </>
     );
 });

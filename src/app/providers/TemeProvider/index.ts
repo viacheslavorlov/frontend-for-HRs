@@ -1,6 +1,6 @@
-import { useTheme } from 'app/providers/TemeProvider/lib/useThem';
-import ThemeProvider from 'app/providers/TemeProvider/ui/ThemeProvider';
-import { Theme } from 'app/providers/TemeProvider/lib/ThemeContext';
+import { useTheme } from './lib/useThem';
+import ThemeProvider from './ui/ThemeProvider';
+import { Theme } from './const/themeConst';
 
 export {
     Theme,

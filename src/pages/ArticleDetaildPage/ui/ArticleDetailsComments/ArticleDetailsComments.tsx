@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { memo, useCallback } from 'react';
+import { memo, useCallback, Suspense } from 'react';
 import { Text } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/addCommentForm';
 import { CommentList } from 'entities/Comments';
@@ -9,6 +9,7 @@ import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { fetchCommentsByArticleId } from 'entities/Comments/model/services/fetchComments/fetchComments';
 import { useTranslation } from 'react-i18next';
+import LoadingSpinner from 'shared/ui/LoadingSpinner/LoadingSpinner';
 import { getArticleComments } from '../../model/slice/articleDetaildCommentSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import {
@@ -42,7 +43,9 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
     return (
         <VStack gap="8" max className={classNames('', {}, [className])}>
             <Text title={t('Комментарии')} />
-            <AddCommentForm onSendComment={onSendComment} />
+            <Suspense fallback={<LoadingSpinner />}>
+                <AddCommentForm onSendComment={onSendComment} />
+            </Suspense>
             <CommentList
                 isLoading={commentIsLoading}
                 comments={comments}

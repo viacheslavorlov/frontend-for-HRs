@@ -2,7 +2,8 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { Theme } from 'app/providers/TemeProvider';
 import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article/model/types/type';
+import { Article } from 'entities/Article/model/types/type';
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/articleConst';
 import ArticleDetailedPage from './ArticleDetailedPage';
 
 export default {
