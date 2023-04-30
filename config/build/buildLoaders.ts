@@ -29,14 +29,14 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             },
         },
     };
-    // const fileLoader =  {
-    //     test: /\.(png|jpe?g|gif|woff2|woff)$/i,
-    //     use: [
-    //         {
-    //             loader: 'file-loader',
-    //         },
-    //     ],
-    // }
+    const fileLoader = {
+        test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+        use: [
+            {
+                loader: 'file-loader',
+            },
+        ],
+    };
 
     const assetsLoader = {
         test: /\.(png|jpg|gif)$/i,
@@ -51,5 +51,5 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         use: 'ts-loader',
         exclude: /node_modules/,
     };
-    return [svgLoader, babelLoader, typeScriptLoader, cssLoader, assetsLoader];
+    return [fileLoader, svgLoader, babelLoader, typeScriptLoader, cssLoader, assetsLoader];
 }

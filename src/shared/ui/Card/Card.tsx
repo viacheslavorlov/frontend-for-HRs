@@ -1,11 +1,7 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributes, memo, ReactNode } from 'react';
+import { CardVariant } from './const/cardConst';
 import cls from './Card.module.scss';
-
-export enum CardVariant {
-    NORMAL = 'normal',
-    OUTLINED = 'outlined'
-}
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string;

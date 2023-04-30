@@ -1,6 +1,6 @@
 import { ComponentStory } from '@storybook/react';
 import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/types/type';
+import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/articleConst';
 import { ArticlePageAsync } from './ArticlePage.async';
 
 const Template: ComponentStory<typeof ArticlePageAsync> = (args) => <ArticlePageAsync {...args} />;
