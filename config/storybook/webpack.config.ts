@@ -1,6 +1,6 @@
 import webpack, { RuleSetRule, DefinePlugin } from 'webpack';
 import path from 'path';
-import { buildCssLoader } from '../build/cssLoaders/buldCSSLoader';
+import { buildCssLoader } from '../build/loaders/buldCSSLoader';
 
 export default ({ config }: { config: webpack.Configuration }) => {
     config!.plugins!.push(new DefinePlugin({

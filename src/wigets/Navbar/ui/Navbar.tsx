@@ -14,6 +14,8 @@ import cls from 'wigets/Navbar/ui/Navbar.module.scss';
 import { HStack } from 'shared/ui/Stack';
 import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { Icon } from 'shared/ui/Icon/Icon';
+import Bell from '../../../shared/assets/bell.svg';
 
 interface NavbarProps {
     className?: string;
@@ -59,25 +61,31 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             {t('Создать статью')}
                         </AppLink>
                     </HStack>
-                    <Dropdown
-                        direction="bottomLeft"
-                        className={cls.logout}
-                        items={[
-                            ...(isAdminPanelAvalible ? [{
-                                content: t('Admin'),
-                                href: RoutePaths.admin_panel,
-                            }] : []),
-                            {
-                                content: t('translation:Выйти'),
-                                onClick: onLogout,
-                            },
-                            {
-                                content: t('Профиль'),
-                                href: RoutePaths.profile + authData.id,
-                            },
-                        ]}
-                        trigger={<Avatar src={authData.avatar} alt="выйти" size={30} />}
-                    />
+                    <HStack gap="16" className={cls.actions}>
+                        <Button theme={ButtonTheme.CLEAR}>
+                            <Icon className={cls.bell} Svg={Bell} />
+                        </Button>
+                        <Dropdown
+                            direction="bottomLeft"
+                            className={cls.logout}
+                            items={[
+                                ...(isAdminPanelAvalible ? [{
+                                    content: t('Admin'),
+                                    href: RoutePaths.admin_panel,
+                                }] : []),
+                                {
+                                    content: t('translation:Выйти'),
+                                    onClick: onLogout,
+                                },
+                                {
+                                    content: t('Профиль'),
+                                    href: RoutePaths.profile + authData.id,
+                                },
+                            ]}
+                            trigger={<Avatar src={authData.avatar} alt="выйти" size={30} />}
+                        />
+                    </HStack>
+
                 </HStack>
             </header>
         );

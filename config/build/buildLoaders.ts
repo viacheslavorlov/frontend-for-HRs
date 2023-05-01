@@ -1,34 +1,16 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-import { buildCssLoader } from './cssLoaders/buldCSSLoader';
+import { buildCssLoader } from './loaders/buldCSSLoader';
+import { buildBabelLoader } from './loaders/babelLoader';
 
-export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
+export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
+    const { isDev } = options;
     const svgLoader = {
         test: /\.svg$/i,
         issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack'], // to load svr as react components
     };
 
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true,
-                        },
-                    ],
-                    isDev && require.resolve('react-refresh/babel'),
-                ].filter(Boolean),
-            },
-        },
-    };
     const fileLoader = {
         test: /\.(png|jpe?g|gif|woff2|woff)$/i,
         use: [
@@ -37,6 +19,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
             },
         ],
     };
+    const codeBabelLoader = buildBabelLoader({ ...options, isTsx: false });
+    const tsxCodeBabelLoader = buildBabelLoader({ ...options, isTsx: true });
 
     const assetsLoader = {
         test: /\.(png|jpg|gif)$/i,
@@ -46,10 +30,18 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const cssLoader = buildCssLoader(isDev);
 
     // ? Если не используем тайпскрипт - нужен babel-loader
-    const typeScriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
-    return [fileLoader, svgLoader, babelLoader, typeScriptLoader, cssLoader, assetsLoader];
+    // const typeScriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/,
+    // };
+    return [
+        fileLoader,
+        svgLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typeScriptLoader,
+        cssLoader,
+        assetsLoader,
+    ];
 }

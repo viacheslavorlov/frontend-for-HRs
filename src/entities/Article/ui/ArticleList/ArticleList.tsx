@@ -17,7 +17,7 @@ interface ArticleListProps {
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
     searchParams?: boolean;
-    onLoadNext?: () => void
+    onLoadNext?: () => void;
 }
 
 export const ArticleList = memo((props: ArticleListProps) => {
@@ -65,9 +65,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 overscan={250}
                 endReached={onLoadNext}
                 itemContent={(index, article) => renderArticle(article)}
-                // components={{
-                //     Header: ArticlePageFilters as ComponentType,
-                // }}
             />
         );
     }
@@ -82,10 +79,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
             data={articles}
             listClassName={cls.itemContainer}
             endReached={searchParams ? onLoadNext : undefined}
-            // components={{
-            //     Header: searchParams ? ArticlePageFilters as ComponentType : undefined,
-            //     // ScrollSeekPlaceholder: ScrollPlaceholder,
-            // }}
             itemContent={(index, article) => renderArticle(article)}
             // scrollSeekConfiguration={{
             //     enter: (velocity) => Math.abs(velocity) > 200,
