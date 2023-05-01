@@ -6,8 +6,8 @@ export {
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export {
-    ArticleSortField, ArticleType, ArticleView,
-} from './model/types/type';
+    ArticleType, ArticleView, ArticleSortField, ArticleBlockType,
+} from './model/consts/articleConst';
 
 export type { Article } from './model/types/type';
 export { ArticleDetails } from './ui/ArticleDetails/ArticleDetails';
