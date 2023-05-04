@@ -1,4 +1,4 @@
-import { memo, useCallback } from 'react';
+import { memo, ReactNode, useCallback } from 'react';
 import { ArticleList, ArticleView } from 'entities/Article';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
@@ -14,11 +14,12 @@ import { getArticles } from '../../model/slice/articlesSlice';
 
 interface ArticleInfiniteListProps {
     className?: string;
+    Header?: ReactNode;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     const {
-        className,
+        className, Header,
     } = props;
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlePageLoading);

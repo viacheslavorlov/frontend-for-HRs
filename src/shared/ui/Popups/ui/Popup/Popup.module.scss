@@ -1,0 +1,11 @@
+.Popup {
+
+}
+
+.items {
+	background: var(--card-bg);
+	position: absolute;
+	z-index: 103;
+	border-radius: 8px;
+	padding: 8px;
+}

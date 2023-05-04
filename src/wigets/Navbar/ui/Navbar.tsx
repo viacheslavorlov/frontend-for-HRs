@@ -12,9 +12,10 @@ import { AppLink, AppLInkTheme } from 'shared/ui/AppLink/AppLink';
 import { RoutePaths } from 'shared/config/routeConfig/routes';
 import cls from 'wigets/Navbar/ui/Navbar.module.scss';
 import { HStack } from 'shared/ui/Stack';
-import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
+import { Popup } from 'shared/ui/Popups/ui/Popup/Popup';
 import Bell from '../../../shared/assets/bell.svg';
 
 interface NavbarProps {
@@ -62,9 +63,22 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         </AppLink>
                     </HStack>
                     <HStack gap="16" className={cls.actions}>
-                        <Button theme={ButtonTheme.CLEAR}>
-                            <Icon className={cls.bell} Svg={Bell} />
-                        </Button>
+                        <Popup
+                            direction="bottomLeft"
+                            trigger={
+                                (
+                                    <Button theme={ButtonTheme.CLEAR}>
+                                        <Icon className={cls.bell} Svg={Bell} inverted />
+                                    </Button>
+                                )
+                            }
+                        >
+                            {
+                            /* eslint-disable-next-line i18next/no-literal-string */
+                            }
+                            asdfasdfasd
+                        </Popup>
+
                         <Dropdown
                             direction="bottomLeft"
                             className={cls.logout}

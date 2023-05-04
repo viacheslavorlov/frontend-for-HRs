@@ -2,7 +2,7 @@ import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Page } from 'wigets/Page/Page';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 
 interface AboutPageProps {
     className?: string

@@ -2,9 +2,10 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 import { DefaultTFuncReturn } from 'i18next';
-import { DropDownDirection } from '../types';
-import { Button } from '../Button/Button';
+import { DropDownDirection } from '../../styles/consts';
+import { Button } from '../../../Button/Button';
 import cls from './ListBox.module.scss';
+import popup from '../../styles/popups.module.scss';
 
 export interface ListBoxItem {
     value: string;
@@ -35,7 +36,7 @@ export const ListBox = memo((props: ListBoxProps) => {
         direction = 'topRight',
     } = props;
 
-    const optionsClasses = cls[direction];
+    const optionsClasses = popup[direction];
 
     return (
         <Listbox
@@ -43,9 +44,9 @@ export const ListBox = memo((props: ListBoxProps) => {
             as="div"
             value={value}
             onChange={onChange}
-            className={classNames(cls.ListBox, { [cls.disabled]: disabled }, [className])}
+            className={classNames(popup.popup, { [popup.disabled]: disabled }, [className])}
         >
-            <Listbox.Button className={cls.trigger}>
+            <Listbox.Button className={popup.trigger}>
                 {label && <span className={cls.label}>{`${label}>`}</span>}
                 <Button disabled={disabled}>
                     {value || defaultValue}
@@ -61,7 +62,7 @@ export const ListBox = memo((props: ListBoxProps) => {
                     >
                         {({ active, selected }) => (
                             <li
-                                className={classNames(cls.item, { [cls.active]: active })}
+                                className={classNames(cls.item, { [popup.active]: active })}
                             >
                                 {selected && '>'}
                                 {item.content}

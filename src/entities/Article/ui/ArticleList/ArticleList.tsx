@@ -1,10 +1,10 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import {
-    HTMLAttributeAnchorTarget, memo,
+import React, {
+    HTMLAttributeAnchorTarget, memo, ReactElement, ReactNode,
 } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text, TextSize, TextVariant } from 'shared/ui/Text/Text';
-import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { Virtuoso, VirtuosoGrid, Components } from 'react-virtuoso';
 import { ArticleView } from '../../model/consts/articleConst';
 import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
