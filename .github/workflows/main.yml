@@ -3,7 +3,7 @@ on: [push]
 
 jobs:
     pipeline:
-#        runs-on: windows-2019
+        runs-on: windows-2019
 #        strategy:
 #            matrix:
 #                node-version: [ 18.8.1 ]
