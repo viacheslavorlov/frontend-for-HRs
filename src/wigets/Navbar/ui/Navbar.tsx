@@ -16,6 +16,7 @@ import { Dropdown } from 'shared/ui/Popups/ui/Dropdown/Dropdown';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Popup } from 'shared/ui/Popups/ui/Popup/Popup';
+import { NotificationList } from 'entities/Notification';
 import Bell from '../../../shared/assets/bell.svg';
 
 interface NavbarProps {
@@ -73,7 +74,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                                 )
                             }
                         >
-                            asdfasdfasd
+                            <NotificationList className={cls.notifications} />
                         </Popup>
 
                         <Dropdown

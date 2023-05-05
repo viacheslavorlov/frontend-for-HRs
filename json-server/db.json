@@ -11,6 +11,50 @@
       "userId": "2"
     }
   ],
+  "notifications": [
+    {
+      "id": "1",
+      "title": "Notification 1",
+      "description": "Some action happened 1",
+      "userId": "1",
+      "href": "/profile/1"
+    },
+    {
+      "id": "2",
+      "title": "Notification 2",
+      "description": "Some action happened 2",
+      "userId": "2",
+      "href": "http://localhost:3000/articles"
+    },
+    {
+      "id": "3",
+      "title": "Notification 3",
+      "description": "Some action happened 3",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    },
+    {
+      "id": "4",
+      "title": "Notification 4",
+      "description": "Some action happened 4",
+      "userId": "1",
+      "href": "http://localhost:3000/profile/1"
+    },
+    {
+      "id": "5",
+      "title": "Notification 5",
+      "description": "Some action happened 5",
+      "userId": "1",
+      "href": "http://localhost:3000/articles"
+    },
+    {
+      "id": "3",
+      "title": "Notification 3",
+      "description": "Some action happened 3",
+      "userId": "1",
+      "href": "http://localhost:3000/admin"
+    }
+  ],
   "articles": [
     {
       "id": "1",

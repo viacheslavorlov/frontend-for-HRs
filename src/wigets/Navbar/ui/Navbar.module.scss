@@ -19,3 +19,10 @@
     width: var(--sidebar-widh);
     margin-left: 15px;
 }
+
+.notifications {
+    min-height: 150px;
+    max-height: 500px;
+    overflow-y: auto;
+    width: 500px;
+}

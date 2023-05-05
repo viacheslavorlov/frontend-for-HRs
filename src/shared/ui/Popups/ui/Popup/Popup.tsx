@@ -21,7 +21,7 @@ export const Popup = memo((props: PopupProps) => {
 
     return (
         <Popover className={classNames(popupCls.popup, {}, [className, cls.Popup])}>
-            <Popover.Button className={classNames(popupCls.trigger, {}, [])}>{trigger}</Popover.Button>
+            <Popover.Button as="div" className={classNames(popupCls.trigger, {}, [])}>{trigger}</Popover.Button>
             <Popover.Panel className={classNames(cls.items, {}, [optionsClasses])}>
                 {children}
             </Popover.Panel>
