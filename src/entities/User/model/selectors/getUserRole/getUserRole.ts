@@ -1,6 +1,6 @@
 import { StateSchema } from 'app/providers/StoreProvider';
 import { createSelector } from '@reduxjs/toolkit';
-import { UserRole } from 'entities/User/model/consts/userConst';
+import { UserRole } from '../../consts/userConst';
 
 export const getUserRole = (state: StateSchema) => state.user.authData?.roles;
 export const isUserAdmin = createSelector(getUserRole, (roles) => Boolean(roles?.includes(UserRole.ADMIN)));

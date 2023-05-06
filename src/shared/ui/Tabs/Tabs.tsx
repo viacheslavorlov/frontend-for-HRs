@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, ReactNode, useCallback } from 'react';
-import { CardVariant } from 'shared/ui/Card/const/cardConst';
+import { CardVariant } from '../Card/const/cardConst';
 import { Card } from '../Card/Card';
 import cls from './Tabs.module.scss';
 
