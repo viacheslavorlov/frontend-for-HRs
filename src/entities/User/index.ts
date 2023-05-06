@@ -1,3 +1,4 @@
+export { UserRole } from 'entities/User/model/consts/userConst';
 export { isUserAdmin, isUserManager, getUserRole } from 'entities/User/model/selectors/getUserRole/getUserRole';
 export { userActions, userReducer } from './model/slice/userSLice';
 export type { UserSchema, User } from './model/types/user';

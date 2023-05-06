@@ -48,9 +48,9 @@
       "href": "http://localhost:3000/articles"
     },
     {
-      "id": "3",
-      "title": "Notification 3",
-      "description": "Some action happened 3",
+      "id": "6",
+      "title": "Notification 6",
+      "description": "Some action happened 6",
       "userId": "1",
       "href": "http://localhost:3000/admin"
     }
