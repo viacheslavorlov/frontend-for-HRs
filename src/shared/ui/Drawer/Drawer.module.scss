@@ -1,46 +1,45 @@
 .Drawer {
-	position: fixed;
-	top: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: -1;
-	opacity: 0;
-	pointer-events: none;
-	display: flex;
-	justify-content: center;
-	align-items: flex-end;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .content {
-	height: 50%;
-	background: var(--bg-color);
-	bottom: 0;
-	border-top-left-radius: 12px;
-	border-top-right-radius: 12px;
-	position: relative;
-	width: 100%;
-	min-height: 100px;
-	padding: 20px;
-	transition: 0.4s transform;
-	transform: translateY(100%);
-	overflow-y: auto;
-	overflow-x: hidden;
+    height: 50%;
+    background: var(--bg-color);
+    bottom: 0;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+    position: relative;
+    width: 100%;
+    min-height: 100px;
+    padding: 20px;
+    transition: 0.4s transform;
+    transform: translateY(100%);
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .opened {
-	opacity: 1;
-	pointer-events: auto;
-	z-index: var(--modal-z-index);
+    opacity: 1;
+    pointer-events: auto;
+    z-index: var(--modal-z-index);
 
-	.content {
-		transform: translateY(0%);
-	}
+    .content {
+        transform: translateY(0%);
+    }
 }
 
-
 .isClosing {
-	.content {
-		transform: translateY(100%);
-	}
+    .content {
+        transform: translateY(100%);
+    }
 }

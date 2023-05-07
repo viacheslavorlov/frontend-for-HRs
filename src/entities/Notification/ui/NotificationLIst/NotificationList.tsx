@@ -17,8 +17,10 @@ export const NotificationList = memo((props: NotificationProps) => {
         className,
     } = props;
     const { data, isError, isLoading } = useNotifications(null, {
-        pollingInterval: 5000,
         refetchOnMountOrArgChange: true,
+        refetchOnReconnect: true,
+        pollingInterval: 10000,
+        refetchOnFocus: true,
     });
     const { t } = useTranslation();
 

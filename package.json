@@ -5,9 +5,11 @@
     "main": "index.ts",
     "dependencies": {
         "@headlessui/react": "^1.7.14",
+        "@react-spring/web": "^9.7.2",
         "@reduxjs/toolkit": "^1.8.0",
         "@types/jest": "^27.4.1",
         "@types/webpack-bundle-analyzer": "^4.6.0",
+        "@use-gesture/react": "^10.2.26",
         "axios": "^0.26.1",
         "concurrently": "^7.6.0",
         "i18next": "^22.4.15",

@@ -1,5 +1,7 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { memo, ReactNode } from 'react';
+// import { useSpring, animated } from '@react-spring/web';
+// import { useDrag } from '@use-gesture/react';
 import { useTheme } from 'app/providers/TemeProvider';
 import { useModal } from 'shared/lib/hooks/useModal/useModal';
 import { Portal } from '../Portal/Portal';
@@ -18,6 +20,13 @@ export const Drawer = memo((props: DrawerProps) => {
     const {
         className, onClose, isOpen, children, lazy,
     } = props;
+
+    // const [{ x, y }, api] = useSpring(() => ({ x: 0, y: 0 }));
+    //
+    // // Set the drag hook and define component movement based on gesture data
+    // const bind = useDrag(({ down, movement: [mx, my] }) => {
+    //     api.start({ x: down ? mx : 0, y: down ? my : 0, immediate: down });
+    // });
 
     const { isMounted, isClosing, close } = useModal({
         animationDelay: 300, isOpen, onClose,
