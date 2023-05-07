@@ -1,6 +1,15 @@
-.notifications {
+.notificationsMobile {
     min-height: 150px;
     max-height: 300px;
     overflow-y: auto;
-    width: 500px;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.notificationsBrowser {
+    min-height: 150px;
+    max-height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width: 400px;
 }

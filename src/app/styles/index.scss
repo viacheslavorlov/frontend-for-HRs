@@ -22,7 +22,7 @@ body {
 
 * {
     scrollbar-color: var(--inverted-primary-color) var(--primary-color); /* Цвет скролла, цвет ползунка */
-    scrollbar-width: auto; /* Толщина скролла thin, auto */
+    scrollbar-width: thin; /* Толщина скролла thin, auto */
 }
 
 *::-webkit-scrollbar-track {
