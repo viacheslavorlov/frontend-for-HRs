@@ -102,14 +102,18 @@ const DrawerContent = memo((props: DrawerProps) => {
     );
 });
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerWrapper = memo((props: DrawerProps) => {
     const { isLoaded } = useAnimationLybrarys();
     if (!isLoaded) {
         return null;
     }
     return (
-        <AnimationProvider>
-            <DrawerContent {...props} />
-        </AnimationProvider>
+        <DrawerContent {...props} />
     );
 });
+
+export const Drawer = (props: DrawerProps) => (
+    <AnimationProvider>
+        <DrawerWrapper {...props} />
+    </AnimationProvider>
+);
