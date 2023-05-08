@@ -6,6 +6,7 @@ import { NotificationList } from 'entities/Notification';
 import { Popup } from 'shared/ui/Popups/ui/Popup/Popup';
 import { Drawer } from 'shared/ui/Drawer/Drawer';
 import { BrowserView, MobileView } from 'react-device-detect';
+import { AnimationProvider } from 'shared/lib/DynamicLoaders/AnimationProvider/AnimationProvider';
 import cls from './NotificationButton.module.scss';
 
 interface NotificationButtonProps {
@@ -44,10 +45,12 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
             </BrowserView>
 
             <MobileView>
-                {trigger}
-                <Drawer isOpen={isOpened} onClose={closeDrawer}>
-                    <NotificationList className={cls.notificationsMobile} />
-                </Drawer>
+                <AnimationProvider>
+                    {trigger}
+                    <Drawer isOpen={isOpened} onClose={closeDrawer}>
+                        <NotificationList className={cls.notificationsMobile} />
+                    </Drawer>
+                </AnimationProvider>
             </MobileView>
 
         </div>

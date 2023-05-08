@@ -10,7 +10,7 @@ import { VStack } from 'shared/ui/Stack';
 import { ProfileHeader } from 'pages/ProfilePage/ui/ProfileHeader/ProfileHeader';
 import { Text, TextVariant } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicModuleLoader';
+import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
 import { ValidateProfileError } from '../model/services/validateProfile/validateProfile';
 import {
     getProfileValidateErrors,

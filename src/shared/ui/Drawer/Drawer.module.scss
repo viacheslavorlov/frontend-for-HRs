@@ -38,6 +38,26 @@
     }
 }
 
+
+
+.sheet {
+    z-index: var(--modal-z-index);
+    position: fixed;
+    height: calc(100vh + 100px);
+    width: 100vw;
+    border-radius: 12px 12px 0;
+    background: var(--bg-color);
+    touch-action: none;
+    padding: 15px;
+}
+.anker {
+    width: 90px;
+    height: 10px;
+    border-radius: 5px;
+    background: var(--inverted-bg-color);
+    margin: 0 auto 16px;
+}
+
 .isClosing {
     .content {
         transform: translateY(100%);
