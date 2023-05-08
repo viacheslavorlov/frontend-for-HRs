@@ -14,7 +14,7 @@ export interface ListBoxItem {
 }
 
 interface ListBoxProps {
-    disabled?: boolean
+    disabled?: boolean;
     className?: string;
     items?: ListBoxItem[];
     value?: string;
@@ -46,7 +46,7 @@ export const ListBox = memo((props: ListBoxProps) => {
             onChange={onChange}
             className={classNames(popup.popup, { [popup.disabled]: disabled }, [className])}
         >
-            <Listbox.Button className={popup.trigger}>
+            <Listbox.Button as="div" className={popup.trigger}>
                 {label && <span className={cls.label}>{`${label}>`}</span>}
                 <Button disabled={disabled}>
                     {value || defaultValue}

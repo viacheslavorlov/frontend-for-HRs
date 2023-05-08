@@ -44,7 +44,7 @@ export const RoutePaths: Record<AllRoutes, string> = {
     [AllRoutes.PROFILE]: '/profile/',
     [AllRoutes.ARTICLES]: '/articles',
     [AllRoutes.ARTICLE_DETAILS]: '/articles/', // ? + :id
-    [AllRoutes.ARTICLE_CREATE]: '/articles/new',
+    [AllRoutes.ARTICLE_CREATE]: '/article/new',
     [AllRoutes.ARTICLE_EDIT]: '/articles/:id/edit', // ? + :id
     [AllRoutes.ADMIN_PANEL]: '/admin',
     [AllRoutes.FORBIDDEN_PAGE]: '/forbidden',
@@ -77,13 +77,13 @@ export const routeConfig: Record<AllRoutes, AppRouteProps> = {
         element: <ArticleDetailedPage />,
         authOnly: true,
     },
-    [AllRoutes.ARTICLE_EDIT]: {
-        path: `${RoutePaths.article_edit}`,
+    [AllRoutes.ARTICLE_CREATE]: {
+        path: `${RoutePaths.article_create}`,
         element: <ArticleEditPage />,
         authOnly: true,
     },
-    [AllRoutes.ARTICLE_CREATE]: {
-        path: `${RoutePaths.article_create}/new`,
+    [AllRoutes.ARTICLE_EDIT]: {
+        path: `${RoutePaths.article_details}:id/edit`,
         element: <ArticleEditPage />,
         authOnly: true,
     },

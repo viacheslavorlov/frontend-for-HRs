@@ -38,6 +38,7 @@ export default {
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '^@/(.*)$': '<rootDir>/src/$1',
     },
     reporters: [
         'default',
@@ -45,6 +46,7 @@ export default {
             publicPath: '<rootDir>/reports/unit-tests',
             filename: 'report.html',
             openReport: true,
+            inlineSource: true,
         }],
     ],
     // All imported modules in your tests should be mocked automatically
