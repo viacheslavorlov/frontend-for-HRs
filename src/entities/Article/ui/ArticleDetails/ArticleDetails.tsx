@@ -1,16 +1,16 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
 import { useSelector } from 'react-redux';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     Text, TextAlign, TextSize, TextVariant,
-} from 'shared/ui/Text/Text';
-import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { HStack, VStack } from 'shared/ui/Stack';
+} from '@/shared/ui/Text/Text';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { ArticleBlockType } from '../../model/consts/articleConst';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import {

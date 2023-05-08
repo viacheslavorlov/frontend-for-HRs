@@ -1,10 +1,10 @@
 import { Suspense, useEffect } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Navbar } from 'wigets/Navbar';
-import { Sidebar } from 'wigets/Sidebar';
 import { useDispatch, useSelector } from 'react-redux';
-import { userActions, getUserInited } from 'entities/User';
-import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
+import { Navbar } from '@/widgets/Navbar';
+import { Sidebar } from '@/widgets/Sidebar';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { userActions, getUserInited } from '@/entities/User';
+import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
 import { useTheme } from './providers/TemeProvider';
 import { AppRouter } from './router';
 

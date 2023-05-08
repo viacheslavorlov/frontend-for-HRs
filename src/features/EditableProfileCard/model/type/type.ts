@@ -1,4 +1,4 @@
-import { ProfileType } from 'entities/Profile';
+import { ProfileType } from '@/entities/Profile';
 import { ValidateProfileError } from '../services/validateProfile/validateProfile';
 
 export interface ProfileSchema {

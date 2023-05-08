@@ -1,15 +1,15 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Text, TextAlign, TextVariant } from 'shared/ui/Text/Text';
-import { Input } from 'shared/ui/Input/Input';
 import { memo } from 'react';
-import LoadingSpinner from 'shared/ui/LoadingSpinner/LoadingSpinner';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Currency } from 'entities/Currency/model/consts/currency';
-import { CurrencySelect } from 'entities/Currency';
-import { Country } from 'entities/Country/model/consts/country';
-import { CountrySelect } from 'entities/Country';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { Text, TextAlign, TextVariant } from '@/shared/ui/Text/Text';
+import { Input } from '@/shared/ui/Input/Input';
+import LoadingSpinner from '@/shared/ui/LoadingSpinner/LoadingSpinner';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Currency } from '@/entities/Currency/model/consts/currency';
+import { CurrencySelect } from '@/entities/Currency';
+import { Country } from '@/entities/Country/model/consts/country';
+import { CountrySelect } from '@/entities/Country';
+import { HStack, VStack } from '@/shared/ui/Stack';
 import { ProfileType } from '../../model/types/profile';
 import cls from './ProfileCard.module.scss';
 

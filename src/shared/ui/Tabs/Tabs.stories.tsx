@@ -1,7 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/TemeProvider';
-import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
 import { action } from '@storybook/addon-actions';
+import { Theme } from '@/app/providers/TemeProvider';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Tabs } from './Tabs';
 
 export default {

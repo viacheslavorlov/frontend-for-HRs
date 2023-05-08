@@ -1,11 +1,11 @@
 import { memo } from 'react';
-import { DynamicModuleLoader, ReducersList } from 'shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useSearchParams } from 'react-router-dom';
-import { Page } from 'wigets/Page/Page';
-import { PageError } from 'wigets/PageError/PageError';
+import { Page } from '@/widgets/Page/Page';
+import { PageError } from '@/widgets/PageError/PageError';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { initArticlesPage } from '../../model/service/initArticlesPage/initArticlesPage';
 import { articlePageReducer } from '../../model/slice/articlesSlice';

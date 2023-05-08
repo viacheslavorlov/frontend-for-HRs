@@ -1,7 +1,7 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { Fragment, memo, ReactNode } from 'react';
 import { Listbox } from '@headlessui/react';
 import { DefaultTFuncReturn } from 'i18next';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropDownDirection } from '../../styles/consts';
 import { Button } from '../../../Button/Button';
 import cls from './ListBox.module.scss';

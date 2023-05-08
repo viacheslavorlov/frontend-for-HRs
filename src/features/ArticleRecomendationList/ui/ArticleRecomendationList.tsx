@@ -1,11 +1,11 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Text } from 'shared/ui/Text/Text';
-import { ArticleList, ArticleView } from 'entities/Article';
 import { useTranslation } from 'react-i18next';
-import { VStack } from 'shared/ui/Stack';
-import { PageError } from 'wigets/PageError/PageError';
-import { PageLoader } from 'shared/ui/PageLoader/PageLoader';
+import { PageError } from '@/widgets/PageError/PageError';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { ArticleList, ArticleView } from '@/entities/Article';
+import { VStack } from '@/shared/ui/Stack';
+import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
 import { useArticleRecommendationsList } from '../model/api/recommmendationsApi';
 import cls from './ArticleRecomendationList.module.scss';
 

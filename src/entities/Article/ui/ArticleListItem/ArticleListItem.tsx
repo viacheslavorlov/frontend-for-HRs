@@ -1,15 +1,15 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
-import { Text } from 'shared/ui/Text/Text';
-import { Icon } from 'shared/ui/Icon/Icon';
-import { Card } from 'shared/ui/Card/Card';
-import { useHover } from 'shared/lib/hooks/useHover/useHover';
-import { Avatar } from 'shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
-import { RoutePaths } from 'shared/config/routeConfig/routes';
-import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Text } from '@/shared/ui/Text/Text';
+import { Icon } from '@/shared/ui/Icon/Icon';
+import { Card } from '@/shared/ui/Card/Card';
+import { useHover } from '@/shared/lib/hooks/useHover/useHover';
+import { Avatar } from '@/shared/ui/Avatar/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
+import { RoutePaths } from '@/shared/config/routeConfig/routes';
+import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConst';
 import {
     Article, ArticleTextBlock,

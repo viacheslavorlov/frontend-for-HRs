@@ -1,7 +1,7 @@
 import { memo, ReactNode, useCallback } from 'react';
-import { ArticleList, ArticleView } from 'entities/Article';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
+import { ArticleList, ArticleView } from '@/entities/Article';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import { fetchNextArticlePage } from '../../model/service/fetchNextArticlePage/fetchNextArticlePage';
 import {

@@ -3,6 +3,11 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.ts",
+    "browserslist": [
+        "last 5 versions",
+        "> 1%",
+        "not dead"
+    ],
     "dependencies": {
         "@headlessui/react": "^1.7.14",
         "@react-spring/web": "^9.7.2",
@@ -113,6 +118,7 @@
         "stylelint": "^14.5.3",
         "stylelint-config-standard-scss": "^6.1.0",
         "ts-loader": "^9.2.6",
+        "ts-morph": "^18.0.0",
         "ts-node": "^10.5.0",
         "typescript": "^4.5.5",
         "webpack": "^5.69.1",

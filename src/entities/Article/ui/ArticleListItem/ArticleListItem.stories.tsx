@@ -1,8 +1,8 @@
 // noinspection JSUnresolvedVariable,DuplicatedCode
 
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
-import { Theme } from 'app/providers/TemeProvider';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/app/providers/TemeProvider';
 import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConst';
 import {
     Article,

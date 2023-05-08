@@ -1,12 +1,12 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import {
     memo, ReactNode, useCallback, useContext, useEffect,
 } from 'react';
-import { useTheme } from 'app/providers/TemeProvider';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/TemeProvider';
 import { Portal } from '../Portal/Portal';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
-import { AnimationContext, useAnimationLybrarys } from '../../lib/DynamicLoaders';
+import { AnimationContext, AnimationProvider, useAnimationLybrarys } from '../../lib/DynamicLoaders';
 
 interface DrawerProps {
     className?: string;
@@ -107,5 +107,9 @@ export const Drawer = memo((props: DrawerProps) => {
     if (!isLoaded) {
         return null;
     }
-    return <DrawerContent {...props} />;
+    return (
+        <AnimationProvider>
+            <DrawerContent {...props} />
+        </AnimationProvider>
+    );
 });

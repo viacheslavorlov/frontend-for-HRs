@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/TemeProvider';
-import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/app/providers/TemeProvider';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {

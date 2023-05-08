@@ -1,7 +1,9 @@
 import { ComponentStory } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
-import { ArticleBlockType, ArticleType } from 'entities/Article/model/consts/articleConst';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
+import { ArticleBlockType, ArticleType } from '@/entities/Article/model/consts/articleConst';
 import { ArticlePageAsync } from './ArticlePage.async';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/app/providers/TemeProvider';
 
 const Template: ComponentStory<typeof ArticlePageAsync> = (args) => <ArticlePageAsync {...args} />;
 
@@ -83,3 +85,7 @@ const article = {
 export const LightArticleDetails = Template.bind({});
 LightArticleDetails.args = {};
 LightArticleDetails.decorators = [StoreDecorator({ articleDetails: article })];
+
+export const DarkArticleDetails = Template.bind({});
+DarkArticleDetails.args = {};
+DarkArticleDetails.decorators = [StoreDecorator({ articleDetails: article }), ThemeDecorator(Theme.DARK)];

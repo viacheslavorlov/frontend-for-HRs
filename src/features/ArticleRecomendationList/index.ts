@@ -1,1 +1,1 @@
-export { ArticleRecomendationList } from 'features/ArticleRecomendationList/ui/ArticleRecomendationList';
+export { ArticleRecomendationList } from './ui/ArticleRecomendationList';

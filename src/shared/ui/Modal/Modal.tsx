@@ -1,6 +1,6 @@
-import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { MouseEvent, ReactNode } from 'react';
-import { useTheme } from 'app/providers/TemeProvider';
+import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { useTheme } from '@/app/providers/TemeProvider';
 import { Overlay } from '../Overlay/Overlay';
 import { useModal } from '../../lib/hooks/useModal/useModal';
 import { Portal } from '../Portal/Portal';

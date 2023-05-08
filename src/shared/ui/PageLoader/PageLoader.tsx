@@ -1,6 +1,6 @@
-import { classNames } from 'shared/lib/classNames/classNames';
 import { memo } from 'react';
-import { Page } from 'wigets/Page/Page';
+import { Page } from '@/widgets/Page/Page';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 import cls from './PageLoader.module.scss';
 

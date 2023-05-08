@@ -1,9 +1,9 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
-import { Theme } from 'app/providers/TemeProvider';
-import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/app/providers/TemeProvider';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
+import { Currency } from '@/entities/Currency';
+import { Country } from '@/entities/Country';
 import ProfilePage from './ProfilePage';
 
 export default {

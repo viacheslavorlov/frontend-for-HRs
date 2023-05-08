@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from 'app/providers/TemeProvider';
-import { ThemeDecorator } from 'shared/config/themeDecorator/themeDecorator';
-import { StoreDecorator } from 'shared/config/StoreDecorator/StoreDecorator';
-import { ArticleSortField } from 'entities/Article';
+import { Theme } from '@/app/providers/TemeProvider';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
+import { ArticleSortField } from '@/entities/Article';
 import { ArticlePageFilters } from './ArticlePageFilters';
 
 export default {

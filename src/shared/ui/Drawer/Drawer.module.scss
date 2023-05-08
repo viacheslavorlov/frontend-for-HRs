@@ -38,8 +38,6 @@
     }
 }
 
-
-
 .sheet {
     z-index: var(--modal-z-index);
     position: fixed;
@@ -50,6 +48,7 @@
     touch-action: none;
     padding: 15px;
 }
+
 .anker {
     width: 90px;
     height: 10px;
