@@ -67,6 +67,7 @@
       "type": [
         "IT"
       ],
+      "rating": 3,
       "blocks": [
         {
           "id": "1",
@@ -752,6 +753,61 @@
       "city": "Moscow",
       "username": "user",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошо написано!",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошо написано! 2",
+      "articleId": "3"
+    },
+    {
+      "id": "3",
+      "rate": 4,
+      "feedback": "Хорошо написано! 3",
+      "articleId": "2"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "rate": 2,
+      "feedback": "Очень хорошая статья",
+      "id": "xlRZTTi"
+    },
+    {
+      "articleId": "11",
+      "userId": "1",
+      "rate": 5,
+      "feedback": "asdfasdfasdf",
+      "id": "gVeIlvO"
+    },
+    {
+      "articleId": "12",
+      "userId": "1",
+      "rate": 3,
+      "feedback": "asdfas asdf asdf asdf asd f",
+      "id": "wdvNqOQ"
+    }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хороший профиль!",
+      "profileId": "1"
+    },
+    {
+      "id": "3",
+      "rate": 4,
+      "feedback": "Хороший профиль! 3",
+      "profileId": "2"
     }
   ]
 }

@@ -25,6 +25,8 @@
     },
 
     "include": [
+        "webpack.config.ts",
+        "vite.config.ts",
         "./config/jest/jest-setup.ts",
         "./src/**/*.ts",
         "./src/**/*.tsx"
