@@ -45,7 +45,6 @@ export const StarRating = memo((props: StarRatingProps) => {
         <div className={classNames(cls.StarRating, {}, [className])}>
             {stars.map((star) => (
                 <Icon
-                    size={size}
                     onClick={onClick(star)}
                     onMouseEnter={onHover(star)}
                     onMouseLeave={onLeave}
