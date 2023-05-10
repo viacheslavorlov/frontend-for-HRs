@@ -8,15 +8,19 @@ import { VStack } from '@/shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
+import { SIDEBAR_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage/localStorage';
 
 interface SidebarProps {
     className?: string
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState(false);
+    const [collapsed, setCollapsed] = useState<boolean>(
+        JSON.parse(localStorage.getItem(SIDEBAR_LOCAL_STORAGE_KEY) || 'false'),
+    );
     const sidebarItemsList = useSelector(getSidebarItems);
     const onToggle = () => {
+        localStorage.setItem(SIDEBAR_LOCAL_STORAGE_KEY, String(!collapsed));
         setCollapsed((prevState) => !prevState);
     };
     const itemList = useMemo(() => sidebarItemsList.map((item) => (
