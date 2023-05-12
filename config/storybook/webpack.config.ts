@@ -1,6 +1,7 @@
 import webpack, { RuleSetRule, DefinePlugin } from 'webpack';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buldCSSLoader';
+import { BuildPaths } from '../build/types/config';
 
 export default ({ config }: { config: webpack.Configuration }) => {
     config!.plugins!.push(new DefinePlugin({
@@ -9,9 +10,21 @@ export default ({ config }: { config: webpack.Configuration }) => {
         __PROJECT: JSON.stringify('storybook'),
     }));
 
-    config!.resolve!.modules!.push(path.resolve(__dirname, '..', '..', 'src'));
+    const paths: BuildPaths = {
+        entry: '',
+        build: '',
+        html: '',
+        src: path.resolve(__dirname, '..', '..', 'src'),
+        locales: '',
+        buildLocales: '',
+    };
 
+    config!.resolve!.modules!.push(paths.src);
     config!.resolve!.extensions!.push('ts', 'tsx');
+    config!.resolve!.alias = {
+        ...config!.resolve!.alias,
+        '@': paths.src,
+    };
 
     // @ts-ignore
     config!.module!.rules! = config.module!.rules!.map((rule: RuleSetRule) => {

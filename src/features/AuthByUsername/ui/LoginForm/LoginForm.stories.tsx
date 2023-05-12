@@ -5,7 +5,7 @@ import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import LoginForm from './LoginForm';
 
 export default {
-    title: 'widgets/LoginForm',
+    title: 'features/LoginForm',
     component: LoginForm,
     argTypes: {
         background: { control: 'background' },

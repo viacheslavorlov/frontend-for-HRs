@@ -6,7 +6,7 @@ import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import AddCommentForm from './AddCommentForm';
 
 export default {
-    title: 'feachures/AddCommentForm',
+    title: 'features/AddCommentForm',
     component: AddCommentForm,
     argTypes: {
         background: { control: 'background' },

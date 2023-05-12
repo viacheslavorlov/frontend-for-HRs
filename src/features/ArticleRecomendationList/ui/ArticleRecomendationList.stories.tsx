@@ -18,7 +18,7 @@ const article: Article = {
 };
 
 export default {
-    title: 'shared/ArticleRecomendationList',
+    title: 'features/ArticleRecomendationList',
     component: ArticleRecomendationList,
     argTypes: {
         background: { control: 'background' },

@@ -2,9 +2,12 @@ import { Story } from '@storybook/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 
 export const MemoryRouterDecorator = (Story: Story) => (
-    <MemoryRouter>
+    <MemoryRouter initialEntries={['/articles/1']}>
         <Routes>
-            <Route path="profile/:1" element={<Story />} />
+            <Route
+                path="articles/1"
+                element={<Story path="articles/:id" />}
+            />
         </Routes>
     </MemoryRouter>
 );

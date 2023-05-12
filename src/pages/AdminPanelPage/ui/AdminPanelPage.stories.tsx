@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import AdminPanelPage from './AdminPanelPage';
 
 export default {
-    title: 'shared/AdminPanelPage',
+    title: 'pages/AdminPanelPage',
     component: AdminPanelPage,
     argTypes: {
         background: { control: 'background' },

@@ -1,9 +1,9 @@
 import {addDecorator} from "@storybook/react";
-import {StyleDecorator} from "../../src/shared/config/styleDecorator/styleDecorator";
-import {RouterDecorator} from "../../src/shared/config/routerDecorator/routerDecorator";
-import {ThemeDecorator} from "../../src/shared/config/themeDecorator/themeDecorator";
-import {Theme} from "../../src/app/providers/TemeProvider";
-import {SuspenseDecorator} from '../../src/shared/config/SuspenseDecorator/SuspenseDecorator';
+import {StyleDecorator} from '@/shared/config/styleDecorator/styleDecorator';
+import {RouterDecorator} from '@/shared/config/routerDecorator/routerDecorator';
+import {ThemeDecorator} from '@/shared/config/themeDecorator/themeDecorator';
+import {Theme} from '@/app/providers/TemeProvider';
+import {SuspenseDecorator} from '@/shared/config/SuspenseDecorator/SuspenseDecorator';
 
 export const parameters = {
     actions: {argTypesRegex: "^on[A-Z].*"},
@@ -17,5 +17,6 @@ export const parameters = {
 
 addDecorator(StyleDecorator);
 addDecorator(RouterDecorator);
+// addDecorator(MemoryRouterDecorator)
 addDecorator(SuspenseDecorator);
 addDecorator(ThemeDecorator(Theme.LIGHT));

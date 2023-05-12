@@ -2,13 +2,19 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from '@/app/providers/TemeProvider';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import ArticleRating from './ArticleRating';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 
 export default {
-    title: 'shared/ArticleRating',
+    title: 'features/ArticleRating',
     component: ArticleRating,
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        StoreDecorator({
+
+        }),
+    ],
 } as ComponentMeta<typeof ArticleRating>;
 
 const Template: ComponentStory<typeof ArticleRating> = (args) => <ArticleRating {...args} />;

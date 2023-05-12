@@ -21,7 +21,7 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
-    const { id } = useParams();
+    const { id } = useParams<{ id: string }>();
 
     if (!id) {
         return null;
@@ -32,10 +32,10 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
             <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
                 <VStack max gap="16">
                     <ArticleDetailsPageHeader />
-                    <ArticleDetails id={id} />
-                    <ArticleRating articleId={id} />
+                    <ArticleDetails id={id || '1'} />
+                    <ArticleRating articleId={id || '1'} />
                     <ArticleRecomendationList className={cls.recommendations} />
-                    <ArticleDetailsComments id={id} />
+                    <ArticleDetailsComments id={id || '1'} />
                 </VStack>
             </DynamicModuleLoader>
         </Page>
