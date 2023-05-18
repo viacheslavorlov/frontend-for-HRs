@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { ForbiddenPage } from './ForbiddenPage';
 
 export default {
-    title: 'shared/ForbiddenPage',
+    title: 'pages/ForbiddenPage',
     component: ForbiddenPage,
     argTypes: {
         background: { control: 'background' },

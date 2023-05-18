@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
-    title: 'shared/ArticleEditPage',
+    title: 'pages/ArticleEditPage',
     component: ArticleEditPage,
     argTypes: {
         background: { control: 'background' },

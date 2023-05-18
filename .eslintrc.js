@@ -45,7 +45,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
-        'fsd-architecture-checker/import-path-checker': 'error',
+        'fsd-architecture-checker/import-path-checker': ['error', {alias: '@'}],
     },
     globals: {
         __IS_DEV: true,

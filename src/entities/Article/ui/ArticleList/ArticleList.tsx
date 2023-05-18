@@ -7,6 +7,7 @@ import { ArticleView } from '../../model/consts/articleConst';
 import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
+import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
 
 interface ArticleListProps {
     className?: string;
@@ -52,6 +53,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
         [cls.wrap]: searchParams,
     };
 
+    if (isLoading) {
+        return (
+            <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
+                <Skeleton width="100%" />
+            </div>
+        );
+    }
     if (view === ArticleView.BIG) {
         return (
             <Virtuoso
@@ -66,6 +74,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
             />
         );
     }
+
     return (
         <VirtuosoGrid
             className={classNames(cls.ArticleList, mods, [className, cls[view]])}

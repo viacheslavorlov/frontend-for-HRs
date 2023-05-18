@@ -109,7 +109,7 @@ const articles = new Array(10).fill(0).map((item) => ({
 
 export const LoadingBig = Template.bind({});
 LoadingBig.args = {
-    articles: [],
+    articles,
     isLoading: true,
     view: ArticleView.BIG,
     searchParams: true,
@@ -118,7 +118,7 @@ LoadingBig.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LoadingSmall = Template.bind({});
 LoadingSmall.args = {
-    articles: [],
+    articles,
     isLoading: true,
     view: ArticleView.SMALL,
     searchParams: true,
@@ -126,18 +126,18 @@ LoadingSmall.args = {
 
 export const LightArticleList = Template.bind({});
 LightArticleList.args = {
-    view: ArticleView.SMALL, isLoading: false, articles, searchParams: true,
+    view: ArticleView.SMALL, isLoading: false, articles,
 };
 LightArticleList.decorators = [];
 
 export const LightArticleListBIG = Template.bind({});
 LightArticleListBIG.args = {
-    view: ArticleView.BIG, isLoading: false, searchParams: true, articles,
+    view: ArticleView.BIG, isLoading: false, articles,
 };
 LightArticleListBIG.decorators = [];
 
 export const ArticleListError = Template.bind({});
 ArticleListError.args = {
-    view: ArticleView.SMALL, isLoading: false, articles: [], searchParams: true,
+    view: ArticleView.SMALL, isLoading: false, articles: [],
 };
 ArticleListError.decorators = [ThemeDecorator(Theme.DARK)];

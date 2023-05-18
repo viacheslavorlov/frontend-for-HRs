@@ -5,7 +5,7 @@ import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ArticleDetailsComments } from './ArticleDetailsComments';
 
 export default {
-    title: 'shared/ArticleDetailsComments',
+    title: 'features/ArticleDetailsComments',
     component: ArticleDetailsComments,
     argTypes: {
         background: { control: 'background' },
