@@ -8,6 +8,7 @@ import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
 import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleListProps {
     className?: string;
@@ -20,17 +21,18 @@ interface ArticleListProps {
 }
 
 const ScrollPlaceHolderBig = () => (
-    <div>
+    <VStack className={cls.card} gap="16">
         <Skeleton border="50%" width={50} height={50} />
         <Skeleton width="100%" height={200} />
         <Skeleton width="100%" height={200} />
         <Skeleton width="100%" height={200} />
-    </div>
+    </VStack>
 );
 
 const ScrollPlaceHolderSmall = () => (
-    <div>
-        <Skeleton width={240} height={296} />
+    <div className={cls.card}>
+        <Skeleton border="50%" width={50} height={50} />
+        <Skeleton width={240} height={246} border="6px" />
     </div>
 );
 
