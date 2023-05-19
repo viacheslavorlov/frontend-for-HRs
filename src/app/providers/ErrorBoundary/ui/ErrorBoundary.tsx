@@ -1,7 +1,7 @@
 import {
     Component, ErrorInfo, ReactNode, Suspense,
 } from 'react';
-import { PageError } from '@/widgets/PageError/PageError';
+import { PageError } from '@/widgets/PageError';
 import LoadingSpinner from '@/shared/ui/LoadingSpinner/LoadingSpinner';
 
 export interface ErrorBoundaryProps {

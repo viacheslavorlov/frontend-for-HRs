@@ -8,7 +8,7 @@ import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitial
 import { Currency } from '@/entities/Currency';
 import { Country } from '@/entities/Country';
 import { VStack } from '@/shared/ui/Stack';
-import { ProfileHeader } from '@/pages/ProfilePage/ui/ProfileHeader/ProfileHeader';
+import { ProfileHeader } from '@/pages/ProfilePage';
 import { Text, TextVariant } from '@/shared/ui/Text/Text';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
 import { ValidateProfileError } from '../model/services/validateProfile/validateProfile';

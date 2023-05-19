@@ -1,20 +1,17 @@
-import { memo, useCallback, Suspense } from 'react';
+import { memo, Suspense, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text/Text';
 import { AddCommentForm } from '@/features/addCommentForm';
-import { CommentList } from '@/entities/Comments';
+import { CommentList, fetchCommentsByArticleId } from '@/entities/Comments';
 import { VStack } from '@/shared/ui/Stack';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchCommentsByArticleId } from '@/entities/Comments/model/services/fetchComments/fetchComments';
 import LoadingSpinner from '@/shared/ui/LoadingSpinner/LoadingSpinner';
 import { getArticleComments } from '../../model/slice/articleDetaildCommentSlice';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import {
-    addCommentsForArticle,
-} from '../../model/services/addCommentsForArticle/addCommentsForArticle';
+import { addCommentsForArticle } from '../../model/services/addCommentsForArticle/addCommentsForArticle';
 import { fetchRecommendations } from '../../model/services/fetchRecommendations/fetchRecommendations';
 
 interface ArticleDetailsCommentsProps {

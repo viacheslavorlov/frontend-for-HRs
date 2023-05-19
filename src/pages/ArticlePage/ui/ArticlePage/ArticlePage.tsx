@@ -1,8 +1,8 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { Page } from '@/widgets/Page/Page';
-import { PageError } from '@/widgets/PageError/PageError';
+import { Page } from '@/widgets/Page';
+import { PageError } from '@/widgets/PageError';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';

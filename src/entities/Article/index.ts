@@ -1,3 +1,7 @@
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
+
+export { articleDetailsReducer, articleDetailsActions } from './model/slice/articleDetails';
+
 export {
     getArticleDetailsData, getArticleDetailsError,
     getArticleDetailsIsLoading,

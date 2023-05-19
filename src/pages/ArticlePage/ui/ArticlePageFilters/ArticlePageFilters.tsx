@@ -5,10 +5,11 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
     ArticleSortField, ArticleTypeTabs, ArticleView, ArticleType,
+    ArticleSortSelector,
 } from '@/entities/Article';
 import { Card } from '@/shared/ui/Card/Card';
 import { Input } from '@/shared/ui/Input/Input';
-import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector';
+
 import { SortOrder } from '@/shared/types/sortOrder';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from '@/shared/ui/Tabs/Tabs';
