@@ -19,6 +19,21 @@ interface ArticleListProps {
     onLoadNext?: () => void;
 }
 
+const ScrollPlaceHolderBig = () => (
+    <div>
+        <Skeleton border="50%" width={50} height={50} />
+        <Skeleton width="100%" height={200} />
+        <Skeleton width="100%" height={200} />
+        <Skeleton width="100%" height={200} />
+    </div>
+);
+
+const ScrollPlaceHolderSmall = () => (
+    <div>
+        <Skeleton width={240} height={296} />
+    </div>
+);
+
 export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
@@ -70,6 +85,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
                 data={articles}
                 overscan={250}
                 endReached={onLoadNext}
+                scrollSeekConfiguration={{
+                    enter: (velocity) => Math.abs(velocity) > 400,
+                    exit: (velocity) => Math.abs(velocity) < 30,
+                }}
+                components={{
+                    ScrollSeekPlaceholder: ScrollPlaceHolderBig,
+                }}
                 itemContent={(index, article) => renderArticle(article)}
             />
         );
@@ -87,11 +109,13 @@ export const ArticleList = memo((props: ArticleListProps) => {
             listClassName={cls.itemContainer}
             endReached={searchParams ? onLoadNext : undefined}
             itemContent={(index, article) => renderArticle(article)}
-            // scrollSeekConfiguration={{
-            //     enter: (velocity) => Math.abs(velocity) > 200,
-            //     exit: (velocity) => Math.abs(velocity) < 30,
-            //     change: (_, range) => console.log({ range }),
-            // }}
+            scrollSeekConfiguration={{
+                enter: (velocity) => Math.abs(velocity) > 100,
+                exit: (velocity) => Math.abs(velocity) < 30,
+            }}
+            components={{
+                ScrollSeekPlaceholder: ScrollPlaceHolderSmall,
+            }}
         />
     );
 });
