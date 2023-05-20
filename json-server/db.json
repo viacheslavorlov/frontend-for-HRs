@@ -700,6 +700,12 @@
       "userId": "2",
       "text": "asdfasdfasdfasd",
       "id": "JdZexp8"
+    },
+    {
+      "articleId": "4",
+      "userId": "1",
+      "text": "test comment",
+      "id": "oLxrEOG"
     }
   ],
   "users": [

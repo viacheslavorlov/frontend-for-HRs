@@ -8,10 +8,10 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
 import { Text, TextVariant } from '@/shared/ui/Text/Text';
 import { AppLink, AppLInkTheme } from '@/shared/ui/AppLink/AppLink';
-import { RoutePaths } from '@/shared/config/routeConfig/routes';
 import { HStack } from '@/shared/ui/Stack';
 import { NotificationButton } from '@/features/NotificationButton';
 import { DropDownAvatar } from '@/features/DropDownAvatar';
+import { RoutePaths } from '@/shared/const/routerConst';
 
 interface NavbarProps {
     className?: string;

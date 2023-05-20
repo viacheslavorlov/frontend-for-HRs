@@ -8,7 +8,6 @@ import { Card } from '@/shared/ui/Card/Card';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { RoutePaths } from '@/shared/config/routeConfig/routes';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConst';
 import {
@@ -17,6 +16,7 @@ import {
 import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/ArticlesTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import Eye from '../../assets/Eye.svg';
+import { RoutePaths } from '@/shared/const/routerConst';
 
 interface ArticleListItemProps {
     className?: string;
