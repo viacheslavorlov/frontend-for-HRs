@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import withMock from 'storybook-addon-mock';
-import { Theme } from '@/app/providers/TemeProvider';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import ArticleRating from './ArticleRating';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';

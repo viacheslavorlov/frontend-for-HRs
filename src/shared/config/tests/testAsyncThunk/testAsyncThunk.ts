@@ -1,5 +1,6 @@
 import { AsyncThunkAction } from '@reduxjs/toolkit';
 import axios, { AxiosStatic } from 'axios';
+// eslint-disable-next-line fsd-architecture-checker/layers-imports-order
 import { StateSchema } from '@/app/providers/StoreProvider';
 
 type ActionCreatorType<Return, Arg, RejectedValue>

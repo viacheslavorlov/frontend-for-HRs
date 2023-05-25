@@ -1,4 +1,5 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+// eslint-disable-next-line fsd-architecture-checker/layers-imports-order
 import { StateSchema } from '@/app/providers/StoreProvider';
 import { ARTICLE_VIEW_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage/localStorage';
 import { SortOrder } from '@/shared/types/sortOrder';

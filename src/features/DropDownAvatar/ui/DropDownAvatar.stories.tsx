@@ -1,6 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
-import { Theme } from '@/app/providers/TemeProvider';
 import { DropDownAvatar } from './DropDownAvatar';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { UserRole } from '@/entities/User';

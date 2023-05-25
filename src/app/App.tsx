@@ -5,7 +5,7 @@ import { Sidebar } from '@/widgets/Sidebar';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { userActions, getUserInited } from '@/entities/User';
 import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
-import { useTheme } from './providers/TemeProvider';
+import { useTheme } from '@/shared/lib/hooks/useTheme/useThem';
 import { AppRouter } from './router';
 
 function App() {

@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Page } from '@/widgets/Page';
+import { Page } from '@/shared/ui/Page';
 import { Text, TextVariant } from '@/shared/ui/Text/Text';
 import { classNames } from '@/shared/lib/classNames/classNames';
 

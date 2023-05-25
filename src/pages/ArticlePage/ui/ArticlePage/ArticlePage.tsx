@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { Page } from '@/widgets/Page';
+import { Page } from '@/shared/ui/Page';
 import { PageError } from '@/widgets/PageError';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';

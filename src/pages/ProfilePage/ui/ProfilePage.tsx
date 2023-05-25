@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useParams } from 'react-router-dom';
-import { Page } from '@/widgets/Page';
+import { Page } from '@/shared/ui/Page';
 import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { classNames } from '@/shared/lib/classNames/classNames';
 

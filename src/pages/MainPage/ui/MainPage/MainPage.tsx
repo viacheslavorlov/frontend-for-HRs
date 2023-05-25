@@ -1,7 +1,6 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Page } from '@/widgets/Page';
-import { BugButton } from '@/app/providers/ErrorBoundary';
+import { Page } from '@/shared/ui/Page';
 import { Text, TextVariant } from '@/shared/ui/Text/Text';
 
 interface MainPageProps {
@@ -32,7 +31,6 @@ const MainPage = memo((props: MainPageProps) => {
                     + 'изменения в профиле не работают из за ограничений фейкового беленда на сервере(((')}
                 variant={TextVariant.PRIMARY}
             />
-            <BugButton />
         </Page>
     );
 });

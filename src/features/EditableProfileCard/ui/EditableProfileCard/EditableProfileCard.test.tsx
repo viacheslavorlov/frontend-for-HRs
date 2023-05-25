@@ -6,7 +6,7 @@ import { Currency } from '@/entities/Currency';
 import { ProfileType } from '@/entities/Profile';
 import { $api } from '@/shared/api/api';
 import { EditableProfileCard } from './EditableProfileCard';
-import { profileReducer } from '../model/slice/profileSlice';
+import { profileReducer } from '../../model/slice/profileSlice';
 
 const profile: ProfileType = {
     id: '1',

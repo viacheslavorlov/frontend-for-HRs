@@ -53,6 +53,13 @@ module.exports = {
 				testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
 			}
 		],
+		'fsd-architecture-checker/layers-imports-order': [
+			'error',
+			{
+				alias: '@',
+				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
+			}
+		],
 	},
 	globals: {
 		__IS_DEV: true,

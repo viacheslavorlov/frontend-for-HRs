@@ -3,7 +3,9 @@ import { render } from '@testing-library/react';
 import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 import { ReducersMapObject } from '@reduxjs/toolkit';
+// eslint-disable-next-line fsd-architecture-checker/layers-imports-order
 import { StoreProvider } from '@/app/providers/StoreProvider';
+// eslint-disable-next-line fsd-architecture-checker/layers-imports-order
 import { StateSchema } from '@/app/providers/StoreProvider/config/StateSchema';
 import i18n from '../../i18testConfig/i18testConfig';
 

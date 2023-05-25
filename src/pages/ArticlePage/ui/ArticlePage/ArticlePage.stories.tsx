@@ -1,9 +1,9 @@
 import { ComponentStory } from '@storybook/react';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ArticleBlockType, ArticleType } from '@/entities/Article';
 import { ArticlePageAsync } from './ArticlePage.async';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
-import { Theme } from '@/app/providers/TemeProvider';
 
 const Template: ComponentStory<typeof ArticlePageAsync> = (args) => <ArticlePageAsync {...args} />;
 
