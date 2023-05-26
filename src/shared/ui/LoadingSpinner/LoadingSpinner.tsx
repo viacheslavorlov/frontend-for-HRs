@@ -1,6 +1,6 @@
 import './LoadingSpinner.scss';
 
-const LoadingSpinner = () => (
+export const LoadingSpinner = () => (
     <div className="lds-roller">
         <div />
         <div />
@@ -12,5 +12,3 @@ const LoadingSpinner = () => (
         <div />
     </div>
 );
-
-export default LoadingSpinner;

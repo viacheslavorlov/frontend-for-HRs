@@ -2,13 +2,13 @@ import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
-import { Icon } from '@/shared/ui/Icon/Icon';
-import { Card } from '@/shared/ui/Card/Card';
+import { Text } from '@/shared/ui/Text';
+import { Icon } from '@/shared/ui/Icon';
+import { Card } from '@/shared/ui/Card';
 import { useHover } from '@/shared/lib/hooks/useHover/useHover';
-import { Avatar } from '@/shared/ui/Avatar/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { AppLink } from '@/shared/ui/AppLink/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConst';
 import {
     Article, ArticleTextBlock,

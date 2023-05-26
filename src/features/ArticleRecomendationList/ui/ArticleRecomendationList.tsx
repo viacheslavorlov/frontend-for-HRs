@@ -2,10 +2,10 @@ import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageError } from '../../../widgets/PageError';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Text } from '@/shared/ui/Text/Text';
+import { Text } from '@/shared/ui/Text';
 import { ArticleList, ArticleView } from '@/entities/Article';
 import { VStack } from '@/shared/ui/Stack';
-import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
+import { PageLoader } from '@/shared/ui/PageLoader';
 import { useArticleRecommendationsList } from '../model/api/recommmendationsApi';
 import cls from './ArticleRecomendationList.module.scss';
 

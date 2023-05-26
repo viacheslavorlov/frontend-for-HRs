@@ -1,13 +1,13 @@
 import React, { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
-import { Text, TextSize, TextVariant } from '@/shared/ui/Text/Text';
+import { Text, TextSize, TextVariant } from '@/shared/ui/Text';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { ArticleView } from '../../model/consts/articleConst';
 import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
 import cls from './ArticleList.module.scss';
-import { Skeleton } from '@/shared/ui/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleListProps {

@@ -2,7 +2,7 @@ import {
     Component, ErrorInfo, ReactNode, Suspense,
 } from 'react';
 import { PageError } from '@/widgets/PageError';
-import LoadingSpinner from '@/shared/ui/LoadingSpinner/LoadingSpinner';
+import { LoadingSpinner } from '@/shared/ui/LoadingSpinner';
 
 export interface ErrorBoundaryProps {
     children: ReactNode;

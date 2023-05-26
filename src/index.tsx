@@ -3,7 +3,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@/app/providers/TemeProvider';
 import { ErrorBoundary } from '@/app/providers/ErrorBoundary';
-import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
+import { PageLoader } from '@/shared/ui/PageLoader';
 import { StoreProvider } from '@/app/providers/StoreProvider';
 import App from './app/App';
 import './app/styles/index.scss';

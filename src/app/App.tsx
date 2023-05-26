@@ -4,7 +4,7 @@ import { Navbar } from '@/widgets/Navbar';
 import { Sidebar } from '@/widgets/Sidebar';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { userActions, getUserInited } from '@/entities/User';
-import { PageLoader } from '@/shared/ui/PageLoader/PageLoader';
+import { PageLoader } from '@/shared/ui/PageLoader';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useThem';
 import { AppRouter } from './router';
 
