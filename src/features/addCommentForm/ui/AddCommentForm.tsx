@@ -9,7 +9,6 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/D
 
 import { HStack } from '@/shared/ui/Stack';
 import {
-    getAddCommentFormError,
     getAddCommentFormText,
 } from '../model/selectors/addCommentFormSelectors';
 import { addCommentFormActions, addCommentFormReducer } from '../model/slice/addCommentSlice';

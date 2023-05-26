@@ -1,4 +1,3 @@
-import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import { BuildOptions } from '../types/config';
 
 interface BuildBabelLoaderProps extends BuildOptions{

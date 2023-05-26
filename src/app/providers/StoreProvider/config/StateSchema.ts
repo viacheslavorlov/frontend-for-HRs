@@ -1,18 +1,15 @@
-import {
-    AnyAction, CombinedState, EnhancedStore, Reducer, ReducersMapObject,
-} from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
+import { AppDispatch } from './typedAppDispatch';
+import { ArticleDetailsSchema } from '@/entities/Article';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
-import { LoginSchema } from '@/features/AuthByUsername';
-import { ArticleDetailsSchema } from '@/entities/Article';
 import { AddCommentFormSchema } from '@/features/addCommentForm';
-import { ArticlesPageSchema } from '@/pages/ArticlePage';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ProfileSchema } from '@/features/EditableProfileCard';
 import { ScrollRestorationSchema } from '@/features/ScrollRextoration';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetaildPage';
+import { ArticlesPageSchema } from '@/pages/ArticlePage';
 import { rtkApi } from '@/shared/api/rtkApi';
-import { ProfileSchema } from '@/features/EditableProfileCard';
-import { AppDispatch } from './store';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -26,23 +23,6 @@ export interface StateSchema {
     articleDetailedPage?: ArticleDetailsPageSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
-}
-
-export type StateSchemaKey = keyof StateSchema;
-
-export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
-
-export interface ReducerManager {
-    getReducerMap: () => ReducersMapObject<StateSchema>;
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>;
-    add: (key: StateSchemaKey, reducer: Reducer) => void;
-    remove: (key: StateSchemaKey) => void;
-    getMountedReducers?: () => MountedReducers;
-
-}
-
-export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
-    reducerManager: ReducerManager;
 }
 
 export interface ThunkExtraArg {

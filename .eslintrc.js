@@ -7,7 +7,10 @@ module.exports = {
 	extends: [
 		'plugin:react/recommended',
 		'airbnb',
-		'plugin:i18next/recommended'
+		'eslint:recommended',
+		'plugin:i18next/recommended',
+		'plugin:import/recommended',
+		'plugin:import/typescript'
 	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -19,7 +22,9 @@ module.exports = {
 		'@typescript-eslint',
 		'i18next',
 		'react-hooks',
-		'fsd-architecture-checker'
+		'fsd-architecture-checker',
+		'unused-imports',
+		'import'
 	],
 	rules: {
 		'react/jsx-indent': [2, 4],
@@ -60,6 +65,12 @@ module.exports = {
 				ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
 			}
 		],
+		"@typescript-eslint/no-unused-vars": "off",
+		"unused-imports/no-unused-imports": "error",
+		"unused-imports/no-unused-vars": [
+			"warn",
+			{ "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" }
+		]
 	},
 	globals: {
 		__IS_DEV: true,

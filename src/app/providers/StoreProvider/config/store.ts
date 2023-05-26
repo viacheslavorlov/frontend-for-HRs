@@ -3,8 +3,8 @@ import {
 } from '@reduxjs/toolkit';
 import { counterReducer } from '@/entities/Counter';
 import { userReducer } from '@/entities/User';
-import { $api } from '@/shared/api/api';
 import { scrollRestorationSliceReducer } from '@/features/ScrollRextoration';
+import { $api } from '@/shared/api/api';
 import { rtkApi } from '@/shared/api/rtkApi';
 import { createReducerManager } from './reducerManager';
 import { StateSchema, ThunkExtraArg } from './StateSchema';
@@ -41,5 +41,3 @@ export function createReduxStore(
     store.reducerManager = reducerManager;
     return store;
 }
-
-export type AppDispatch = ReturnType<typeof createReduxStore>['dispatch'];
