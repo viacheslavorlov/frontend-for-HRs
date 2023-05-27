@@ -6,7 +6,7 @@ import { Dropdown } from '@/shared/ui/Popups';
 import {
     getUserAuthData, isUserAdmin, isUserManager, userActions,
 } from '@/entities/User';
-import { RoutePaths } from '@/shared/const/routerConst';
+import { getRouteAdmin, getRouteProfile } from '@/shared/const/routerConst';
 
 interface DropDownAvatarProps {
     className?: string;
@@ -35,7 +35,7 @@ export const DropDownAvatar = memo((props: DropDownAvatarProps) => {
                 items={[
                     ...(isAdminPanelAvalible ? [{
                         content: t('Admin'),
-                        href: RoutePaths.admin_panel,
+                        href: getRouteAdmin(),
                     }] : []),
                     {
                         content: t('translation:Выйти'),
@@ -43,7 +43,7 @@ export const DropDownAvatar = memo((props: DropDownAvatarProps) => {
                     },
                     {
                         content: t('Профиль'),
-                        href: RoutePaths.profile + authData.id,
+                        href: getRouteProfile(authData.id),
                     },
                 ]}
                 trigger={<Avatar src={authData.avatar} alt="выйти" size={30} />}

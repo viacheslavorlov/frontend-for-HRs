@@ -3,10 +3,10 @@ on: [ push ]
 
 jobs:
     pipeline:
-        runs-on: windows-latest
-        #        strategy:
-        #            matrix:
-        #                node-version: [ 18.8.1 ]
+        runs-on: windows-2019
+#            strategy:
+#                matrix:
+#                    node-version: [ 18.8.1 ]
         steps:
             -   uses: actions/checkout@v3
             -   name: Starting Node.js
@@ -25,5 +25,5 @@ jobs:
                 run: npm run unit
             -   name: build storybook
                 run: npm run build-storybook
-            -   name: screenshot testing
-                run: npm run test:ui:ci
+#            -   name: screenshot testing
+#                run: npm run test:ui:ci

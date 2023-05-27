@@ -21,16 +21,12 @@ export enum AllRoutes {
     FORBIDDEN_PAGE = 'forbidden'
 }
 
-export const RoutePaths: Record<AllRoutes, string> = {
-    [AllRoutes.MAIN]: '/',
-    [AllRoutes.ABOUT]: '/about',
-    [AllRoutes.PROFILE]: '/profile/',
-    [AllRoutes.ARTICLES]: '/articles',
-    [AllRoutes.ARTICLE_DETAILS]: '/articles/', // ? + :id
-    [AllRoutes.ARTICLE_CREATE]: '/article/new',
-    [AllRoutes.ARTICLE_EDIT]: '/articles/:id/edit', // ? + :id
-    [AllRoutes.ADMIN_PANEL]: '/admin',
-    [AllRoutes.FORBIDDEN_PAGE]: '/forbidden',
-    // last
-    [AllRoutes.NOT_FOUND]: '*',
-};
+export const getRouteMain = () => '/';
+export const getRouteAbout = () => '/about';
+export const getRouteProfile = (id: string) => `/profile/${id}`;
+export const getRouteArticles = () => '/articles';
+export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
+export const getRouteArticleNew = () => '/article/new';
+export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
+export const getRouteAdmin = () => '/admin';
+export const getRouteForbidden = () => '/forbidden';

@@ -16,7 +16,7 @@ import {
 import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/ArticlesTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import Eye from '../../assets/Eye.svg';
-import { RoutePaths } from '@/shared/const/routerConst';
+import { getRouteArticleDetails } from '@/shared/const/routerConst';
 
 interface ArticleListItemProps {
     className?: string;
@@ -37,7 +37,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     const navigate = useNavigate();
 
     const onOpenArticle = useCallback(() => {
-        navigate(RoutePaths.article_details + article.id);
+        navigate(getRouteArticleDetails(article.id));
     }, [article, navigate]);
 
     // * useHover() hook can be used instead of
@@ -68,7 +68,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <img className={cls.img} src={article?.img} alt={article?.title} />
                     {textBlock && <ArticlesTextBlockComponent block={textBlock} className={cls.textBlock} />}
                     <div className={cls.footer}>
-                        <AppLink target={target} to={RoutePaths.article_details + article.id}>
+                        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
                             <Button
                                 theme={ButtonTheme.CLEAR}
                                 className={cls.btn}
@@ -87,7 +87,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     return (
         <AppLink
             target={target}
-            to={RoutePaths.article_details + article.id}
+            to={getRouteArticleDetails(article.id)}
         >
             <div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card} onClick={onOpenArticle}>
