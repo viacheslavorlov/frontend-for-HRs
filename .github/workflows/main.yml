@@ -1,12 +1,12 @@
 name: linting-testing-building
-on: [push]
+on: [ push ]
 
 jobs:
     pipeline:
         runs-on: windows-latest
-#        strategy:
-#            matrix:
-#                node-version: [ 18.8.1 ]
+        #        strategy:
+        #            matrix:
+        #                node-version: [ 18.8.1 ]
         steps:
             -   uses: actions/checkout@v3
             -   name: Starting Node.js
@@ -23,8 +23,7 @@ jobs:
                 run: npm run stylelint
             -   name: unit tests
                 run: npm run unit
-
-#      - name: build storybook
-#        run: npm run build-storybook
-#      - name: screenshot testing
-#        run: npm run test:ui:ci
+            -   name: build storybook
+                run: npm run build-storybook
+            -   name: screenshot testing
+                run: npm run test:ui:ci

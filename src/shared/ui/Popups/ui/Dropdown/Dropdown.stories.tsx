@@ -26,5 +26,25 @@ LightDropdown.args = {
 };
 
 export const DarkDropdown = Template.bind({});
-DarkDropdown.args = {};
+DarkDropdown.args = {
+    direction: 'bottomRight',
+    trigger: <Button>Название инструмента</Button>,
+    items: [
+        { content: 'первый пункт', disabled: false },
+        { content: 'второй пункт', disabled: false },
+        { content: 'отключенный пункт', disabled: true },
+    ],
+};
 DarkDropdown.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeDropdown = Template.bind({});
+OrangeDropdown.args = {
+    direction: 'bottomLeft',
+    trigger: <Button>Название инструмента</Button>,
+    items: [
+        { content: 'первый пункт', disabled: false },
+        { content: 'второй пункт', disabled: false },
+        { content: 'отключенный пункт', disabled: true },
+    ],
+};
+OrangeDropdown.decorators = [ThemeDecorator(Theme.ORANGE)];

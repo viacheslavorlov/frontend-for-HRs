@@ -21,7 +21,11 @@ const reducers: ReducersList = {
 };
 
 const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
-    const { id } = useParams<{ id: string }>();
+    let { id } = useParams<{ id: string }>();
+
+    if (__PROJECT === 'storybook') {
+        id = '1';
+    }
 
     if (!id) {
         return null;
