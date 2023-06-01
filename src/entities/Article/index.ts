@@ -1,13 +1,9 @@
-export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
-
 export { articleDetailsReducer, articleDetailsActions } from './model/slice/articleDetails';
 
 export {
     getArticleDetailsData, getArticleDetailsError,
     getArticleDetailsIsLoading,
 } from './model/selectors/articleDetailsSelector';
-
-export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
 
 export {
     ArticleType, ArticleView, ArticleSortField, ArticleBlockType,

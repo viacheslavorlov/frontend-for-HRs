@@ -1,9 +1,9 @@
 import { memo } from 'react';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '@/shared/ui/Icon';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { ArticleView } from '@/entities/Article';
-import { viewTypes } from './const/viewTypes';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Icon } from '@/shared/ui/Icon';
+import { viewTypes } from '../const/viewTypes';
 import cls from './ArticleViewSelector.module.scss';
 
 interface ArticleViewSelectorPrors {

@@ -1,10 +1,11 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
+import { ArticleType } from '@/entities/Article';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { ArticleTypeTabs } from './ArticleTypeTabs';
 
 export default {
-    title: 'entities/Article/ArticleTypeTabs',
+    title: 'features/ArticleTypeTabs',
     component: ArticleTypeTabs,
     argTypes: {
         background: { control: 'background' },
@@ -14,8 +15,12 @@ export default {
 const Template: ComponentStory<typeof ArticleTypeTabs> = (args) => <ArticleTypeTabs {...args} />;
 
 export const LightArticleTypeTabs = Template.bind({});
-LightArticleTypeTabs.args = {};
+LightArticleTypeTabs.args = { value: ArticleType.ECONOMICS };
 
 export const DarkArticleTypeTabs = Template.bind({});
-DarkArticleTypeTabs.args = {};
+DarkArticleTypeTabs.args = { value: ArticleType.ALL };
 DarkArticleTypeTabs.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeArticleTypeTabs = Template.bind({});
+OrangeArticleTypeTabs.args = { value: ArticleType.IT };
+OrangeArticleTypeTabs.decorators = [ThemeDecorator(Theme.ORANGE)];

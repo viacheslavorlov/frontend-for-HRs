@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { ArticleSortSelector } from './ArticleSortSelector';
 
 export default {
-    title: 'entities/Article/ArticleSortSelector',
+    title: 'features/ArticleSortSelector',
     component: ArticleSortSelector,
     argTypes: {
         background: { control: 'background' },

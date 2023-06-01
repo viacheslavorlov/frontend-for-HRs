@@ -2,15 +2,15 @@ import { memo, ReactNode, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { ArticleList, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
-import { fetchNextArticlePage } from '../../model/service/fetchNextArticlePage/fetchNextArticlePage';
+import { ArticlePageFilters } from '../../ArticlePageFilters/ui/ArticlePageFilters';
+import { fetchNextArticlePage } from '../model/service/fetchNextArticlePage/fetchNextArticlePage';
 import {
     getArticlePageError,
     getArticlePageHasMore,
     getArticlePageLoading,
     getArticlePageView,
-} from '../../model/selectors/articlePageSelectors';
-import { getArticles } from '../../model/slice/articlesSlice';
+} from '../model/selectors/articlePageSelectors';
+import { getArticles } from '../model/slice/articlesSlice';
 
 interface ArticleInfiniteListProps {
     className?: string;

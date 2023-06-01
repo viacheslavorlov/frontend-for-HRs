@@ -6,7 +6,7 @@ import { ArticleSortField } from '@/entities/Article';
 import { ArticlePageFilters } from './ArticlePageFilters';
 
 export default {
-    title: 'entities/Article/ArticlePageFilters',
+    title: 'features/ArticlePageFilters',
     component: ArticlePageFilters,
     argTypes: {
         background: { control: 'background' },

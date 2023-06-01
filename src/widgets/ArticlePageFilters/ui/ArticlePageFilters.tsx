@@ -1,11 +1,12 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
-    ArticleSortField, ArticleTypeTabs, ArticleView, ArticleType,
-    ArticleSortSelector,
+    ArticleSortField, ArticleView, ArticleType,
 } from '@/entities/Article';
 import { Card } from '@/shared/ui/Card';
 import { Input } from '@/shared/ui/Input';
@@ -15,12 +16,12 @@ import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
 import { TabItem } from '@/shared/ui/Tabs';
 
 import { HStack, VStack } from '@/shared/ui/Stack';
-import { fetchArticlesList } from '../../model/service/fetchArticles/fetchArticles';
+import { fetchArticlesList } from '../../ArticleInfiniteList/model/service/fetchArticles/fetchArticles';
 import {
     getArticlePageOrder, getArticlePageSearch, getArticlePageSort, getArticlePageType, getArticlePageView,
-} from '../../model/selectors/articlePageSelectors';
-import { ArticleViewSelector } from '../ArticleViewSelector/ArticleViewSelector';
-import { articlePageActions } from '../../model/slice/articlesSlice';
+} from '../../ArticleInfiniteList/model/selectors/articlePageSelectors';
+import { ArticleViewSelector } from '@/features/ArticlevVewSelector';
+import { articlePageActions } from '../../ArticleInfiniteList/model/slice/articlesSlice';
 
 interface ArticlePageFiltersProps {
     className?: string;
