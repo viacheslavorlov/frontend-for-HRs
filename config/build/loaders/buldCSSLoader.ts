@@ -3,6 +3,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 export function buildCssLoader(isDev: boolean) {
     return {
         test: /\.s[ac]ss$/i,
+        exclude: /node_modules/,
         use: [
             isDev ? 'style-loader' : MiniCssExtractPlugin.loader, //! создаёт отдельные файлы css, а не пишет весь css в .js файле
             //! Translates CSS into CommonJS

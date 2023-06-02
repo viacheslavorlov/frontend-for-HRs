@@ -53,7 +53,8 @@
         "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
         "visual:report:json": "node scripts/generate-visual-json-report.js",
         "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "postinstall": ""
     },
     "devDependencies": {
         "@babel/core": "^7.17.5",
