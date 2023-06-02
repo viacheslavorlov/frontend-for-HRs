@@ -7,7 +7,7 @@ interface BuildBabelLoaderProps extends BuildOptions{
 export function buildBabelLoader({ isDev, isTsx }: BuildBabelLoaderProps) {
     return {
         test: isTsx ? /\.(jsx|tsx)$/ : /\.(js|ts)$/,
-        exclude: /node_modules/,
+        exclude: [/node_modules/, /dist/, /extractedTranslations/, /scripts/, /reports/],
         rules: [
             {
                 test: /\.tsx?$/,
