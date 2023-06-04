@@ -1,5 +1,9 @@
 import { CSSProperties, memo, useMemo } from 'react';
+import { AppImage } from '@/shared/ui/AppImage';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { classNames, Mods } from '../../lib/classNames/classNames';
+import { Icon } from '../Icon';
+import AvatarPlaceholder from '../../assets/avatar.svg';
 import cls from './Avatar.module.scss';
 
 interface AvatarPrors {
@@ -11,15 +15,20 @@ interface AvatarPrors {
 
 export const Avatar = memo((props: AvatarPrors) => {
     const {
-        src, alt, className, size,
+        src, alt, className, size = 100,
     } = props;
     const mods: Mods = {};
     const styles = useMemo<CSSProperties>(() => ({
-        width: size || 100,
-        height: size || 100,
+        width: size,
+        height: size,
     }), [size]);
+
+    const errorFallback = <Icon width={size} height={size} Svg={AvatarPlaceholder} />;
+
     return (
-        <img
+        <AppImage
+            loadingFallback={<Skeleton border="50%" />}
+            errorFallback={errorFallback}
             src={src}
             alt={alt}
             style={styles}

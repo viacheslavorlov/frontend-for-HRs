@@ -1,4 +1,4 @@
-import React, { StrictMode, Suspense } from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from '@/app/providers/TemeProvider';
@@ -20,15 +20,13 @@ if (!root) {
 root.render(
     <BrowserRouter>
         <StoreProvider>
-            <StrictMode>
-                <ErrorBoundary>
-                    <ThemeProvider>
-                        <Suspense fallback={<PageLoader />}>
-                            <App />
-                        </Suspense>
-                    </ThemeProvider>
-                </ErrorBoundary>
-            </StrictMode>
+            <ErrorBoundary>
+                <ThemeProvider>
+                    <Suspense fallback={<PageLoader />}>
+                        <App />
+                    </Suspense>
+                </ThemeProvider>
+            </ErrorBoundary>
         </StoreProvider>
     </BrowserRouter>,
 );

@@ -6,3 +6,4 @@ reports
 
 .loki/report.html
 .loki/report.json
+/dist-vite/

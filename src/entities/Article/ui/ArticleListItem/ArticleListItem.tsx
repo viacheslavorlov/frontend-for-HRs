@@ -1,6 +1,7 @@
 import { HTMLAttributeAnchorTarget, memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
+import { Skeleton } from '@/shared/ui/Skeleton';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import { Icon } from '@/shared/ui/Icon';
@@ -17,6 +18,7 @@ import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/Articl
 import cls from './ArticleListItem.module.scss';
 import Eye from '../../assets/Eye.svg';
 import { getRouteArticleDetails } from '@/shared/const/routerConst';
+import { AppImage } from '@/shared/ui/AppImage';
 
 interface ArticleListItemProps {
     className?: string;
@@ -65,7 +67,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     <Text title={article?.title} className={cls.title} />
                     {types}
 
-                    <img className={cls.img} src={article?.img} alt={article?.title} />
+                    <AppImage
+                        className={cls.img}
+                        src={article?.img}
+                        alt={article?.title}
+                        errorFallback={<div className={cls.img}>{t('Ошибка при загрузке изображения!')}</div>}
+                        loadingFallback={<Skeleton height={20} width={20} border="50%" />}
+                    />
                     {textBlock && <ArticlesTextBlockComponent block={textBlock} className={cls.textBlock} />}
                     <div className={cls.footer}>
                         <AppLink target={target} to={getRouteArticleDetails(article.id)}>
@@ -92,7 +100,13 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             <div {...bindHover} className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
                 <Card className={cls.card} onClick={onOpenArticle}>
                     <div className={cls.imageWrapper}>
-                        <img src={article?.img} alt={article?.title} className={cls.img} />
+                        <AppImage
+                            className={cls.img}
+                            src={article?.img}
+                            alt={article?.title}
+                            errorFallback={<div className={cls.img}>{t('Ошибка при загрузке изображения!')}</div>}
+                            loadingFallback={<Skeleton height={250} width="100%" />}
+                        />
                         <Text text={article?.createdAt} className={cls.date} />
                     </div>
                     <div className={cls.infoWrapper}>
