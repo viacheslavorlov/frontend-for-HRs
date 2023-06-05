@@ -1,8 +1,8 @@
-dist
+/dist
 node_modules
 .idea
 storybook-static
-reports
+reports/unit-tests
 
 .loki/report.html
 .loki/report.json

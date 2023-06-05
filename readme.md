@@ -139,6 +139,133 @@ CardOrange.decorators = [ThemeDecorator(Theme.ORANGE)];
 
 ```
 
+
+## CI\CD
+
+Github Actions предназначен для автоматической проверки, тестирования и сборки проекта при каждом пуше или создании pull request в ветке  main .
+
+```yaml
+name: linting, testing, building
+on:
+    push:
+        branches: [ main ]
+    pull_request:
+        branches: [ main ]
+permissions:
+    contents: write
+    pages: write
+    id-token: write
+concurrency:
+    group: "pages"
+    cancel-in-progress: true
+jobs:
+    build-and-ui-testing:
+        runs-on: ubuntu-latest
+        concurrency: ci-${{ github.ref }}
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        strategy:
+            matrix:
+                node-version: [ 18.x ]
+        steps:
+            - uses: actions/checkout@v3
+            - name: Staring Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: install modules
+              run: npm ci
+            - name: build production project
+              run: npm run build:production
+              if: always()
+            - name: build storybook
+              run: npm run build-storybook
+              if: always()
+            - name: screenshot testing
+              run: npm run test:ui:ci
+              if: always()
+            - name: Generate HTML report
+              run: npm run test:ui:report
+              if: always()
+            - name: move loki report
+              run: mv .loki reports/
+              if: always()
+            - name: Setup Pages
+              uses: actions/configure-pages@v2
+              if: always()
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v1
+              if: always()
+              with:
+                  path: 'reports'
+            - name: Deploy to GitHub Pages
+              id: deployment
+              if: always()
+              uses: actions/deploy-pages@v1
+
+    checks:
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+                node-version: [ 18.x ]
+        steps:
+            - uses: actions/checkout@v3
+            - name: Staring Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - name: install modules
+              run: npm ci
+            - name: linting typescript
+              run: npm run lint:ts
+              if: always()
+            - name: linting css
+              run: npm run stylelint
+            - name: unit testing
+              if: always()
+              run: npm run unit
+
+```
+
+#### Триггеры
+
+-  push : Запускает Github Actions при каждом пуше в ветку  main .
+-  pull_request : Запускает Github Actions при создании pull request в ветку  main .
+
+#### Разрешения
+
+-  contents : Разрешает запись в содержимое репозитория.
+-  pages : Разрешает запись в Github Pages.
+
+#### Concurrency
+
+-  group : Группа для ограничения параллельных запусков.
+-  cancel-in-progress : Отменяет предыдущий запуск, если новый запуск был инициирован.
+
+### Jobs
+
+#### build-and-ui-testing
+
+Задача для сборки проекта, сборки Storybook и тестирования пользовательского интерфейса.
+
+-  runs-on : Использует последнюю версию Ubuntu.
+-  concurrency : Ограничивает параллельные запуски.
+-  environment : Имя и URL среды, в которой выполняется задача.
+-  strategy : Матрица для запуска задачи с разными версиями Node.js (в данном случае 18.x).
+-  steps : Шаги для выполнения задачи, включая установку зависимостей, сборку проекта, сборку Storybook, тестирование пользовательского интерфейса, генерацию отчетов и развертывание на Github Pages.
+   
+  - :) ДЛЯ ПОСМОТРА ОТЧЕТА СКРИНШОТНЫХ ТЕСТОВ МОЖНО ПЕРЕЙТИ НА https://viacheslavorlov.github.io/frontend-for-HRs/index.html
+  ЕСЛИ ИМЕЮТСЯ РАЗЛИЧИЯ ПРИ СРАВНЕНИИ СКРИНШОТОВ - В ЭТОМ ФАЙЛЕ БУДУТ ПРЕДСТАВЛЕНЫ ЭТИ СРАВНЕНИЯ В УДОБНОМ ДЛЯ ПРОСМОТРА ВИДЕ 
+
+#### checks
+
+Задача для проверки кода на соответствие стилю и выполнения юнит-тестов.
+
+-  runs-on : Использует последнюю версию Ubuntu.
+-  strategy : Матрица для запуска задачи с разными версиями Node.js (в данном случае 18.x).
+-  steps : Шаги для выполнения задачи, включая установку зависимостей, проверку TypeScript и CSS кода на соответствие стилю и выполнение юнит-тестов.
+
 ## React-hooks
 
 ### useDebounce:
