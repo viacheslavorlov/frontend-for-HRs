@@ -2,6 +2,7 @@ import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Avatar } from './Avatar';
+import AvatarPlaceHolder from './placeholder.png';
 
 export default {
     title: 'shared/Avatar',
@@ -15,14 +16,14 @@ const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const LightAvatar = Template.bind({});
 LightAvatar.args = {
-    src: 'https://cdn-icons-png.flaticon.com/512/924/924956.png',
+    src: AvatarPlaceHolder,
     alt: 'alt',
     size: 100,
 };
 
 export const DarkAvatar = Template.bind({});
 DarkAvatar.args = {
-    src: 'https://cdn-icons-png.flaticon.com/512/924/924956.png',
+    src: AvatarPlaceHolder,
     alt: 'alt',
     size: 100,
 };

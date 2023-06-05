@@ -1,6 +1,5 @@
 import React, { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Counter } from '@/entities/Counter';
 import { Page } from '@/shared/ui/Page';
 import { Text, TextVariant } from '@/shared/ui/Text';
 
@@ -13,7 +12,6 @@ const MainPage = memo((props: MainPageProps) => {
 
     return (
         <Page className={props.className}>
-            <Counter />
             <Text
                 title={t('Главная')}
                 text={t('Чтобы войти и посмотреть все возможности'
