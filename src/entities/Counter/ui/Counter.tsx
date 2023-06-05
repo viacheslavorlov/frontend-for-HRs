@@ -1,32 +1,32 @@
-import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
-import { counterActions } from '../model/slice/counterSlice';
-import { getCounterValue } from '../model/selectors/getCounterValue/getCounterValue';
+import { useCounterValue } from '../model/selectors/getCounter/getCounterValue';
+import { useCounterActions } from '../model/slice/counterSlice';
 
 export const Counter = memo(() => {
-    const dispatch = useDispatch();
-    const counterValue = useSelector(getCounterValue);
+    const counterValue = useCounterValue();
     const { t } = useTranslation();
+    const { increment, decrement, addFive } = useCounterActions();
 
-    const increment = () => {
-        dispatch(counterActions.increment());
+    const onIncrement = () => {
+        increment();
     };
-    const decrement = () => {
-        dispatch(counterActions.decrement());
+    const onDecrement = () => {
+        decrement();
+    };
+    const onAddFive = (num: number) => {
+        addFive(num);
     };
     return (
         <div>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
-            <button data-testid="increment" onClick={increment}>{t('increment')}</button>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
+            <button data-testid="increment" onClick={onIncrement}>{t('increment')}</button>
             <h1 data-testid="value">
                 {t('value')}
                 {' '}
                 {counterValue}
             </h1>
-            {/* eslint-disable-next-line i18next/no-literal-string */}
-            <button data-testid="decrement" onClick={decrement}>{t('decrement')}</button>
+            <button data-testid="decrement" onClick={onDecrement}>{t('decrement')}</button>
+            <button onClick={() => onAddFive(5)}>{t('+5')}</button>
         </div>
     );
 });
