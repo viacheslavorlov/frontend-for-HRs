@@ -1,6 +1,6 @@
 import { CSSProperties, memo, useMemo } from 'react';
-import { AppImage } from '@/shared/ui/AppImage';
-import { Skeleton } from '@/shared/ui/Skeleton';
+import { AppImage } from '../AppImage/AppImage';
+import { Skeleton } from '../Skeleton/Skeleton';
 import { classNames, Mods } from '../../lib/classNames/classNames';
 import { Icon } from '../Icon';
 import AvatarPlaceholder from '../../assets/avatar.svg';
@@ -27,7 +27,7 @@ export const Avatar = memo((props: AvatarPrors) => {
 
     return (
         <AppImage
-            loadingFallback={<Skeleton border="50%" />}
+            loadingFallback={<Skeleton border="50%" width={size} height={size} />}
             errorFallback={errorFallback}
             src={src}
             alt={alt}
