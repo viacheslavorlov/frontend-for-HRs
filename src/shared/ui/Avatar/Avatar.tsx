@@ -1,6 +1,6 @@
 import { CSSProperties, memo, useMemo } from 'react';
 import { AppImage } from '../AppImage/AppImage';
-import { Skeleton } from '../Skeleton/Skeleton';
+import { Skeleton } from '../Skeleton/ui/Skeleton';
 import { classNames, Mods } from '../../lib/classNames/classNames';
 import { Icon } from '../Icon';
 import AvatarPlaceholder from '../../assets/avatar.svg';

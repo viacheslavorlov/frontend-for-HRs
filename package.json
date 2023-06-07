@@ -94,7 +94,7 @@
         "css-loader": "^6.6.0",
         "eslint": "^8.10.0",
         "eslint-config-airbnb": "^19.0.4",
-        "eslint-plugin-fsd-architecture-checker": "^0.0.17",
+        "eslint-plugin-fsd-architecture-checker": "^0.0.19",
         "eslint-plugin-i18next": "^6.0.0-6",
         "eslint-plugin-import": "^2.27.5",
         "eslint-plugin-jsx-a11y": "^6.5.1",

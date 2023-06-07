@@ -1,6 +1,6 @@
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { PageError } from '../../../widgets/PageError';
+import { PageError } from '@/shared/ui/PageError/ui/PageError';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Text } from '@/shared/ui/Text';
 import { ArticleList, ArticleView } from '@/entities/Article';
