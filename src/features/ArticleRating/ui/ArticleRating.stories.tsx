@@ -1,5 +1,4 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import withMock from 'storybook-addon-mock';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import ArticleRating from './ArticleRating';
@@ -13,7 +12,6 @@ export default {
     },
 
     decorators: [
-        withMock,
         StoreDecorator({
             user: {
                 authData: {

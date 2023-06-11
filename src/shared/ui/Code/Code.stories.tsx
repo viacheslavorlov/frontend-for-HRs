@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Code } from './Code';
 
 export default {
-    title: 'widgets/Code',
+    title: 'shared/Code',
     component: Code,
     argTypes: {
         background: { control: 'background' },

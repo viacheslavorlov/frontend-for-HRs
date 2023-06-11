@@ -5,7 +5,7 @@ import { Icon } from './Icon';
 import TestIcon from '../../assets/copie.svg';
 
 export default {
-    title: 'widgets/Code',
+    title: 'shared/Icon',
     component: Icon,
     argTypes: {
         background: { control: 'background' },

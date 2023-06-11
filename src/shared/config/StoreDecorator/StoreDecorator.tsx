@@ -1,4 +1,5 @@
 import { Story } from '@storybook/react';
+import { articlePageReducer } from '../../../widgets/ArticleInfiniteList';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
@@ -13,6 +14,7 @@ const defaultReducers: ReducersList = {
     articleDetails: articleDetailsReducer,
     addCommentForm: addCommentFormReducer,
     articleDetailedPage: articleDetailsPageReducer,
+    articlesPage: articlePageReducer,
 };
 
 export const StoreDecorator = (

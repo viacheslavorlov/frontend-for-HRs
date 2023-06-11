@@ -1,5 +1,4 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
-// eslint-disable-next-line fsd-architecture-checker/layers-imports-order
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { SortOrder } from '@/shared/types/sortOrder';
 import { ArticleSortField, ArticleType } from '@/entities/Article';

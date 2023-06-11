@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
-import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
-import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
+import { Meta, StoryFn } from '@storybook/react';
 import { Article } from '@/entities/Article';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { ArticleRecomendationList } from './ArticleRecomendationList';
 
 const article: Article = {
@@ -37,10 +37,10 @@ export default {
             },
         ],
     },
-} as ComponentMeta<typeof ArticleRecomendationList>;
+} as Meta<typeof ArticleRecomendationList>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ArticleRecomendationList> = (args) => <ArticleRecomendationList {...args} />;
+const Template: StoryFn<typeof ArticleRecomendationList> = (args) => <ArticleRecomendationList {...args} />;
 
 export const LightArticleRecommendationList = Template.bind({});
 LightArticleRecommendationList.args = {};
