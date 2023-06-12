@@ -9,9 +9,11 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof CurrencySelect>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;
 
 export const LightCurrencySelect = Template.bind({});

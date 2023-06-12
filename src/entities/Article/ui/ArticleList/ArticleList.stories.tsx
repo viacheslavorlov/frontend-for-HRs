@@ -1,7 +1,6 @@
 import { ComponentMeta, ComponentStory, Story } from '@storybook/react';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
-
-// noinspection JSUnusedLocalSymbols
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ArticleView } from '../../model/consts/articleConst';
@@ -14,10 +13,9 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [StoreDecorator({}), (StoryComponent: Story) => <div style={{ width: '100vw', height: '100vh' }}><StoryComponent /></div>],
+    decorators: [StoreDecorator({}), ThemeDecorator(Theme.LIGHT), RouterDecorator, (StoryComponent: Story) => <div style={{ width: '100vw', height: '100vh' }}><StoryComponent /></div>],
 } as ComponentMeta<typeof ArticleList>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof ArticleList> = (args) => <ArticleList {...args} />;
 
 const articles = new Array(10).fill(0).map((item) => ({

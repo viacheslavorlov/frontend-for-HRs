@@ -14,9 +14,9 @@ export default {
 
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;
 
-export const LightCode = Template.bind({});
-LightCode.args = { Svg: TestIcon };
+export const LightIcon = Template.bind({});
+LightIcon.args = { Svg: TestIcon };
 
-export const DarkCode = Template.bind({});
-DarkCode.args = { Svg: TestIcon };
-DarkCode.decorators = [ThemeDecorator(Theme.DARK)];
+export const DarkIcon = Template.bind({});
+DarkIcon.args = { Svg: TestIcon };
+DarkIcon.decorators = [ThemeDecorator(Theme.DARK)];

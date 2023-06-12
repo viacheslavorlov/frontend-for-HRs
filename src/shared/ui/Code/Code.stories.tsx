@@ -28,7 +28,7 @@ const children = (
 );
 
 const Template: ComponentStory<typeof Code> = (args) => (
-    <Code {...args} />
+    <Code {...args}>{children}</Code>
 );
 
 export const LightCode = Template.bind({});
@@ -37,3 +37,7 @@ LightCode.args = { children };
 export const DarkCode = Template.bind({});
 DarkCode.args = { children };
 DarkCode.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const OrangeCode = Template.bind({});
+OrangeCode.args = { children };
+OrangeCode.decorators = [ThemeDecorator(Theme.ORANGE)];

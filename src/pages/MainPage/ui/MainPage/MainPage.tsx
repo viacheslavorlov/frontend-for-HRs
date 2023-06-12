@@ -11,7 +11,7 @@ const MainPage = memo((props: MainPageProps) => {
     const { t } = useTranslation('main');
 
     return (
-        <Page className={props.className}>
+        <Page data-testid="MainPage" className={props.className}>
             <Text
                 title={t('Главная')}
                 text={t('Чтобы войти и посмотреть все возможности'

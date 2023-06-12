@@ -1,6 +1,5 @@
-// noinspection JSUnresolvedVariable,DuplicatedCode
-
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConst';
@@ -15,9 +14,12 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        RouterDecorator,
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof ArticleListItem>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
 
 const article: Article = {
@@ -107,7 +109,6 @@ DarkArticleListItem.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const LightArticleListItemBIG = Template.bind({});
 LightArticleListItemBIG.args = { view: ArticleView.BIG, article };
-LightArticleListItemBIG.decorators = [];
 
 export const DarkArticleListItemBIG = Template.bind({});
 DarkArticleListItemBIG.args = { view: ArticleView.BIG, article };

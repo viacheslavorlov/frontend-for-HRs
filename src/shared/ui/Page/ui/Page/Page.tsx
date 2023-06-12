@@ -7,6 +7,7 @@ import cls from './Page.module.scss';
 interface PageProps {
     className?: string;
     children: ReactNode;
+    'data-testid'?: string;
 }
 
 export const Page = memo((props: PageProps) => {
@@ -19,6 +20,7 @@ export const Page = memo((props: PageProps) => {
 
     return (
         <main
+            data-testid={props['data-testid'] ?? 'Page'}
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
         >
