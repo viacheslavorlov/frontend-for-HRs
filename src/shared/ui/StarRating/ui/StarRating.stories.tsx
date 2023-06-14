@@ -9,6 +9,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof StarRating>;
 
 const Template: ComponentStory<typeof StarRating> = (args) => <StarRating {...args} />;

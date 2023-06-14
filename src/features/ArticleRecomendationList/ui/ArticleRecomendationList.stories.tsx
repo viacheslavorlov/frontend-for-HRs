@@ -1,4 +1,5 @@
 import { Meta, StoryFn } from '@storybook/react';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { Article } from '@/entities/Article';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
@@ -23,6 +24,10 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        RouterDecorator,
+        ThemeDecorator(Theme.LIGHT),
+    ],
     parameters: {
         mockData: [
             {
@@ -39,8 +44,7 @@ export default {
     },
 } as Meta<typeof ArticleRecomendationList>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
-const Template: StoryFn<typeof ArticleRecomendationList> = (args) => <ArticleRecomendationList {...args} />;
+const Template: StoryFn<typeof ArticleRecomendationList> = (args) => <ArticleRecomendationList />;
 
 export const LightArticleRecommendationList = Template.bind({});
 LightArticleRecommendationList.args = {};

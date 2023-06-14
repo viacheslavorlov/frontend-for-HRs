@@ -4,6 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ArticleBlockType, ArticleType } from '../../model/consts/articleConst';
 import { ArticleDetails } from './ArticleDetails';
+import { StyleDecorator } from '@/shared/config/styleDecorator/styleDecorator';
 
 export default {
     title: 'entities/ArticleDetails',
@@ -11,6 +12,10 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        StyleDecorator,
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof ArticleDetails>;
 
 const article = {

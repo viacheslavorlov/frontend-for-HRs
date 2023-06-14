@@ -12,6 +12,9 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof ProfilePage>;
 
 const Template: ComponentStory<typeof ProfilePage> = () => <ProfilePage />;

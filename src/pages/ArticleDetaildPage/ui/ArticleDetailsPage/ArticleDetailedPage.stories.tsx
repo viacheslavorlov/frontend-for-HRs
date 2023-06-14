@@ -47,6 +47,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
+        ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         StoreDecorator({
             user: {
@@ -74,7 +75,7 @@ export default {
     },
 } as Meta<typeof ArticleDetailedPage>;
 
-const Template: StoryFn<typeof ArticleDetailedPage> = (args) => <ArticleDetailedPage {...args} />;
+const Template: StoryFn<typeof ArticleDetailedPage> = () => <ArticleDetailedPage />;
 
 export const LightArticleDetaildPage = Template.bind({});
 LightArticleDetaildPage.args = {};

@@ -12,26 +12,28 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [StoreDecorator({
-        profile: {
-            form: {
-                id: '1',
-                username: 'User',
-                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
-                last: 'User',
-                first: 'Userella',
-                currency: Currency.EUR,
-                country: Country.Russia,
-                city: 'Moscow',
-                age: 99,
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+        StoreDecorator({
+            profile: {
+                form: {
+                    id: '1',
+                    username: 'User',
+                    avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
+                    last: 'User',
+                    first: 'Userella',
+                    currency: Currency.EUR,
+                    country: Country.Russia,
+                    city: 'Moscow',
+                    age: 99,
+                },
             },
-        },
-        user: {
-            authData: {
-                id: '1',
+            user: {
+                authData: {
+                    id: '1',
+                },
             },
-        },
-    })],
+        })],
 } as ComponentMeta<typeof EditableProfileCard>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

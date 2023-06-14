@@ -1,8 +1,8 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
-import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -11,9 +11,11 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof ProfileCard>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof ProfileCard> = (args) => <ProfileCard {...args} />;
 
 export const LightProfileCard = Template.bind({});
