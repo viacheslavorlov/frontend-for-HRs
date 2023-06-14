@@ -41,7 +41,7 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page className={cls.ArticlePage}>
+            <Page data-testid="ArticlePage" className={cls.ArticlePage}>
                 <ArticleInfiniteList />
             </Page>
         </DynamicModuleLoader>
