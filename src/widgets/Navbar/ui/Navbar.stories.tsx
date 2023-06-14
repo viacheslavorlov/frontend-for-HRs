@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
@@ -12,6 +13,7 @@ export default {
     },
     decorators: [
         ThemeDecorator(Theme.LIGHT),
+        RouterDecorator,
     ],
 } as ComponentMeta<typeof Navbar>;
 
