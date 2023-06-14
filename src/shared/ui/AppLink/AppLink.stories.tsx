@@ -1,6 +1,7 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { AppLink, AppLInkTheme } from './AppLink';
 
 export default {
@@ -12,6 +13,10 @@ export default {
     args: {
         to: '/',
     },
+    decorators: [
+        RouterDecorator,
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;

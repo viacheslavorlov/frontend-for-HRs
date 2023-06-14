@@ -11,6 +11,7 @@ export default {
     },
     decorators: [
         (Story) => <div style={{ padding: 100 }}><Story /></div>,
+        ThemeDecorator(Theme.LIGHT),
     ],
 } as ComponentMeta<typeof ListBox>;
 

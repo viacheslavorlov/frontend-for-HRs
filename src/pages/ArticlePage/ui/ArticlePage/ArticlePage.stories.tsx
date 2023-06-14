@@ -4,7 +4,7 @@ import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
 import ArticlePage from './ArticlePage';
 
-const Template: StoryFn<typeof ArticlePage> = (args) => <ArticlePage {...args} />;
+const Template: StoryFn<typeof ArticlePage> = (args) => <ArticlePage />;
 
 export default {
     title: 'pages/ArticlePage',

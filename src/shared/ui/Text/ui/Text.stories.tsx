@@ -9,6 +9,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof Text>;
 
 const Template: ComponentStory<typeof Text> = (args) => <Text {...args} />;

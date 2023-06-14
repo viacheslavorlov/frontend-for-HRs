@@ -10,6 +10,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof Tabs>;
 
 const Template: ComponentStory<typeof Tabs> = (args) => <Tabs {...args} />;

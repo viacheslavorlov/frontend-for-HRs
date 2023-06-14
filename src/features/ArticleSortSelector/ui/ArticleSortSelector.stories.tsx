@@ -6,6 +6,9 @@ import { ArticleSortSelector } from './ArticleSortSelector';
 export default {
     title: 'features/ArticleSortSelector',
     component: ArticleSortSelector,
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
     argTypes: {
         background: { control: 'background' },
     },

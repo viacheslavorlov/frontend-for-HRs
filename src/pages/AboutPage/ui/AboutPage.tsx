@@ -10,7 +10,7 @@ interface AboutPageProps {
 const AboutPage = memo((props: AboutPageProps) => {
     const { t } = useTranslation('about');
     return (
-        <Page className={props?.className}>
+        <Page data-testid="AboutPage" className={props?.className}>
             <Text
                 title={t('О нас!')}
                 text={t('Чтобы войти и посмотреть все возможности '

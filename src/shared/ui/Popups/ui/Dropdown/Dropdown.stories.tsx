@@ -10,7 +10,8 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-} as ComponentMeta<typeof Dropdown>;
+    decorators: [ThemeDecorator(Theme.LIGHT)],
+} as unknown as ComponentMeta<typeof Dropdown>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;

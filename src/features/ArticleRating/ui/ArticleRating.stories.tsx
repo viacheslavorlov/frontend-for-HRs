@@ -19,6 +19,7 @@ export default {
                 },
             },
         }),
+        ThemeDecorator(Theme.LIGHT),
     ],
     mockData: [
         {

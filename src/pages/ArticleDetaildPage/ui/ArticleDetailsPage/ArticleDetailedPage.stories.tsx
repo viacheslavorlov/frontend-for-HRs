@@ -74,7 +74,7 @@ export default {
     },
 } as Meta<typeof ArticleDetailedPage>;
 
-const Template: StoryFn<typeof ArticleDetailedPage> = (args) => <ArticleDetailedPage {...args} />;
+const Template: StoryFn<typeof ArticleDetailedPage> = () => <ArticleDetailedPage />;
 
 export const LightArticleDetaildPage = Template.bind({});
 LightArticleDetaildPage.args = {};
