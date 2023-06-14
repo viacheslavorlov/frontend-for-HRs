@@ -22,8 +22,8 @@ export const preview = {
     },
     layout: 'fullscreen',
     decorators: [
-        ThemeDecorator(Theme.LIGHT),
         StyleDecorator,
+        ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         SuspenseDecorator,
     ],

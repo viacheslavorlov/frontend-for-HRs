@@ -12,16 +12,7 @@ export default {
         background: { control: 'background' },
     },
     decorators: [
-        (StoryComponent) => (
-            <div style={{
-                display: 'flex',
-                justifyContent: 'flex-end',
-                width: 400,
-            }}
-            >
-                <StoryComponent />
-            </div>
-        ),
+        ThemeDecorator(Theme.LIGHT),
         StoreDecorator({
             user: {
                 authData: {

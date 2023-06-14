@@ -10,6 +10,9 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof LoginForm>;
 
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;

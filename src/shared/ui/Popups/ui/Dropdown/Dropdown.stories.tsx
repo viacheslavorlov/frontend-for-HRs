@@ -1,4 +1,4 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { Meta, StoryFn } from '@storybook/react';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Button } from '../../../Button/Button';
@@ -11,10 +11,10 @@ export default {
         background: { control: 'background' },
     },
     decorators: [ThemeDecorator(Theme.LIGHT)],
-} as unknown as ComponentMeta<typeof Dropdown>;
+} as Meta<typeof Dropdown>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof Dropdown> = (args) => <Dropdown {...args} />;
+const Template: StoryFn<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
 export const LightDropdown = Template.bind({});
 LightDropdown.args = {

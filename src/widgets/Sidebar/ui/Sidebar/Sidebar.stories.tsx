@@ -3,6 +3,7 @@ import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { Sidebar } from './Sidebar';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 
 export default {
     title: 'widgets/Sidebar',
@@ -10,6 +11,10 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        RouterDecorator,
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof Sidebar>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

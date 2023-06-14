@@ -47,6 +47,7 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
+        ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         StoreDecorator({
             user: {

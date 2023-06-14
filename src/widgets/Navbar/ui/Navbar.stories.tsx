@@ -10,6 +10,9 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof Navbar>;
 
 const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;

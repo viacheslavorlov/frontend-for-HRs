@@ -10,7 +10,6 @@ module.exports = {
 		'@storybook/addon-interactions',
 		'storybook-addon-mock',
 		'storybook-addon-themes'],
-	staticDirs: ['../../public'],
 	framework: {
 		name: '@storybook/react-webpack5',
 		options: {}

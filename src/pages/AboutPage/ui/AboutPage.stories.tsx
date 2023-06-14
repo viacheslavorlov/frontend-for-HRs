@@ -12,6 +12,9 @@ export default {
     args: {
         text: 'important text',
     },
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof AboutPage>;
 
 const Template: ComponentStory<typeof AboutPage> = (args) => <AboutPage {...args} />;
