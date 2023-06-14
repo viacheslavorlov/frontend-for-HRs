@@ -142,7 +142,7 @@
     },
     "loki": {
         "fetchFailIgnore": ".*",
-        "looks-same": {
+        "gm": {
             "ignoreCaret": true
         },
         "configurations": {

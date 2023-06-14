@@ -1,4 +1,5 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { SuspenseDecorator } from '@/shared/config/SuspenseDecorator/SuspenseDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Drawer } from './Drawer';
@@ -9,6 +10,10 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+
+    decorators: [
+        SuspenseDecorator,
+    ],
 } as ComponentMeta<typeof Drawer>;
 
 const content = [
@@ -19,6 +24,7 @@ const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
 
 export const LightDrawer = Template.bind({});
 LightDrawer.args = { children: content, isOpen: true };
+LightDrawer.decorators = [ThemeDecorator(Theme.LIGHT)];
 
 export const DarkDrawer = Template.bind({});
 DarkDrawer.args = { children: content, isOpen: true };

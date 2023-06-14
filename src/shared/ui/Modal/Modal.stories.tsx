@@ -1,6 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
+import { Meta, StoryFn } from '@storybook/react';
+import { SuspenseDecorator } from '@/shared/config/SuspenseDecorator/SuspenseDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { Modal } from './Modal';
 
 export default {
@@ -9,9 +10,13 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-} as ComponentMeta<typeof Modal>;
+    decorators: [
+        ThemeDecorator(Theme.LIGHT),
+        SuspenseDecorator,
+    ],
+} as Meta<typeof Modal>;
 
-const Template: ComponentStory<typeof Modal> = (args) => <Modal {...args} />;
+const Template: StoryFn<typeof Modal> = (args) => <Modal {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {
