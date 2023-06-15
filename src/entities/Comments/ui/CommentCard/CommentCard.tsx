@@ -54,7 +54,7 @@ export const CommentCard = memo((props: CommentCardPrors) => {
                 {comment?.user.avatar ? <Avatar size={30} src={comment?.user.avatar} /> : null}
                 <Text title={comment?.user.username} />
             </AppLink>
-            <Text text={comment?.text} />
+            <Text data-testid="CommentText" text={comment?.text} />
         </VStack>
     );
 });

@@ -95,6 +95,7 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
                     />
                 </HStack>
                 <Text
+                    data-testid="ArticleDetails"
                     title={data?.title}
                     text={data?.subtitle}
                     className={cls.title}

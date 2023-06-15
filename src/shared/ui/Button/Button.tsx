@@ -33,6 +33,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
     disabled?: boolean;
     children?: ReactNode;
+    'data-testid'?: string;
 }
 
 export const Button = memo((props: ButtonProps) => {
@@ -43,6 +44,7 @@ export const Button = memo((props: ButtonProps) => {
         size = ButtonSize.M,
         children,
         disabled,
+        'data-testid': dataTestId,
         ...otherProps
     } = props;
 
@@ -56,10 +58,11 @@ export const Button = memo((props: ButtonProps) => {
     return (
         <button
             /* eslint-disable-next-line react/jsx-props-no-spreading */
-            {...otherProps}
             type="button"
             disabled={disabled}
+            data-testid={dataTestId}
             className={classNames(cls.Button, mods, [className])}
+            {...otherProps}
         >
             {children}
         </button>

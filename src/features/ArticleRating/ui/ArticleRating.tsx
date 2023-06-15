@@ -21,6 +21,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
     const [rateArticle] = useRateArticle();
 
     const rating = data?.[0];
+    const feedbackTitle = data?.[0]?.feedback;
 
     const onHandelRating = useCallback((starsCount: number, feedback?: string) => {
         try {
@@ -52,7 +53,7 @@ const ArticleRating = memo((props: ArticleRatingProps) => {
             rate={rating?.rate}
             className={className}
             title={t('Оцените статью.')}
-            feedBackTitle={t('Остатвьте свой отзыв о статье')}
+            feedBackTitle={feedbackTitle}
             hasFeedback
             onAccept={onAccept}
             onCancel={onCancel}

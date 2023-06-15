@@ -60,12 +60,17 @@ export const Rating = memo((props: RatingProps) => {
     const modalContent = (
         <VStack gap="32" max>
             <Text text={feedBackTitle} />
-            <Input placeholder={t('Ваш отзыв')} value={feedback} onChange={setFeedback} />
+            <Input
+                data-testid="RatingModalInput"
+                placeholder={t('Ваш отзыв')}
+                value={feedback}
+                onChange={setFeedback}
+            />
             <HStack justify="between" max>
-                <Button onClick={onCancelHandler} theme={ButtonTheme.OUTLINE_RED}>
+                <Button data-testid="RatingModalClose" onClick={onCancelHandler} theme={ButtonTheme.OUTLINE_RED}>
                     {t('Отменить')}
                 </Button>
-                <Button onClick={onAcceptHandler}>
+                <Button data-testid="RatingModalSend" onClick={onAcceptHandler}>
                     {t('Отправить')}
                 </Button>
             </HStack>
@@ -75,7 +80,10 @@ export const Rating = memo((props: RatingProps) => {
     return (
         <Card className={className}>
             <VStack align="center" max gap="8">
-                <Text text={starsCount ? t('Спасибо за оценку!') : title} />
+                <Text
+                    data-testid="ArticleRating"
+                    text={starsCount ? feedBackTitle || t('Спасибо за оценку!') : title ?? t('Оставьте свой отзыв!')}
+                />
                 <StarRating onSelect={onSelectStars} selectedStars={rate} />
                 <BrowserView>
                     <Modal isOpen={isModalOpen} lazy>

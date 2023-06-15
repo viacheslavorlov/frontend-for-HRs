@@ -89,6 +89,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     if (view === ArticleView.BIG) {
         return (
             <Virtuoso
+                data-testid="ArticleList"
                 className={classNames(cls.ArticleList, mods, [className, cls[view]])}
                 style={{
                     height: 'calc(65vh - var(--navbar-heigt)',
@@ -110,6 +111,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
 
     return (
         <VirtuosoGrid
+            data-testid="ArticleList"
             className={classNames(cls.ArticleList, mods, [className, cls[view]])}
             style={{
                 height: searchParams ? 'calc(65vh - var(--navbar-heigt)' : 'calc(55vh - var(--navbar-heigt)',
