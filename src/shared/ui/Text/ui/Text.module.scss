@@ -1,11 +1,33 @@
 .title {
     font: var(--font-l);
     color: var(--primary-color);
+	.thin {
+		font-weight: 300;
+	}
+
+	.normal {
+		font-weight: 600;
+	}
+
+	.bold {
+		font-weight: 900;
+	}
 }
 
 .text {
     font: var(--font-m);
     color: var(--primary-color);
+	.thin {
+		font-weight: 300;
+	}
+
+	.normal {
+		font-weight: 600;
+	}
+
+	.bold {
+		font-weight: 900;
+	}
 }
 
 .inverted {
@@ -69,3 +91,5 @@
         font: var(--font-l);
     }
 }
+
+
