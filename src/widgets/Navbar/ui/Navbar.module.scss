@@ -19,4 +19,27 @@
 .appName {
     width: var(--sidebar-widh);
     margin-left: 15px;
+    background: linear-gradient(to right, #000, #f00, #0f0, #0ff, #00f, #f0f);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: gradient 3s linear infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 25% 50%;
+    }
+
+    75% {
+        background-position: 75% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }

@@ -19,6 +19,7 @@ export enum TextSize {
     M = 'size_m',
     L = 'size_l',
 }
+type FontWeight = 'thin' | 'normal' | 'bold';
 
 interface TextProps {
     className?: string;
@@ -27,6 +28,7 @@ interface TextProps {
     variant?: TextVariant;
     align?: TextAlign;
     size?: TextSize;
+    fontWeight?: FontWeight
     'data-testid'?: string;
 }
 
@@ -46,6 +48,7 @@ export const Text = memo((props: TextProps) => {
         variant = TextVariant.PRIMARY,
         align = TextAlign.LEFT,
         size = TextSize.M,
+        fontWeight = 'normal',
         'data-testid': dataTestId = 'Text',
     } = props;
 
@@ -58,7 +61,7 @@ export const Text = memo((props: TextProps) => {
     const HTag = headerTag[size];
 
     return (
-        <div data-testid={dataTestId} className={classNames(cls.Text, mods, [className])}>
+        <div data-testid={dataTestId} className={classNames(cls.Text, mods, [className, cls[fontWeight]])}>
             {title && (
                 <HTag
                     data-testid={`${dataTestId}.Header`}

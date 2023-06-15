@@ -1,17 +1,17 @@
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import cls from './Navbar.module.scss';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { LoginModal } from '@/features/AuthByUsername';
 import { getUserAuthData } from '@/entities/User';
-import { Text, TextVariant } from '@/shared/ui/Text';
-import { AppLink, AppLInkTheme } from '@/shared/ui/AppLink';
-import { HStack } from '@/shared/ui/Stack';
-import { NotificationButton } from '@/features/NotificationButton';
+import { LoginModal } from '@/features/AuthByUsername';
 import { DropDownAvatar } from '@/features/DropDownAvatar';
+import { NotificationButton } from '@/features/NotificationButton';
 import { getRouteArticleNew } from '@/shared/const/routerConst';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink, AppLInkTheme } from '@/shared/ui/AppLink';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { HStack } from '@/shared/ui/Stack';
+import { Text, TextSize, TextVariant } from '@/shared/ui/Text';
+import cls from './Navbar.module.scss';
 
 interface NavbarProps {
     className?: string;
@@ -36,6 +36,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                 <HStack justify="between" max>
                     <HStack justify="start">
                         <Text
+                            size={TextSize.L}
+                            fontWeight="bold"
                             className={cls.appName}
                             title={t('Блог')}
                             variant={TextVariant.INVERTED}

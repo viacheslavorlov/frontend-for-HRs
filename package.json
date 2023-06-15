@@ -55,7 +55,7 @@
         "visual:report:html": "reg-cli --from .loki/report.json --report .loki/report.html",
         "cypress:open": "cypress open",
         "prepare": "husky install",
-        "postinstall": "node ./scripts/clear-cache.js"
+        "postinstall": "node ./scripts/clearCache/clearCache.js"
     },
     "devDependencies": {
         "@babel/core": "^7.17.5",
