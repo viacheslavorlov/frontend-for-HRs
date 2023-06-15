@@ -956,6 +956,13 @@
       "rate": 5,
       "feedback": "dasdfasdfasd",
       "id": "C_gvRFa"
+    },
+    {
+      "articleId": "3",
+      "userId": "1",
+      "rate": 2,
+      "feedback": "",
+      "id": "7CKgb22"
     }
   ],
   "profile-ratings": [
