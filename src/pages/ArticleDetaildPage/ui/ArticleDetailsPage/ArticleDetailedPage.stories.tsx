@@ -11,7 +11,7 @@ const article: Article = {
     id: '13',
     title: 'Kotlin news',
     subtitle: 'Что не нового в Kotlin за 2022 год декабрь?',
-    img: 'https://kotlinlang.org/assets/images/twitter/general.png',
+    img: '',
     views: 3422,
     createdAt: '01.01.2023',
     type: [
