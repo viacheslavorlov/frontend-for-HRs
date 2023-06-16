@@ -20,7 +20,11 @@
     width: var(--sidebar-widh);
     margin-left: 15px;
     background: linear-gradient(to right, #000, #f00, #0f0, #0ff, #00f, #f0f);
+    /* stylelint-disable */
     background-clip: text;
+    -webkit-background-clip: text;
+    /* stylelint-enable */
+    color: transparent;
     -webkit-text-fill-color: transparent;
     background-size: 200% 100%;
     animation: gradient 3s linear infinite;

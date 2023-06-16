@@ -14,16 +14,17 @@ describe('Articles details page', () => {
     afterEach(() => {
         cy.deleteArticle(currentArticleId);
     });
-    it('Статья загрузилась', () => {
+    it('Статья загрузилась, пример с (ФИКСТУРОЙ ТЕСТА)', () => {
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
         cy.getByTestId('ArticleDetails').should('exist');
     });
-
-    it('Список рекомендаций и рейтинг загрузился', () => {
+    it('Список рекомендаций и рейтинг загрузился пример с (ФИКСТУРОЙ ТЕСТА)', () => {
+        cy.intercept('GET', '**/articles/*', { fixture: 'article-details.json' });
         cy.getByTestId('ArticleListItem').should('have.length.greaterThan', 2);
         cy.getByTestId('ArticleRating').should('exist');
     });
-
-    it('Комментарий к статье', () => {
+    it('Комментарий к статье, пример со СТАБОМ ТЕСТА)', () => {
+        cy.intercept('GET', '**/articles?*', { fixture: 'articles.json' });
         cy.getByTestId('ArticleDetails');
         cy.getByTestId('ArticleDetailsCommentInput').should('exist').scrollIntoView();
         cy.addComment('Cypress test comment');
