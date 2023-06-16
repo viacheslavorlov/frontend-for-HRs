@@ -21,7 +21,7 @@ export default defineConfig({
     ],
     define: {
         __IS_DEV: JSON.stringify(true),
-        __API_URL: JSON.stringify('http://localhost:8000'),
+        __API_URL: JSON.stringify('https://backend-for-advanced-frontend.vercel.app'),
         __PROJECT: JSON.stringify('frontend'),
     },
 });
