@@ -846,6 +846,12 @@
       "userId": "2",
       "text": "asdfasdfasdf",
       "id": "YPgoSw3"
+    },
+    {
+      "articleId": "13",
+      "userId": "2",
+      "text": "sdfgsdf sdf gsdf gsdf gsdfg",
+      "id": "-J0Iv8g"
     }
   ],
   "users": [
@@ -905,7 +911,7 @@
       "age": 45,
       "currency": "EUR",
       "country": "Belarus",
-      "city": "Moscow",
+      "city": "Moscow 2",
       "username": "user",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
@@ -1036,6 +1042,13 @@
       "rate": 5,
       "feedback": "Cypress rating feedback",
       "id": "XcTqToe"
+    },
+    {
+      "articleId": "13",
+      "userId": "2",
+      "rate": 2,
+      "feedback": "",
+      "id": "Nwuypy0"
     }
   ],
   "profile-ratings": [
