@@ -74,7 +74,6 @@ module.exports = {
                 argsIgnorePattern: '^_',
             },
         ],
-        'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
     },
     globals: {
         __IS_DEV: true,

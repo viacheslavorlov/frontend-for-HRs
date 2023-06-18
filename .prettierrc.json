@@ -4,8 +4,9 @@
     "singleQuote": true,
     "trailingComma": "all",
     "bracketSpacing": true,
-    "bracketSameLine": false,
+    "jsxBracketSameLine": false,
+    "maxPropsPerLine": 3,
     "arrowParens": "always",
     "endOfLine": "lf",
-    "printWidth": 120
+    "printWidth": 100
 }

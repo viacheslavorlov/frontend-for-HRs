@@ -37,18 +37,35 @@ const ScrollPlaceHolderSmall = () => (
 );
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const { className, articles, target, view = ArticleView.SMALL, isLoading, searchParams, onLoadNext } = props;
+    const {
+        className,
+        articles,
+        target,
+        view = ArticleView.SMALL,
+        isLoading,
+        searchParams,
+        onLoadNext,
+    } = props;
     const { t } = useTranslation('article');
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem className={cls.card} key={article.id} article={article} view={view}
-target={target} />
+        <ArticleListItem
+            className={cls.card}
+            key={article.id}
+            article={article}
+            view={view}
+            target={target}
+        />
     );
 
     if (!isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                <Text title={t('Статьи не найдены')} variant={TextVariant.ERROR} size={TextSize.L} />
+                <Text
+                    title={t('Статьи не найдены')}
+                    variant={TextVariant.ERROR}
+                    size={TextSize.L}
+                />
             </div>
         );
     }
@@ -100,7 +117,9 @@ target={target} />
             data-testid="ArticleList"
             className={classNames(cls.ArticleList, mods, [className, cls[view]])}
             style={{
-                height: searchParams ? 'calc(65vh - var(--navbar-heigt)' : 'calc(55vh - var(--navbar-heigt)',
+                height: searchParams
+                    ? 'calc(65vh - var(--navbar-heigt)'
+                    : 'calc(55vh - var(--navbar-heigt)',
                 overflowY: !searchParams ? 'hidden' : 'auto',
             }}
             totalCount={articles.length}
