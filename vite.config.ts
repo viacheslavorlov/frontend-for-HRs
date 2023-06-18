@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vite';
 import svgr from 'vite-plugin-svgr';
 
 export default defineConfig({
@@ -21,7 +21,7 @@ export default defineConfig({
     ],
     define: {
         __IS_DEV: JSON.stringify(true),
-        __API_URL: JSON.stringify('https://backend-for-advanced-frontend.vercel.app'),
+        __API_URL: JSON.stringify('http://localhost:8000'),
         __PROJECT: JSON.stringify('frontend'),
     },
 });
