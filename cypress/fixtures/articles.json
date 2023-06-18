@@ -7,9 +7,7 @@
         "views": 3422,
         "createdAt": "01.01.2023",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -26,9 +24,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -40,9 +36,7 @@
         "views": 10000,
         "createdAt": "04.01.2023",
         "userId": "1",
-        "type": [
-            "ECONOMICS"
-        ],
+        "type": ["ECONOMICS"],
         "blocks": [
             {
                 "id": "1",
@@ -59,9 +53,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -73,9 +65,7 @@
         "views": 2232,
         "createdAt": "06.02.2022",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -92,9 +82,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -106,9 +94,7 @@
         "views": 102,
         "createdAt": "10.02.2022",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -125,9 +111,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -139,9 +123,7 @@
         "views": 1022,
         "createdAt": "14.06.2021",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -158,9 +140,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -172,9 +152,7 @@
         "views": 19922,
         "createdAt": "20.02.2012",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -191,9 +169,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -205,9 +181,7 @@
         "views": 8976,
         "createdAt": "20.04.2022",
         "userId": "1",
-        "type": [
-            "SCIENCE"
-        ],
+        "type": ["SCIENCE"],
         "blocks": [
             {
                 "id": "1",
@@ -224,9 +198,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -238,9 +210,7 @@
         "views": 1992,
         "createdAt": "24.01.2023",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -257,9 +227,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     },
@@ -271,9 +239,7 @@
         "views": 12,
         "createdAt": "25.01.2023",
         "userId": "1",
-        "type": [
-            "IT"
-        ],
+        "type": ["IT"],
         "blocks": [
             {
                 "id": "1",
@@ -290,9 +256,7 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "roles": [
-                "ADMIN"
-            ],
+            "roles": ["ADMIN"],
             "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
         }
     }

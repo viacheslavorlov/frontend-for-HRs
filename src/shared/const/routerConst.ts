@@ -18,7 +18,7 @@ export enum AllRoutes {
     // eslint-disable-next-line no-unused-vars
     NOT_FOUND = 'not-found',
     // eslint-disable-next-line no-unused-vars
-    FORBIDDEN_PAGE = 'forbidden'
+    FORBIDDEN_PAGE = 'forbidden',
 }
 
 export const getRouteMain = () => '/';

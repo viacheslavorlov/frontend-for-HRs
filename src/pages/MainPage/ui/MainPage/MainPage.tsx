@@ -4,7 +4,7 @@ import { Page } from '@/shared/ui/Page';
 import { Text, TextVariant } from '@/shared/ui/Text';
 
 interface MainPageProps {
-    className?: string
+    className?: string;
 }
 
 const MainPage = memo((props: MainPageProps) => {
@@ -14,21 +14,19 @@ const MainPage = memo((props: MainPageProps) => {
         <Page data-testid="MainPage" className={props.className}>
             <Text
                 title={t('Главная')}
-                text={t('Чтобы войти и посмотреть все возможности'
-                    + ' данного сайта нажмите на кнопку "Войти" в правом верхнем углу экрана')}
+                text={t(
+                    'Чтобы войти и посмотреть все возможности' +
+                        ' данного сайта нажмите на кнопку "Войти" в правом верхнем углу экрана',
+                )}
                 variant={TextVariant.PRIMARY}
             />
+            <Text text={t('Используйте логин: admin')} variant={TextVariant.PRIMARY} />
+            <Text text={t('Используйте пароль: 123')} variant={TextVariant.PRIMARY} />
             <Text
-                text={t('Используйте логин: admin')}
-                variant={TextVariant.PRIMARY}
-            />
-            <Text
-                text={t('Используйте пароль: 123')}
-                variant={TextVariant.PRIMARY}
-            />
-            <Text
-                text={t('PS: Статьи, естественно, фейковые))) '
-                    + 'изменения в профиле не работают из за ограничений фейкового беленда на сервере(((')}
+                text={t(
+                    'PS: Статьи, естественно, фейковые))) ' +
+                        'изменения в профиле не работают из за ограничений фейкового беленда на сервере(((',
+                )}
                 variant={TextVariant.PRIMARY}
             />
         </Page>

@@ -13,10 +13,7 @@ export default {
     args: {
         to: '/',
     },
-    decorators: [
-        RouterDecorator,
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [RouterDecorator, ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof AppLink>;
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;

@@ -6,19 +6,14 @@ export default defineConfig({
     build: { outDir: 'dist-vite' },
     assetsInclude: '/public/locales/',
     resolve: {
-        alias: [
-            { find: '@', replacement: '/src' },
-        ],
+        alias: [{ find: '@', replacement: '/src' }],
     },
     css: {
         modules: {
             generateScopedName: '[path][name]__[local]--[hash:base64:5]',
         },
     },
-    plugins: [
-        react(),
-        svgr({ exportAsDefault: true }),
-    ],
+    plugins: [react(), svgr({ exportAsDefault: true })],
     define: {
         __IS_DEV: JSON.stringify(true),
         __API_URL: JSON.stringify('https://backend-for-advanced-frontend.vercel.app'),

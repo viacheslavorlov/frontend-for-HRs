@@ -1,10 +1,8 @@
-import {
-    AnyAction, CombinedState, combineReducers, EnhancedStore, Reducer, ReducersMapObject,
-} from '@reduxjs/toolkit';
+import { AnyAction, CombinedState, combineReducers, EnhancedStore, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
 import { StateSchema } from './StateSchema';
 
 export type StateSchemaKey = keyof StateSchema;
-export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>
+export type MountedReducers = OptionalRecord<StateSchemaKey, boolean>;
 
 export interface ReducerManager {
     getReducerMap: () => ReducersMapObject<StateSchema>;

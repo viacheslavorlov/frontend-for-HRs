@@ -37,25 +37,12 @@ const ScrollPlaceHolderSmall = () => (
 );
 
 export const ArticleList = memo((props: ArticleListProps) => {
-    const {
-        className,
-        articles,
-        target,
-        view = ArticleView.SMALL,
-        isLoading,
-        searchParams,
-        onLoadNext,
-    } = props;
+    const { className, articles, target, view = ArticleView.SMALL, isLoading, searchParams, onLoadNext } = props;
     const { t } = useTranslation('article');
 
     const renderArticle = (article: Article) => (
-        <ArticleListItem
-            className={cls.card}
-            key={article.id}
-            article={article}
-            view={view}
-            target={target}
-        />
+        <ArticleListItem className={cls.card} key={article.id} article={article} view={view}
+target={target} />
     );
 
     if (!isLoading && !articles.length) {
@@ -73,16 +60,15 @@ export const ArticleList = memo((props: ArticleListProps) => {
     if (isLoading) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
-                {
-                    view === ArticleView.BIG
-                        ? <Skeleton width="100%" /> : (
-                            <HStack max gap="16">
-                                <Skeleton width={240} height={256} />
-                                <Skeleton width={240} height={256} />
-                                <Skeleton width={240} height={256} />
-                            </HStack>
-                        )
-                }
+                {view === ArticleView.BIG ? (
+                    <Skeleton width="100%" />
+                ) : (
+                    <HStack max gap="16">
+                        <Skeleton width={240} height={256} />
+                        <Skeleton width={240} height={256} />
+                        <Skeleton width={240} height={256} />
+                    </HStack>
+                )}
             </div>
         );
     }

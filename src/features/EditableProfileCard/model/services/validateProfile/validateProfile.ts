@@ -18,23 +18,14 @@ export enum ValidateProfileError {
     // eslint-disable-next-line no-unused-vars
     NO_DATA = 'NO_DATA',
     // eslint-disable-next-line no-unused-vars
-    SERVER_ERROR = 'SERVER_ERROR'
+    SERVER_ERROR = 'SERVER_ERROR',
 }
 
 export const validateProfile = (profile?: ProfileType): ValidateProfileError[] => {
     if (!profile) {
         return [ValidateProfileError.NO_DATA];
     }
-    const {
-        age,
-        first,
-        last,
-        country,
-        currency,
-        city,
-        username,
-        avatar,
-    } = profile;
+    const { age, first, last, country, currency, city, username, avatar } = profile;
 
     const errors: ValidateProfileError[] = [];
 

@@ -5,7 +5,7 @@ import cls from './PageError.module.scss';
 import { Page } from '../../Page';
 
 interface PageErrorProps {
-    className?: string
+    className?: string;
 }
 
 export const PageError = ({ className }: PageErrorProps) => {

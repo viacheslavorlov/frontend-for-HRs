@@ -6,7 +6,7 @@ export interface ArticleBase {
     type: ArticleBlockType;
 }
 
-export interface ArticleCodeBlock extends ArticleBase{
+export interface ArticleCodeBlock extends ArticleBase {
     type: ArticleBlockType.CODE;
     code: string;
 }

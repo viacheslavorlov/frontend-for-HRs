@@ -5,7 +5,7 @@ import { EditableProfileCard } from '@/features/EditableProfileCard';
 import { classNames } from '@/shared/lib/classNames/classNames';
 
 interface ProfilePageProps {
-    className?: string
+    className?: string;
 }
 
 const ProfilePage = memo(({ className }: ProfilePageProps) => {
@@ -15,7 +15,6 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
         <Page data-testid="ProfilePage" className={classNames('', {}, [className])}>
             <EditableProfileCard id={id} />
         </Page>
-
     );
 });
 

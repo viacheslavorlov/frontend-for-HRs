@@ -22,7 +22,8 @@ RowGap4.args = {
             <div>first</div>
             <div>second</div>
             <div>third</div>
-        </>),
+        </>
+    ),
 };
 
 export const RowBetween = Template.bind({});
@@ -34,7 +35,8 @@ RowBetween.args = {
             <div>first</div>
             <div>second</div>
             <div>third</div>
-        </>),
+        </>
+    ),
 };
 
 export const ColumnAlignEnd = Template.bind({});
@@ -47,7 +49,8 @@ ColumnAlignEnd.args = {
             <div>first</div>
             <div>second</div>
             <div>third</div>
-        </>),
+        </>
+    ),
 };
 
 export const ColumnGap32 = Template.bind({});
@@ -59,6 +62,7 @@ ColumnGap32.args = {
             <div>first</div>
             <div>second</div>
             <div>third</div>
-        </>),
+        </>
+    ),
 };
 ColumnGap32.decorators = [ThemeDecorator(Theme.DARK)];

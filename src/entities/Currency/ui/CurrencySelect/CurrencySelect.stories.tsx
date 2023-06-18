@@ -9,9 +9,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof CurrencySelect>;
 
 const Template: ComponentStory<typeof CurrencySelect> = (args) => <CurrencySelect {...args} />;

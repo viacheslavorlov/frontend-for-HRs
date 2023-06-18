@@ -8,7 +8,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 
 declare module 'i18next' {
     interface CustomTypeOptions {
-        returnNull: false
+        returnNull: false;
     }
 }
 

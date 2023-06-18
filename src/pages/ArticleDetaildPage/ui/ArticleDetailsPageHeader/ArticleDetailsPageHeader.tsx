@@ -14,9 +14,7 @@ interface ArticleDetailsPageHeaderProps {
 }
 
 export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation('article');
     const article = useSelector(getArticleDetailsData);
     const canEdit = useSelector(getCanEditArticle);
@@ -34,17 +32,11 @@ export const ArticleDetailsPageHeader = memo((props: ArticleDetailsPageHeaderPro
 
     return (
         <HStack max justify="between" className={classNames('', {}, [className])}>
-            <Button
-                theme={ButtonTheme.BACKGROUND_INVERTED}
-                onClick={onBackToList}
-            >
+            <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onBackToList}>
                 {t('Назад к списку статей...')}
             </Button>
             {canEdit && (
-                <Button
-                    theme={ButtonTheme.BACKGROUND_INVERTED}
-                    onClick={onEditArticle}
-                >
+                <Button theme={ButtonTheme.BACKGROUND_INVERTED} onClick={onEditArticle}>
                     {t('Редактировать')}
                 </Button>
             )}

@@ -3,9 +3,7 @@ import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator
 import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { ArticleBlockType, ArticleType, ArticleView } from '../../model/consts/articleConst';
-import {
-    Article,
-} from '../../model/types/type';
+import { Article } from '../../model/types/type';
 import { ArticleListItem } from './ArticleListItem';
 
 export default {
@@ -14,10 +12,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        RouterDecorator,
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [RouterDecorator, ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof ArticleListItem>;
 
 const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
@@ -34,9 +29,7 @@ const article: Article = {
         username: 'UserName',
         avatar: 'https://teknotower.com/wp-content/uploads/2020/11/js.png',
     },
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
@@ -71,7 +64,7 @@ const article: Article = {
         {
             id: '3',
             type: ArticleBlockType.CODE,
-            code: 'const path = require(\'path\');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, \'db.json\'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);',
+            code: "const path = require('path');\n\nconst server = jsonServer.create();\n\nconst router = jsonServer.router(path.resolve(__dirname, 'db.json'));\n\nserver.use(jsonServer.defaults({}));\nserver.use(jsonServer.bodyParser);",
         },
         {
             id: '7',

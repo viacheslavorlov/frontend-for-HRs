@@ -13,18 +13,16 @@ interface PopupProps {
 }
 
 export const Popup = memo((props: PopupProps) => {
-    const {
-        className, children, trigger, direction = 'bottomRight',
-    } = props;
+    const { className, children, trigger, direction = 'bottomRight' } = props;
 
     const optionsClasses = popupCls[direction];
 
     return (
         <Popover className={classNames(popupCls.popup, {}, [className, cls.Popup])}>
-            <Popover.Button as="div" className={classNames(popupCls.trigger, {}, [])}>{trigger}</Popover.Button>
-            <Popover.Panel className={classNames(cls.items, {}, [optionsClasses])}>
-                {children}
-            </Popover.Panel>
+            <Popover.Button as="div" className={classNames(popupCls.trigger, {}, [])}>
+                {trigger}
+            </Popover.Button>
+            <Popover.Panel className={classNames(cls.items, {}, [optionsClasses])}>{children}</Popover.Panel>
         </Popover>
     );
 });

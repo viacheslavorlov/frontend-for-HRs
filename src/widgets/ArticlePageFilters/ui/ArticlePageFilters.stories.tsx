@@ -17,20 +17,26 @@ const Template: ComponentStory<typeof ArticlePageFilters> = (args) => <ArticlePa
 
 export const LightArticlePageFilters = Template.bind({});
 LightArticlePageFilters.args = {};
-LightArticlePageFilters.decorators = [ThemeDecorator(Theme.LIGHT), StoreDecorator({
-    articlesPage: {
-        order: 'desc',
-        search: 'test',
-        sort: ArticleSortField.VIEWS,
-    },
-})];
+LightArticlePageFilters.decorators = [
+    ThemeDecorator(Theme.LIGHT),
+    StoreDecorator({
+        articlesPage: {
+            order: 'desc',
+            search: 'test',
+            sort: ArticleSortField.VIEWS,
+        },
+    }),
+];
 
 export const DarkArticlePageFilters = Template.bind({});
 DarkArticlePageFilters.args = {};
-DarkArticlePageFilters.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articlesPage: {
-        order: 'desc',
-        search: 'test',
-        sort: ArticleSortField.VIEWS,
-    },
-})];
+DarkArticlePageFilters.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articlesPage: {
+            order: 'desc',
+            search: 'test',
+            sort: ArticleSortField.VIEWS,
+        },
+    }),
+];

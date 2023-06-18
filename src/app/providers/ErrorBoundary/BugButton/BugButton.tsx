@@ -14,10 +14,7 @@ export const BugButton = () => {
         }
     }, [error]);
     return (
-        <Button
-            onClick={onThrowError}
-            theme={ButtonTheme.CLASSIC}
-        >
+        <Button onClick={onThrowError} theme={ButtonTheme.CLASSIC}>
             {t('throw error')}
         </Button>
     );

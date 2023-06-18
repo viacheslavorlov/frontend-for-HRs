@@ -1,9 +1,5 @@
 import { StateSchema } from '@/app/providers/StoreProvider';
-import {
-    getArticleDetailsData,
-    getArticleDetailsError,
-    getArticleDetailsIsLoading,
-} from './articleDetailsSelector';
+import { getArticleDetailsData, getArticleDetailsError, getArticleDetailsIsLoading } from './articleDetailsSelector';
 
 describe('articleDetailsSelector.test', () => {
     const article: DeepPartial<StateSchema> = {
@@ -21,19 +17,23 @@ describe('articleDetailsSelector.test', () => {
         });
     });
     test('returns error', () => {
-        expect(getArticleDetailsError({
-            articleDetails: {
-                ...article.articleDetails,
-                error: 'error',
-            },
-        } as StateSchema)).toEqual('error');
+        expect(
+            getArticleDetailsError({
+                articleDetails: {
+                    ...article.articleDetails,
+                    error: 'error',
+                },
+            } as StateSchema),
+        ).toEqual('error');
     });
     test('returns isLoading', () => {
-        expect(getArticleDetailsIsLoading({
-            articleDetails: {
-                ...article.articleDetails,
-                isLoading: true,
-            },
-        } as StateSchema)).toEqual(true);
+        expect(
+            getArticleDetailsIsLoading({
+                articleDetails: {
+                    ...article.articleDetails,
+                    isLoading: true,
+                },
+            } as StateSchema),
+        ).toEqual(true);
     });
 });

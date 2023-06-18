@@ -33,13 +33,19 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     const isLoading = useSelector(getLoginIsLoading);
     const error = useSelector(getLoginError);
 
-    const onChangeUsername = useCallback((value: string) => {
-        dispatch(loginActions.setUsername(value));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setUsername(value));
+        },
+        [dispatch],
+    );
 
-    const onChangePassword = useCallback((value: string) => {
-        dispatch(loginActions.setPassword(value));
-    }, [dispatch]);
+    const onChangePassword = useCallback(
+        (value: string) => {
+            dispatch(loginActions.setPassword(value));
+        },
+        [dispatch],
+    );
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }));
@@ -49,10 +55,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
     }, [dispatch, username, password, onSuccess]);
 
     return (
-        <DynamicModuleLoader
-            reducers={initialReducers}
-            removeAfterUnmount
-        >
+        <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount>
             <div className={classNames(cls.LoginForm, {}, [className])}>
                 <Text variant={TextVariant.PRIMARY} title={t('Форма авторизации')} />
                 {error && <Text variant={TextVariant.ERROR} text={t('Вы ввели неверный логин или пароль')} />}
@@ -71,12 +74,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
                     onChange={onChangePassword}
                     value={password}
                 />
-                <Button
-                    className={cls.loginBtn}
-                    theme={ButtonTheme.CLEAR}
-                    onClick={onLoginClick}
-                    disabled={isLoading}
-                >
+                <Button className={cls.loginBtn} theme={ButtonTheme.CLEAR} onClick={onLoginClick} disabled={isLoading}>
                     {t('Войти')}
                 </Button>
             </div>

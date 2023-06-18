@@ -10,24 +10,14 @@ interface ArticleEditPageProps {
 }
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation('article');
     const params = useParams();
     if (!params || !params.id) {
-        return (
-            <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-                {t('Создать статью')}
-            </Page>
-        );
+        return <Page className={classNames(cls.ArticleEditPage, {}, [className])}>{t('Создать статью')}</Page>;
     }
 
-    return (
-        <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-            {t('Редактировать статью')}
-        </Page>
-    );
+    return <Page className={classNames(cls.ArticleEditPage, {}, [className])}>{t('Редактировать статью')}</Page>;
 });
 
 export default ArticleEditPage;

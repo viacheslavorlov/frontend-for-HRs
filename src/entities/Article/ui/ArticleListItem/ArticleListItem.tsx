@@ -11,9 +11,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { AppLink } from '@/shared/ui/AppLink';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConst';
-import {
-    Article, ArticleTextBlock,
-} from '../../model/types/type';
+import { Article, ArticleTextBlock } from '../../model/types/type';
 import { ArticlesTextBlockComponent } from '../ArticlesTextBlockComponent/ArticlesTextBlockComponent';
 import cls from './ArticleListItem.module.scss';
 import Eye from '../../assets/Eye.svg';
@@ -28,12 +26,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-    const {
-        className,
-        article,
-        target,
-        view = ArticleView.BIG,
-    } = props;
+    const { className, article, target, view = ArticleView.BIG } = props;
     const { t } = useTranslation();
 
     const navigate = useNavigate();
@@ -77,11 +70,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                     {textBlock && <ArticlesTextBlockComponent block={textBlock} className={cls.textBlock} />}
                     <div className={cls.footer}>
                         <AppLink target={target} to={getRouteArticleDetails(article.id)}>
-                            <Button
-                                theme={ButtonTheme.CLEAR}
-                                className={cls.btn}
-                                onClick={onOpenArticle}
-                            >
+                            <Button theme={ButtonTheme.CLEAR} className={cls.btn} onClick={onOpenArticle}>
                                 {t('Читать далее...')}
                             </Button>
                         </AppLink>
@@ -93,10 +82,7 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     }
 
     return (
-        <AppLink
-            target={target}
-            to={getRouteArticleDetails(article.id)}
-        >
+        <AppLink target={target} to={getRouteArticleDetails(article.id)}>
             <div
                 data-testid="ArticleListItem"
                 {...bindHover}

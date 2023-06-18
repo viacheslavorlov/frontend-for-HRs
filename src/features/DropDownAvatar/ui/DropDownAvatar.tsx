@@ -3,9 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
-import {
-    getUserAuthData, isUserAdmin, isUserManager, userActions,
-} from '@/entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/routerConst';
 
 interface DropDownAvatarProps {
@@ -13,9 +11,7 @@ interface DropDownAvatarProps {
 }
 
 export const DropDownAvatar = memo((props: DropDownAvatarProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation();
     const dispatch = useDispatch();
     const isAdmin = useSelector(isUserAdmin);
@@ -33,10 +29,14 @@ export const DropDownAvatar = memo((props: DropDownAvatarProps) => {
                 className={className}
                 direction="bottomLeft"
                 items={[
-                    ...(isAdminPanelAvalible ? [{
-                        content: t('Admin'),
-                        href: getRouteAdmin(),
-                    }] : []),
+                    ...(isAdminPanelAvalible
+                        ? [
+                              {
+                                  content: t('Admin'),
+                                  href: getRouteAdmin(),
+                              },
+                          ]
+                        : []),
                     {
                         content: t('translation:Выйти'),
                         onClick: onLogout,

@@ -1,6 +1,4 @@
-import {
-    ChangeEvent, useMemo,
-} from 'react';
+import { ChangeEvent, useMemo } from 'react';
 import { classNames } from '../../../lib/classNames/classNames';
 import cls from './Select.module.scss';
 
@@ -14,29 +12,22 @@ interface SelectProps<T extends string> {
     label?: string;
     options?: SelectOption<T>[];
     value?: T;
-    disabled?: boolean
+    disabled?: boolean;
     onChange?: (value: T) => void;
 }
 
 export const Select = <T extends string>(props: SelectProps<T>) => {
-    const {
-        className,
-        label,
-        options,
-        value,
-        onChange,
-        disabled,
-    } = props;
+    const { className, label, options, value, onChange, disabled } = props;
 
-    const optionList = useMemo(() => options?.map((option) => (
-        <option
-            key={option.value}
-            className={cls.option}
-            value={option.value}
-        >
-            {option.content}
-        </option>
-    )), [options]);
+    const optionList = useMemo(
+        () =>
+            options?.map((option) => (
+                <option key={option.value} className={cls.option} value={option.value}>
+                    {option.content}
+                </option>
+            )),
+        [options],
+    );
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
         if (onChange) {
@@ -50,17 +41,8 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
 
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
-            {label && (
-                <span className={cls.label}>
-                    {`${label}>`}
-                </span>
-            )}
-            <select
-                disabled={disabled}
-                className={cls.select}
-                onChange={onChangeHandler}
-                value={value}
-            >
+            {label && <span className={cls.label}>{`${label}>`}</span>}
+            <select disabled={disabled} className={cls.select} onChange={onChangeHandler} value={value}>
                 {optionList}
             </select>
         </div>

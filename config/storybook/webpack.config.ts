@@ -4,11 +4,13 @@ import { buildCssLoader } from '../build/loaders/buldCSSLoader';
 import { BuildPaths } from '../build/types/config';
 
 export default ({ config }: { config: webpack.Configuration }) => {
-    config!.plugins!.push(new DefinePlugin({
-        __IS_DEV: JSON.stringify(true),
-        __API_URL: JSON.stringify('http://localhost:8000'),
-        __PROJECT: JSON.stringify('storybook'),
-    }));
+    config!.plugins!.push(
+        new DefinePlugin({
+            __IS_DEV: JSON.stringify(true),
+            __API_URL: JSON.stringify('http://localhost:8000'),
+            __PROJECT: JSON.stringify('storybook'),
+        }),
+    );
 
     const paths: BuildPaths = {
         entry: '',

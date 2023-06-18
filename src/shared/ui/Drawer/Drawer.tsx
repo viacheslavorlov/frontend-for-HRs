@@ -1,6 +1,4 @@
-import {
-    memo, ReactNode, useCallback, useContext, useEffect,
-} from 'react';
+import { memo, ReactNode, useCallback, useContext, useEffect } from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useThem';
 import { Portal } from '../Portal/Portal';
@@ -13,15 +11,13 @@ interface DrawerProps {
     children?: ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
-    lazy?: boolean
+    lazy?: boolean;
 }
 
 const height = window.innerHeight - 100;
 
 const DrawerContent = memo((props: DrawerProps) => {
-    const {
-        className, onClose, isOpen, children,
-    } = props;
+    const { className, onClose, isOpen, children } = props;
     const { Spring, Gesture } = useContext(AnimationContext);
     const { a, config, useSpring } = Spring!;
     const { useDrag } = Gesture!;
@@ -45,13 +41,7 @@ const DrawerContent = memo((props: DrawerProps) => {
 
     // Set the drag hook and define component movement based on gesture data
     const bind = useDrag(
-        ({
-            last,
-            velocity: [, vy],
-            direction: [, dy],
-            movement: [, my],
-            cancel,
-        }) => {
+        ({ last, velocity: [, vy], direction: [, dy], movement: [, my], cancel }) => {
             if (my < -70) {
                 cancel();
             }
@@ -107,9 +97,7 @@ const DrawerWrapper = memo((props: DrawerProps) => {
     if (!isLoaded) {
         return null;
     }
-    return (
-        <DrawerContent {...props} />
-    );
+    return <DrawerContent {...props} />;
 });
 
 export const Drawer = (props: DrawerProps) => (

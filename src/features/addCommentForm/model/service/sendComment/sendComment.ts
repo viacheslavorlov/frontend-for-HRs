@@ -9,9 +9,7 @@ import { getAddCommentFormText } from '../../selectors/addCommentFormSelectors';
 export const sendComment = createAsyncThunk<CommentType, void, ThunkConfig<string>>(
     'addCommentForm/sendComment',
     async (_, thunkApi) => {
-        const {
-            extra, dispatch, rejectWithValue, getState,
-        } = thunkApi;
+        const { extra, dispatch, rejectWithValue, getState } = thunkApi;
         const userData = getUserAuthData(getState());
         const text = getAddCommentFormText(getState());
         const article = getArticleDetailsData(getState());

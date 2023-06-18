@@ -11,13 +11,16 @@ export default {
         background: { control: 'background' },
     },
 
-    decorators: [
-        SuspenseDecorator,
-    ],
+    decorators: [SuspenseDecorator],
 } as ComponentMeta<typeof Drawer>;
 
 const content = [
-    '1 Notification', '2 Notification', '3 Notification', '1 Notification', '2 Notification', '3 Notification',
+    '1 Notification',
+    '2 Notification',
+    '3 Notification',
+    '1 Notification',
+    '2 Notification',
+    '3 Notification',
 ].map((item) => <div>{item}</div>);
 
 const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;

@@ -22,7 +22,6 @@ LightTabs.args = {
         { value: 'tab2', content: 'tab2' },
         { value: 'tab3', content: 'tab3' },
         { value: 'tab4', content: 'tab4' },
-
     ],
     value: 'tab2',
     onTabClick: action('onTabClick'),
@@ -35,7 +34,6 @@ DarkTabs.args = {
         { value: 'tab2', content: 'tab2' },
         { value: 'tab3', content: 'tab3' },
         { value: 'tab4', content: 'tab4' },
-
     ],
     value: 'tab2',
     onTabClick: action('onTabClick'),

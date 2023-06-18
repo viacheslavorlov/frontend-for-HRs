@@ -1,6 +1,4 @@
-import {
-    memo, MutableRefObject, ReactNode, useRef,
-} from 'react';
+import { memo, MutableRefObject, ReactNode, useRef } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import cls from './Page.module.scss';
 
@@ -11,10 +9,7 @@ interface PageProps {
 }
 
 export const Page = memo((props: PageProps) => {
-    const {
-        className,
-        children,
-    } = props;
+    const { className, children } = props;
 
     const wrapperRef = useRef() as MutableRefObject<HTMLDivElement>;
 

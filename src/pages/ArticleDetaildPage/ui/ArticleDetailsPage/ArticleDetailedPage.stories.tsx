@@ -14,9 +14,7 @@ const article: Article = {
     img: '',
     views: 3422,
     createdAt: '01.01.2023',
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
@@ -32,12 +30,9 @@ const article: Article = {
     user: {
         id: '1',
         username: 'admin',
-        roles: [
-            UserRole.ADMIN,
-        ],
+        roles: [UserRole.ADMIN],
         avatar: 'https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     },
-
 };
 
 export default {
@@ -79,16 +74,21 @@ const Template: StoryFn<typeof ArticleDetailedPage> = () => <ArticleDetailedPage
 
 export const LightArticleDetaildPage = Template.bind({});
 LightArticleDetaildPage.args = {};
-LightArticleDetaildPage.decorators = [StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+LightArticleDetaildPage.decorators = [
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+];
 
 export const DarkArticleDetaildPage = Template.bind({});
 DarkArticleDetaildPage.args = {};
-DarkArticleDetaildPage.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    articleDetails: {
-        data: article,
-    },
-})];
+DarkArticleDetaildPage.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        articleDetails: {
+            data: article,
+        },
+    }),
+];

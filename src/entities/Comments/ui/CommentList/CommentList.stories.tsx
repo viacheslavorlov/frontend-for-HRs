@@ -10,10 +10,7 @@ export default {
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-    decorators: [
-        RouterDecorator,
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [RouterDecorator, ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof CommentList>;
 
 const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
@@ -24,12 +21,20 @@ Normal.args = {
         {
             id: '1',
             text: 'hello world',
-            user: { id: '1', username: 'Vasya', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png' },
+            user: {
+                id: '1',
+                username: 'Vasya',
+                avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png',
+            },
         },
         {
             id: '2',
             text: 'Comment 2',
-            user: { id: '1', username: 'Petya', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png' },
+            user: {
+                id: '1',
+                username: 'Petya',
+                avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png',
+            },
         },
     ],
 };
@@ -46,12 +51,20 @@ Orange.args = {
         {
             id: '1',
             text: 'hello world',
-            user: { id: '1', username: 'Vasya', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png' },
+            user: {
+                id: '1',
+                username: 'Vasya',
+                avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png',
+            },
         },
         {
             id: '2',
             text: 'Comment 2',
-            user: { id: '1', username: 'Petya', avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png' },
+            user: {
+                id: '1',
+                username: 'Petya',
+                avatar: 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Anonymous.svg/1200px-Anonymous.svg.png',
+            },
         },
     ],
     isLoading: false,

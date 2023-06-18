@@ -3,8 +3,9 @@ import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import {
     getArticlePageError,
-    ArticleInfiniteList, initArticlesPage, articlePageReducer,
-
+    ArticleInfiniteList,
+    initArticlesPage,
+    articlePageReducer,
 } from '@/widgets/ArticleInfiniteList';
 import { Page } from '@/shared/ui/Page';
 import { PageError } from '@/shared/ui/PageError/ui/PageError';
@@ -15,7 +16,7 @@ import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/D
 import cls from './ArticlePage.module.scss';
 
 interface ArticlePageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {

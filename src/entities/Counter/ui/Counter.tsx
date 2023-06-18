@@ -19,13 +19,15 @@ export const Counter = memo(() => {
     };
     return (
         <div>
-            <button data-testid="increment" onClick={onIncrement}>{t('increment')}</button>
+            <button data-testid="increment" onClick={onIncrement}>
+                {t('increment')}
+            </button>
             <h1 data-testid="value">
-                {t('value')}
-                {' '}
-                {counterValue}
+                {t('value')} {counterValue}
             </h1>
-            <button data-testid="decrement" onClick={onDecrement}>{t('decrement')}</button>
+            <button data-testid="decrement" onClick={onDecrement}>
+                {t('decrement')}
+            </button>
             <button onClick={() => onAddFive(5)}>{t('+5')}</button>
         </div>
     );

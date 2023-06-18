@@ -20,9 +20,7 @@ export const Code = ({ className, children }: CodeProps) => {
             <Button className={cls.copyBtn} theme={ButtonTheme.CLEAR} onClick={onCopie}>
                 <Icon Svg={Copie} className={cls.copyIcon} />
             </Button>
-            <code>
-                {children}
-            </code>
+            <code>{children}</code>
         </pre>
     );
 };

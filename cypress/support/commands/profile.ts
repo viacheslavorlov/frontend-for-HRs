@@ -2,8 +2,12 @@ import { USER_LOCAL_STORAGE_KEY } from '../../../src/shared/const/localStorage/l
 
 export const updateProfile = (firstName: string, lastname: string) => {
     cy.getByTestId('EditableProfileCard.EditButton').click();
-    cy.getByTestId('EditableProfileCard.FirstName').clear().type(firstName || 'newFirst');
-    cy.getByTestId('EditableProfileCard.LastName').clear().type(lastname || 'newLast');
+    cy.getByTestId('EditableProfileCard.FirstName')
+        .clear()
+        .type(firstName || 'newFirst');
+    cy.getByTestId('EditableProfileCard.LastName')
+        .clear()
+        .type(lastname || 'newLast');
     cy.getByTestId('EditableProfileCard.SaveButton').click();
 };
 
@@ -23,7 +27,6 @@ export const resetProfile = (profileId: string) => {
             username: 'testuser',
             avatar: 'https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg',
         },
-
     }).then(({ body }) => {
         window.localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(body));
         return body;

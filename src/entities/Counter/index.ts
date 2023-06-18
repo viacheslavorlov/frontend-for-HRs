@@ -3,8 +3,4 @@ import { Counter } from './ui/Counter';
 
 export type { CounterSchema } from './model/types/counterSchema';
 
-export {
-    counterReducer,
-    counterActions,
-    Counter,
-};
+export { counterReducer, counterActions, Counter };

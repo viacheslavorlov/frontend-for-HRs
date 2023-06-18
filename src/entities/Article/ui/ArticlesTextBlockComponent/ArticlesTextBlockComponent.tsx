@@ -11,9 +11,7 @@ interface ArticlesTextBlockComponentProps {
 
 export const ArticlesTextBlockComponent = memo(({ className, block }: ArticlesTextBlockComponentProps) => (
     <div className={classNames(cls.ArticlesTextBlockComponent, {}, [className])}>
-        {block.title && (
-            <Text title={block.title} className={cls.title} />
-        )}
+        {block.title && <Text title={block.title} className={cls.title} />}
         {block.paragraphs.map((paragraph) => (
             <Text key={paragraph} text={paragraph} className={cls.paragraph} />
         ))}

@@ -9,10 +9,10 @@ describe('getProfileValidateErrors.test', () => {
                 validateErrors: [ValidateProfileError.INCORRECT_AGE, ValidateProfileError.INCORRECT_USERNAME],
             },
         };
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
-            [ValidateProfileError.INCORRECT_AGE,
-                ValidateProfileError.INCORRECT_USERNAME],
-        );
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual([
+            ValidateProfileError.INCORRECT_AGE,
+            ValidateProfileError.INCORRECT_USERNAME,
+        ]);
     });
 
     test('with true', () => {

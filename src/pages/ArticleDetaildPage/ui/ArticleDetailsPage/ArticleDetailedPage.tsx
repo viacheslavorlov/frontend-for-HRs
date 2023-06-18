@@ -13,7 +13,7 @@ import cls from './ArticleDetailedPage.module.scss';
 import { ArticleRating } from '@/features/ArticleRating';
 
 interface ArticleDetaildPageProps {
-    className?: string
+    className?: string;
 }
 
 const reducers: ReducersList = {

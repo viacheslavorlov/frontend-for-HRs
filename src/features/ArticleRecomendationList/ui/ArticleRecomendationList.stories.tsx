@@ -24,21 +24,14 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        RouterDecorator,
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [RouterDecorator, ThemeDecorator(Theme.LIGHT)],
     parameters: {
         mockData: [
             {
                 url: 'http://localhost:8080/articles?_limit=4',
                 method: 'GET',
                 status: 200,
-                response: [
-                    { ...article },
-                    { ...article, id: '2' },
-                    { ...article, id: '3' },
-                ],
+                response: [{ ...article }, { ...article, id: '2' }, { ...article, id: '3' }],
             },
         ],
     },

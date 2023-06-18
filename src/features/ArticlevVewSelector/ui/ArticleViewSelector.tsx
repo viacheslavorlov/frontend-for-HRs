@@ -13,11 +13,7 @@ interface ArticleViewSelectorPrors {
 }
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorPrors) => {
-    const {
-        className,
-        onViewClick,
-        view,
-    } = props;
+    const { className, onViewClick, view } = props;
 
     const onCLick = (newView: ArticleView) => () => {
         onViewClick?.(newView);
@@ -38,7 +34,6 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorPrors) => {
                     />
                 </Button>
             ))}
-
         </div>
     );
 });

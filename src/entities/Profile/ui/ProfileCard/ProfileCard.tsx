@@ -72,7 +72,6 @@ export const ProfileCard = memo((props: ProfileCardProps) => {
 
     return (
         <VStack gap="16" className={classNames(cls.ProfileCard, mods, [className])}>
-
             {data?.avatar && (
                 <HStack align="center" justify="center" max className={cls.avatarWrapper}>
                     <Avatar src={data?.avatar} alt={data?.username} />

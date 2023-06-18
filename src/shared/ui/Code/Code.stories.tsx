@@ -12,8 +12,7 @@ export default {
     decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof Code>;
 
-const children = (
-    `<!doctype html>
+const children = `<!doctype html>
     <html lang="en">
         <head>
         <meta charset="UTF-8">
@@ -25,12 +24,9 @@ const children = (
         <body>
         
         </body>
-    </html>`
-);
+    </html>`;
 
-const Template: ComponentStory<typeof Code> = (args) => (
-    <Code {...args}>{children}</Code>
-);
+const Template: ComponentStory<typeof Code> = (args) => <Code {...args}>{children}</Code>;
 
 export const LightCode = Template.bind({});
 LightCode.args = { children };

@@ -33,7 +33,8 @@ export default {
                     id: '1',
                 },
             },
-        })],
+        }),
+    ],
 } as ComponentMeta<typeof EditableProfileCard>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -44,37 +45,7 @@ LightEditableProfileCard.args = { id: '1' };
 
 export const LightEditableProfileCardEditable = Template.bind({});
 LightEditableProfileCardEditable.args = { id: '1' };
-LightEditableProfileCardEditable.decorators = [StoreDecorator({
-    profile: {
-        data: {
-            id: '1',
-        },
-        form: {
-            id: '1',
-            username: 'User',
-            avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
-            last: 'User',
-            first: 'Userella',
-            currency: Currency.EUR,
-            country: Country.Russia,
-            city: 'Moscow',
-            age: 99,
-        },
-    },
-    user: {
-        authData: {
-            id: '1',
-        },
-    },
-})];
-
-export const DarkEditableProfileCard = Template.bind({});
-DarkEditableProfileCard.args = { id: '1' };
-DarkEditableProfileCard.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const DarkEditableProfileCardEditable = Template.bind({});
-DarkEditableProfileCardEditable.args = { id: '1' };
-DarkEditableProfileCardEditable.decorators = [ThemeDecorator(Theme.DARK),
+LightEditableProfileCardEditable.decorators = [
     StoreDecorator({
         profile: {
             data: {
@@ -97,4 +68,38 @@ DarkEditableProfileCardEditable.decorators = [ThemeDecorator(Theme.DARK),
                 id: '1',
             },
         },
-    })];
+    }),
+];
+
+export const DarkEditableProfileCard = Template.bind({});
+DarkEditableProfileCard.args = { id: '1' };
+DarkEditableProfileCard.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const DarkEditableProfileCardEditable = Template.bind({});
+DarkEditableProfileCardEditable.args = { id: '1' };
+DarkEditableProfileCardEditable.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            data: {
+                id: '1',
+            },
+            form: {
+                id: '1',
+                username: 'User',
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
+                last: 'User',
+                first: 'Userella',
+                currency: Currency.EUR,
+                country: Country.Russia,
+                city: 'Moscow',
+                age: 99,
+            },
+        },
+        user: {
+            authData: {
+                id: '1',
+            },
+        },
+    }),
+];

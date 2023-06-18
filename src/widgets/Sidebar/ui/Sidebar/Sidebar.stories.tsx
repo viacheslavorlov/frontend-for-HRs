@@ -11,10 +11,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        RouterDecorator,
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [RouterDecorator, ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof Sidebar>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
@@ -27,7 +24,8 @@ Light.decorators = [
         user: {
             authData: {},
         },
-    })];
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
@@ -43,6 +41,4 @@ Dark.decorators = [
 
 export const DarkNoAuth = Template.bind({});
 DarkNoAuth.args = {};
-DarkNoAuth.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({ user: {} })];
+DarkNoAuth.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ user: {} })];

@@ -11,10 +11,7 @@ interface ArticleListItemSkeletonProps {
 }
 
 export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps) => {
-    const {
-        className,
-        view = ArticleView.SMALL,
-    } = props;
+    const { className, view = ArticleView.SMALL } = props;
 
     if (view === ArticleView.BIG) {
         return (
@@ -30,17 +27,9 @@ export const ArticleListItemSkeleton = memo((props: ArticleListItemSkeletonProps
                     <Skeleton className={cls.img} height={200} />
                     <Skeleton className={cls.img} height={200} />
                     <div className={cls.footer}>
-                        <Skeleton
-                            height={36}
-                            width={200}
-                            className={cls.btn}
-                        />
+                        <Skeleton height={36} width={200} className={cls.btn} />
 
-                        <Skeleton
-                            height={36}
-                            width={200}
-                            className={cls.views}
-                        />
+                        <Skeleton height={36} width={200} className={cls.views} />
                     </div>
                 </Card>
             </div>

@@ -9,23 +9,17 @@ export enum AppLInkTheme {
     // eslint-disable-next-line no-unused-vars
     SECONDARY = 'secondary',
     // eslint-disable-next-line no-unused-vars
-    RED = 'red'
+    RED = 'red',
 }
 
-interface AppLinkProps extends LinkProps{
+interface AppLinkProps extends LinkProps {
     theme?: AppLInkTheme;
     className?: string;
     children?: ReactNode;
 }
 
 export const AppLink = memo((props: AppLinkProps) => {
-    const {
-        to,
-        className,
-        children,
-        theme = AppLInkTheme.PRIMARY,
-        ...otherProps
-    } = props;
+    const { to, className, children, theme = AppLInkTheme.PRIMARY, ...otherProps } = props;
     return (
         <Link
             to={to}

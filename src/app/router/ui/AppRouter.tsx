@@ -7,31 +7,23 @@ import { AppRouteProps } from '@/shared/types/router';
 
 export const AppRouter = () => {
     const renderWithWrapper = useCallback((route: AppRouteProps) => {
-        const element = (
-            <Suspense fallback={<PageLoader />}>
-                {route.element}
-            </Suspense>
-        );
+        const element = <Suspense fallback={<PageLoader />}>{route.element}</Suspense>;
         return (
             <Route
                 key={route.path}
                 path={route.path}
-                element={route.authOnly
-                    ? (
+                element={
+                    route.authOnly ? (
                         <Suspense fallback={<PageLoader />}>
-                            <RequireAuth roles={route.roles}>
-                                {element}
-                            </RequireAuth>
+                            <RequireAuth roles={route.roles}>{element}</RequireAuth>
                         </Suspense>
+                    ) : (
+                        element
                     )
-                    : element}
+                }
             />
         );
     }, []);
 
-    return (
-        <Routes>
-            {Object.values(routeConfig).map(renderWithWrapper)}
-        </Routes>
-    );
+    return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 };

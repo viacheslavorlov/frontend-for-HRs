@@ -11,52 +11,58 @@ interface ArticleSortSelectorProps {
     sort: ArticleSortField;
     order: SortOrder;
     onChangeOrder: (order: SortOrder) => void;
-    onChangeSort: (sort: ArticleSortField) => void
+    onChangeSort: (sort: ArticleSortField) => void;
 }
 
 export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
-    const {
-        className,
-        onChangeSort,
-        sort,
-        order,
-        onChangeOrder,
-    } = props;
+    const { className, onChangeSort, sort, order, onChangeOrder } = props;
     const { t } = useTranslation('article');
 
-    const sortOptions = useMemo<SelectOption<SortOrder>[]>(() => [
-        {
-            value: 'asc',
-            content: t('возрастанию'),
-        },
-        {
-            value: 'desc',
-            content: t('убыванию'),
-        },
-    ], [t]);
+    const sortOptions = useMemo<SelectOption<SortOrder>[]>(
+        () => [
+            {
+                value: 'asc',
+                content: t('возрастанию'),
+            },
+            {
+                value: 'desc',
+                content: t('убыванию'),
+            },
+        ],
+        [t],
+    );
 
-    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(() => [
-        {
-            value: ArticleSortField.CREATED,
-            content: t('дате создания'),
-        },
-        {
-            value: ArticleSortField.TITLE,
-            content: t('названию'),
-        },
-        {
-            value: ArticleSortField.VIEWS,
-            content: t('количеству просмотров'),
-        },
-    ], [t]);
+    const sortFieldOptions = useMemo<SelectOption<ArticleSortField>[]>(
+        () => [
+            {
+                value: ArticleSortField.CREATED,
+                content: t('дате создания'),
+            },
+            {
+                value: ArticleSortField.TITLE,
+                content: t('названию'),
+            },
+            {
+                value: ArticleSortField.VIEWS,
+                content: t('количеству просмотров'),
+            },
+        ],
+        [t],
+    );
 
-    const changeSortHandler = useCallback((newSort: string) => {
-        onChangeSort(newSort as ArticleSortField);
-    }, [onChangeSort]);
+    const changeSortHandler = useCallback(
+        (newSort: string) => {
+            onChangeSort(newSort as ArticleSortField);
+        },
+        [onChangeSort],
+    );
 
-    const changeOrderHandler = useCallback((newSort: string) => {
-        onChangeOrder(newSort as SortOrder);
-    }, [onChangeOrder]);
+    const changeOrderHandler = useCallback(
+        (newSort: string) => {
+            onChangeOrder(newSort as SortOrder);
+        },
+        [onChangeOrder],
+    );
 
     return (
         <div className={classNames(cls.ArticleSortSelector, {}, [className])}>

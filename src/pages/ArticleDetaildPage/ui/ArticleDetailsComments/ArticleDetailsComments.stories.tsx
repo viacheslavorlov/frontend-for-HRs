@@ -10,10 +10,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        StoreDecorator({}),
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [StoreDecorator({}), ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading

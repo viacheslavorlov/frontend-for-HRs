@@ -13,9 +13,7 @@ interface NotificationProps {
 }
 
 export const NotificationList = memo((props: NotificationProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { data, isError, isLoading } = useNotifications(null, {
         pollingInterval: 10000,
         refetchOnFocus: true,
@@ -24,11 +22,7 @@ export const NotificationList = memo((props: NotificationProps) => {
 
     if (isLoading) {
         return (
-            <VStack
-                gap="16"
-                max
-                className={classNames(cls.NotificationList, {}, [className])}
-            >
+            <VStack gap="16" max className={classNames(cls.NotificationList, {}, [className])}>
                 <Skeleton width="100%" border="8px" height="80px" />
                 <Skeleton width="100%" border="8px" height="80px" />
                 <Skeleton width="100%" border="8px" height="80px" />

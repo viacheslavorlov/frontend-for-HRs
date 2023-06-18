@@ -42,11 +42,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             title={t('Блог')}
                             variant={TextVariant.INVERTED}
                         />
-                        <AppLink
-                            to={getRouteArticleNew()}
-                            theme={AppLInkTheme.SECONDARY}
-                            className={cls.createLink}
-                        >
+                        <AppLink to={getRouteArticleNew()} theme={AppLInkTheme.SECONDARY} className={cls.createLink}>
                             {t('Создать статью')}
                         </AppLink>
                     </HStack>
@@ -54,7 +50,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                         <NotificationButton />
                         <DropDownAvatar />
                     </HStack>
-
                 </HStack>
             </header>
         );
@@ -63,19 +58,10 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
         <header className={classNames(cls.Navbar, {}, [className])}>
             <HStack justify="end" max className={classNames(cls.links)}>
-                <Button
-                    theme={ButtonTheme.CLEAR}
-                    className={cls.links}
-                    onClick={onShowModal}
-                >
+                <Button theme={ButtonTheme.CLEAR} className={cls.links} onClick={onShowModal}>
                     {t('Войти')}
                 </Button>
-                {isAuthModal && (
-                    <LoginModal
-                        isOpen={isAuthModal}
-                        onClose={onCloseModal}
-                    />
-                )}
+                {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}
             </HStack>
         </header>
     );

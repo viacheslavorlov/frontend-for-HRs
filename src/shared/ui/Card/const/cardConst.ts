@@ -1,4 +1,4 @@
 export enum CardVariant {
     NORMAL = 'normal',
-    OUTLINED = 'outlined'
+    OUTLINED = 'outlined',
 }

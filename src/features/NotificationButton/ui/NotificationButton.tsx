@@ -13,9 +13,7 @@ interface NotificationButtonProps {
 }
 
 export const NotificationButton = memo((props: NotificationButtonProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
 
     const [isOpened, setIsOpened] = useState(false);
 
@@ -35,10 +33,7 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
     return (
         <div className={className}>
             <BrowserView>
-                <Popup
-                    direction="bottomLeft"
-                    trigger={trigger}
-                >
+                <Popup direction="bottomLeft" trigger={trigger}>
                     <NotificationList className={cls.notificationsBrowser} />
                 </Popup>
             </BrowserView>
@@ -50,6 +45,5 @@ export const NotificationButton = memo((props: NotificationButtonProps) => {
                 </Drawer>
             </MobileView>
         </div>
-
     );
 });

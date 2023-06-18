@@ -9,9 +9,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof AdminPanelPage>;
 
 const Template: ComponentStory<typeof AdminPanelPage> = (args) => <AdminPanelPage {...args} />;

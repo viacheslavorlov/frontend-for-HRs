@@ -9,7 +9,4 @@ export { fetchProfileData } from './model/services/fetchProfile/fetchProfile';
 export { ProfileHeader } from './ui/ProfileHeader/ProfileHeader';
 export type { ProfileSchema } from './model/type/type';
 
-export {
-    profileActions,
-    profileReducer,
-} from './model/slice/profileSlice';
+export { profileActions, profileReducer } from './model/slice/profileSlice';

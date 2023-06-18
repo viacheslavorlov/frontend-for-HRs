@@ -25,20 +25,13 @@ interface TestPrividerProps {
 
 export const TestProvider = (props: TestPrividerProps) => {
     const { children, options = {} } = props;
-    const {
-        route = '/',
-        initialState,
-        asyncReducers,
-        theme = Theme.LIGHT,
-    } = options;
+    const { route = '/', initialState, asyncReducers, theme = Theme.LIGHT } = options;
     return (
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider asyncReducers={asyncReducers} initialState={initialState}>
                 <I18nextProvider i18n={i18n}>
                     <ThemeProvider initialTheme={theme}>
-                        <div className={`app ${theme}`}>
-                            {children}
-                        </div>
+                        <div className={`app ${theme}`}>{children}</div>
                     </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
@@ -47,7 +40,5 @@ export const TestProvider = (props: TestPrividerProps) => {
 };
 
 export function componentRender(component: ReactNode, options: RenderWithRouterOptions = {}) {
-    return render(
-        <TestProvider options={options}>{component}</TestProvider>,
-    );
+    return render(<TestProvider options={options}>{component}</TestProvider>);
 }

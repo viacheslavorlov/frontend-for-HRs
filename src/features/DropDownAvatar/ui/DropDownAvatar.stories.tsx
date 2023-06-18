@@ -33,16 +33,18 @@ LightDropDownAvatarUser.args = {};
 
 export const LightDropDownAvatarAdmin = Template.bind({});
 LightDropDownAvatarAdmin.args = {};
-LightDropDownAvatarAdmin.decorators = [StoreDecorator({
-    user: {
-        authData: {
-            id: '1',
-            roles: [UserRole.ADMIN],
-            username: 'user',
-            avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
+LightDropDownAvatarAdmin.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                roles: [UserRole.ADMIN],
+                username: 'user',
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
+            },
         },
-    },
-})];
+    }),
+];
 
 export const DarkDropDownAvatarUser = Template.bind({});
 DarkDropDownAvatarUser.args = {};
@@ -50,13 +52,16 @@ DarkDropDownAvatarUser.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const DarkDropDownAvatarManager = Template.bind({});
 DarkDropDownAvatarManager.args = {};
-DarkDropDownAvatarManager.decorators = [StoreDecorator({
-    user: {
-        authData: {
-            id: '1',
-            roles: [UserRole.MANAGER],
-            username: 'user',
-            avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
+DarkDropDownAvatarManager.decorators = [
+    StoreDecorator({
+        user: {
+            authData: {
+                id: '1',
+                roles: [UserRole.MANAGER],
+                username: 'user',
+                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
+            },
         },
-    },
-}), ThemeDecorator(Theme.DARK)];
+    }),
+    ThemeDecorator(Theme.DARK),
+];

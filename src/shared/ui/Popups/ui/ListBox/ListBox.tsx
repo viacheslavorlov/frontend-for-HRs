@@ -25,16 +25,7 @@ interface ListBoxProps {
 }
 
 export const ListBox = memo((props: ListBoxProps) => {
-    const {
-        className,
-        items,
-        value,
-        onChange,
-        defaultValue,
-        disabled,
-        label,
-        direction = 'topRight',
-    } = props;
+    const { className, items, value, onChange, defaultValue, disabled, label, direction = 'topRight' } = props;
 
     const optionsClasses = popup[direction];
 
@@ -48,22 +39,13 @@ export const ListBox = memo((props: ListBoxProps) => {
         >
             <Listbox.Button as="div" className={popup.trigger}>
                 {label && <span className={cls.label}>{`${label}>`}</span>}
-                <Button disabled={disabled}>
-                    {value || defaultValue}
-                </Button>
+                <Button disabled={disabled}>{value || defaultValue}</Button>
             </Listbox.Button>
             <Listbox.Options className={classNames(cls.options, {}, [optionsClasses])}>
                 {items?.map((item) => (
-                    <Listbox.Option
-                        key={item.value}
-                        value={item.value}
-                        disabled={item.disabled}
-                        as={Fragment}
-                    >
+                    <Listbox.Option key={item.value} value={item.value} disabled={item.disabled} as={Fragment}>
                         {({ active, selected }) => (
-                            <li
-                                className={classNames(cls.item, { [popup.active]: active })}
-                            >
+                            <li className={classNames(cls.item, { [popup.active]: active })}>
                                 {selected && '>'}
                                 {item.content}
                             </li>

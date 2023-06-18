@@ -29,14 +29,11 @@ describe('updateProfile test', () => {
         country: Country.Kazakhstan,
     };
     test('normal data update', async () => {
-        const thunk = new TestAsyncThunk(
-            updateProfile,
-            {
-                profile: {
-                    form: userdata,
-                },
+        const thunk = new TestAsyncThunk(updateProfile, {
+            profile: {
+                form: userdata,
             },
-        );
+        });
         thunk.api.put.mockReturnValue(Promise.resolve({ data: userdata }));
         const result = await thunk.callThunk();
 
@@ -55,9 +52,7 @@ describe('updateProfile test', () => {
         const result = await thunk.callThunk();
 
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([
-            ValidateProfileError.SERVER_ERROR,
-        ]);
+        expect(result.payload).toEqual([ValidateProfileError.SERVER_ERROR]);
     });
 
     test('Validate profile data error during profile update', async () => {
@@ -70,8 +65,6 @@ describe('updateProfile test', () => {
         const result = await thunk.callThunk();
 
         expect(result.meta.requestStatus).toBe('rejected');
-        expect(result.payload).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA,
-        ]);
+        expect(result.payload).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
     });
 });

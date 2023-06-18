@@ -5,10 +5,10 @@
         "module": "ESNext",
         "target": "es5",
         "jsx": "react-jsx",
-        "allowJs": true,  //компилятор обрабатывает не только ts, но и js файлы
+        "allowJs": true, //компилятор обрабатывает не только ts, но и js файлы
         "moduleResolution": "node",
         "esModuleInterop": true, // позволяет работать с пакетами, которые используют common js,
-                                //  как с обычными пакетами с помощью import
+        //  как с обычными пакетами с помощью import
         "allowSyntheticDefaultImports": true, // симулирует дефолтный импорт пакета даже если таковой отсутствует
         "baseUrl": ".",
         "strict": true,
@@ -24,11 +24,5 @@
         }
     },
 
-    "include": [
-        "webpack.config.ts",
-        "vite.config.ts",
-        "./config/jest/jest-setup.ts",
-        "./src/**/*.ts",
-        "./src/**/*.tsx"
-    ]
+    "include": ["webpack.config.ts", "vite.config.ts", "./config/jest/jest-setup.ts", "./src/**/*.ts", "./src/**/*.tsx"]
 }

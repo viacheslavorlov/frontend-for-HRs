@@ -1,0 +1,11 @@
+build
+coverage
+dist
+dist-vite
+extractedTranslations
+storybook-static
+*.html
+*.css
+*.scss
+node_modules
+

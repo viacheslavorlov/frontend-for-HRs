@@ -14,7 +14,7 @@ export enum ButtonTheme {
     // eslint-disable-next-line no-unused-vars
     BACKGROUND = 'background',
     // eslint-disable-next-line no-unused-vars
-    BACKGROUND_INVERTED = 'backgroundInverted'
+    BACKGROUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {

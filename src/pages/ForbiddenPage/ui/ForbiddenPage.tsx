@@ -9,9 +9,7 @@ interface ForbiddenPageProps {
 }
 
 export const ForbiddenPage = memo((props: ForbiddenPageProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation();
 
     return (

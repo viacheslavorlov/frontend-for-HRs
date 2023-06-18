@@ -1,6 +1,4 @@
-import {
-    Component, ErrorInfo, ReactNode, Suspense,
-} from 'react';
+import { Component, ErrorInfo, ReactNode, Suspense } from 'react';
 import { PageError } from '@/shared/ui/PageError/ui/PageError';
 import { LoadingSpinner } from '@/shared/ui/LoadingSpinner';
 
@@ -41,11 +39,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             );
         }
 
-        return (
-            <div>
-                {children}
-            </div>
-        );
+        return <div>{children}</div>;
     }
 }
 export default ErrorBoundary;

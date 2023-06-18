@@ -5,7 +5,7 @@ import cls from './Text.module.scss';
 export enum TextVariant {
     PRIMARY = 'primary',
     INVERTED = 'inverted',
-    ERROR = 'error'
+    ERROR = 'error',
 }
 
 export enum TextAlign {
@@ -28,7 +28,7 @@ interface TextProps {
     variant?: TextVariant;
     align?: TextAlign;
     size?: TextSize;
-    fontWeight?: FontWeight
+    fontWeight?: FontWeight;
     'data-testid'?: string;
 }
 
@@ -63,18 +63,12 @@ export const Text = memo((props: TextProps) => {
     return (
         <div data-testid={dataTestId} className={classNames(cls.Text, mods, [className, cls[fontWeight]])}>
             {title && (
-                <HTag
-                    data-testid={`${dataTestId}.Header`}
-                    className={cls.title}
-                >
+                <HTag data-testid={`${dataTestId}.Header`} className={cls.title}>
                     {title}
                 </HTag>
             )}
             {text && (
-                <p
-                    className={cls.text}
-                    data-testid={`${dataTestId}.Paragraph`}
-                >
+                <p className={cls.text} data-testid={`${dataTestId}.Paragraph`}>
                     {text}
                 </p>
             )}

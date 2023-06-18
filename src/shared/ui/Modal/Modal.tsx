@@ -18,13 +18,7 @@ const ANIMATION_DELAY = 300;
 
 export const Modal = (props: ModalProps) => {
     const { theme } = useTheme();
-    const {
-        children,
-        className,
-        isOpen,
-        onClose,
-        lazy,
-    } = props;
+    const { children, className, isOpen, onClose, lazy } = props;
 
     const { close, isClosing, isMounted } = useModal({
         animationDelay: ANIMATION_DELAY,
@@ -51,13 +45,9 @@ export const Modal = (props: ModalProps) => {
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
                 <Overlay onClick={close} />
                 {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
-                <div
-                    className={classNames(cls.content, {})}
-                    onClick={contentClickHandler}
-                >
+                <div className={classNames(cls.content, {})} onClick={contentClickHandler}>
                     {children}
                 </div>
-
             </div>
         </Portal>
     );

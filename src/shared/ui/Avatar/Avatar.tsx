@@ -14,14 +14,15 @@ interface AvatarPrors {
 }
 
 export const Avatar = memo((props: AvatarPrors) => {
-    const {
-        src, alt, className, size = 100,
-    } = props;
+    const { src, alt, className, size = 100 } = props;
     const mods: Mods = {};
-    const styles = useMemo<CSSProperties>(() => ({
-        width: size,
-        height: size,
-    }), [size]);
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            width: size,
+            height: size,
+        }),
+        [size],
+    );
 
     const errorFallback = <Icon width={size} height={size} Svg={AvatarPlaceholder} />;
 

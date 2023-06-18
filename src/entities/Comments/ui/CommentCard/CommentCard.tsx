@@ -16,11 +16,7 @@ interface CommentCardPrors {
 }
 
 export const CommentCard = memo((props: CommentCardPrors) => {
-    const {
-        className,
-        comment,
-        isLoading,
-    } = props;
+    const { className, comment, isLoading } = props;
 
     if (!comment) {
         return null;
@@ -30,20 +26,10 @@ export const CommentCard = memo((props: CommentCardPrors) => {
         return (
             <VStack gap="16" max className={classNames(cls.CommentCard, {}, [className])}>
                 <VStack max gap="8">
-                    <Skeleton
-                        width={30}
-                        height={30}
-                        border="50%"
-                    />
-                    <Skeleton
-                        width={100}
-                        height={20}
-                    />
+                    <Skeleton width={30} height={30} border="50%" />
+                    <Skeleton width={100} height={20} />
                 </VStack>
-                <Skeleton
-                    width="100%"
-                    height={50}
-                />
+                <Skeleton width="100%" height={50} />
             </VStack>
         );
     }

@@ -23,7 +23,11 @@ function App() {
                 <Navbar />
                 <div className="content-page">
                     <Sidebar />
-                    {inited && <Suspense fallback={<PageLoader />}><AppRouter /></Suspense>}
+                    {inited && (
+                        <Suspense fallback={<PageLoader />}>
+                            <AppRouter />
+                        </Suspense>
+                    )}
                 </div>
             </Suspense>
         </div>

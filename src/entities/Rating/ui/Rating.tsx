@@ -1,7 +1,5 @@
 import { BrowserView, MobileView } from 'react-device-detect';
-import {
-    memo, useCallback, useState,
-} from 'react';
+import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Text } from '@/shared/ui/Text';
 import { Card } from '@/shared/ui/Card';
@@ -23,29 +21,24 @@ interface RatingProps {
 }
 
 export const Rating = memo((props: RatingProps) => {
-    const {
-        className,
-        title,
-        feedBackTitle,
-        onAccept,
-        onCancel,
-        hasFeedback,
-        rate = 0,
-    } = props;
+    const { className, title, feedBackTitle, onAccept, onCancel, hasFeedback, rate = 0 } = props;
     const { t } = useTranslation();
 
     const [starsCount, setStarsCount] = useState(rate);
     const [feedback, setFeedback] = useState('');
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const onSelectStars = useCallback((selectedStarsCount: number) => {
-        setStarsCount(selectedStarsCount);
-        if (hasFeedback) {
-            setIsModalOpen(true);
-        } else if (onAccept) {
-            onAccept(selectedStarsCount, feedback);
-        }
-    }, [feedback, hasFeedback, onAccept]);
+    const onSelectStars = useCallback(
+        (selectedStarsCount: number) => {
+            setStarsCount(selectedStarsCount);
+            if (hasFeedback) {
+                setIsModalOpen(true);
+            } else if (onAccept) {
+                onAccept(selectedStarsCount, feedback);
+            }
+        },
+        [feedback, hasFeedback, onAccept],
+    );
 
     const onAcceptHandler = useCallback(() => {
         onAccept?.(starsCount, feedback);

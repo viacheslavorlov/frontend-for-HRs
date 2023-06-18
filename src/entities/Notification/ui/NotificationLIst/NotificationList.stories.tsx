@@ -16,7 +16,7 @@ export default {
             api: {
                 queries: {
                     'getNotifications(null)': {
-                    // @ts-ignore
+                        // @ts-ignore
                         status: 'fulfilled',
                         endpointName: 'getNotifications',
                         requestId: 'OV4tO_BBMurYtiA0kvfvF',
@@ -70,7 +70,8 @@ export default {
                     },
                 },
             },
-        })],
+        }),
+    ],
 } as ComponentMeta<typeof NotificationList>;
 
 const Template: ComponentStory<typeof NotificationList> = (args) => <NotificationList {...args} />;
@@ -80,16 +81,18 @@ LightNotification.args = {};
 
 export const LightNotificationLoading = Template.bind({});
 LightNotificationLoading.args = {};
-LightNotificationLoading.decorators = [StoreDecorator({
-    api: {
-        queries: {
-            'getNotifications(null)': {
-                // @ts-ignore
-                status: 'pending',
+LightNotificationLoading.decorators = [
+    StoreDecorator({
+        api: {
+            queries: {
+                'getNotifications(null)': {
+                    // @ts-ignore
+                    status: 'pending',
+                },
             },
         },
-    },
-})];
+    }),
+];
 
 export const DarkNotification = Template.bind({});
 DarkNotification.args = {};
@@ -108,4 +111,5 @@ DarkNotificationLoading.decorators = [
                 },
             },
         },
-    })];
+    }),
+];

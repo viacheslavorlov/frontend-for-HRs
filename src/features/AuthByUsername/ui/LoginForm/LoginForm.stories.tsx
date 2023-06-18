@@ -10,33 +10,32 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        ThemeDecorator(Theme.LIGHT),
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof LoginForm>;
 
 const Template: ComponentStory<typeof LoginForm> = (args) => <LoginForm {...args} />;
 
 export const LightLoginForm = Template.bind({});
 LightLoginForm.args = {};
-LightLoginForm.decorators = [StoreDecorator(
-    { loginForm: { username: '123', password: 'asdf' } },
-)];
+LightLoginForm.decorators = [StoreDecorator({ loginForm: { username: '123', password: 'asdf' } })];
 
 export const DarkLoginForm = Template.bind({});
 DarkLoginForm.args = {};
-DarkLoginForm.decorators = [StoreDecorator(
-    { loginForm: { username: '123', password: 'asdf' } },
-), ThemeDecorator(Theme.DARK)];
+DarkLoginForm.decorators = [
+    StoreDecorator({ loginForm: { username: '123', password: 'asdf' } }),
+    ThemeDecorator(Theme.DARK),
+];
 
 export const DarkLoginFormWithError = Template.bind({});
 DarkLoginFormWithError.args = {};
-DarkLoginFormWithError.decorators = [StoreDecorator(
-    { loginForm: { username: '123', password: 'asdf', error: 'Error, error!!!' } },
-), ThemeDecorator(Theme.DARK)];
+DarkLoginFormWithError.decorators = [
+    StoreDecorator({ loginForm: { username: '123', password: 'asdf', error: 'Error, error!!!' } }),
+    ThemeDecorator(Theme.DARK),
+];
 
 export const DarkLoginFormWithLoading = Template.bind({});
 DarkLoginFormWithLoading.args = {};
-DarkLoginFormWithLoading.decorators = [StoreDecorator(
-    { loginForm: { username: '123', password: 'asdf', isLoading: true } },
-), ThemeDecorator(Theme.DARK)];
+DarkLoginFormWithLoading.decorators = [
+    StoreDecorator({ loginForm: { username: '123', password: 'asdf', isLoading: true } }),
+    ThemeDecorator(Theme.DARK),
+];

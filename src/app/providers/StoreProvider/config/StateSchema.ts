@@ -15,7 +15,7 @@ export interface StateSchema {
     counter: CounterSchema;
     user: UserSchema;
     scroll: ScrollRestorationSchema;
-    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>
+    [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
     // Асинхронные редьюсеры
     loginForm?: LoginSchema;
     profile?: ProfileSchema;

@@ -10,7 +10,11 @@ export default {
         background: { control: 'background' },
     },
     decorators: [
-        (Story) => <div style={{ padding: 100 }}><Story /></div>,
+        (Story) => (
+            <div style={{ padding: 100 }}>
+                <Story />
+            </div>
+        ),
         ThemeDecorator(Theme.LIGHT),
     ],
 } as ComponentMeta<typeof ListBox>;

@@ -14,9 +14,7 @@ interface ArticleRecomendationListProps {
 }
 
 export const ArticleRecomendationList = memo((props: ArticleRecomendationListProps) => {
-    const {
-        className,
-    } = props;
+    const { className } = props;
     const { t } = useTranslation('article');
     const { data: recommendations, isLoading, error } = useArticleRecommendationsList(4);
 

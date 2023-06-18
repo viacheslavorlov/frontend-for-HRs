@@ -15,24 +15,14 @@ interface LoginModalProps {
 export const LoginModal = memo(({ className, isOpen, onClose }: LoginModalProps) => (
     <>
         <BrowserView>
-            <Modal
-                className={classNames('', {}, [className])}
-                isOpen={isOpen}
-                onClose={onClose}
-                lazy
-            >
+            <Modal className={classNames('', {}, [className])} isOpen={isOpen} onClose={onClose} lazy>
                 <Suspense fallback={<PageLoader />}>
                     <LoginFormAsync onSuccess={onClose} />
                 </Suspense>
             </Modal>
         </BrowserView>
         <MobileView>
-            <Drawer
-                className={classNames('', {}, [className])}
-                isOpen={isOpen}
-                onClose={onClose}
-                lazy
-            >
+            <Drawer className={classNames('', {}, [className])} isOpen={isOpen} onClose={onClose} lazy>
                 <Suspense fallback={<PageLoader />}>
                     <LoginFormAsync onSuccess={onClose} />
                 </Suspense>

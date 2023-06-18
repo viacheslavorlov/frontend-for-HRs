@@ -10,10 +10,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [
-        ThemeDecorator(Theme.LIGHT),
-        SuspenseDecorator,
-    ],
+    decorators: [ThemeDecorator(Theme.LIGHT), SuspenseDecorator],
 } as Meta<typeof Modal>;
 
 const Template: StoryFn<typeof Modal> = (args) => <Modal {...args} />;

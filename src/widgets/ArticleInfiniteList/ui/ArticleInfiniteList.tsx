@@ -18,9 +18,7 @@ interface ArticleInfiniteListProps {
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-    const {
-        className, Header,
-    } = props;
+    const { className, Header } = props;
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlePageLoading);
     const error = useSelector(getArticlePageError);
@@ -45,6 +43,5 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
                 onLoadNext={onLoadNextPart}
             />
         </>
-
     );
 });

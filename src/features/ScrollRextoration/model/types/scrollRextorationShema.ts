@@ -2,5 +2,5 @@
 export type ScrollRestoration = Record<string, number>;
 
 export interface ScrollRestorationSchema {
-    scroll: ScrollRestoration
+    scroll: ScrollRestoration;
 }

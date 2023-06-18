@@ -16,9 +16,7 @@ const article = {
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyFw5X5IZjxzEbANedFXMCEWJs6wU08IKb-2ibwhK&s',
     views: 8976,
     createdAt: '20.04.2022',
-    type: [
-        ArticleType.IT,
-    ],
+    type: [ArticleType.IT],
     blocks: [
         {
             id: '1',
@@ -34,12 +32,9 @@ const article = {
     user: {
         id: '1',
         username: 'admin',
-        roles: [
-            UserRole.ADMIN,
-        ],
+        roles: [UserRole.ADMIN],
         avatar: 'https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     },
-
 };
 export default {
     title: 'pages/ArticlePage',
@@ -67,9 +62,7 @@ export default {
                         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyFw5X5IZjxzEbANedFXMCEWJs6wU08IKb-2ibwhK&s',
                         views: 8976,
                         createdAt: '20.04.2022',
-                        type: [
-                            ArticleType.IT,
-                        ],
+                        type: [ArticleType.IT],
                         blocks: [
                             {
                                 id: '1',
@@ -85,12 +78,9 @@ export default {
                         user: {
                             id: '1',
                             username: 'admin',
-                            roles: [
-                                UserRole.ADMIN,
-                            ],
+                            roles: [UserRole.ADMIN],
                             avatar: 'https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
                         },
-
                     },
                     11: {
                         id: '12',
@@ -99,9 +89,7 @@ export default {
                         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyyFw5X5IZjxzEbANedFXMCEWJs6wU08IKb-2ibwhK&s',
                         views: 8976,
                         createdAt: '20.04.2022',
-                        type: [
-                            ArticleType.IT,
-                        ],
+                        type: [ArticleType.IT],
                         blocks: [
                             {
                                 id: '1',
@@ -117,12 +105,9 @@ export default {
                         user: {
                             id: '1',
                             username: 'admin',
-                            roles: [
-                                UserRole.ADMIN,
-                            ],
+                            roles: [UserRole.ADMIN],
                             avatar: 'https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
                         },
-
                     },
                     10: article,
                     9: article,
@@ -149,9 +134,7 @@ export default {
                         views: 19922,
                         createdAt: '20.02.2012',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',
@@ -173,9 +156,7 @@ export default {
                         views: 102,
                         createdAt: '10.02.2022',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',
@@ -197,9 +178,7 @@ export default {
                         views: 2232,
                         createdAt: '06.02.2022',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',
@@ -221,9 +200,7 @@ export default {
                         views: 1022,
                         createdAt: '26.02.2022',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',
@@ -245,9 +222,7 @@ export default {
                         views: 12,
                         createdAt: '25.01.2023',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',
@@ -269,9 +244,7 @@ export default {
                         views: 1992,
                         createdAt: '24.01.2023',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',
@@ -293,9 +266,7 @@ export default {
                         views: 1022,
                         createdAt: '14.06.2021',
                         userId: '1',
-                        type: [
-                            'IT',
-                        ],
+                        type: ['IT'],
                         blocks: [
                             {
                                 id: '1',

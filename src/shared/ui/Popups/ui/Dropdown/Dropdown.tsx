@@ -21,41 +21,37 @@ interface DropdownProps {
 }
 
 export const Dropdown = memo((props: DropdownProps) => {
-    const {
-        trigger,
-        className,
-        items,
-        direction = 'bottomLeft',
-    } = props;
+    const { trigger, className, items, direction = 'bottomLeft' } = props;
     const optionsClasses = popupCls[direction];
 
     return (
         <Menu as="div" className={classNames(popupCls.popup, {}, [className])}>
             <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.items, {}, [optionsClasses])}>
-                {items.length && items.map((item, i) => {
-                    const content = ({ active }: { active: boolean }) => (
-                        <button
-                            type="button"
-                            onClick={item.onClick}
-                            className={classNames(cls.item, { [popupCls.active]: active })}
-                        >
-                            {item.content}
-                        </button>
-                    );
-                    if (item.href) {
+                {items.length &&
+                    items.map((item, i) => {
+                        const content = ({ active }: { active: boolean }) => (
+                            <button
+                                type="button"
+                                onClick={item.onClick}
+                                className={classNames(cls.item, { [popupCls.active]: active })}
+                            >
+                                {item.content}
+                            </button>
+                        );
+                        if (item.href) {
+                            return (
+                                <Menu.Item key={Date.now() + i.toString()} as={AppLink} to={item.href}>
+                                    {content}
+                                </Menu.Item>
+                            );
+                        }
                         return (
-                            <Menu.Item key={Date.now() + i.toString()} as={AppLink} to={item.href}>
+                            <Menu.Item key={Date.now() + i.toString()} as={Fragment} disabled={item.disabled}>
                                 {content}
                             </Menu.Item>
                         );
-                    }
-                    return (
-                        <Menu.Item key={Date.now() + i.toString()} as={Fragment} disabled={item.disabled}>
-                            {content}
-                        </Menu.Item>
-                    );
-                })}
+                    })}
             </Menu.Items>
         </Menu>
     );

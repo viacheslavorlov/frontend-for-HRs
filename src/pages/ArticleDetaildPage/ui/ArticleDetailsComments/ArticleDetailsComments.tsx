@@ -20,9 +20,7 @@ interface ArticleDetailsCommentsProps {
 }
 
 export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) => {
-    const {
-        className, id,
-    } = props;
+    const { className, id } = props;
     const { t } = useTranslation('article');
     const dispatch = useAppDispatch();
 
@@ -33,9 +31,12 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
 
     const comments = useSelector(getArticleComments.selectAll);
     const commentIsLoading = useSelector(getArticleCommentsIsLoading);
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentsForArticle(text));
-    }, [dispatch]);
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentsForArticle(text));
+        },
+        [dispatch],
+    );
 
     return (
         <VStack gap="8" max className={classNames('', {}, [className])}>
@@ -43,10 +44,7 @@ export const ArticleDetailsComments = memo((props: ArticleDetailsCommentsProps) 
             <Suspense fallback={<LoadingSpinner />}>
                 <AddCommentForm onSendComment={onSendComment} />
             </Suspense>
-            <CommentList
-                isLoading={commentIsLoading}
-                comments={comments}
-            />
+            <CommentList isLoading={commentIsLoading} comments={comments} />
         </VStack>
     );
 });

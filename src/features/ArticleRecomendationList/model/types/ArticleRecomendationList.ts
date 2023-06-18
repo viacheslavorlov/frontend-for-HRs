@@ -1,3 +1,1 @@
-export interface ArticleRecomendationListSchema {
-
-}
+export interface ArticleRecomendationListSchema {}
