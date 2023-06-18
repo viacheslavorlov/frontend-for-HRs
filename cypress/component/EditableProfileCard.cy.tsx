@@ -6,6 +6,20 @@ const userId = '3';
 describe('EditableProfileCard.cy.tsx', () => {
     it('playground', () => {
         cy.intercept('GET', '**/profile/*', { fixture: 'profile.json' });
-        cy.mount(<TestProvider><EditableProfileCard id={userId} /></TestProvider>);
+        cy.mount(
+            <TestProvider options={{
+                initialState: {
+                    user: {
+                        authData: {
+                            id: userId,
+                        },
+
+                    },
+                },
+            }}
+            >
+                <EditableProfileCard id={userId} />
+            </TestProvider>,
+        );
     });
 });
