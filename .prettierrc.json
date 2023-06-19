@@ -5,7 +5,6 @@
     "trailingComma": "all",
     "bracketSpacing": true,
     "jsxBracketSameLine": false,
-    "maxPropsPerLine": 3,
     "arrowParens": "always",
     "endOfLine": "lf",
     "printWidth": 100

@@ -25,10 +25,13 @@ const articleCommentSlice = createSlice({
                 state.error = undefined;
                 state.isLoading = true;
             })
-            .addCase(fetchCommentsByArticleId.fulfilled, (state, action: PayloadAction<CommentType[]>) => {
-                state.isLoading = false;
-                commentAdapter.setAll(state, action.payload);
-            })
+            .addCase(
+                fetchCommentsByArticleId.fulfilled,
+                (state, action: PayloadAction<CommentType[]>) => {
+                    state.isLoading = false;
+                    commentAdapter.setAll(state, action.payload);
+                },
+            )
             .addCase(fetchCommentsByArticleId.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
@@ -36,4 +39,5 @@ const articleCommentSlice = createSlice({
     },
 });
 
-export const { reducer: articleCommentReducer, actions: articleCommentActions } = articleCommentSlice;
+export const { reducer: articleCommentReducer, actions: articleCommentActions } =
+    articleCommentSlice;

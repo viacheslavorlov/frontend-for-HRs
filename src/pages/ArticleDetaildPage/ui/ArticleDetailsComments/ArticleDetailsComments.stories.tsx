@@ -14,7 +14,9 @@ export default {
 } as ComponentMeta<typeof ArticleDetailsComments>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => <ArticleDetailsComments {...args} />;
+const Template: ComponentStory<typeof ArticleDetailsComments> = (args) => (
+    <ArticleDetailsComments {...args} />
+);
 
 export const LightArticleDetailsComments = Template.bind({});
 LightArticleDetailsComments.args = {};

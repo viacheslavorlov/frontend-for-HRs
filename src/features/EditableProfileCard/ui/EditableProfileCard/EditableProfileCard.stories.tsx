@@ -38,7 +38,9 @@ export default {
 } as ComponentMeta<typeof EditableProfileCard>;
 
 // eslint-disable-next-line react/jsx-props-no-spreading
-const Template: ComponentStory<typeof EditableProfileCard> = (args) => <EditableProfileCard {...args} />;
+const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
+    <EditableProfileCard {...args} />
+);
 
 export const LightEditableProfileCard = Template.bind({});
 LightEditableProfileCard.args = { id: '1' };

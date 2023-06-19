@@ -94,7 +94,9 @@ describe('profileSlice.test', () => {
             isLoading: false,
             validateErrors: [ValidateProfileError.SERVER_ERROR],
         };
-        expect(profileReducer(state as ProfileSchema, updateProfile.fulfilled(data.form!, ''))).toEqual({
+        expect(
+            profileReducer(state as ProfileSchema, updateProfile.fulfilled(data.form!, '')),
+        ).toEqual({
             readonly: true,
             isLoading: false,
             validateErrors: undefined,
@@ -104,9 +106,16 @@ describe('profileSlice.test', () => {
     });
 
     test('test update profile service Error (rejected)', () => {
-        const state: DeepPartial<ProfileSchema> = { isLoading: true, validateErrors: undefined, error: 'error' };
+        const state: DeepPartial<ProfileSchema> = {
+            isLoading: true,
+            validateErrors: undefined,
+            error: 'error',
+        };
         expect(
-            profileReducer(state as ProfileSchema, updateProfile.rejected({ message: 'error', name: '' }, 'error arg')),
+            profileReducer(
+                state as ProfileSchema,
+                updateProfile.rejected({ message: 'error', name: '' }, 'error arg'),
+            ),
         ).toEqual({
             isLoading: false,
             error: 'error',

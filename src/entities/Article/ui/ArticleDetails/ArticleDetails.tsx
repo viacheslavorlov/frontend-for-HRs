@@ -1,7 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize, TextVariant } from '@/shared/ui/Text';
@@ -44,11 +47,25 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     const renderBlock = useCallback((block: ArticleBlock) => {
         switch (block.type) {
             case ArticleBlockType.CODE:
-                return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />;
+                return (
+                    <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />
+                );
             case ArticleBlockType.IMAGE:
-                return <ArticlesImageBlockComponent key={block.id} className={cls.block} block={block} />;
+                return (
+                    <ArticlesImageBlockComponent
+                        key={block.id}
+                        className={cls.block}
+                        block={block}
+                    />
+                );
             case ArticleBlockType.TEXT:
-                return <ArticlesTextBlockComponent key={block.id} className={cls.block} block={block} />;
+                return (
+                    <ArticlesTextBlockComponent
+                        key={block.id}
+                        className={cls.block}
+                        block={block}
+                    />
+                );
             default:
                 return null;
         }

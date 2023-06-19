@@ -42,7 +42,12 @@ export const Select = <T extends string>(props: SelectProps<T>) => {
     return (
         <div className={classNames(cls.Wrapper, mods, [className])}>
             {label && <span className={cls.label}>{`${label}>`}</span>}
-            <select disabled={disabled} className={cls.select} onChange={onChangeHandler} value={value}>
+            <select
+                disabled={disabled}
+                className={cls.select}
+                onChange={onChangeHandler}
+                value={value}
+            >
                 {optionList}
             </select>
         </div>

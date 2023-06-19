@@ -10,6 +10,7 @@ import { ScrollRestorationSchema } from '@/features/ScrollRextoration';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetaildPage';
 import { ArticlesPageSchema } from '@/pages/ArticlePage';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { NewArticleSliceType } from '@/features/CreateNewArticle';
 
 export interface StateSchema {
     counter: CounterSchema;
@@ -23,6 +24,7 @@ export interface StateSchema {
     articleDetailedPage?: ArticleDetailsPageSchema;
     addCommentForm?: AddCommentFormSchema;
     articlesPage?: ArticlesPageSchema;
+    newArticle?: NewArticleSliceType;
 }
 
 export interface ThunkExtraArg {

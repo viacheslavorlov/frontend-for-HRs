@@ -14,7 +14,8 @@ interface AnimationProviderProps {
     children: ReactNode;
 }
 
-const getAsyncAnimationsModules = async () => Promise.all([import('@react-spring/web'), import('@use-gesture/react')]);
+const getAsyncAnimationsModules = async () =>
+    Promise.all([import('@react-spring/web'), import('@use-gesture/react')]);
 
 export function AnimationProvider({ children }: AnimationProviderProps) {
     const GestureRef = useRef<GestureType>();
@@ -40,4 +41,5 @@ export function AnimationProvider({ children }: AnimationProviderProps) {
     return <AnimationContext.Provider value={value}>{children}</AnimationContext.Provider>;
 }
 
-export const useAnimationLybrarys = () => useContext(AnimationContext) as Required<AnimationContextInterface>;
+export const useAnimationLybrarys = () =>
+    useContext(AnimationContext) as Required<AnimationContextInterface>;

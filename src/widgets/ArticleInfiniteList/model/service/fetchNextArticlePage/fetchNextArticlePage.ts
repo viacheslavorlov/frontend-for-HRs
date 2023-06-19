@@ -1,7 +1,11 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 // eslint-disable-next-line fsd-architecture-checker/layers-imports-order
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { getArticlePageHasMore, getArticlePageLoading, getArticlePageNum } from '../../selectors/articlePageSelectors';
+import {
+    getArticlePageHasMore,
+    getArticlePageLoading,
+    getArticlePageNum,
+} from '../../selectors/articlePageSelectors';
 import { articlePageActions } from '../../slice/articlesSlice';
 import { fetchArticlesList } from '../fetchArticles/fetchArticles';
 

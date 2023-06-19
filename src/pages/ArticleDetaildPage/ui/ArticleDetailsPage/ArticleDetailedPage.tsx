@@ -3,7 +3,10 @@ import { useParams } from 'react-router-dom';
 import { Page } from '@/shared/ui/Page';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { ArticleDetails } from '@/entities/Article';
-import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
+import {
+    DynamicModuleLoader,
+    ReducersList,
+} from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleRecomendationList } from '@/features/ArticleRecomendationList';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -32,7 +35,10 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     }
 
     return (
-        <Page data-testid="ArticleDetailedPage" className={classNames(cls.ArticleDetaildPage, {}, [className])}>
+        <Page
+            data-testid="ArticleDetailedPage"
+            className={classNames(cls.ArticleDetaildPage, {}, [className])}
+        >
             <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
                 <VStack max gap="16">
                     <ArticleDetailsPageHeader />

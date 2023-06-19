@@ -13,7 +13,9 @@ export default {
     decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof NotificationButton>;
 
-const Template: ComponentStory<typeof NotificationButton> = (args) => <NotificationButton {...args} />;
+const Template: ComponentStory<typeof NotificationButton> = (args) => (
+    <NotificationButton {...args} />
+);
 
 export const LightNotificationButton = Template.bind({});
 LightNotificationButton.args = {};

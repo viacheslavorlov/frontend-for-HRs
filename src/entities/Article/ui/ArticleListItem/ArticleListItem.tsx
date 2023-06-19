@@ -48,9 +48,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     );
 
     if (view === ArticleView.BIG) {
-        const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+        const textBlock = article.blocks.find(
+            (block) => block.type === ArticleBlockType.TEXT,
+        ) as ArticleTextBlock;
         return (
-            <div data-testid="ArticleListItem" className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}>
+            <div
+                data-testid="ArticleListItem"
+                className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
+            >
                 <Card>
                     <div className={cls.header}>
                         <Avatar size={30} src={article?.user.avatar} />
@@ -64,13 +69,21 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                         className={cls.img}
                         src={article?.img}
                         alt={article?.title}
-                        errorFallback={<div className={cls.img}>{t('Ошибка при загрузке изображения!')}</div>}
+                        errorFallback={
+                            <div className={cls.img}>{t('Ошибка при загрузке изображения!')}</div>
+                        }
                         loadingFallback={<Skeleton height={20} width={20} border="50%" />}
                     />
-                    {textBlock && <ArticlesTextBlockComponent block={textBlock} className={cls.textBlock} />}
+                    {textBlock && (
+                        <ArticlesTextBlockComponent block={textBlock} className={cls.textBlock} />
+                    )}
                     <div className={cls.footer}>
                         <AppLink target={target} to={getRouteArticleDetails(article.id)}>
-                            <Button theme={ButtonTheme.CLEAR} className={cls.btn} onClick={onOpenArticle}>
+                            <Button
+                                theme={ButtonTheme.CLEAR}
+                                className={cls.btn}
+                                onClick={onOpenArticle}
+                            >
                                 {t('Читать далее...')}
                             </Button>
                         </AppLink>
@@ -94,7 +107,11 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
                             className={cls.img}
                             src={article?.img}
                             alt={article?.title}
-                            errorFallback={<div className={cls.img}>{t('Ошибка при загрузке изображения!')}</div>}
+                            errorFallback={
+                                <div className={cls.img}>
+                                    {t('Ошибка при загрузке изображения!')}
+                                </div>
+                            }
                             loadingFallback={<Skeleton height={250} width="100%" />}
                         />
                         <Text text={article?.createdAt} className={cls.date} />

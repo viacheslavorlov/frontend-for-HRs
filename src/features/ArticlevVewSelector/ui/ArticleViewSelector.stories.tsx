@@ -13,7 +13,9 @@ export default {
     decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof ArticleViewSelector>;
 
-const Template: ComponentStory<typeof ArticleViewSelector> = (args) => <ArticleViewSelector {...args} />;
+const Template: ComponentStory<typeof ArticleViewSelector> = (args) => (
+    <ArticleViewSelector {...args} />
+);
 
 export const LightArticlevVewSelectorBIG = Template.bind({});
 LightArticlevVewSelectorBIG.args = { view: ArticleView.BIG };

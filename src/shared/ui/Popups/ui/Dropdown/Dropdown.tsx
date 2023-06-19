@@ -41,13 +41,21 @@ export const Dropdown = memo((props: DropdownProps) => {
                         );
                         if (item.href) {
                             return (
-                                <Menu.Item key={Date.now() + i.toString()} as={AppLink} to={item.href}>
+                                <Menu.Item
+                                    key={Date.now() + i.toString()}
+                                    as={AppLink}
+                                    to={item.href}
+                                >
                                     {content}
                                 </Menu.Item>
                             );
                         }
                         return (
-                            <Menu.Item key={Date.now() + i.toString()} as={Fragment} disabled={item.disabled}>
+                            <Menu.Item
+                                key={Date.now() + i.toString()}
+                                as={Fragment}
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         );

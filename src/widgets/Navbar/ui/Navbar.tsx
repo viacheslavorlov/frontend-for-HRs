@@ -42,7 +42,11 @@ export const Navbar = memo(({ className }: NavbarProps) => {
                             title={t('Блог')}
                             variant={TextVariant.INVERTED}
                         />
-                        <AppLink to={getRouteArticleNew()} theme={AppLInkTheme.SECONDARY} className={cls.createLink}>
+                        <AppLink
+                            to={getRouteArticleNew()}
+                            theme={AppLInkTheme.SECONDARY}
+                            className={cls.createLink}
+                        >
                             {t('Создать статью')}
                         </AppLink>
                     </HStack>

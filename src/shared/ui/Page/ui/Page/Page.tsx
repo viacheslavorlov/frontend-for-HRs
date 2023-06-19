@@ -15,7 +15,7 @@ export const Page = memo((props: PageProps) => {
 
     return (
         <main
-            data-testid={props['data-testid'] ?? 'Page'}
+            data-testid={props['data-testid'] || 'Page'}
             ref={wrapperRef}
             className={classNames(cls.Page, {}, [className])}
         >

@@ -60,7 +60,11 @@ export const Rating = memo((props: RatingProps) => {
                 onChange={setFeedback}
             />
             <HStack justify="between" max>
-                <Button data-testid="RatingModalClose" onClick={onCancelHandler} theme={ButtonTheme.OUTLINE_RED}>
+                <Button
+                    data-testid="RatingModalClose"
+                    onClick={onCancelHandler}
+                    theme={ButtonTheme.OUTLINE_RED}
+                >
                     {t('Отменить')}
                 </Button>
                 <Button data-testid="RatingModalSend" onClick={onAcceptHandler}>
@@ -75,7 +79,11 @@ export const Rating = memo((props: RatingProps) => {
             <VStack align="center" max gap="8">
                 <Text
                     data-testid="ArticleRating"
-                    text={starsCount ? feedBackTitle || t('Спасибо за оценку!') : title ?? t('Оставьте свой отзыв!')}
+                    text={
+                        starsCount
+                            ? feedBackTitle || t('Спасибо за оценку!')
+                            : title ?? t('Оставьте свой отзыв!')
+                    }
                 />
                 <StarRating onSelect={onSelectStars} selectedStars={rate} />
                 <BrowserView>

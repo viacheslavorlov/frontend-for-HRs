@@ -22,4 +22,5 @@ const addCommentFormSlice = createSlice({
     // },
 });
 
-export const { reducer: addCommentFormReducer, actions: addCommentFormActions } = addCommentFormSlice;
+export const { reducer: addCommentFormReducer, actions: addCommentFormActions } =
+    addCommentFormSlice;

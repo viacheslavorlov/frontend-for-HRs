@@ -14,7 +14,10 @@ export const ForbiddenPage = memo((props: ForbiddenPageProps) => {
 
     return (
         <Page data-testid="ForbiddenPage" className={classNames('', {}, [className])}>
-            <Text variant={TextVariant.ERROR} title={t('У вас нет правдоступа для просмотра этой страницы')} />
+            <Text
+                variant={TextVariant.ERROR}
+                title={t('У вас нет правдоступа для просмотра этой страницы')}
+            />
         </Page>
     );
 });

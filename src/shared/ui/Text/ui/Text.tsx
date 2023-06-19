@@ -61,7 +61,10 @@ export const Text = memo((props: TextProps) => {
     const HTag = headerTag[size];
 
     return (
-        <div data-testid={dataTestId} className={classNames(cls.Text, mods, [className, cls[fontWeight]])}>
+        <div
+            data-testid={dataTestId}
+            className={classNames(cls.Text, mods, [className, cls[fontWeight]])}
+        >
             {title && (
                 <HTag data-testid={`${dataTestId}.Header`} className={cls.title}>
                     {title}

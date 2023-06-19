@@ -97,11 +97,17 @@ LightArticleDetails.decorators = [StoreDecorator({ articleDetails: article })];
 
 export const DarkArticleDetails = Template.bind({});
 DarkArticleDetails.args = {};
-DarkArticleDetails.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({ articleDetails: article })];
+DarkArticleDetails.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({ articleDetails: article }),
+];
 
 export const OrangeArticleDetails = Template.bind({});
 OrangeArticleDetails.args = {};
-OrangeArticleDetails.decorators = [ThemeDecorator(Theme.ORANGE), StoreDecorator({ articleDetails: article })];
+OrangeArticleDetails.decorators = [
+    ThemeDecorator(Theme.ORANGE),
+    StoreDecorator({ articleDetails: article }),
+];
 
 export const DarkArticleDetailsError = Template.bind({});
 DarkArticleDetailsError.args = {};

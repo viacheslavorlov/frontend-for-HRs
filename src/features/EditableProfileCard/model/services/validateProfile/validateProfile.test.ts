@@ -18,34 +18,50 @@ describe('validateProfile.test', () => {
     });
 
     test('invalid: no first name', () => {
-        expect(validateProfile({ ...data, first: '' })).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
+        expect(validateProfile({ ...data, first: '' })).toEqual([
+            ValidateProfileError.INCORRECT_USER_DATA,
+        ]);
     });
 
     test('invalid: no last name', () => {
-        expect(validateProfile({ ...data, last: '' })).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
+        expect(validateProfile({ ...data, last: '' })).toEqual([
+            ValidateProfileError.INCORRECT_USER_DATA,
+        ]);
     });
     test('invalid: no age', () => {
-        expect(validateProfile({ ...data, age: undefined })).toEqual([ValidateProfileError.INCORRECT_AGE]);
+        expect(validateProfile({ ...data, age: undefined })).toEqual([
+            ValidateProfileError.INCORRECT_AGE,
+        ]);
     });
 
     test('invalid: no avatar', () => {
-        expect(validateProfile({ ...data, avatar: '' })).toEqual([ValidateProfileError.INCORRECT_AVATAR]);
+        expect(validateProfile({ ...data, avatar: '' })).toEqual([
+            ValidateProfileError.INCORRECT_AVATAR,
+        ]);
     });
 
     test('invalid: no username', () => {
-        expect(validateProfile({ ...data, username: '' })).toEqual([ValidateProfileError.INCORRECT_USERNAME]);
+        expect(validateProfile({ ...data, username: '' })).toEqual([
+            ValidateProfileError.INCORRECT_USERNAME,
+        ]);
     });
 
     test('invalid: no City', () => {
-        expect(validateProfile({ ...data, city: '' })).toEqual([ValidateProfileError.INCORRECT_CITY]);
+        expect(validateProfile({ ...data, city: '' })).toEqual([
+            ValidateProfileError.INCORRECT_CITY,
+        ]);
     });
 
     test('invalid: no Country', () => {
-        expect(validateProfile({ ...data, country: undefined })).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
+        expect(validateProfile({ ...data, country: undefined })).toEqual([
+            ValidateProfileError.INCORRECT_COUNTRY,
+        ]);
     });
 
     test('invalid: no currency', () => {
-        expect(validateProfile({ ...data, currency: undefined })).toEqual([ValidateProfileError.INCORRECT_CURRENCY]);
+        expect(validateProfile({ ...data, currency: undefined })).toEqual([
+            ValidateProfileError.INCORRECT_CURRENCY,
+        ]);
     });
 
     test('invalid: no data', () => {
