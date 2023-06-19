@@ -1,0 +1,8 @@
+.Checkbox {
+    padding: 4px;
+    margin: 4px;
+}
+
+.Checkbox:checked {
+    accent-color: var(--primary-color);
+}

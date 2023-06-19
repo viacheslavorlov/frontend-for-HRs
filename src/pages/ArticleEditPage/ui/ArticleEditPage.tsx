@@ -12,18 +12,17 @@ interface ArticleEditPageProps {
 }
 const reducers: ReducersList = {
     newArticle: newArticleReducer,
-}
+};
 
 const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     const { className } = props;
     const { t } = useTranslation('article');
     const params = useParams();
 
-
     if (!params || !params.id) {
         return (
             <Page className={classNames(cls.ArticleEditPage, {}, [className])}>
-                <DynamicModuleLoader reducers={reducers} >
+                <DynamicModuleLoader reducers={reducers}>
                     <CreateNewArticleForm />
                 </DynamicModuleLoader>
             </Page>
