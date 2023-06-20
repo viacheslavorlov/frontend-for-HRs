@@ -8,6 +8,7 @@ export const postArticle = createAsyncThunk<Article, void, ThunkConfig<string>>(
     async (_, thunkAPI) => {
         const { extra, dispatch, rejectWithValue, getState } = thunkAPI;
         const newArticle = getNewArticle(getState());
+
         if (!newArticle) {
             return thunkAPI.rejectWithValue('Cannot post article, no article found');
         }

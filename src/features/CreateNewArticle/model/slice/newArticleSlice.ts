@@ -13,8 +13,6 @@ const initialState: NewArticleSliceType = {
         id: '',
         user: {
             id: '',
-            avatar: '',
-            roles: [],
             username: '',
         },
         views: 0,

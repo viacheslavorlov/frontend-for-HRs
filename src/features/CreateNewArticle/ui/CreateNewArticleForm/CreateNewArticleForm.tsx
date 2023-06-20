@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { Text, TextAlign } from '@/shared/ui/Text';
@@ -9,15 +9,17 @@ import {
     getNewArticleImg,
     getNewArticleSubtitle,
     getNewArticleTitle,
-} from '../model/selectors/newArticleSelectors';
+} from '../../model/selectors/newArticleSelectors';
 import { Input } from '@/shared/ui/Input';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { newArticleActions } from '../model/slice/newArticleSlice';
+import { newArticleActions } from '../../model/slice/newArticleSlice';
 import { VStack } from '@/shared/ui/Stack';
 import { ArticleType } from '@/entities/Article';
 import { CheckboxGroup, OptionsCheckbox } from '@/shared/ui/CheckboxGroup/ui/CheckboxGroup';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { postArticle } from '../model/service/postArticle';
+import { postArticle } from '../../model/service/postArticle';
+import { ArticleBlockForm } from '../ArticleBlockForm/ArticleBlockForm';
+import { getUserAuthData } from '@/entities/User';
 
 const checkboxOptions: OptionsCheckbox<ArticleType>[] = [
     {
@@ -42,7 +44,7 @@ export const CreateNewArticleForm = () => {
     const image = useSelector(getNewArticleImg);
     const blocks = useSelector(getNewArticleBlocks);
     const createdAt = useSelector(getNewArticleCreatedAt)?.split('.').reverse().join('-');
-
+    const user = useSelector(getUserAuthData);
     const onInputTitle = useCallback(
         (value: string) => {
             dispatch(newArticleActions.setArticleTitle(value));
@@ -83,6 +85,10 @@ export const CreateNewArticleForm = () => {
         dispatch(postArticle());
     }, [dispatch]);
 
+    useEffect(() => {
+        dispatch(newArticleActions.setArticleUser(user));
+    }, [dispatch, user]);
+
     return (
         <VStack gap="8" className={cls.CreateNewArticleForm}>
             <Text
@@ -99,6 +105,7 @@ export const CreateNewArticleForm = () => {
             <Input className={cls.input} type="date" value={createdAt} onChange={onInputDate} />
             <Text text={`${t('Выберите тип статьи')}: `} />
             <CheckboxGroup<ArticleType> options={checkboxOptions} onChange={onInputType} />
+            <ArticleBlockForm />
             <Button onClick={onSendArticle} theme={ButtonTheme.OUTLINE}>
                 {t('Отправить')}
             </Button>
