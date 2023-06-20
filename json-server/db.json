@@ -696,53 +696,110 @@
           ]
         }
       ],
-      "user": {
-        "id": "1",
-        "username": "admin",
-        "password": "123",
-        "roles": [
-          "ADMIN"
-        ],
-        "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
-      },
       "id": "333"
+    },
+    {
+      "type": [],
+      "title": "",
+      "img": "",
+      "createdAt": "",
+      "id": "p2mgCHj",
+      "userId": "",
+      "user": {
+        "id": "",
+        "username": ""
+      },
+      "views": 0,
+      "subtitle": "",
+      "blocks": []
     },
     {
       "type": [
         "IT",
         "SCIENCE"
       ],
-      "title": "Новая статья",
-      "img": "https://www.shutterstock.com/ru/image-photo/lorem-ipsum-text-201759230",
-      "createdAt": "20.06.2023",
-      "id": "TJL7Ttd",
+      "title": "Ну наконецто?",
+      "img": "http://ufa.uz/wp-content/uploads/2020/10/lorem-ipsum-alternatives.png",
+      "createdAt": "21.06.2023",
+      "id": "F1rUcv4",
+      "userId": "2",
       "user": {
         "id": "",
-        "avatar": "",
-        "roles": [],
         "username": ""
       },
       "views": 0,
-      "subtitle": "пробуем добавить пользователя в статью",
+      "subtitle": "работает?",
       "blocks": [
         {
-          "id": "1687293070580",
-          "title": "заголовок текстового блока",
+          "id": "1687297485184",
+          "title": "ффвафывафыва фыва фыва фыв фыв аф",
           "paragraphs": [
-            "ту должен быть текст статьи"
+            "фыва фыв фыва фыв афыв афыв афыв афы вафыв фыв афы афы вфы фы"
           ],
           "type": "TEXT"
         },
         {
-          "id": "1687293094047",
-          "code": "тут должен ыть код статьифываф ыа",
+          "id": "1687297488601",
+          "code": "фыва фыв фыва фыв афыв афыв афыв афы вафыв фыв афы афы вфы фы",
           "type": "CODE"
         },
         {
-          "id": "1687293139798",
-          "src": "https://www.shutterstock.com/ru/image-vector/bird-abstract-triangle-design-concept-element-373629352",
-          "title": "картика с птицей",
+          "id": "1687297508889",
+          "src": "http://ufa.uz/wp-content/uploads/2020/10/lorem-ipsum-alternatives.png",
+          "title": "картинка",
           "type": "IMAGE"
+        }
+      ]
+    },
+    {
+      "type": [
+        "IT"
+      ],
+      "title": "Redux Toolkit (RTK) ",
+      "img": "https://hybridheroes.de/blog/content/images/2022/03/redux-toolkit-1400.jpg",
+      "createdAt": "21.06.2023",
+      "id": "8OQ3OtO",
+      "userId": "2",
+      "user": {
+        "id": "",
+        "username": ""
+      },
+      "views": 0,
+      "subtitle": " это официальное расширение библиотеки Redux, которое предоставляет удобные инструменты для упрощения работы с Redux",
+      "blocks": [
+        {
+          "id": "1687298252400",
+          "title": " Основные возможности RTK: ",
+          "paragraphs": [
+            " Основные возможности RTK:   1. Создание Redux Store с помощью функции configureStore, которая автоматически настраивает middleware и подключает DevTools.   2. Использование утилит createSlice и createAsyncThunk для создания сущностей Redux (slice), которые объединяют в себе reducer, actions и action creators.   3. Использование createEntityAdapter для упрощения работы с нормализованными данными и уменьшения количества кода.   Пример создания сущности Redux с помощью createSlice:"
+          ],
+          "type": "TEXT"
+        },
+        {
+          "id": "1687298276168",
+          "code": "import { createSlice } from '@reduxjs/toolkit'  const counterSlice = createSlice({   name: 'counter',   initialState: { value: 0 },   reducers: {     increment: (state) => {       state.value += 1     },     decrement: (state) => {       state.value -= 1     },   }, })  export const { increment, decrement } = counterSlice.actions  export default counterSlice.reducer",
+          "type": "CODE"
+        },
+        {
+          "id": "1687298296775",
+          "title": "",
+          "paragraphs": [
+            "В данном примере создается сущность Redux для управления счетчиком. Внутри createSlice указывается имя сущности, начальное состояние и reducers - функции, которые изменяют состояние сущности. С помощью функции createSlice автоматически создаются action creators и reducer.   Пример использования createAsyncThunk для загрузки данных из API:"
+          ],
+          "type": "TEXT"
+        },
+        {
+          "id": "1687298305223",
+          "code": "import { createAsyncThunk, createSlice } from '@reduxjs/toolkit' import { fetchUser } from './api'  export const fetchUserById = createAsyncThunk(   'users/fetchByIdStatus',   async (userId) => {     const response = await fetchUser(userId)     return response.data   } )  const userSlice = createSlice({   name: 'user',   initialState: { data: {}, status: 'idle', error: null },   reducers: {},   extraReducers: (builder) => {     builder       .addCase(fetchUserById.pending, (state) => {         state.status = 'loading'       })       .addCase(fetchUserById.fulfilled, (state, action) => {         state.status = 'succeeded'         state.data = action.payload       })       .addCase(fetchUserById.rejected, (state, action) => {         state.status = 'failed'         state.error = action.error.message       })   }, })  export default userSlice.reducer",
+          "type": "CODE"
+        },
+        {
+          "id": "1687298331728",
+          "title": "",
+          "paragraphs": [
+            "В данном примере создается сущность Redux для загрузки данных о пользователе из API. С помощью функции createAsyncThunk создается action creator для асинхронной операции. Внутри createSlice указывается начальное состояние, а также extraReducers - функции, которые изменяют состояние сущности в зависимости от action.   Использование RTK позволяет уменьшить количество кода и упростить работу с Redux. Однако, необходимо учитывать, что RTK не решает всех проблем, связанных с Redux, и может быть не подходящим для всех проектов."
+          ],
+          "type": "TEXT"
         }
       ]
     }

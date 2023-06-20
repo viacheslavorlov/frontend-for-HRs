@@ -1,6 +1,6 @@
 import { Meta, StoryFn } from '@storybook/react';
-import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { Article } from '@/entities/Article';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
@@ -11,6 +11,7 @@ const article: Article = {
     title: 'asdf asdfasdf',
     type: [],
     blocks: [],
+    userId: '1',
     views: 123,
     img: '',
     createdAt: '',

@@ -13,6 +13,7 @@ const article: Article = {
     subtitle: 'Что не нового в Kotlin за 2022 год декабрь?',
     img: '',
     views: 3422,
+    userId: '1',
     createdAt: '01.01.2023',
     type: [ArticleType.IT],
     blocks: [

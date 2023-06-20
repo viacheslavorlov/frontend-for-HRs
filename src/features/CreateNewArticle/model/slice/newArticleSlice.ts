@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { NewArticleSliceType } from '../type/newArticleSliceType';
 import { postArticle } from '../service/postArticle';
+import { NewArticleSliceType } from '../type/newArticleSliceType';
 
 const initialState: NewArticleSliceType = {
     error: undefined,
@@ -11,6 +11,7 @@ const initialState: NewArticleSliceType = {
         img: '',
         createdAt: '',
         id: '',
+        userId: '',
         user: {
             id: '',
             username: '',
@@ -40,8 +41,8 @@ const newArticleSlice = createSlice({
         setArticleBlock: (state, action) => {
             state.newArticle.blocks.push(action.payload);
         },
-        setArticleUser: (state, action) => {
-            state.newArticle.user = action.payload;
+        setArticleUserId: (state, action) => {
+            state.newArticle.userId = action.payload;
         },
         setArticleImg: (state, action) => {
             state.newArticle.img = action.payload;

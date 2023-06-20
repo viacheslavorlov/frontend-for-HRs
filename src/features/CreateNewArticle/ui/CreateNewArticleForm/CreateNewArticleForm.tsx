@@ -1,8 +1,14 @@
-import React, { useCallback, useEffect } from 'react';
+import React, { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+import { ArticleType } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { CheckboxGroup, OptionsCheckbox } from '@/shared/ui/CheckboxGroup/ui/CheckboxGroup';
+import { Input } from '@/shared/ui/Input';
+import { VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign } from '@/shared/ui/Text';
-import cls from './CreateNewArticleForm.module.scss';
 import {
     getNewArticleBlocks,
     getNewArticleCreatedAt,
@@ -10,16 +16,10 @@ import {
     getNewArticleSubtitle,
     getNewArticleTitle,
 } from '../../model/selectors/newArticleSelectors';
-import { Input } from '@/shared/ui/Input';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { newArticleActions } from '../../model/slice/newArticleSlice';
-import { VStack } from '@/shared/ui/Stack';
-import { ArticleType } from '@/entities/Article';
-import { CheckboxGroup, OptionsCheckbox } from '@/shared/ui/CheckboxGroup/ui/CheckboxGroup';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { postArticle } from '../../model/service/postArticle';
+import { newArticleActions } from '../../model/slice/newArticleSlice';
 import { ArticleBlockForm } from '../ArticleBlockForm/ArticleBlockForm';
-import { getUserAuthData } from '@/entities/User';
+import cls from './CreateNewArticleForm.module.scss';
 
 const checkboxOptions: OptionsCheckbox<ArticleType>[] = [
     {
@@ -36,20 +36,30 @@ const checkboxOptions: OptionsCheckbox<ArticleType>[] = [
     },
 ];
 
-export const CreateNewArticleForm = () => {
+interface CreateNewArticleFormProps {
+    className?: string;
+    userId: string;
+}
+
+export const CreateNewArticleForm = memo(({ userId, className }: CreateNewArticleFormProps) => {
     const { t } = useTranslation('newArticle');
     const dispatch = useAppDispatch();
+    const [inited, setInited] = useState(false);
     const title = useSelector(getNewArticleTitle);
     const subtitle = useSelector(getNewArticleSubtitle);
     const image = useSelector(getNewArticleImg);
     const blocks = useSelector(getNewArticleBlocks);
     const createdAt = useSelector(getNewArticleCreatedAt)?.split('.').reverse().join('-');
-    const user = useSelector(getUserAuthData);
+
     const onInputTitle = useCallback(
         (value: string) => {
             dispatch(newArticleActions.setArticleTitle(value));
+            if (!inited) {
+                dispatch(newArticleActions.setArticleUserId(userId));
+                setInited(true);
+            }
         },
-        [dispatch],
+        [dispatch, inited, userId],
     );
 
     const onInputSubtitle = useCallback(
@@ -85,12 +95,8 @@ export const CreateNewArticleForm = () => {
         dispatch(postArticle());
     }, [dispatch]);
 
-    useEffect(() => {
-        dispatch(newArticleActions.setArticleUser(user));
-    }, [dispatch, user]);
-
     return (
-        <VStack gap="8" className={cls.CreateNewArticleForm}>
+        <VStack gap="8" className={classNames(cls.CreateNewArticleForm, {}, [className])}>
             <Text
                 align={TextAlign.CENTER}
                 title={t('Заполните необходимые поля для создания статьи')}
@@ -111,4 +117,4 @@ export const CreateNewArticleForm = () => {
             </Button>
         </VStack>
     );
-};
+});

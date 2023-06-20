@@ -1,6 +1,6 @@
+import { Reducer } from '@reduxjs/toolkit';
 import { FC, ReactNode, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { Reducer } from '@reduxjs/toolkit';
 import { ReduxStoreWithManager, StateSchema, StateSchemaKey } from '@/app/providers/StoreProvider';
 
 export type ReducersList = {
@@ -39,8 +39,7 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
                 });
             }
         };
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    }, [dispatch, reducers, removeAfterUnmount, store.reducerManager]);
     return (
         // eslint-disable-next-line react/jsx-no-useless-fragment
         <>{children}</>
