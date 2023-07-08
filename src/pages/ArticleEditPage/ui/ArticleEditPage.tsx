@@ -7,6 +7,7 @@ import { CreateNewArticleForm, newArticleReducer } from '@/features/CreateNewArt
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DynamicModuleLoader, ReducersList } from '@/shared/lib/DynamicLoaders';
 import { Page } from '@/shared/ui/Page';
+import { useArticleItemById } from '@/widgets/ArticleInfiniteList';
 import cls from './ArticleEditPage.module.scss';
 
 interface ArticleEditPageProps {
@@ -22,6 +23,8 @@ const ArticleEditPage = memo((props: ArticleEditPageProps) => {
     const { t } = useTranslation('article');
     const params = useParams();
     const user = useSelector(getUserAuthData);
+    const articleItem = useArticleItemById('2');
+    console.log('articleItem', articleItem);
 
     if ((!params || !params.id) && user?.id) {
         return (

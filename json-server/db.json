@@ -699,107 +699,39 @@
       "id": "333"
     },
     {
-      "type": [],
-      "title": "",
-      "img": "",
-      "createdAt": "",
-      "id": "p2mgCHj",
-      "userId": "",
-      "user": {
-        "id": "",
-        "username": ""
-      },
-      "views": 0,
-      "subtitle": "",
-      "blocks": []
-    },
-    {
-      "type": [
-        "IT",
-        "SCIENCE"
-      ],
-      "title": "Ну наконецто?",
-      "img": "http://ufa.uz/wp-content/uploads/2020/10/lorem-ipsum-alternatives.png",
-      "createdAt": "21.06.2023",
-      "id": "F1rUcv4",
-      "userId": "2",
-      "user": {
-        "id": "",
-        "username": ""
-      },
-      "views": 0,
-      "subtitle": "работает?",
-      "blocks": [
-        {
-          "id": "1687297485184",
-          "title": "ффвафывафыва фыва фыва фыв фыв аф",
-          "paragraphs": [
-            "фыва фыв фыва фыв афыв афыв афыв афы вафыв фыв афы афы вфы фы"
-          ],
-          "type": "TEXT"
-        },
-        {
-          "id": "1687297488601",
-          "code": "фыва фыв фыва фыв афыв афыв афыв афы вафыв фыв афы афы вфы фы",
-          "type": "CODE"
-        },
-        {
-          "id": "1687297508889",
-          "src": "http://ufa.uz/wp-content/uploads/2020/10/lorem-ipsum-alternatives.png",
-          "title": "картинка",
-          "type": "IMAGE"
-        }
-      ]
-    },
-    {
       "type": [
         "IT"
       ],
-      "title": "Redux Toolkit (RTK) ",
-      "img": "https://hybridheroes.de/blog/content/images/2022/03/redux-toolkit-1400.jpg",
-      "createdAt": "21.06.2023",
-      "id": "8OQ3OtO",
+      "title": "Статья с трёмя блоками",
+      "img": "https://images.genius.com/7470c218dc765124f97b22f5191382a1.1000x667x1.jpg",
+      "createdAt": "08.07.2023",
+      "id": "EvUSuAG",
       "userId": "2",
       "user": {
         "id": "",
         "username": ""
       },
       "views": 0,
-      "subtitle": " это официальное расширение библиотеки Redux, которое предоставляет удобные инструменты для упрощения работы с Redux",
+      "subtitle": "триблока",
       "blocks": [
         {
-          "id": "1687298252400",
-          "title": " Основные возможности RTK: ",
+          "id": "1688838858018",
+          "title": "тут должен быть текст статьи",
           "paragraphs": [
-            " Основные возможности RTK:   1. Создание Redux Store с помощью функции configureStore, которая автоматически настраивает middleware и подключает DevTools.   2. Использование утилит createSlice и createAsyncThunk для создания сущностей Redux (slice), которые объединяют в себе reducer, actions и action creators.   3. Использование createEntityAdapter для упрощения работы с нормализованными данными и уменьшения количества кода.   Пример создания сущности Redux с помощью createSlice:"
+            "тут очень много текста, ещё текст и ещеё тесфит  фывалофывлао фжлывоа лфоывал офыжлвоа жфлыоваж флоывлао фжлывоа фывжал офыжвлао фылвоа фыжвлоа фывоа жфылова жфлыова фыжлвоа жфыв"
           ],
           "type": "TEXT"
         },
         {
-          "id": "1687298276168",
-          "code": "import { createSlice } from '@reduxjs/toolkit'  const counterSlice = createSlice({   name: 'counter',   initialState: { value: 0 },   reducers: {     increment: (state) => {       state.value += 1     },     decrement: (state) => {       state.value -= 1     },   }, })  export const { increment, decrement } = counterSlice.actions  export default counterSlice.reducer",
+          "id": "1688838887426",
+          "code": "import { Meta, StoryFn } from '@storybook/react'; import { Article } from '@/entities/Article'; import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator'; import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator'; import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator'; import { Theme } from '@/shared/const/theme/themeConst'; import { ArticleRecomendationList } from './ArticleRecomendationList';  const article: Article = {     id: '1',     title: 'asdf asdfasdf',     type: [],     blocks: [],     userId: '1',     views: 123,     img: '',     createdAt: '',     user: { id: '1', username: 'asdasdf' },     subtitle: 'asdfasdfasdfasdfasdf', };  export default {     title: 'features/ArticleRecomendationList',     component: ArticleRecomendationList,     argTypes: {         background: { control: 'background' },     },     decorators: [RouterDecorator, ThemeDecorator(Theme.LIGHT)],     parameters: {         mockData: [             {                 url: 'http://localhost:8080/articles?_limit=4',                 method: 'GET',                 status: 200,                 response: [{ ...article }, { ...article, id: '2' }, { ...article, id: '3' }],             },         ],     }, } as Meta<typeof ArticleRecomendationList>;  const Template: StoryFn<typeof ArticleRecomendationList> = (args) => <ArticleRecomendationList />;  export const LightArticleRecommendationList = Template.bind({}); LightArticleRecommendationList.args = {}; LightArticleRecommendationList.decorators = [StoreDecorator({})];  export const DarkArticleRecomendationList = Template.bind({}); DarkArticleRecomendationList.args = {}; DarkArticleRecomendationList.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];",
           "type": "CODE"
         },
         {
-          "id": "1687298296775",
-          "title": "",
-          "paragraphs": [
-            "В данном примере создается сущность Redux для управления счетчиком. Внутри createSlice указывается имя сущности, начальное состояние и reducers - функции, которые изменяют состояние сущности. С помощью функции createSlice автоматически создаются action creators и reducer.   Пример использования createAsyncThunk для загрузки данных из API:"
-          ],
-          "type": "TEXT"
-        },
-        {
-          "id": "1687298305223",
-          "code": "import { createAsyncThunk, createSlice } from '@reduxjs/toolkit' import { fetchUser } from './api'  export const fetchUserById = createAsyncThunk(   'users/fetchByIdStatus',   async (userId) => {     const response = await fetchUser(userId)     return response.data   } )  const userSlice = createSlice({   name: 'user',   initialState: { data: {}, status: 'idle', error: null },   reducers: {},   extraReducers: (builder) => {     builder       .addCase(fetchUserById.pending, (state) => {         state.status = 'loading'       })       .addCase(fetchUserById.fulfilled, (state, action) => {         state.status = 'succeeded'         state.data = action.payload       })       .addCase(fetchUserById.rejected, (state, action) => {         state.status = 'failed'         state.error = action.error.message       })   }, })  export default userSlice.reducer",
-          "type": "CODE"
-        },
-        {
-          "id": "1687298331728",
-          "title": "",
-          "paragraphs": [
-            "В данном примере создается сущность Redux для загрузки данных о пользователе из API. С помощью функции createAsyncThunk создается action creator для асинхронной операции. Внутри createSlice указывается начальное состояние, а также extraReducers - функции, которые изменяют состояние сущности в зависимости от action.   Использование RTK позволяет уменьшить количество кода и упростить работу с Redux. Однако, необходимо учитывать, что RTK не решает всех проблем, связанных с Redux, и может быть не подходящим для всех проектов."
-          ],
-          "type": "TEXT"
+          "id": "1688838920394",
+          "src": "https://sun9-62.userapi.com/impg/D4i1FVHRG9TElnROoOU_BDBfrq-NfDHoSVsszQ/cCjnemaWLzY.jpg?size=1280x853&quality=96&sign=b4e4cc024dec962058b25375eec3342d&c_uniq_tag=vVwdZE9T1MrcQNkrrg22SxbG3hWM53tWX5nnEQOrPI0&type=album",
+          "title": "картинка",
+          "type": "IMAGE"
         }
       ]
     }
@@ -1145,6 +1077,13 @@
       "rate": 2,
       "feedback": "",
       "id": "Nwuypy0"
+    },
+    {
+      "articleId": "J3kGO8r",
+      "userId": "2",
+      "rate": 3,
+      "feedback": "",
+      "id": "qemGhih"
     }
   ],
   "profile-ratings": [

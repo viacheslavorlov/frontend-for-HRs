@@ -1,13 +1,12 @@
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import cls from './ArticleBlockForm.module.scss';
-import { Text } from '@/shared/ui/Text';
-import { Select, SelectOption } from '@/shared/ui/Select';
 import { ArticleBlock, ArticleBlockType } from '@/entities/Article';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { Input } from '@/shared/ui/Input';
 import { Button } from '@/shared/ui/Button';
+import { Input } from '@/shared/ui/Input';
+import { Select, SelectOption } from '@/shared/ui/Select';
+import { Text } from '@/shared/ui/Text';
 import { newArticleActions } from '../../model/slice/newArticleSlice';
 
 interface ArticleBlockFormProps {
@@ -133,7 +132,7 @@ export const ArticleBlockForm = memo((props: ArticleBlockFormProps) => {
     const content = contentCreator();
 
     return (
-        <div className={classNames(cls.ArticleBlockForm, {}, [className])}>
+        <div className={classNames('', {}, [className])}>
             <Text title={t('Выберите тип блока статьи')} />
             <Select options={articleBlocTypeOptions} onChange={onSetArticleBlockType} />
             {content}

@@ -15,4 +15,5 @@ export {
     getArticlePageOrder,
     getArticlePageSearch,
     getArticlePageType,
+    useArticleItemById,
 } from './model/selectors/articlePageSelectors';
