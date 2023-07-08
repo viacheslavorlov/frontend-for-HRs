@@ -1,5 +1,5 @@
-import { memo } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { memo } from 'react';
 import cls from './Overlay.module.scss';
 
 interface OverlayProps {
@@ -10,8 +10,5 @@ interface OverlayProps {
 export const Overlay = memo((props: OverlayProps) => {
     const { className, onClick } = props;
 
-    return (
-        // eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions
-        <div onClick={onClick} className={classNames(cls.Overlay, {}, [className])} />
-    );
+    return <div onClick={onClick} className={classNames(cls.Overlay, {}, [className])} />;
 });

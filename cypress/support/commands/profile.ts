@@ -34,9 +34,11 @@ export const resetProfile = (profileId: string) => {
 };
 
 declare global {
+    // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace Cypress {
         interface Chainable {
             updateProfile(): Chainable<void>;
+
             resetProfile(profileId: string): Chainable<void>;
         }
     }

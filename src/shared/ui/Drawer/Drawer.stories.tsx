@@ -1,7 +1,7 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { SuspenseDecorator } from '@/shared/config/SuspenseDecorator/SuspenseDecorator';
-import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Drawer } from './Drawer';
 
 export default {
@@ -21,7 +21,7 @@ const content = [
     '1 Notification',
     '2 Notification',
     '3 Notification',
-].map((item) => <div>{item}</div>);
+].map((item, i) => <div key={i}>{item}</div>);
 
 const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
 

@@ -49,9 +49,11 @@ export const deleteArticle = (articleId: string) => {
 };
 
 declare global {
+    // eslint-disable-next-line @typescript-eslint/no-namespace
     namespace Cypress {
         interface Chainable {
             createArticle(article?: Article): Chainable<Article>;
+
             deleteArticle(articleId: string): Chainable<void>;
         }
     }

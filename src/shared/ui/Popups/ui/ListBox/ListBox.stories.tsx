@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
 import { ListBox } from './ListBox';
 
 export default {
@@ -33,7 +33,9 @@ LightListBox.args = {
         { value: '3333', disabled: false, content: '3333' },
     ],
     direction: 'bottomLeft',
-    onChange: (value: string) => {},
+    onChange: (value: string) => {
+        console.log(value);
+    },
     defaultValue: 'укажите',
 };
 
@@ -47,7 +49,9 @@ DarkListBox.args = {
         { value: '2222', disabled: false, content: '2222' },
         { value: '3333', disabled: false, content: '3333' },
     ],
-    onChange: (value: string) => {},
+    onChange: (value: string) => {
+        console.log(value);
+    },
     defaultValue: 'укажите',
 };
 DarkListBox.decorators = [ThemeDecorator(Theme.DARK)];
@@ -63,7 +67,9 @@ DarkListBoxBottomLeft.args = {
         { value: '3333', disabled: false, content: '3333' },
     ],
     direction: 'bottomLeft',
-    onChange: (value: string) => {},
+    onChange: (value: string) => {
+        console.log(value);
+    },
     defaultValue: 'укажите',
 };
 DarkListBoxBottomLeft.decorators = [ThemeDecorator(Theme.DARK)];

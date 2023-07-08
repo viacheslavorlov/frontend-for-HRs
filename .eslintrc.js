@@ -5,8 +5,8 @@ module.exports = {
         jest: true,
     },
     extends: [
+        'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
-        'airbnb',
         'eslint:recommended',
         'plugin:i18next/recommended',
         'plugin:import/recommended',
@@ -17,6 +17,9 @@ module.exports = {
     parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
+        ecmaFeatures: {
+            jsx: true,
+        },
     },
     plugins: [
         'react',
@@ -28,10 +31,11 @@ module.exports = {
         'import',
     ],
     rules: {
+        'react/jsx-uses-react': 'error',
+        'react/jsx-uses-vars': 'error',
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
-        'no-unused-vars': 'warn',
         'react/require-default-props': 'off',
         'react/react-in-jsx-scope': 'off',
         'react/jsx-props-no-spreading': 'off',
@@ -41,9 +45,14 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'no-undef': 'off',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
         'react/button-has-type': 'off',
         'max-len': ['error', { code: 120, ignoreComments: true }],
-        'i18next/no-literal-string': ['error', { markupOnly: true, ignoreAttributes: ['data-testid'] }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttributes: ['data-testid'] },
+        ],
         'linebreak-style': 0,
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
@@ -63,7 +72,6 @@ module.exports = {
                 ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
             },
         ],
-        '@typescript-eslint/no-unused-vars': 'off',
         'unused-imports/no-unused-imports': 'error',
         'unused-imports/no-unused-vars': [
             'warn',
@@ -74,6 +82,8 @@ module.exports = {
                 argsIgnorePattern: '^_',
             },
         ],
+        '@typescript-eslint/ban-ts-comment': 'warn',
+        'react/display-name': 'off',
     },
     globals: {
         __IS_DEV: true,
