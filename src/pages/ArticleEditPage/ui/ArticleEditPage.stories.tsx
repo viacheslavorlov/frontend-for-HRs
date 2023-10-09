@@ -1,6 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
+import { UserRole } from '@/entities/User';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
@@ -9,7 +11,20 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [ThemeDecorator(Theme.LIGHT)],
+    decorators: [
+        StoreDecorator({
+            user: {
+                authData: {
+                    id: '1',
+                    username: 'user',
+                    roles: [UserRole.USER],
+                    avatar: '',
+                    features: {},
+                },
+            },
+        }),
+        ThemeDecorator(Theme.LIGHT),
+    ],
 } as ComponentMeta<typeof ArticleEditPage>;
 
 const Template: ComponentStory<typeof ArticleEditPage> = (args) => <ArticleEditPage {...args} />;

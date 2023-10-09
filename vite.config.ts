@@ -16,7 +16,7 @@ export default defineConfig({
     plugins: [react(), svgr({ exportAsDefault: true })],
     define: {
         __IS_DEV: JSON.stringify(true),
-        __API_URL: JSON.stringify('https://backend-for-advanced-frontend.vercel.app'),
+        __API_URL: JSON.stringify(process.env.API_URL),
         __PROJECT: JSON.stringify('frontend'),
     },
 });

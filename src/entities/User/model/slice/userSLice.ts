@@ -1,6 +1,6 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { USER_LOCAL_STORAGE_KEY } from '@/shared/const/localStorage/localStorage';
 import { setFeatureFlags } from '@/shared/lib/features';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { User, UserSchema } from '../types/user';
 
 export const initialState: UserSchema = {
@@ -12,6 +12,7 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         setAuthData: (state, action: PayloadAction<User>) => {
+            console.log(action.payload);
             state.authData = action.payload;
             setFeatureFlags(action.payload.features);
         },

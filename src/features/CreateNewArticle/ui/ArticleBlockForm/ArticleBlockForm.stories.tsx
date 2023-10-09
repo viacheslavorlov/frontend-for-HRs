@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { ArticleBlockForm } from './ArticleBlockForm';
-import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 
 export default {
     title: 'entities/ArticleBlockForm',
@@ -10,7 +10,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
-    decorators: [StoreDecorator({})],
+    decorators: [StoreDecorator({}),ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof ArticleBlockForm>;
 
 const Template: ComponentStory<typeof ArticleBlockForm> = (args) => <ArticleBlockForm {...args} />;

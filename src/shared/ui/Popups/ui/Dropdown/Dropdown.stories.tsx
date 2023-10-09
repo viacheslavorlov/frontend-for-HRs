@@ -1,6 +1,6 @@
-import { Meta, StoryFn } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { Meta, StoryFn } from '@storybook/react';
 import { Button } from '../../../Button/Button';
 import { Dropdown } from './Dropdown';
 
@@ -18,6 +18,7 @@ const Template: StoryFn<typeof Dropdown> = (args) => <Dropdown {...args} />;
 
 export const LightDropdown = Template.bind({});
 LightDropdown.args = {
+    direction: 'bottomRight',
     trigger: <Button>Название инструмента</Button>,
     items: [
         { content: 'первый пункт', disabled: false },
@@ -40,7 +41,7 @@ DarkDropdown.decorators = [ThemeDecorator(Theme.DARK)];
 
 export const OrangeDropdown = Template.bind({});
 OrangeDropdown.args = {
-    direction: 'bottomLeft',
+    direction: 'bottomRight',
     trigger: <Button>Название инструмента</Button>,
     items: [
         { content: 'первый пункт', disabled: false },

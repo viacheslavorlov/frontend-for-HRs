@@ -1,8 +1,8 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
-import { Icon } from './Icon';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import TestIcon from '../../assets/copie.svg';
+import { Icon } from './Icon';
 
 export default {
     title: 'shared/Icon',
@@ -10,6 +10,7 @@ export default {
     argTypes: {
         background: { control: 'background' },
     },
+    decorators: [ThemeDecorator(Theme.LIGHT)],
 } as ComponentMeta<typeof Icon>;
 
 const Template: ComponentStory<typeof Icon> = (args) => <Icon {...args} />;

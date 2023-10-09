@@ -1,12 +1,18 @@
-import { Meta, StoryFn } from '@storybook/react';
+// noinspection ES6ConvertVarToLetConst
+
 import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 import { UserRole } from '@/entities/User';
 import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { Theme } from '@/shared/const/theme/themeConst';
+import { Meta, StoryFn } from '@storybook/react';
 import ArticleDetailedPage from './ArticleDetailedPage';
 
+const featureFlags = {
+    isArticleRatingEnabled: true,
+    isCounterEnabled: true,
+};
 const article: Article = {
     id: '13',
     title: 'Kotlin news',
@@ -32,6 +38,10 @@ const article: Article = {
         id: '1',
         username: 'admin',
         roles: [UserRole.ADMIN],
+        features: {
+            isArticleRatingEnabled: true,
+            isCounterEnabled: true,
+        },
         avatar: 'https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     },
 };
@@ -43,16 +53,21 @@ export default {
         backgroundColor: { control: 'color' },
     },
     decorators: [
+        // FeatureFlagsDecorator,
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
-        StoreDecorator({
-            user: {
-                authData: {
-                    id: '1',
-                    username: 'user',
-                },
-            },
-        }),
+        // StoreDecorator({
+        //     user: {
+        //         authData: {
+        //             id: '1',
+        //             username: 'user',
+        //             features: {
+        //                 isArticleRatingEnabled: true,
+        //                 isCounterEnabled: true,
+        //             },
+        //         },
+        //     },
+        // }),
     ],
     parameters: {
         mockData: [
@@ -75,21 +90,8 @@ const Template: StoryFn<typeof ArticleDetailedPage> = () => <ArticleDetailedPage
 
 export const LightArticleDetaildPage = Template.bind({});
 LightArticleDetaildPage.args = {};
-LightArticleDetaildPage.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: article,
-        },
-    }),
-];
+LightArticleDetaildPage.decorators = [StoreDecorator({ articleDetails: { data: article } })];
 
 export const DarkArticleDetaildPage = Template.bind({});
 DarkArticleDetaildPage.args = {};
-DarkArticleDetaildPage.decorators = [
-    ThemeDecorator(Theme.DARK),
-    StoreDecorator({
-        articleDetails: {
-            data: article,
-        },
-    }),
-];
+DarkArticleDetaildPage.decorators = [ThemeDecorator(Theme.DARK)];

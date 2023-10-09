@@ -1,10 +1,10 @@
-import React, { HTMLAttributeAnchorTarget, memo } from 'react';
-import { useTranslation } from 'react-i18next';
-import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextSize, TextVariant } from '@/shared/ui/Text';
+import React, { HTMLAttributeAnchorTarget, memo } from 'react';
+import { useTranslation } from 'react-i18next';
+import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
 import { ArticleView } from '../../model/consts/articleConst';
 import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -74,7 +74,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
         [cls.wrap]: searchParams,
     };
 
-    if (isLoading) {
+    if (isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
                 {view === ArticleView.BIG ? (

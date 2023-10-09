@@ -1,10 +1,10 @@
-import { memo, useCallback } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useTranslation } from 'react-i18next';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Dropdown } from '@/shared/ui/Popups';
 import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/routerConst';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Dropdown } from '@/shared/ui/Popups';
+import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useDispatch, useSelector } from 'react-redux';
 
 interface DropDownAvatarProps {
     className?: string;
@@ -38,7 +38,7 @@ export const DropDownAvatar = memo((props: DropDownAvatarProps) => {
                           ]
                         : []),
                     {
-                        content: t('translation:Выйти'),
+                        content: t('Выйти'),
                         onClick: onLogout,
                     },
                     {

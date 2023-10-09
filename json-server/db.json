@@ -946,6 +946,10 @@
       "country": "Belarus",
       "city": "Novgorod",
       "username": "admin",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://images.unsplash.com/photo-1519755898819-cef8c3021d6f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
     },
     {
@@ -957,6 +961,10 @@
       "country": "Belarus",
       "city": "Moscow",
       "username": "user",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     },
     {
@@ -968,6 +976,10 @@
       "country": "Belarus",
       "city": "Novgorod",
       "username": "testuser",
+      "features": {
+        "isArticleRatingEnabled": false,
+        "isCounterEnabled": false
+      },
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],
@@ -1100,6 +1112,13 @@
       "rate": 3,
       "feedback": "",
       "id": "qemGhih"
+    },
+    {
+      "articleId": "EvUSuAG",
+      "userId": "1",
+      "rate": 4,
+      "feedback": "Jnpsd hflb jnpsdf",
+      "id": "5xnhU9j"
     }
   ],
   "profile-ratings": [

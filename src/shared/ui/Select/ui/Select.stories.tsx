@@ -1,6 +1,6 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
 import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { Select } from './Select';
 
 export default {
@@ -17,6 +17,11 @@ const Template: ComponentStory<typeof Select> = (args) => <Select {...args} />;
 export const LightSelect = Template.bind({});
 LightSelect.args = {
     label: 'укажите значение',
+    options: [
+        { value: '123', content: 'первый пункт' },
+        { value: '12345', content: 'второй пункт' },
+    ],
+    value: '12345',
 };
 
 export const DarkSelect = Template.bind({});

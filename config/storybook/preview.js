@@ -3,6 +3,7 @@ import { StyleDecorator } from '../../src/shared/config/styleDecorator/styleDeco
 import { SuspenseDecorator } from '../../src/shared/config/SuspenseDecorator/SuspenseDecorator';
 import { ThemeDecorator } from '../../src/shared/config/themeDecorator/themeDecorator';
 import { Theme } from '../../src/shared/const/theme/themeConst';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 
 export const preview = {
     actions: { argTypesRegex: '^on[A-Z].*' },
@@ -26,5 +27,6 @@ export const preview = {
         ThemeDecorator(Theme.LIGHT),
         RouterDecorator,
         SuspenseDecorator,
+        () => StoreDecorator({}),
     ],
 };

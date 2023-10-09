@@ -1,9 +1,10 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
-import { Theme } from '@/shared/const/theme/themeConst';
-import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
-import { DropDownAvatar } from './DropDownAvatar';
-import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
 import { UserRole } from '@/entities/User';
+import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
+import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { DropDownAvatar } from './DropDownAvatar';
 
 export default {
     title: 'features/DropDownAvatar',
@@ -12,6 +13,7 @@ export default {
         background: { control: 'background' },
     },
     decorators: [
+        RouterDecorator,
         ThemeDecorator(Theme.LIGHT),
         StoreDecorator({
             user: {
@@ -33,18 +35,7 @@ LightDropDownAvatarUser.args = {};
 
 export const LightDropDownAvatarAdmin = Template.bind({});
 LightDropDownAvatarAdmin.args = {};
-LightDropDownAvatarAdmin.decorators = [
-    StoreDecorator({
-        user: {
-            authData: {
-                id: '1',
-                roles: [UserRole.ADMIN],
-                username: 'user',
-                avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRxN-HcCY8vkC5AR8G8QJN6HFOklqleEMQc8KhBtZtnQ&s',
-            },
-        },
-    }),
-];
+LightDropDownAvatarAdmin.decorators = [];
 
 export const DarkDropDownAvatarUser = Template.bind({});
 DarkDropDownAvatarUser.args = {};
