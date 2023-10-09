@@ -8,6 +8,7 @@ import { StoreProvider } from '@/app/providers/StoreProvider';
 import App from './app/App';
 import './app/styles/index.scss';
 import './shared/config/i18n/i18n';
+import { Theme } from './shared/const/theme/themeConst';
 
 const root = createRoot(document.getElementById('root') as HTMLElement);
 
@@ -19,7 +20,7 @@ root.render(
     <BrowserRouter>
         <StoreProvider>
             <ErrorBoundary>
-                <ThemeProvider>
+                <ThemeProvider initialTheme={Theme.LIGHT}>
                     <Suspense fallback={<PageLoader />}>
                         <App />
                     </Suspense>

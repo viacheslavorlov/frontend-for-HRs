@@ -4,7 +4,7 @@ import { Theme } from '../../../const/theme/themeConst';
 import { ThemeContext } from '../../context/ThemeContext';
 
 interface UseThemResult {
-    toggleTheme: () => void;
+    toggleTheme: () => Theme;
     theme: Theme;
 }
 
@@ -28,6 +28,7 @@ export function useTheme(): UseThemResult {
         setTheme?.(newTheme);
         document.body.className = newTheme;
         localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+        return newTheme;
     };
 
     return {

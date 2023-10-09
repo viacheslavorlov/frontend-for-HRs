@@ -8,8 +8,8 @@ export const rtkApi = createApi({
     reducerPath: 'api',
     baseQuery: fetchBaseQuery({
         baseUrl: mode
-            ? 'http://localhost:8000/'
-            : 'https://backend-for-advanced-frontend.vercel.app/',
+            ? 'http://localhost:8000'
+            : 'https://backend-for-advanced-frontend.vercel.app',
         prepareHeaders: (headers) => {
             const token = localStorage.getItem(USER_LOCAL_STORAGE_KEY) || '';
             if (token) {
