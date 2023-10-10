@@ -1,13 +1,13 @@
+import { Theme } from '@/shared/const/theme/themeConst';
 import { buildSelector } from '@/shared/store';
 import { JsonSettingsInterface } from '../../types/jsonSettings';
-import { Theme } from '@/shared/const/theme/themeConst';
 
 export const [useJsonSettings, getJsonSettings] = buildSelector(
     (state) =>
         state.user?.authData?.jsonSettings || {
             theme: Theme.LIGHT,
             isFirstVisit: true,
-            settingsPageHasBeenOpen: false,
+            isFirstTimeArticlePageVisit: false,
         },
 );
 

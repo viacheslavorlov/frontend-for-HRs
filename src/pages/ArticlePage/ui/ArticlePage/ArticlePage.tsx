@@ -1,32 +1,28 @@
-import { memo } from 'react';
-import { useSelector } from 'react-redux';
-import { useSearchParams } from 'react-router-dom';
-import {
-    getArticlePageError,
-    ArticleInfiniteList,
-    initArticlesPage,
-    articlePageReducer,
-} from '@/widgets/ArticleInfiniteList';
-import { Page } from '@/shared/ui/Page';
-import { PageError } from '@/shared/ui/PageError/ui/PageError';
-import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { ArticlePageGreetings } from '@/features/ArticlePageGreetings';
 import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { Page } from '@/shared/ui/Page';
+import { PageError } from '@/shared/ui/PageError/ui/PageError';
+import {
+    ArticleInfiniteList,
+    articlePageReducer,
+    getArticlePageError,
+    initArticlesPage,
+} from '@/widgets/ArticleInfiniteList';
+import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
 
 import cls from './ArticlePage.module.scss';
-
-interface ArticlePageProps {
-    className?: string;
-}
 
 const reducers: ReducersList = {
     articlesPage: articlePageReducer,
 };
 
-const ArticlePage = memo(({ className }: ArticlePageProps) => {
+const ArticlePage = () => {
     const dispatch = useAppDispatch();
     const error = useSelector(getArticlePageError);
     const [searchParams] = useSearchParams();
@@ -47,9 +43,10 @@ const ArticlePage = memo(({ className }: ArticlePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page data-testid="ArticlePage" className={cls.ArticlePage}>
                 <ArticleInfiniteList />
+                <ArticlePageGreetings />
             </Page>
         </DynamicModuleLoader>
     );
-});
+};
 
 export default ArticlePage;
