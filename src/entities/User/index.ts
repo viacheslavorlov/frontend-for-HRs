@@ -11,4 +11,6 @@ export {
     useJsonSettingsByKey,
 } from './model/selectors/getUserInited/getJsonSettings';
 
-export {saveJsonSettings} from './model/services/saveJsonSettings'
+export { saveJsonSettings } from './model/services/saveJsonSettings';
+
+export { initAuthData } from './model/services/initAuthData';
