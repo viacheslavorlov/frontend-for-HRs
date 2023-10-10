@@ -22,7 +22,6 @@ const project = new Project();
 project.addSourceFilesAtPaths(['src/**/*.ts', 'src/**/*.tsx']);
 const sourceFiles = project.getSourceFiles();
 
-//!  Для функции toggleFeatures
 function isToggleFunction(node: Node) {
     let isToggleFeatures = false;
     node.forEachChild((child) => {
@@ -31,6 +30,11 @@ function isToggleFunction(node: Node) {
         }
     });
     return isToggleFeatures;
+}
+
+function isToggleComponent(node: Node) {
+    const identifier = node.getFirstDescendantByKind(SyntaxKind.Identifier);
+    return identifier?.getText() === toggleComponentName;
 }
 
 const replaceToggleFunction = (node: Node) => {
@@ -58,26 +62,8 @@ const replaceToggleFunction = (node: Node) => {
     }
 };
 
-//------------------------------------------------------------------------------//
-//! для компонента ToggleFeature 
-function isToggleComponent(node: Node) {
-    const identifier = node.getFirstDescendantByKind(SyntaxKind.Identifier);
-    return identifier?.getText() === toggleComponentName;
-}
-
 const getAttributesByName = (jsxAttributes: JsxAttribute[], name: string) => {
     return jsxAttributes.find((node) => node.getName() === name);
-};
-
-const prepareReplaceValue = (attribute?: Node) => {
-    const value = attribute
-        ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
-        ?.getExpression()
-        ?.getText();
-    if (value?.startsWith('(')) {
-        return value.slice(1, -1);
-    }
-    return value || '';
 };
 
 const replaceToggleComponent = (node: Node) => {
@@ -96,18 +82,22 @@ const replaceToggleComponent = (node: Node) => {
 
     if (featureName !== featureNameForRemove) return;
 
-    const onValue = prepareReplaceValue(onAttribute);
+    const onValue = onAttribute
+        ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
+        ?.getExpression();
 
-    const offValue = prepareReplaceValue(offAttribute);
-        
+    const offValue = offAttribute
+        ?.getFirstDescendantByKind(SyntaxKind.JsxExpression)
+        ?.getExpression();
+
     if (featureState === 'on') {
         if (onValue) {
-            node.replaceWithText(onValue);
+            node.replaceWithText(onValue.getText());
         }
     }
     if (featureState === 'off') {
         if (offValue) {
-            node.replaceWithText(offValue);
+            node.replaceWithText(offValue.getText());
         }
     }
 };
