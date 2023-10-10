@@ -7,7 +7,6 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
-import { getFeatureFlags } from '@/shared/lib/features';
 import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature';
 import { Page } from '@/shared/ui/Page';
 import { PageError } from '@/shared/ui/PageError';
@@ -30,7 +29,6 @@ const reducers: ReducersList = {
 const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
     let { id } = useParams<{ id: string }>();
 
-    const isArticleRatingEnabled = getFeatureFlags('isArticleRatingEnabled');
     if (__PROJECT === 'storybook') {
         id = '1';
     }
