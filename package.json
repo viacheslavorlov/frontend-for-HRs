@@ -34,7 +34,8 @@
     "license": "ISC",
     "scripts": {
         "vite:production": "vite build",
-        "vite:dev": "concurrently \"vite serve --host --mode dev\" \"node ./json-server/index.js\"",
+        "vite:dev": "concurrently \"vite serve --mode dev\" \"node ./json-server/index.js\"",
+        "vite:dev:host": "concurrently \"vite serve --host --mode dev\" \"node ./json-server/index.js\"",
         "start": "webpack serve --env mode=development port=3000",
         "start:dev:server": "node ./json-server/index.js",
         "start:dev": "concurrently \"webpack serve --env mode=development\" \"node ./json-server/index.js\"",

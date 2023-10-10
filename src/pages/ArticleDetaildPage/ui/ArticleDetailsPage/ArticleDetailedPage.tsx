@@ -7,11 +7,12 @@ import {
     DynamicModuleLoader,
     ReducersList,
 } from '@/shared/lib/DynamicLoaders/DynamicModuleLoader/DynamicModuleLoader';
-import { getFeatureFlags, toggleFeatures } from '@/shared/lib/features';
+import { getFeatureFlags } from '@/shared/lib/features';
+import { ToggleFeature } from '@/shared/lib/features/ToggleFeature/ToggleFeature';
 import { Page } from '@/shared/ui/Page';
 import { PageError } from '@/shared/ui/PageError';
 import { VStack } from '@/shared/ui/Stack';
-import { memo, ReactNode } from 'react';
+import { memo } from 'react';
 import { useParams } from 'react-router-dom';
 import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
@@ -38,12 +39,6 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
         return <PageError />;
     }
 
-    const isCounterEnabled = toggleFeatures<ReactNode | null>({
-        name: 'isCounterEnabled',
-        on: () => <Counter />,
-        off: () => null,
-    });
-
     return (
         <Page
             data-testid="ArticleDetailedPage"
@@ -53,8 +48,11 @@ const ArticleDetailedPage = ({ className }: ArticleDetaildPageProps) => {
                     <ArticleDetailsPageHeader />
                     <ArticleDetails id={id || '1'} />
                     {/* Обнаружился Баг */}
-                    {isArticleRatingEnabled && <ArticleRating articleId={id} />}
-                    {isCounterEnabled}
+                    <ToggleFeature
+                        feature={'isCounterEnabled'}
+                        on={<Counter />}
+                        off={<ArticleRating articleId={id} />}
+                    />
                     <ArticleRecomendationList className={cls.recommendations} />
                     <ArticleDetailsComments id={id || '1'} />
                 </VStack>
