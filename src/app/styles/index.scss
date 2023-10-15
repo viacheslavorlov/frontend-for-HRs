@@ -22,6 +22,12 @@ body {
     font-family: var(--font-m-redesigned);
 }
 
+.app_redesigned {
+    background: var(--bg-color-redesigned);
+    min-height: 100vh;
+    font-family: var(--font-m-redesigned);
+}
+
 .content-page {
     display: flex;
     width: 100%;
