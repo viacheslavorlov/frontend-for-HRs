@@ -898,10 +898,11 @@
       ],
       "features": {
         "isArticleRatingEnabled": true,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isNewDesign": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isFirstTimeArticlePageVisit": true
@@ -917,7 +918,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": false
+        "isCounterEnabled": false,
+        "isNewDesign": false
       },
       "jsonSettings": {
         "theme": "app_orange_theme",
@@ -936,7 +938,8 @@
       ],
       "features": {
         "isArticleRatingEnabled": false,
-        "isCounterEnabled": true
+        "isCounterEnabled": true,
+        "isNewDesign": false
       },
       "jsonSettings": {
         "theme": "app_orange_theme",
@@ -961,7 +964,8 @@
       "jsonSettings": {
         "theme": "app_light_theme",
         "isFirstVisit": true,
-        "isFirstTimeArticlePageVisit": true
+        "isFirstTimeArticlePageVisit": true,
+        "isNewDesign": false
       }
     }
   ],
@@ -987,8 +991,8 @@
       "last": "Sholz",
       "age": 45,
       "currency": "EUR",
-      "country": "Belarus",
-      "city": "Moscow",
+      "country": "Russia",
+      "city": "Wroclaw",
       "username": "user",
       "features": {
         "isArticleRatingEnabled": false,
