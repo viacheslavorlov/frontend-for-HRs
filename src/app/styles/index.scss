@@ -13,10 +13,11 @@ body {
     background: var(--bg-color);
     min-height: 100vh;
     font-family: var(--font-family-main);
-    color: var(--text-color-redesigned);
+
 }
 
 .app_redesigned {
+	color: var(--text-color-redesigned);
     background: var(--bg-color-redesigned);
     min-height: 100vh;
     font-family: var(--font-m-redesigned);
