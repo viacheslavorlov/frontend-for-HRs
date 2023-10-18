@@ -18,7 +18,7 @@ export function buildPlugins({
         new webpack.DefinePlugin({
             __IS_DEV: JSON.stringify(isDev),
             __API_URL: JSON.stringify(apiUrl),
-            __PROJECT: JSON.stringify(project),
+            __PROJECT: JSON.stringify(project || 'frontend'),
         }),
         new HtmlWebpackPlugin({
             template: paths.html,

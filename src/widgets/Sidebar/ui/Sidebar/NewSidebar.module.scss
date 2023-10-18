@@ -1,11 +1,14 @@
 .Sidebar {
-    height: 100%;
+    max-height: 100%;
     width: 220px;
     background: var(--light-bg-redesigned);
     border-radius: 32px;
-    position: relative;
     transition: all 0.3s;
+    position: relative;
     flex-shrink: 0;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 .lang {
@@ -13,8 +16,7 @@
 }
 
 .switchers {
-    position: absolute;
-    bottom: 20px;
+    margin: auto 0 20px 0;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -24,7 +26,7 @@
     position: absolute;
     right: -40px;
     bottom: 40px;
-    color: var(--secondary-color);
+    color: var(--dark-bg-redesigned);
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
 }

@@ -5,45 +5,28 @@
 @import "./thems/orange";
 
 body {
-    font: var(--font-m);
+
     color: var(--primary-color);
 }
 
 .app {
     background: var(--bg-color);
     min-height: 100vh;
-    font-family: var(--font-family-main);
-
+    font: var(--font-family-main);
 }
 
 .app_redesigned {
 	color: var(--text-color-redesigned);
     background: var(--bg-color-redesigned);
     min-height: 100vh;
-    font-family: var(--font-m-redesigned);
+    font: var(--font-m-redesigned);
 }
 
-.app_redesigned {
-    background: var(--bg-color-redesigned);
-    min-height: 100vh;
-    font-family: var(--font-m-redesigned);
-}
-
-.app_redesigned {
-    background: var(--bg-color-redesigned);
-    min-height: 100vh;
-    font-family: var(--font-m-redesigned);
-}
-
-.app_redesigned {
-    background: var(--bg-color-redesigned);
-    min-height: 100vh;
-    font-family: var(--font-m-redesigned);
-}
 
 .content-page {
     display: flex;
-    width: 100%;
+    width: 100vw;
+    height: 100%;
 }
 
 * {

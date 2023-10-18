@@ -18,6 +18,7 @@ export enum TextSize {
     S = 'size_s',
     M = 'size_m',
     L = 'size_l',
+    XL = 'size_xl',
 }
 type FontWeight = 'thin' | 'normal' | 'bold';
 
@@ -32,12 +33,13 @@ interface TextProps {
     'data-testid'?: string;
 }
 
-type HeaderTagNum = 'h1' | 'h2' | 'h3';
+type HeaderTagNum = 'h1' | 'h2' | 'h3' | 'h4';
 
 const headerTag: Record<TextSize, HeaderTagNum> = {
-    [TextSize.S]: 'h3',
-    [TextSize.M]: 'h2',
-    [TextSize.L]: 'h1',
+    [TextSize.XL]: 'h1',
+    [TextSize.S]: 'h4',
+    [TextSize.M]: 'h3',
+    [TextSize.L]: 'h2',
 };
 
 export const Text = memo((props: TextProps) => {
@@ -63,7 +65,7 @@ export const Text = memo((props: TextProps) => {
     return (
         <div
             data-testid={dataTestId}
-            className={classNames(cls.Text, mods, [className, cls[fontWeight]])}
+            className={classNames('', mods, [className, cls[fontWeight]])}
         >
             {title && (
                 <HTag data-testid={`${dataTestId}.Header`} className={cls.title}>

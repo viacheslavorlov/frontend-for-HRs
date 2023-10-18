@@ -39,7 +39,7 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundaryState> {
             );
         }
 
-        return <div>{children}</div>;
+        return <>{children}</>;
     }
 }
 export default ErrorBoundary;
