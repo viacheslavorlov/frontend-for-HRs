@@ -5,7 +5,6 @@
 @import "./thems/orange";
 
 body {
-
     color: var(--primary-color);
 }
 
@@ -51,6 +50,6 @@ body {
 }
 
 *::-webkit-scrollbar {
-    width: 1em; /* Толщина скролла */
-    height: 1em;
+    width: 2em; /* Толщина скролла */
+    height: 2em;
 }

@@ -4,9 +4,9 @@ import { ReactElement } from 'react';
 
 interface MainLayoutProps {
 	className?: string;
-	header: ReactElement;
-	content: ReactElement;
-	sidebar: ReactElement;
+	header?: ReactElement;
+	content?: ReactElement;
+	sidebar?: ReactElement;
 	toolbar?: ReactElement;
 	
 }

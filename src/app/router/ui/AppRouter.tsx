@@ -15,15 +15,17 @@ export const AppRouter = () => {
                 element={
                     route.authOnly ? (
                         <Suspense fallback={<PageLoader />}>
-                            <RequireAuth roles={route.roles}>{element}</RequireAuth>
+                            <RequireAuth roles={route?.roles || []}>{element}</RequireAuth>
                         </Suspense>
                     ) : (
-                        element
+                        <Suspense fallback={<PageLoader />}>
+                            {element}
+                        </Suspense>
                     )
                 }
             />
         );
     }, []);
-
+    // @ts-ignore
     return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
 };

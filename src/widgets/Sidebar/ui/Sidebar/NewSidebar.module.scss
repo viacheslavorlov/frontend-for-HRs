@@ -1,12 +1,11 @@
 .Sidebar {
-    max-height: 100%;
+    min-height: 100%;
     width: 220px;
     background: var(--light-bg-redesigned);
     border-radius: 32px;
     transition: all 0.3s;
     position: relative;
     flex-shrink: 0;
-    margin: 20px;
     display: flex;
     flex-direction: column;
 }
@@ -16,7 +15,8 @@
 }
 
 .switchers {
-    margin: auto 0 20px 0;
+    position: absolute;
+    bottom: 20px;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -24,9 +24,9 @@
 
 .collapseBtn {
     position: absolute;
-    right: -40px;
-    bottom: 40px;
-    color: var(--dark-bg-redesigned);
+    right: -32px;
+    bottom: 32px;
+    background: var(--light-bg-redesigned);
     border-bottom-right-radius: 50%;
     border-top-right-radius: 50%;
 }
@@ -52,11 +52,10 @@
 }
 
 .collapsed {
-    width: var(--sidebar-widh-collapsed);
+    width: var(--sidebar-width-collapsed);
 
     .switchers {
         flex-direction: column;
-        margin: 0 auto;
     }
 
     .lang {

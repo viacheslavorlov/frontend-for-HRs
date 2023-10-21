@@ -7,3 +7,4 @@ reports/unit-tests
 .loki/report.html
 .loki/report.json
 /dist-vite/
+/extractedTranslations/
