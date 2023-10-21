@@ -1,10 +1,12 @@
-import { classNames, Mods } from '@/shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { LoadingSpinner } from '@/shared/ui/LoadingSpinner';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextSize, TextVariant } from '@/shared/ui/Text';
-import React, { HTMLAttributeAnchorTarget, memo } from 'react';
+import React, { ComponentType, HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Virtuoso, VirtuosoGrid } from 'react-virtuoso';
+import { ArticlePageFilters } from '../../../../widgets/ArticlePageFilters';
 import { ArticleView } from '../../model/consts/articleConst';
 import { Article } from '../../model/types/type';
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem';
@@ -14,9 +16,9 @@ interface ArticleListProps {
     className?: string;
     articles: Article[];
     isLoading?: boolean;
+    searchTools?: boolean;
     view: ArticleView;
     target?: HTMLAttributeAnchorTarget;
-    searchParams?: boolean;
     onLoadNext?: () => void;
 }
 
@@ -41,9 +43,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         className,
         articles,
         target,
+        searchTools,
         view = ArticleView.SMALL,
         isLoading,
-        searchParams,
         onLoadNext,
     } = props;
     const { t } = useTranslation('article');
@@ -70,10 +72,6 @@ export const ArticleList = memo((props: ArticleListProps) => {
         );
     }
 
-    const mods: Mods = {
-        [cls.wrap]: searchParams,
-    };
-
     if (isLoading && !articles.length) {
         return (
             <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
@@ -93,9 +91,9 @@ export const ArticleList = memo((props: ArticleListProps) => {
         return (
             <Virtuoso
                 data-testid="ArticleList"
-                className={classNames(cls.ArticleList, mods, [className, cls[view]])}
+                className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 style={{
-                    height: 'calc(65vh - var(--navbar-heigt)',
+                    height: '100%',
                 }}
                 data={articles}
                 overscan={250}
@@ -105,6 +103,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
                     exit: (velocity) => Math.abs(velocity) < 30,
                 }}
                 components={{
+                    Header: ArticlePageFilters as ComponentType,
                     ScrollSeekPlaceholder: ScrollPlaceHolderBig,
                 }}
                 itemContent={(index, article) => renderArticle(article)}
@@ -115,24 +114,23 @@ export const ArticleList = memo((props: ArticleListProps) => {
     return (
         <VirtuosoGrid
             data-testid="ArticleList"
-            className={classNames(cls.ArticleList, mods, [className, cls[view]])}
+            className={classNames(cls.ArticleList, {}, [className, cls[view]])}
             style={{
-                height: searchParams
-                    ? 'calc(65vh - var(--navbar-heigt)'
-                    : 'calc(55vh - var(--navbar-heigt)',
-                overflowY: !searchParams ? 'hidden' : 'auto',
+                height: '100%',
             }}
             totalCount={articles.length}
             data={articles}
             listClassName={cls.itemContainer}
-            endReached={searchParams ? onLoadNext : undefined}
+            endReached={onLoadNext}
             itemContent={(index, article) => renderArticle(article)}
             scrollSeekConfiguration={{
                 enter: (velocity) => Math.abs(velocity) > 100,
                 exit: (velocity) => Math.abs(velocity) < 30,
             }}
             components={{
+                Header: searchTools ? (ArticlePageFilters as ComponentType) : undefined,
                 ScrollSeekPlaceholder: ScrollPlaceHolderSmall,
+                Footer: isLoading ? (LoadingSpinner as ComponentType) : undefined,
             }}
         />
     );

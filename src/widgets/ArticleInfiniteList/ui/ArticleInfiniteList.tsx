@@ -1,15 +1,14 @@
-import { memo, ReactNode, useCallback } from 'react';
-import { useSelector } from 'react-redux';
 import { ArticleList, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { ArticlePageFilters } from '../../ArticlePageFilters/ui/ArticlePageFilters';
-import { fetchNextArticlePage } from '../model/service/fetchNextArticlePage/fetchNextArticlePage';
+import { memo, ReactNode, useCallback } from 'react';
+import { useSelector } from 'react-redux';
 import {
     getArticlePageError,
     getArticlePageHasMore,
     getArticlePageLoading,
     getArticlePageView,
 } from '../model/selectors/articlePageSelectors';
+import { fetchNextArticlePage } from '../model/service/fetchNextArticlePage/fetchNextArticlePage';
 import { getArticles } from '../model/slice/articlesSlice';
 
 interface ArticleInfiniteListProps {
@@ -33,11 +32,10 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
 
     return (
         <>
-            <ArticlePageFilters />
             <ArticleList
+                searchTools
                 articles={articles}
                 view={view}
-                searchParams
                 isLoading={isLoading}
                 target="_blank"
                 onLoadNext={onLoadNextPart}

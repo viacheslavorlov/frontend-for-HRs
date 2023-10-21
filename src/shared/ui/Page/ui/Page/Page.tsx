@@ -1,5 +1,6 @@
-import { memo, MutableRefObject, ReactNode, useRef } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { toggleFeatures } from '@/shared/lib/features';
+import { memo, MutableRefObject, ReactNode, useRef } from 'react';
 import cls from './Page.module.scss';
 
 interface PageProps {
@@ -17,8 +18,15 @@ export const Page = memo((props: PageProps) => {
         <main
             data-testid={props['data-testid'] || 'Page'}
             ref={wrapperRef}
-            className={classNames(cls.Page, {}, [className])}
-        >
+            className={classNames(
+                toggleFeatures({
+                    off: () => cls.Page,
+                    on: () => cls.PageRedesigned,
+                    name: 'isNewDesign',
+                }),
+                {},
+                [className],
+            )}>
             {children}
         </main>
     );

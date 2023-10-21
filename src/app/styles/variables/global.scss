@@ -1,13 +1,14 @@
 :root {
     --font-family-main: "Courier New";
-    --font-family-text-redesigned: 'Nunito Sans', sans-serif;
-    --font-family-header-redesigned: 'Roboto', sans-serif;
+    --font-family-text-redesigned: "Nunito Sans", sans-serif;
+    --font-family-header-redesigned: "Roboto", sans-serif;
 
     // размеры шрифтов
     // s
     --font-size-s: 12px;
     --font-line-s: 20px;
     --font-s: var(--font-size-s) / var(--font-line-s) var(--font-family-main);
+
     // m
     --font-size-m: 16px;
     --font-line-m: 24px;
@@ -22,7 +23,6 @@
     --font-size-xl: 32px;
     --font-line-xl: 40px;
     --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
-
 
     // шрифты redesigned
     --font-s-redesigned: var(--font-size-s) / var(--font-line-s) var(--font-family-text-redesigned);

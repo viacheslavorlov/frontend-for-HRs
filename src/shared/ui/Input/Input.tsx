@@ -1,5 +1,5 @@
-import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState } from 'react';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
@@ -42,7 +42,7 @@ export const Input = memo((props: InputProps) => {
     const onBlur = () => {
         setIsFocused(false);
     };
-
+    // @ts-ignore
     const onSelect = (e: any) => {
         setCarretPosition(e?.target?.selectionStart || 0);
     };

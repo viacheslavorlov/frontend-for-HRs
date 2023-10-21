@@ -31,6 +31,7 @@ module.exports = {
         'import',
     ],
     rules: {
+        '@typescript-eslint/no-explicit-any': 'off',
         'react/jsx-uses-react': 'error',
         'react/jsx-uses-vars': 'error',
         'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],

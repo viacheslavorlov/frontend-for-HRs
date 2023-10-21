@@ -7,6 +7,7 @@
     position: relative;
     flex-shrink: 0;
     display: flex;
+    margin: 0;
     flex-direction: column;
 }
 
@@ -32,6 +33,7 @@
 }
 
 .items {
+    z-index: 10;
     margin-top: 20px;
 }
 
@@ -45,6 +47,11 @@
     margin-left: 20px;
     display: flex;
     align-items: center;
+}
+
+.AppLogo {
+    top: 8px;
+    opacity: 1;
 }
 
 .icon {

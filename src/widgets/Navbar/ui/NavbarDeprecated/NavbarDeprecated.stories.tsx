@@ -1,20 +1,20 @@
-import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { RouterDecorator } from '@/shared/config/routerDecorator/routerDecorator';
-import { Theme } from '@/shared/const/theme/themeConst';
-import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
 import { StoreDecorator } from '@/shared/config/StoreDecorator/StoreDecorator';
-import { Navbar } from './Navbar';
+import { ThemeDecorator } from '@/shared/config/themeDecorator/themeDecorator';
+import { Theme } from '@/shared/const/theme/themeConst';
+import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { NavbarDeprecated } from './NavbarDeprecated';
 
 export default {
     title: 'widgets/Navbar',
-    component: Navbar,
+    component: NavbarDeprecated,
     argTypes: {
         background: { control: 'background' },
     },
     decorators: [ThemeDecorator(Theme.LIGHT), RouterDecorator],
-} as ComponentMeta<typeof Navbar>;
+} as ComponentMeta<typeof NavbarDeprecated>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: ComponentStory<typeof NavbarDeprecated> = (args) => <NavbarDeprecated {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
