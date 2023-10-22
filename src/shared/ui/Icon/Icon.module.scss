@@ -1,7 +1,14 @@
 .Icon {
-    fill: var(--inverted-primary-color);
+    fill: var(--primary-color);
+    color: var(--primary-color);
 }
 
 .inverted {
-    fill: var(--inverted-secondary-color);
+    fill: var(--inverted-primary-color);
+    color: var(--inverted-primary-color);
+}
+
+.IconRedesigned {
+    fill: var(--accent-redesigned);
+    color: var(--bg-redesigned);
 }
