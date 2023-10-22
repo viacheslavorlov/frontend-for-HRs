@@ -17,6 +17,8 @@ import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 
 import cls from './ArticlePage.module.scss';
+import { ArticlePageFilters } from '@/widgets/ArticlePageFilters';
+import { AnyAction } from '@reduxjs/toolkit';
 
 const reducers: ReducersList = {
     articlesPage: articlePageReducer,
@@ -28,7 +30,7 @@ const ArticlePage = () => {
     const [searchParams] = useSearchParams();
 
     useInitialEffect(() => {
-        dispatch(initArticlesPage(searchParams));
+        dispatch(initArticlesPage(searchParams) as AnyAction);
     });
 
     if (error) {
@@ -42,6 +44,7 @@ const ArticlePage = () => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
             <Page data-testid="ArticlePage" className={cls.ArticlePage}>
+                <ArticlePageFilters />
                 <ArticleInfiniteList />
                 <ArticlePageGreetings />
             </Page>

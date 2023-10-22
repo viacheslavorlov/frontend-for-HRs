@@ -1,6 +1,6 @@
 import { ArticleList, ArticleView } from '@/entities/Article';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { memo, ReactNode, useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import {
     getArticlePageError,
@@ -10,14 +10,14 @@ import {
 } from '../model/selectors/articlePageSelectors';
 import { fetchNextArticlePage } from '../model/service/fetchNextArticlePage/fetchNextArticlePage';
 import { getArticles } from '../model/slice/articlesSlice';
+import { AnyAction } from '@reduxjs/toolkit';
 
 interface ArticleInfiniteListProps {
     className?: string;
-    Header?: ReactNode;
 }
 
 export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
-    const { className, Header } = props;
+    const { className } = props;
     const articles = useSelector(getArticles.selectAll);
     const isLoading = useSelector(getArticlePageLoading);
     const error = useSelector(getArticlePageError);
@@ -26,13 +26,11 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
     const dispatch = useAppDispatch();
     const onLoadNextPart = useCallback(() => {
         if (hasMore) {
-            dispatch(fetchNextArticlePage());
+            dispatch(fetchNextArticlePage() as AnyAction);
         }
     }, [dispatch, hasMore]);
 
-    return (
-        <>
-            <ArticleList
+    return <ArticleList
                 searchTools
                 articles={articles}
                 view={view}
@@ -40,6 +38,4 @@ export const ArticleInfiniteList = memo((props: ArticleInfiniteListProps) => {
                 target="_blank"
                 onLoadNext={onLoadNextPart}
             />
-        </>
-    );
 });

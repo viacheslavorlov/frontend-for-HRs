@@ -8,6 +8,7 @@ import { initAuthData } from '../services/initAuthData';
 
 export const initialState: UserSchema = {
     _inited: false,
+    authData: undefined
 };
 
 export const userSlice = createSlice({
@@ -17,7 +18,7 @@ export const userSlice = createSlice({
         setAuthData: (state, action: PayloadAction<User>) => {
             state.authData = action.payload;
             setFeatureFlags(action.payload.features);
-            localStorage.setItem(USER_LOCAL_STORAGE_KEY, JSON.stringify(action.payload.id));
+            localStorage.setItem(USER_LOCAL_STORAGE_KEY, action.payload.id);
         },
         logout: (state) => {
             state.authData = undefined;

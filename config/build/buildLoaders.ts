@@ -29,19 +29,19 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoader = buildCssLoader(isDev);
 
-    // ? Если не используем тайпскрипт - нужен babel-loader
-    // const typeScriptLoader = {
-    //     test: /\.tsx?$/,
-    //     use: 'ts-loader',
-    //     exclude: /node_modules/,
-    // };
-    return [
-        fileLoader,
-        svgLoader,
-        codeBabelLoader,
-        tsxCodeBabelLoader,
-        // typeScriptLoader,
-        cssLoader,
-        assetsLoader,
-    ];
+// ? Если не используем тайпскрипт - нужен babel-loader
+// const typeScriptLoader = {
+//     test: /\.tsx?$/,
+//     use: 'ts-loader',
+//     exclude: /node_modules/,
+// };
+	return [
+		fileLoader,
+		svgLoader,
+		codeBabelLoader,
+		tsxCodeBabelLoader,
+		// typeScriptLoader,
+		cssLoader,
+		assetsLoader,
+	];
 }

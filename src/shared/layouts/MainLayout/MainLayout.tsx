@@ -21,6 +21,7 @@ export const MainLayout = (props: MainLayoutProps) => {
 	} = props;
 	return (
 		<div className={classNames(cls.MainLayout, {}, [className])}>
+			<div />
 			<div className={cls.sidebar}>{sidebar}</div>
 			<div className={cls.content}>{content}</div>
 			<div className={cls.rightbar}>

@@ -31,12 +31,12 @@ export const ArticleRecomendationList = memo((props: ArticleRecomendationListPro
             <Text title={t('Рекомендации')} />
             {!isLoading && recommendations && (
                 <ArticleList
+                    overflow
                     className={cls.ArticleRecommendationList}
                     target="_blank"
                     articles={recommendations}
                     view={ArticleView.SMALL}
                     isLoading={isLoading}
-                    onLoadNext={undefined}
                 />
             )}
         </VStack>

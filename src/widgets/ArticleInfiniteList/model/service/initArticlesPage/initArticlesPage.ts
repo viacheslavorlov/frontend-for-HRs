@@ -1,4 +1,4 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
+import { AnyAction, createAsyncThunk } from '@reduxjs/toolkit';
 import { ThunkConfig } from '@/app/providers/StoreProvider';
 import { SortOrder } from '@/shared/types/sortOrder';
 import { ArticleSortField, ArticleType } from '@/entities/Article';
@@ -32,7 +32,7 @@ export const initArticlesPage = createAsyncThunk<void, URLSearchParams, ThunkCon
                 dispatch(articlePageActions.setType(typeFromUrl));
             }
             dispatch(articlePageActions.initState());
-            dispatch(fetchArticlesList({ replace: false }));
+            dispatch(fetchArticlesList({ replace: false }) as AnyAction);
         }
     },
 );
